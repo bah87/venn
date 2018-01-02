@@ -17,14 +17,13 @@ class NewUserForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm(this.state);
   }
 
   render() {
     return (
       <div className="signup-wrapper">
-        <form className="signup-form">
+        <form onSubmit={this.handleSubmit} className="signup-form">
           <label>First name
             <input
               type="text"
@@ -56,6 +55,8 @@ class NewUserForm extends React.Component {
               onChange={this.update("password")}
             />
           </label>
+
+          <input type="submit" value="Sign up" />
         </form>
       </div>
     );
