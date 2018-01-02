@@ -1,6 +1,13 @@
 {
   "name": "venn",
   "private": true,
+  "scripts": {
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "9.3.0",
+    "npm": "5.6.0"
+  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
