@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -17,14 +17,13 @@ class SessionForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const user = this.state;
-    this.props.processForm({user});
+    this.props.login(this.state);
   }
 
   render() {
     return (
       <div className="login-header">
-        <form className="login-form">
+        <form onSubmit={this.handleSubmit} className="login-form">
           <label>Email
             <input
               type="text"
@@ -40,6 +39,8 @@ class SessionForm extends React.Component {
               onChange={this.update("password")}
             />
           </label>
+
+          <input type="submit" value="Log In" />
         </form>
       </div>
     );
