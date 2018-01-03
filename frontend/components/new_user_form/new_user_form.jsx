@@ -15,7 +15,7 @@ class NewUserForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    // this.handleBirthday = this.handleBirthday.bind(this);
+    this.handleBirthday = this.handleBirthday.bind(this);
   }
 
   update(field) {
@@ -24,9 +24,18 @@ class NewUserForm extends React.Component {
     };
   }
 
-  // handleBirthday(event) {
-  //   debugger
-  // }
+  handleBirthday(birthday) {
+    this.setState({ birthday: new Date(
+      birthday.year,
+      birthday.month,
+      birthday.day
+    )});
+    console.log(new Date(
+      birthday.year,
+      birthday.month,
+      birthday.day
+    ));
+  }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -89,7 +98,7 @@ class NewUserForm extends React.Component {
                 />
               </label>
 
-              <BirthdayDropdown />
+              <BirthdayDropdown handleBirthday={this.handleBirthday}/>
 
               <div className="gender-signup">
                 <div className="female">
