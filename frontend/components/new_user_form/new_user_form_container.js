@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import { login, logout, signup } from '../../actions/session_actions';
 import NewUserForm from './new_user_form';
 
-const mapStateToProps = state => {
-  return {};
-};
+// const mapStateToProps = state => {
+//   return {};
+// };
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -13,6 +13,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(NewUserForm);

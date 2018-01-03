@@ -115,6 +115,41 @@
   cursor: pointer;
 }
 
-.signup-btn:hover {
+#signup-btn:hover {
 
+}
+
+.birthday-signup input {
+  cursor: default;
+}
+
+.gender-signup {
+  display: flex;
+  width: 175px;
+
+}
+
+.gender-signup div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: default;
+}
+
+.female {
+  width: 90px;
+}
+
+.male {
+  width: 72px;
+}
+
+.gender-signup input {
+  margin: 3px;
+  cursor: default;
+}
+
+.gender-signup p {
+  padding-left: 3px;
+  padding-right: 10px;
 }

@@ -4,7 +4,14 @@ import { Link, withRouter } from 'react-router-dom';
 class NewUserForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { first_name: "", last_name: "", email: "", password: "" };
+    this.state = {
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+      gender: "",
+      birthday: ""
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
@@ -21,6 +28,8 @@ class NewUserForm extends React.Component {
   }
 
   render() {
+
+
     return (
       <main className="landing-page-main">
         <div className="signup-container">
@@ -75,6 +84,35 @@ class NewUserForm extends React.Component {
                   onChange={this.update("password")}
                 />
               </label>
+
+              <div className="birthday-signup">
+                <p>Birthday</p>
+                <input
+                  type="date"
+                  value={this.state.birthday}
+                  onChange={this.update("birthday")}
+                />
+              </div>
+
+              <div className="gender-signup">
+                <div className="female">
+                  <input
+                    type="radio"
+                    value={this.state.gender}
+                    name="gender"
+                    onChange={this.update("gender")}/>
+                  <p>Female</p>
+                </div>
+
+                <div className="male">
+                  <input
+                    type="radio"
+                    value={this.state.gender}
+                    name="gender"
+                    onChange={this.update("gender")}/>
+                  <p>Male</p>
+                </div>
+              </div>
 
               <input id="signup-btn" type="submit" value="Create Account" />
             </form>
