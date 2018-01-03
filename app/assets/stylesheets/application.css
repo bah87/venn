@@ -35,26 +35,66 @@
   min-width: 980px;
 }
 
+.both-login-forms {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
 .login-form {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .email-login {
+  font-size: 12px;
+  box-sizing: border-box;
+  width: 164px;
+  padding-left: 14px;
+}
 
+.email-login input {
+  width: 142px;
+  height: 15px;
+  border: 1px solid rgb(29, 42, 91);
+  color: black;
+  font-weight: 400;
+  background-color: white;
+  padding: 3px 3px 4px 3px;
 }
 
 .password-login {
-
+  font-size: 12px;
+  width: 164px;
+  padding-left: 14px;
 }
 
-.login-btn {
-  background-color: rgb(66, 103, 178)
+.password-login input {
+  width: 142px;
+  height: 15px;
+  border: 1px solid rgb(29, 42, 91);
+  color: black;
+  font-weight: 400;
+  background-color: white;
+  padding: 3px 3px 4px 3px;
 }
 
-.login-btn:hover {
+.both-login-forms button {
+  margin-right: 14px;
+  height: 24px;
+  background-color: rgb(66, 103, 178);
+  border-radius: 2px;
+  border: 1px solid rgb(41, 72, 125);
+  cursor: pointer;
+  padding: 2px 6px;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+}
 
+.both-login-forms button:hover {
+  background-color: #3b5998;
 }
 
 .landing-page-main {

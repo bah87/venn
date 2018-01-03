@@ -25,12 +25,11 @@ class SessionForm extends React.Component {
       <div className="login-header">
         <h1>venn</h1>
 
-        <div className="login-form">
-          <form onSubmit={this.handleSubmit}>
+        <div className="both-login-forms">
+          <form className="login-form" onSubmit={this.handleSubmit}>
             <div className="email-login">
-              <label for="email">Email</label>
+              <label>Email</label>
               <input
-                id="email"
                 type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
@@ -38,19 +37,20 @@ class SessionForm extends React.Component {
             </div>
 
             <div className="password-login">
-              <label for="password">Password</label>
+              <label>Password</label>
               <input
-                id="password"
                 type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
               />
             </div>
 
-            <input className="login-btn" type="submit" value="Log In" />
+            <button>Log In</button>
           </form>
 
-          <button className="demo-login-btn">Demo Log In</button>
+          <form onSubmit={this.handleSubmit}>
+            <button>Demo Log In</button>
+          </form>
         </div>
       </div>
     );
