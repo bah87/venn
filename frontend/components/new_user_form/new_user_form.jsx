@@ -17,46 +17,55 @@ class NewUserForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.processForm(this.state);
+    this.props.signup(this.state);
   }
 
   render() {
+
+    // <label>
+    //   <input
+    //     type="text"
+    //     placeholder="First name"
+    //     value={this.state.first_name}
+    //     onChange={this.update("first_name")}
+    //   />
+    // </label>
+    //
+    // <label>
+    //   <input
+    //     type="text"
+    //     placeholder="Last name"
+    //     value={this.state.last_name}
+    //     onChange={this.update("last_name")}
+    //   />
+    // </label>
+
     return (
       <div className="signup-wrapper">
         <form onSubmit={this.handleSubmit} className="signup-form">
-          <label>First name
-            <input
-              type="text"
-              value={this.state.first_name}
-              onChange={this.update("first_name")}
-            />
-          </label>
+          <h3>Sign Up</h3>
+          <p>It's free and always will be.</p>
 
-          <label>Last name
-            <input
-              type="text"
-              value={this.state.last_name}
-              onChange={this.update("last_name")}
-            />
-          </label>
 
-          <label>Email
+          <label>
             <input
               type="text"
+              placeholder="Email"
               value={this.state.email}
               onChange={this.update("email")}
             />
           </label>
 
-          <label>Password
+          <label>
             <input
               type="password"
+              placeholder="New password"
               value={this.state.password}
               onChange={this.update("password")}
             />
           </label>
 
-          <input type="submit" value="Sign up" />
+          <input type="submit" value="Create Account" />
         </form>
       </div>
     );

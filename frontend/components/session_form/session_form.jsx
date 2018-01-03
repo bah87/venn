@@ -23,6 +23,8 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-header">
+        <h1>Venn</h1>
+
         <form onSubmit={this.handleSubmit} className="login-form">
           <label>Email
             <input

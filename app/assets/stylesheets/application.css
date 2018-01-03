@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.login-header {
+  background-color: #3b5998;
+}
+
+.signup-wrapper {
+  background-color: #d8dfea;
+}

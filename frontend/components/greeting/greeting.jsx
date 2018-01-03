@@ -13,13 +13,18 @@ class Greeting extends React.Component {
       );
     } else {
       return (
-        <div>
-          <Link to="/signup">Signup</Link>
-          <br/>
-          <Link to="/login">Login</Link>
-        </div>
+        <div></div>
       );
     }
+    // else {
+    //   return (
+    //     <div>
+    //       <Link to="/signup">Signup</Link>
+    //       <br/>
+    //       <Link to="/login">Login</Link>
+    //     </div>
+    //   );
+    // }
   }
 }
 
