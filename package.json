@@ -2,11 +2,12 @@
   "name": "venn",
   "private": true,
   "scripts": {
+    "webpack": "webpack --watch",
     "postinstall": "webpack"
   },
   "engines": {
-    "node": "9.3.0",
-    "npm": "5.6.0"
+    "node": "6.7.0",
+    "npm": "3.10.7"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
