@@ -50,12 +50,12 @@ class NewUserForm extends React.Component {
               <li>
                 <i className="fa fa-newspaper-o" aria-hidden="true"></i>
                 <h4 id="landing-page-timeline">See photos and updates</h4>
-                <p>in your life on your Timeline.</p>
+                <p>from friends in News Feed.</p>
               </li>
               <li>
                 <i class="fa fa-share" aria-hidden="true"></i>
                 <h4 id="landing-page-feed">Share what's new</h4>
-                <p>from friends in News Feed.</p>
+                <p>in your life on your Timeline.</p>
               </li>
               <li>
                 <i class="fa fa-search" aria-hidden="true"></i>
