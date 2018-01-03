@@ -15,6 +15,7 @@ class NewUserForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    // this.handleBirthday = this.handleBirthday.bind(this);
   }
 
   update(field) {
@@ -22,6 +23,10 @@ class NewUserForm extends React.Component {
       this.setState({ [field]: event.target.value });
     };
   }
+
+  // handleBirthday(event) {
+  //   debugger
+  // }
 
   handleSubmit(event) {
     event.preventDefault();
