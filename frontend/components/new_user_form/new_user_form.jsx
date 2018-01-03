@@ -45,11 +45,23 @@ class NewUserForm extends React.Component {
       <main className="landing-page-main">
         <div className="signup-container">
           <div className="signup-static-content">
-            <h4>Connect with friends and the world around you on Venn.</h4>
+            <h2>Connect with friends and the world around you on Venn.</h2>
             <ul>
-              <li>See photos and updates from friends in News Feed.</li>
-              <li>Share what's new in your life on your Timeline.</li>
-              <li>Find more of what you're looking for with Venn Search.</li>
+              <li>
+                <i className="fa fa-newspaper-o" aria-hidden="true"></i>
+                <h4 id="landing-page-timeline">See photos and updates</h4>
+                <p>in your life on your Timeline.</p>
+              </li>
+              <li>
+                <i class="fa fa-share" aria-hidden="true"></i>
+                <h4 id="landing-page-feed">Share what's new</h4>
+                <p>from friends in News Feed.</p>
+              </li>
+              <li>
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <h4 id="landing-page-search">Find more</h4>
+                <p>of what you're looking for with Venn Search.</p>
+              </li>
             </ul>
           </div>
 
