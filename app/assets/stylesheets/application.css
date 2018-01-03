@@ -35,6 +35,28 @@
   min-width: 980px;
 }
 
+.login-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.email-login {
+
+}
+
+.password-login {
+
+}
+
+.login-btn {
+  background-color: rgb(66, 103, 178)
+}
+
+.login-btn:hover {
+
+}
+
 .landing-page-main {
   background-color: #edf0f5;
   width: 100%;
