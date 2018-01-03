@@ -101,6 +101,7 @@ class NewUserForm extends React.Component {
               <div className="gender-signup">
                 <div className="female">
                   <input
+                    id="female-radio"
                     type="radio"
                     value={this.state.gender}
                     name="gender"
@@ -110,6 +111,7 @@ class NewUserForm extends React.Component {
 
                 <div className="male">
                   <input
+                    id="male-radio"
                     type="radio"
                     value={this.state.gender}
                     name="gender"

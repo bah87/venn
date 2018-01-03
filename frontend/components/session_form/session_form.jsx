@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = { email: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
     this.update = this.update.bind(this);
   }
 
@@ -18,6 +19,17 @@ class SessionForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.login(this.state);
+  }
+
+  handleDemo(event) {
+    event.preventDefault();
+
+    const demoUser = {
+      email: "demo_user@email.com",
+      password: "starwars"
+    };
+
+    this.props.login(demoUser);
   }
 
   render() {
@@ -48,7 +60,7 @@ class SessionForm extends React.Component {
             <button>Log In</button>
           </form>
 
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleDemo}>
             <button>Demo Log In</button>
           </form>
         </div>
