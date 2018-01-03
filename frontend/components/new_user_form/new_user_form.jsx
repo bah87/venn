@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import BirthdayDropdown from './birthday_dropdown';
 
 class NewUserForm extends React.Component {
   constructor(props) {
@@ -28,8 +29,6 @@ class NewUserForm extends React.Component {
   }
 
   render() {
-
-
     return (
       <main className="landing-page-main">
         <div className="signup-container">
@@ -85,14 +84,7 @@ class NewUserForm extends React.Component {
                 />
               </label>
 
-              <div className="birthday-signup">
-                <p>Birthday</p>
-                <input
-                  type="date"
-                  value={this.state.birthday}
-                  onChange={this.update("birthday")}
-                />
-              </div>
+              <BirthdayDropdown />
 
               <div className="gender-signup">
                 <div className="female">
