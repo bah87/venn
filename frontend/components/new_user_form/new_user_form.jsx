@@ -20,7 +20,11 @@ class NewUserForm extends React.Component {
 
   update(field) {
     return event => {
-      this.setState({ [field]: event.target.value });
+      let value;
+      if (field === "male") { value = "M"; field = "gender"; }
+      else if (field === "female") { value = "F"; field = "gender"; }
+      else { value = event.target.value; }
+      this.setState({ [field]: value });
     };
   }
 
@@ -110,7 +114,7 @@ class NewUserForm extends React.Component {
                     type="radio"
                     value={this.state.gender}
                     name="gender"
-                    onChange={this.update("gender")}/>
+                    onChange={this.update("female")}/>
                   <p>Female</p>
                 </div>
 
@@ -119,7 +123,7 @@ class NewUserForm extends React.Component {
                     type="radio"
                     value={this.state.gender}
                     name="gender"
-                    onChange={this.update("gender")}/>
+                    onChange={this.update("male")}/>
                   <p>Male</p>
                 </div>
               </div>
