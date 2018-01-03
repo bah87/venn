@@ -8,12 +8,18 @@
 #  password_digest :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  first_name      :string           not null
+#  last_name       :string           not null
+#  birthday        :date             not null
+#  gender          :string           not null
 #
 
 class User < ApplicationRecord
   attr_reader :password
 
-  validates :email, :session_token, :password_digest, presence: true
+  validates :email, :session_token, :password_digest,
+    :first_name, :last_name, :birthday, :gender, presence: true
+  validates :gender, inclusion: { in: ["M", "F"] }
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
