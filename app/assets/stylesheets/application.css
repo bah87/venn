@@ -312,12 +312,12 @@
   justify-content: left;
   background-color: rgb(246, 247, 249);
   height: 16px;
-  padding: 8px 4px;
+  padding: 8px 0;
   border-bottom: 1px solid rgb(221, 223, 226);
 }
 
 .post-form-header span {
-  padding: 0 4px;
+  padding: 0 8px;
   border-right: 1px solid rgb(221, 223, 226);
 }
 
@@ -326,7 +326,7 @@
   font-size: 12px;
 }
 
-.make-post-modal-btn {
+.post-form-header button {
   color: rgb(75, 79, 86);
   cursor: pointer;
   font-size: 12px;
@@ -335,9 +335,24 @@
   border: none;
 }
 
+.make-post-modal-btn {
+
+}
+
 .post-form-main {
   height: 122px;
   border-bottom: 1px solid rgb(221, 223, 226);
+}
+
+.post-body-footer {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 32px;
+  width: 492px;
+  padding: 8px 0;
+  margin: 0 12px;
+  border-top: 1px solid rgb(221, 223, 226);
 }
 
 .create-post-btn {

@@ -27,6 +27,11 @@ class PostForm extends React.Component {
             <i className="fa fa-pencil" aria-hidden="true"></i>
             <button className="make-post-modal-btn">Make Post</button>
           </span>
+
+          <span>
+            <i class="fa fa-camera" aria-hidden="true"></i>
+            <button className="photo-video-modal-btn">Photo/Video</button>
+          </span>
         </div>
 
         <form className="post-form" onSubmit={this.handleSubmit}>
@@ -39,12 +44,13 @@ class PostForm extends React.Component {
                 value={this.state.body}
                 onChange={this.update}
               />
-              <div className="post-body-footer">
-                <span>
-                  <i class="fa fa-camera" aria-hidden="true"></i>
-                  <button className="photo-video-modal-btn">Photo/Video</button>
-                </span>
-              </div>
+            </div>
+
+            <div className="post-body-footer">
+              <span>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <button className="photo-video-modal-btn">Photo/Video</button>
+              </span>
             </div>
           </div>
 
