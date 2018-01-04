@@ -22,17 +22,29 @@ class PostForm extends React.Component {
   render() {
     return (
       <div className="post-form-container">
-        <button className="make-post-modal-btn">Make Post</button>
+        <div className="post-form-header">
+          <button className="make-post-modal-btn">Make Post</button>
+        </div>
 
         <form className="post-form" onSubmit={this.handleSubmit}>
-          <textarea
-            className="post-body"
-            placeholder="What's on your mind?"
-            value={this.state.body}
-            onChange={this.update}
-          />
+          <div className="post-form-main">
+            <div className="post-body-wrapper">
+              <textarea
+                className="post-body"
+                placeholder="What's on your mind?"
+                value={this.state.body}
+                onChange={this.update}
+              />
+            </div>
 
-          <button className="create-post-btn">Post</button>
+            <div className="post-body-footer">
+
+            </div>
+          </div>
+
+          <div className="post-form-footer">
+            <button className="create-post-btn">Post</button>
+          </div>
         </form>
       </div>
     );

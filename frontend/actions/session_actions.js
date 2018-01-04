@@ -1,16 +1,7 @@
 import * as SessionApiUtil from '../util/session_api_util';
-import * as UserApiUtil from '../util/user_api_util';
 
-export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
-
-export const receiveUser = user => {
-  return {
-    type: RECEIVE_USER,
-    user
-  };
-};
 
 export const receiveCurrentUser = currentUser => {
   return {
@@ -45,11 +36,5 @@ export const signup = user => dispatch => {
     dispatch(receiveCurrentUser(user));
   }, err => {
     dispatch(receiveErrors(err.responseJSON));
-  });
-};
-
-export const fetchUser = id => dispatch => {
-  return UserApiUtil.fetchUser(id).then(user => {
-    dispatch(receiveUser(user));
   });
 };
