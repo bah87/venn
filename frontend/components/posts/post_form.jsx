@@ -32,16 +32,19 @@ class PostForm extends React.Component {
         <form className="post-form" onSubmit={this.handleSubmit}>
           <div className="post-form-main">
             <div className="post-body-wrapper">
+              <p className="post-profile-pic"></p>
               <textarea
                 className="post-body"
                 placeholder="What's on your mind?"
                 value={this.state.body}
                 onChange={this.update}
               />
-            </div>
-
-            <div className="post-body-footer">
-
+              <div className="post-body-footer">
+                <span>
+                  <i class="fa fa-camera" aria-hidden="true"></i>
+                  <button className="photo-video-modal-btn">Photo/Video</button>
+                </span>
+              </div>
             </div>
           </div>
 
