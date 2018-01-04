@@ -11,7 +11,7 @@ export const receivePost = post => {
   };
 };
 
-export const receivePosts = posts => {
+export const receiveAllPosts = posts => {
   return {
     type: RECEIVE_ALL_POSTS,
     posts
@@ -33,7 +33,7 @@ export const fetchPost = id => dispatch => {
 
 export const fetchPosts = () => dispatch => {
   return PostApiUtil.fetchPosts().then(posts => {
-    dispatch(receivePosts(posts));
+    dispatch(receiveAllPosts(posts));
   });
 };
 
