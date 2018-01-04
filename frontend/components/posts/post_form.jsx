@@ -8,10 +8,6 @@ class PostForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchPost();
-  // }
-
   update(event) {
     this.setState({ body: event.target.value });
   }

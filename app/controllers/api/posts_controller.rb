@@ -3,6 +3,7 @@ class Api::PostsController < ApplicationController
 
   def index
     @posts = Post.order(created_at: :desc).includes(:author)
+    # @posts = Post.order(created_at: :asc).includes(:author)
   end
 
   def show
@@ -41,7 +42,7 @@ class Api::PostsController < ApplicationController
     @post = current_user.posts.find(params[:id])
     if @post
       @post.destroy
-      render :index
+      render :show
     end
   end
 
