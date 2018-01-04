@@ -25,7 +25,7 @@ class SessionForm extends React.Component {
     event.preventDefault();
 
     const demoUser = {
-      email: "demo_user@email.com",
+      email: "demo_user",
       password: "starwars"
     };
 
