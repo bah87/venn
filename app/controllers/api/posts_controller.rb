@@ -24,6 +24,7 @@ class Api::PostsController < ApplicationController
 
   def edit
     @post = current_user.posts.find(params[:id])
+    render :show
   end
 
   def update
