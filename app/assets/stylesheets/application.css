@@ -266,19 +266,9 @@
   cursor: default;
 }
 
-/* #female-radio {
-  width: 18px;
-  height: 18px;
-} */
-
 .female {
   width: 90px;
 }
-
-/* #male-radio {
-  width: 18px;
-  height: 18px;
-} */
 
 .male {
   width: 72px;
@@ -353,6 +343,38 @@
   padding: 8px 0;
   margin: 0 12px;
   border-top: 1px solid rgb(221, 223, 226);
+}
+
+.post-body-footer i {
+  margin-left: 8px;
+}
+
+.post-body-footer button {
+  margin-right: 8px;
+  background-color: transparent;
+  border: none;
+  color: rgb(75, 79, 86);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.post-body-footer span {
+  color: rgb(75, 79, 86);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: rgb(246, 247, 249);
+  border-radius: 18px;
+  width: 122px;
+  height: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.post-body-footer span:hover {
+  background-color: lightgrey;
 }
 
 .create-post-btn {
