@@ -53,12 +53,12 @@ class NewUserForm extends React.Component {
                 <p>from friends in News Feed.</p>
               </li>
               <li>
-                <i class="fa fa-share" aria-hidden="true"></i>
+                <i className="fa fa-share" aria-hidden="true"></i>
                 <h4 id="landing-page-feed">Share what's new</h4>
                 <p>in your life on your Timeline.</p>
               </li>
               <li>
-                <i class="fa fa-search" aria-hidden="true"></i>
+                <i className="fa fa-search" aria-hidden="true"></i>
                 <h4 id="landing-page-search">Find more</h4>
                 <p>of what you're looking for with Venn Search.</p>
               </li>

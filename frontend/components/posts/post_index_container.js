@@ -8,7 +8,6 @@ import {
 } from '../../actions/post_actions';
 
 const mapStateToProps = state => {
-  debugger
   return {
     posts: state.entities.posts
   };
