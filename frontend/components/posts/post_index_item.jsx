@@ -7,14 +7,16 @@ const PostIndexItem = ({ post, deletePost }) => {
       <header className="post-item-header">
         <p className="post-item-profile-pic"></p>
         <div className="post-item-header-right">
-          <div>
+          <div className="post-item-name-and-options">
             <p className="post-item-name">Brendan Higgins</p>
             <button
               className="post-item-delete-btn"
               onClick={() => deletePost(post.id)}>Delete</button>
           </div>
 
-          <p className="post-item-date">{"January 1 at 5:27pm"}</p>
+          <div className="post-item-date-container">
+            <p className="post-item-date">{"January 1 at 5:27pm"}</p>
+          </div>
         </div>
       </header>
 
