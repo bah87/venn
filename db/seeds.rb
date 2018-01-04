@@ -41,6 +41,15 @@ u4 = User.create(
   birthday: Date.new(1992,11,15)
 )
 
+u5 = User.create(
+  email: "demo_user",
+  first_name: "Demo",
+  last_name: "User",
+  password: "starwars",
+  gender: "F",
+  birthday: Date.new(1991,12,17)
+)
+
 Post.destroy_all
 
 p1 = Post.create(body: "first post!", author_id: User.first.id)
