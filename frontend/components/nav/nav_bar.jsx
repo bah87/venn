@@ -7,8 +7,33 @@ class NavBar extends React.Component {
     if (currentUser) {
       return (
         <div className="main-nav-bar">
-          <h1>Welcome, { currentUser.email }!</h1>
-          <button onClick={() => this.props.logout()}>Logout</button>
+          <div className="left-nav">
+            <div className="nav-logo"></div>
+
+            <div className="nav-search">
+              <input
+                type="text"
+                placeholder="Search"
+              />
+              <button className="nav-search-btn">
+                <i className="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <div className="right-nav">
+            <div className="profile-btn-container">
+              <p className="nav-profile-pic"></p>
+              <button className="profile-btn">{ currentUser.email }</button>
+            </div>
+
+            <div className="newsfeed-btn-container">
+              <button className="newsfeed-btn">Home</button>
+            </div>
+
+            <button className="logout-btn" onClick={() => this.props.logout()}>Logout</button>
+          </div>
+
         </div>
       );
     } else {
