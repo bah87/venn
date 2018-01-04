@@ -1,8 +1,9 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import NewUserFormContainer from './new_user_form/new_user_form_container';
+import LandingPage from './new_user_form/landing_page';
 import PostIndexContainer from './posts/post_index_container';
 import { AuthRoute } from '../util/route_util';
 
@@ -13,9 +14,10 @@ const App = () => {
         <GreetingContainer />
       </header>
 
-      <AuthRoute path="/" component={SessionFormContainer} />
-      <AuthRoute path="/" component={NewUserFormContainer} />
-      <Route path="/profile" component={PostIndexContainer} />
+      <Switch>
+        <AuthRoute exact path="/" component={LandingPage} />
+        <Route exact path="/profile" component={PostIndexContainer} />
+      </Switch>
     </div>
   );
 };
