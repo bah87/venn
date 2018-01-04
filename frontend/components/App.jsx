@@ -5,7 +5,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import NewUserFormContainer from './new_user_form/new_user_form_container';
 import LandingPage from './new_user_form/landing_page';
 import PostIndexContainer from './posts/post_index_container';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
   return (
@@ -15,8 +15,8 @@ const App = () => {
       </header>
 
       <Switch>
-        <AuthRoute exact path="/" component={LandingPage} />
-        <Route exact path="/profile" component={PostIndexContainer} />
+        <AuthRoute exact path="/login" component={LandingPage} />
+        <ProtectedRoute exact path="/profile" component={PostIndexContainer} />
       </Switch>
     </div>
   );
