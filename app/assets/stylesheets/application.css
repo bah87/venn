@@ -554,7 +554,7 @@
 
 .post-item {
   width: 516px;
-  height: 194px;
+  height: 146px;
   border: 1px solid rgb(221, 223, 226);
   margin: 13px;
   background-color: white;
@@ -630,18 +630,48 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-left: 14px;
+  width: 492px;
+  height: 32px;
+  color: rgb(144, 148, 156);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .like-btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  height: 32px;
+  padding: 4px 4px 4px 0;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.like-btn i {
+  margin-right: 6px;
+}
+
+.like-btn p:hover {
+  text-decoration: underline;
 }
 
 .comment-btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  height: 32px;
+  padding: 4px 4px 4px 0;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.comment-btn i {
+  margin-right: 6px;
+}
+
+.comment-btn p:hover {
+  text-decoration: underline;
 }
 
 .post-item-body {
