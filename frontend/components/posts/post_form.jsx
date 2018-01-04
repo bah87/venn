@@ -23,7 +23,10 @@ class PostForm extends React.Component {
     return (
       <div className="post-form-container">
         <div className="post-form-header">
-          <button className="make-post-modal-btn">Make Post</button>
+          <span>
+            <i className="fa fa-pencil" aria-hidden="true"></i>
+            <button className="make-post-modal-btn">Make Post</button>
+          </span>
         </div>
 
         <form className="post-form" onSubmit={this.handleSubmit}>

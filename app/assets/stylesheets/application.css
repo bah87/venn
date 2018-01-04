@@ -293,3 +293,48 @@
   padding-left: 3px;
   padding-right: 10px;
 }
+
+.post-index-ul {
+  list-style: none;
+}
+
+.post-form-container {
+  width: 516px;
+  height: 194px;
+  border: 1px solid rgb(221, 223, 226);
+  margin: 13px;
+  background-color: white;
+}
+
+.post-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: rgb(246, 247, 249);
+  height: 16px;
+  padding: 8px 4px;
+  border-bottom: 1px solid rgb(221, 223, 226);
+}
+
+.post-form-header span {
+  padding: 0 4px;
+  border-right: 1px solid rgb(221, 223, 226);
+}
+
+.make-post-modal-btn {
+  color: rgb(75, 79, 86);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.post-form-main {
+  height: 122px;
+  border-bottom: 1px solid rgb(221, 223, 226);
+}
+
+.create-post-btn {
+  
+}
