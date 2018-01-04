@@ -21,7 +21,7 @@ class PostIndex extends React.Component {
     return (
       <main className="post-index">
         <PostFormContainer />
-        <ul>{ posts }</ul>
+        <ul className="post-index-ul">{ posts }</ul>
       </main>
     );
   }
