@@ -18,10 +18,11 @@
    padding: 0;
    font-family: "Lucida Grande";
    /* font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif; */
+
  }
 
  #root {
-
+   background-color: #edf0f5;
  }
 
 .login-header {
@@ -286,6 +287,7 @@
 
 .post-index-ul {
   list-style: none;
+  padding: 0;
 }
 
 .post-form-container {
@@ -547,4 +549,17 @@
   background-color: #3b5998;
   border-radius: 2px;
   cursor: pointer;
+}
+
+.post-item {
+  width: 516px;
+  height: 194px;
+  border: 1px solid rgb(221, 223, 226);
+  margin: 13px;
+  background-color: white;
+}
+
+.post-index {
+  width: 516px;
+  margin: auto;
 }
