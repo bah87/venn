@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Greeting extends React.Component {
+class NavBar extends React.Component {
   render() {
     const currentUser = this.props.currentUser;
     if (currentUser) {
       return (
-        <div>
+        <div className="main-nav-bar">
           <h1>Welcome, { currentUser.email }!</h1>
           <button onClick={() => this.props.logout()}>Logout</button>
         </div>
@@ -28,4 +28,4 @@ class Greeting extends React.Component {
   }
 }
 
-export default Greeting;
+export default NavBar;

@@ -29,7 +29,7 @@ class PostForm extends React.Component {
           </span>
 
           <span>
-            <i class="fa fa-camera" aria-hidden="true"></i>
+            <i className="fa fa-camera" aria-hidden="true"></i>
             <button className="photo-video-modal-btn">Photo/Video</button>
           </span>
         </div>
@@ -48,7 +48,7 @@ class PostForm extends React.Component {
 
             <div className="post-body-footer">
               <span>
-                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i className="fa fa-camera" aria-hidden="true"></i>
                 <button className="photo-video-modal-btn">Photo/Video</button>
               </span>
             </div>
