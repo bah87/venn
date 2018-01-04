@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc).includes(:author)
   end
 
   def show
@@ -18,7 +18,7 @@ class Api::PostsController < ApplicationController
     if @post.save
       render :show
     else
-      render json: @post.errors.full_messages
+      render json: @post.errors.full_messages, status: 422
     end
   end
 
