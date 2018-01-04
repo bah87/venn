@@ -1,4 +1,6 @@
 class Api::PostsController < ApplicationController
+  before_action :require_logged_in
+
   def index
     @posts = Post.all
   end
@@ -14,17 +16,32 @@ class Api::PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
+      render :show
     else
+      render json: @post.errors.full_messages
     end
   end
 
   def edit
+    @post = current_user.posts.find(params[:id])
   end
 
   def update
+    @post = current_user.posts.find(params[:id])
+
+    if @post.update_attributes(post_params)
+      render :show
+    else
+      render json: @post.errors.full_messages
+    end
   end
 
   def destroy
+    @post = current_user.posts.find(params[:id])
+    if @post
+      @post.destroy
+      render :index
+    end
   end
 
   private
