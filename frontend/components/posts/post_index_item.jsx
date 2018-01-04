@@ -25,11 +25,11 @@ const PostIndexItem = ({ post, deletePost }) => {
       </main>
 
       <footer className="post-item-footer">
-        <div className="like">
+        <div className="like-btn">
           <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
           <p>Like</p>
         </div>
-        <div className="comment">
+        <div className="comment-btn">
           <i className="fa fa-comment-o" aria-hidden="true"></i>
           <p>Comment</p>
         </div>
