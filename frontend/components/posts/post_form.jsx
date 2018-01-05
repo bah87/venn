@@ -3,11 +3,10 @@ import React from 'react';
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
-    const recipient_id = this.props.recipient ? this.props.user.id : null;
     this.state = {
       body: "",
       author_id: this.props.currentUser.id,
-      recipient_id: recipient_id
+      recipient_id: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -19,13 +18,18 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createPost(this.state).then(() => {
+    const user = this.props.user;
+    const currentUser = this.props.currentUser;
+    const id = user.id !== currentUser.id ? user.id: null;
+
+    this.setState(
+      { recipient_id: id },
+      () => this.props.createPost(this.state).then(() => {
       this.setState({ body: "" });
-    });
+    }));
   }
 
   render() {
-
     let placeholderText;
     if (!this.props.user) {
       placeholderText = null;

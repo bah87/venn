@@ -17,7 +17,7 @@ class Profile extends React.Component {
   render() {
 
     let postForm = null;
-    if ((this.props.user) && (this.props.user.id === this.props.currentUser.id)) {
+    if (parseInt(this.props.match.params.userId) === this.props.currentUser.id) {
       postForm = (
         <PostFormContainer
           page={"profile"}
