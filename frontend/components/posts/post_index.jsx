@@ -15,6 +15,10 @@ class PostIndex extends React.Component {
   render() {
 
     let user = this.props.user;
+
+    //  use currentUser!!!!!
+    // debugger
+
     if (!user && !this.props.friends) { return null; }
 
     const posts = this.props.posts.map(post => {

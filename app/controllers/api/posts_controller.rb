@@ -6,13 +6,14 @@ class Api::PostsController < ApplicationController
   end
 
   def show_profile
-    my_posts_no_recipient = User.find(params[:user_id]).posts.reject do |post|
-      !post.recipient_id.nil
-    end
-
-    posts_to_me = Post.find_by(recipient_id: current_user.id)
-
-    @posts = my_posts_no_recipient + posts_to_me
+    # my_posts_no_recipient = User.find(params[:user_id]).posts.reject do |post|
+    #   !post.recipient_id.nil
+    # end
+    #
+    # posts_to_me = Post.find_by(recipient_id: current_user.id)
+    #
+    # @posts = my_posts_no_recipient + posts_to_me
+    @posts = User.find(params[:user_id]).posts
     render :index
   end
 
