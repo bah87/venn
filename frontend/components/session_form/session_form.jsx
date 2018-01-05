@@ -57,12 +57,19 @@ class SessionForm extends React.Component {
               />
             </div>
 
-            <button>Log In</button>
+            <button className="login-btns">
+              Log In
+              <Link to="/feed" />
+            </button>
           </form>
 
-          <form onSubmit={this.handleDemo}>
-            <button>Demo Log In</button>
-          </form>
+            <Link
+              to="/feed"
+              className="login-btns"
+              onClick={this.handleDemo}
+            >
+              Demo Log In
+            </Link>
         </div>
       </div>
     );
