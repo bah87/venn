@@ -8,7 +8,12 @@ class PostIndex extends React.Component {
 
   render() {
 
-    // user={ this.props.user }
+    let user;
+    if (this.props.page === "feed") {
+      user = this.props.user;
+    } else {
+      user = this.props.friends[post.author_id];
+    }
 
     const posts = this.props.posts.map(post => {
       return (
@@ -16,7 +21,7 @@ class PostIndex extends React.Component {
           key={ post.id }
           deletePost={ this.props.deletePost }
           post={ post }
-          user={ this.props.friends[post.author_id] }
+          user={ user }
         />
       );
     });
