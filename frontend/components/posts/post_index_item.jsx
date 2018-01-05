@@ -13,11 +13,12 @@ const PostIndexItem = ({ user, post, deletePost }) => {
 
         <div className="post-item-header-right">
           <div className="post-item-name-and-options">
-            <Link to={`/profile/${user.id}`}>
-              <p id="post-item-name">
-                {`${user.first_name} ${user.last_name}`}
-              </p>
-            </Link>
+              <Link
+                to={`/profile/${user.id}`} style={{ textDecoration: 'none'}}>
+                <p className="post-item-name">
+                  {`${user.first_name} ${user.last_name}`}
+                </p>
+              </Link>
             <button
               className="post-item-delete-btn"
               onClick={() => deletePost(post.id)}>Delete</button>
