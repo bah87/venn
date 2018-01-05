@@ -13,6 +13,7 @@ class PostIndex extends React.Component {
           key={ post.id }
           deletePost={ this.props.deletePost }
           post={ post }
+          user={ this.props.user }
         />
       );
     });

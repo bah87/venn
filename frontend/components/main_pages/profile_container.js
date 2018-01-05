@@ -4,7 +4,7 @@ import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-
+    user: state.entities.users[ownProps.match.params.userId]
   };
 };
 

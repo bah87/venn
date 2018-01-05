@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import { fetchPosts, deletePost } from '../../actions/post_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    posts: Object.values(state.entities.posts)
+    posts: Object.values(state.entities.posts),
+    user: ownProps.user
   };
 };
 

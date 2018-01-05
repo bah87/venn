@@ -10,7 +10,7 @@ class NavBar extends React.Component {
           <div className="left-nav">
             <img
               className="nav-logo"
-              src={window.staticImages.headerImage}
+              src={window.staticImages.navLogo}
             />
 
             <div className="nav-search">

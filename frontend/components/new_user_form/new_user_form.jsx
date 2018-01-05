@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BirthdayDropdown from './birthday_dropdown';
 
 class NewUserForm extends React.Component {
@@ -136,7 +136,6 @@ class NewUserForm extends React.Component {
                 id="signup-btn"
                 type="submit"
                 value="Create Account">
-                <Link to="/" />
               </input>
             </form>
           </div>

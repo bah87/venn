@@ -12,6 +12,7 @@
 #  last_name       :string           not null
 #  birthday        :date             not null
 #  gender          :string           not null
+#  profile_pic_url :string
 #
 
 require 'test_helper'

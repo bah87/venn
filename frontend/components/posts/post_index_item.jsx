@@ -1,11 +1,17 @@
 import React from 'react';
 
-const PostIndexItem = ({ post, deletePost }) => {
+const PostIndexItem = ({ user, post, deletePost }) => {
+
+  // <img className="post-item-profile-pic"
+  //   src={window.staticImages[user.profile_pic_url]}
+  // />
+
   return (
     <li className="post-item">
 
       <header className="post-item-header">
         <p className="post-item-profile-pic"></p>
+
         <div className="post-item-header-right">
           <div className="post-item-name-and-options">
             <p className="post-item-name">Brendan Higgins</p>
