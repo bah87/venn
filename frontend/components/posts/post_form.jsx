@@ -3,7 +3,11 @@ import React from 'react';
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { body: "", author_id: this.props.currentUser.id};
+    this.state = {
+      body: "",
+      author_id: this.props.currentUser.id,
+      recipient_id: null
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
@@ -14,12 +18,27 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createPost(this.state).then(() => {
+    const user = this.props.user;
+    const currentUser = this.props.currentUser;
+    const id = user.id !== currentUser.id ? user.id: null;
+
+    this.setState(
+      { recipient_id: id },
+      () => this.props.createPost(this.state).then(() => {
       this.setState({ body: "" });
-    });
+    }));
   }
 
   render() {
+    let placeholderText;
+    if (!this.props.user) {
+      placeholderText = null;
+    } else if (this.props.recipient) {
+      placeholderText = `Write something to ${this.props.user.first_name}...`;
+    } else {
+      placeholderText = "What's on your mind?";
+    }
+
     return (
       <div className="post-form-container">
         <div className="post-form-header">
@@ -42,7 +61,7 @@ class PostForm extends React.Component {
               />
               <textarea
                 className="post-body"
-                placeholder="What's on your mind?"
+                placeholder={ placeholderText }
                 value={this.state.body}
                 onChange={this.update}
               />

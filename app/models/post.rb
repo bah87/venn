@@ -2,11 +2,12 @@
 #
 # Table name: posts
 #
-#  id         :integer          not null, primary key
-#  body       :string           not null
-#  author_id  :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  body         :string           not null
+#  author_id    :integer          not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  recipient_id :integer
 #
 
 class Post < ApplicationRecord
