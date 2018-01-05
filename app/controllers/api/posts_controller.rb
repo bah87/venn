@@ -12,6 +12,7 @@ class Api::PostsController < ApplicationController
 
   def show_feed
     @posts = Post.order(created_at: :desc).includes(:author) # temporary until "friends" feature implemented
+    render :index
   end
 
   def show

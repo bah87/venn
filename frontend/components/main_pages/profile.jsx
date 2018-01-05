@@ -11,8 +11,16 @@ class Profile extends React.Component {
   render() {
     return (
       <main className="post-index">
-        <PostFormContainer page={"profile"} user={ this.props.user } />
-        <PostIndexContainer page={"profile"} user={ this.props.user } />
+        <PostFormContainer
+          page={"profile"}
+          user={ this.props.user }
+          id={ this.props.match.params.userId }
+        />
+        <PostIndexContainer
+          page={"profile"}
+          user={ this.props.user }
+          id={ this.props.match.params.userId }
+        />
       </main>
     );
   }
