@@ -37,7 +37,9 @@ class PostForm extends React.Component {
         <form className="post-form" onSubmit={this.handleSubmit}>
           <div className="post-form-main">
             <div className="post-body-wrapper">
-              <p className="post-profile-pic"></p>
+              <img className="post-profile-pic"
+                src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
+              />
               <textarea
                 className="post-body"
                 placeholder="What's on your mind?"

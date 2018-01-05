@@ -8,10 +8,12 @@ class NavBar extends React.Component {
       return (
         <div className="main-nav-bar">
           <div className="left-nav">
-            <img
-              className="nav-logo"
-              src={window.staticImages.navLogo}
-            />
+            <Link to="/">
+              <img
+                className="nav-logo"
+                src={window.staticImages.navLogo}
+                />
+            </Link>
 
             <div className="nav-search">
               <input
@@ -25,13 +27,23 @@ class NavBar extends React.Component {
           </div>
 
           <div className="right-nav">
-            <div className="profile-btn-container">
-              <p className="nav-profile-pic"></p>
-              <button className="profile-btn">{ currentUser.email }</button>
-            </div>
+            <Link
+              to={`/profile/${this.props.currentUser.id}`} 
+              style={{ textDecoration: 'none' }}>
+              <div className="profile-btn-container">
+                <img className="nav-profile-pic"
+                  src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
+                />
+                <button className="profile-btn">{ currentUser.email }</button>
+              </div>
+            </Link>
 
             <div className="newsfeed-btn-container">
-              <button className="newsfeed-btn">Home</button>
+              <Link to="/">
+                <button className="newsfeed-btn">
+                  Home
+                </button>
+              </Link>
             </div>
 
             <div className="logout-btn-container">

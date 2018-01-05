@@ -5,7 +5,7 @@ import { fetchFeed, fetchProfile, deletePost } from '../../actions/post_actions'
 const mapStateToProps = (state, ownProps) => {
   return {
     posts: Object.values(state.entities.posts),
-    user: ownProps.user
+    friends: ownProps.friends
   };
 };
 

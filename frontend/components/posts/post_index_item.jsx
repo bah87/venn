@@ -1,27 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PostIndexItem = ({ user, post, deletePost }) => {
-
-  // <img className="post-item-profile-pic"
-  //   src={window.staticImages[user.profile_pic_url]}
-  // />
 
   return (
     <li className="post-item">
 
       <header className="post-item-header">
-        <p className="post-item-profile-pic"></p>
+        <img className="post-item-profile-pic"
+          src={window.staticImages[user.profile_pic_url.split('.')[0]]}
+        />
 
         <div className="post-item-header-right">
           <div className="post-item-name-and-options">
-            <p className="post-item-name">Brendan Higgins</p>
+              <Link
+                to={`/profile/${user.id}`} style={{ textDecoration: 'none'}}>
+                <p className="post-item-name">
+                  {`${user.first_name} ${user.last_name}`}
+                </p>
+              </Link>
             <button
               className="post-item-delete-btn"
               onClick={() => deletePost(post.id)}>Delete</button>
           </div>
 
           <div className="post-item-date-container">
-            <p className="post-item-date">{"January 1 at 5:27pm"}</p>
+            <p className="post-item-date">{(new Date(post.updated_at)).toString().slice(0,15)}</p>
           </div>
         </div>
       </header>

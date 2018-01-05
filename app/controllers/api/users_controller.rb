@@ -10,6 +10,12 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def get_friends
+    # @users = current_user.friends # once friends feature is implemented
+    @users = User.all
+    render :friends
+  end
+
   def show
     @user = User.find(params[:id])
   end

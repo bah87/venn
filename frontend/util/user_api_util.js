@@ -4,3 +4,10 @@ export const fetchUser = id => {
     url: `/api/users/${id}`
   });
 };
+
+export const fetchFriends = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/friends'
+  });
+};

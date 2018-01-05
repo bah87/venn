@@ -6,7 +6,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show_profile
-    @posts = User.find(params[:user_id])
+    @posts = User.find(params[:user_id]).posts
     render :index
   end
 

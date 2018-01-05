@@ -400,11 +400,9 @@
 }
 
 .post-profile-pic {
-  /* background-color: grey; */
   width: 38px;
   height: 38px;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 19px;
+  border-radius: 50%;
   margin: 12px 0 0 12px;
 }
 
@@ -521,6 +519,7 @@
 .profile-btn {
   cursor: pointer;
   color: white;
+  text-decoration: none;
   font-size: 12px;
   font-weight: 700;
   background-color: transparent;
@@ -528,10 +527,10 @@
 }
 
 .nav-profile-pic {
-  /* background-color: grey; */
   width: 24px;
   height: 24px;
-  border-radius: 12px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .left-nav {
@@ -600,12 +599,11 @@
 }
 
 .post-item-profile-pic {
-  /* background-color: grey; */
   width: 38px;
   height: 38px;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 19px;
+  border-radius: 50%;
   margin: 0 8px 0 0;
+  cursor: pointer;
 }
 
 .post-item-name-and-options {
