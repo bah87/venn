@@ -44,15 +44,6 @@ class NavBar extends React.Component {
         <div></div>
       );
     }
-    // else {
-    //   return (
-    //     <div>
-    //       <Link to="/signup">Signup</Link>
-    //       <br/>
-    //       <Link to="/login">Login</Link>
-    //     </div>
-    //   );
-    // }
   }
 }
 
