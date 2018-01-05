@@ -8,7 +8,10 @@ class NavBar extends React.Component {
       return (
         <div className="main-nav-bar">
           <div className="left-nav">
-            <div className="nav-logo"></div>
+            <img
+              className="nav-logo"
+              src={window.staticImages.headerImage}
+            />
 
             <div className="nav-search">
               <input
