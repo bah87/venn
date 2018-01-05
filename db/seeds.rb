@@ -50,7 +50,7 @@ u5 = User.create!(
   last_name: "User",
   password: "starwars",
   gender: "M",
-  profile_pic_url: "",
+  profile_pic_url: "demo.jpg",
   birthday: Date.new(1991,12,17)
 )
 

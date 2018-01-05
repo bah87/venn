@@ -604,7 +604,7 @@
   width: 38px;
   height: 38px;
   border: 1px solid rgb(0, 0, 0);
-  border-radius: 19px;
+  border-radius: 50%;
   margin: 0 8px 0 0;
 }
 
