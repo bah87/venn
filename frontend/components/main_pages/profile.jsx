@@ -10,14 +10,11 @@ class Profile extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.userId !== this.props.match.params.userId) {
-
       this.props.fetchUser(newProps.match.params.userId);
     }
   }
 
   render() {
-    // debugger
-    // (this.props.user) && (parseInt(this.props.match.params.userId) === this.props.user.id)
 
     let postForm = null;
     if ((this.props.user) && (this.props.user.id === this.props.currentUser.id)) {
@@ -26,6 +23,16 @@ class Profile extends React.Component {
           page={"profile"}
           user={ this.props.user }
           id={ this.props.match.params.userId }
+          recipient={ false }
+        />
+      );
+    } else {
+      postForm = (
+        <PostFormContainer
+          page={"profile"}
+          user={ this.props.user }
+          id={ this.props.match.params.userId }
+          recipient={ true }
         />
       );
     }
