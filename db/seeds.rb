@@ -13,16 +13,16 @@ u1 = User.create!(
   last_name: "James",
   password: "starwars",
   gender: "M",
-  profile_pic_url: "lebron.jpeg",
+  profile_pic_url: "lebron.jpg",
   birthday: Date.new(1991,12,17)
 )
 u2 = User.create!(
   email: "Zucc",
-  first_name: "Matz",
+  first_name: "Mats",
   last_name: "Zuccarello",
   password: "starwars",
   gender: "M",
-  profile_pic_url: "zucc.jpeg",
+  profile_pic_url: "zucc.jpg",
   birthday: Date.new(1991,12,17)
 )
 u3 = User.create!(
@@ -31,7 +31,7 @@ u3 = User.create!(
   last_name: "Judge",
   password: "starwars",
   gender: "M",
-  profile_pic_url: "judge.jpeg",
+  profile_pic_url: "judge.jpg",
   birthday: Date.new(1991,12,17)
 )
 u4 = User.create!(
@@ -40,7 +40,7 @@ u4 = User.create!(
   last_name: "Beckham Jr.",
   password: "starwars",
   gender: "M",
-  profile_pic_url: "odell.jpeg",
+  profile_pic_url: "odell.jpg",
   birthday: Date.new(1991,12,17)
 )
 
@@ -76,70 +76,3 @@ p17 = Post.create(body: "who's throwing me the rock next year", author_id: User.
 p18 = Post.create(body: "inventor of the one handed catch", author_id: User.fourth.id)
 p19 = Post.create(body: "G.O.A.T", author_id: User.fourth.id)
 p20 = Post.create(body: "*Drake lyrics*", author_id: User.fourth.id)
-
-
-
-
-# User.destroy_all
-#
-# u1 = User.create(
-#   email: "brendan",
-#   first_name: "Brendan",
-#   last_name: "Higgins",
-#   password: "starwars",
-#   gender: "M",
-#   profile_pic_url: "",
-#   birthday: Date.new(1991,12,17)
-# )
-# u2 = User.create(
-#   email: "chris",
-#   first_name: "Chris",
-#   last_name: "Higgins",
-#   password: "starwars",
-#   gender: "M",
-#   profile_pic_url: "",
-#   birthday: Date.new(1988,6,2)
-# )
-# u3 = User.create(
-#   email: "kyle",
-#   first_name: "Kyle",
-#   last_name: "Higgins",
-#   password: "starwars",
-#   gender: "M",
-#   profile_pic_url: "",
-#   birthday: Date.new(1993,9,2)
-# )
-# u4 = User.create(
-#   email: "kelsey",
-#   first_name: "Kelsey",
-#   last_name: "Higgins",
-#   password: "starwars",
-#   gender: "F",
-#   profile_pic_url: "",
-#   birthday: Date.new(1992,11,15)
-# )
-#
-# u5 = User.create(
-#   email: "demo_user",
-#   first_name: "Demo",
-#   last_name: "User",
-#   password: "starwars",
-#   gender: "F",
-#   profile_pic_url: "",
-#   birthday: Date.new(1991,12,17)
-# )
-#
-# Post.destroy_all
-#
-# p1 = Post.create(body: "first post!", author_id: User.first.id)
-# p2 = Post.create(body: "venn is awesome", author_id: User.first.id)
-# p3 = Post.create(body: "what's good", author_id: User.first.id)
-# p4 = Post.create(body: "hey dude!", author_id: User.second.id)
-# p5 = Post.create(body: "great night to relax", author_id: User.second.id)
-# p6 = Post.create(body: "let's go Rangers!", author_id: User.second.id)
-# p7 = Post.create(body: "flying to Chicago this weekend", author_id: User.third.id)
-# p8 = Post.create(body: "need Monday to be over already", author_id: User.third.id)
-# p9 = Post.create(body: "breh", author_id: User.third.id)
-# p10 = Post.create(body: "can't wait for this weekend!", author_id: User.fourth.id)
-# p11 = Post.create(body: "TBT", author_id: User.fourth.id)
-# p12 = Post.create(body: "what a day :)", author_id: User.fourth.id)

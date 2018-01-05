@@ -6,7 +6,7 @@ const PostIndexItem = ({ user, post, deletePost }) => {
   //   src={window.staticImages[user.profile_pic_url]}
   // />
 
-  // debugger
+  debugger
 
   return (
     <li className="post-item">
@@ -23,7 +23,7 @@ const PostIndexItem = ({ user, post, deletePost }) => {
           </div>
 
           <div className="post-item-date-container">
-            <p className="post-item-date">{post.updated_at}</p>
+            <p className="post-item-date">{(new Date(post.updated_at)).toString().slice(0,15)}</p>
           </div>
         </div>
       </header>
