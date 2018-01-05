@@ -6,7 +6,7 @@ const PostIndexItem = ({ user, post, deletePost }) => {
   //   src={window.staticImages[user.profile_pic_url]}
   // />
 
-  debugger
+  // debugger
 
   return (
     <li className="post-item">

@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  // debugger
   const action = ownProps.page === "feed" ? fetchFeed : fetchProfile;
   return {
     action: id => dispatch(action(id)),

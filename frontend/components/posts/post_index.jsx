@@ -6,16 +6,25 @@ class PostIndex extends React.Component {
     this.props.action(this.props.id);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.id !== this.props.id) {
+      // debugger
+      this.props.action(newProps.id);
+    }
+  }
+
   render() {
 
-    let user;
-    if (this.props.page === "feed") {
-      user = this.props.user;
-    } else {
-      user = this.props.friends[post.author_id];
-    }
+    let user = this.props.user;
+    if (!user && !this.props.friends) { return null; }
+    // debugger
 
     const posts = this.props.posts.map(post => {
+
+      if (this.props.page === "feed") {
+        user = this.props.friends[post.author_id];
+      }
+
       return (
         <PostIndexItem
           key={ post.id }

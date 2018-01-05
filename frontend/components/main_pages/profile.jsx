@@ -8,6 +8,13 @@ class Profile extends React.Component {
     this.props.fetchUser(id);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.match.params.userId !== this.props.match.params.userId) {
+
+      this.props.fetchUser(newProps.match.params.userId);
+    }
+  }
+
   render() {
     return (
       <main className="post-index">
