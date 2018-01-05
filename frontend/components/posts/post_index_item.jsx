@@ -6,6 +6,8 @@ const PostIndexItem = ({ user, post, deletePost }) => {
   //   src={window.staticImages[user.profile_pic_url]}
   // />
 
+  // debugger
+
   return (
     <li className="post-item">
 
@@ -14,14 +16,14 @@ const PostIndexItem = ({ user, post, deletePost }) => {
 
         <div className="post-item-header-right">
           <div className="post-item-name-and-options">
-            <p className="post-item-name">Brendan Higgins</p>
+            <p className="post-item-name">{`${user.first_name} ${user.last_name}`}</p>
             <button
               className="post-item-delete-btn"
               onClick={() => deletePost(post.id)}>Delete</button>
           </div>
 
           <div className="post-item-date-container">
-            <p className="post-item-date">{"January 1 at 5:27pm"}</p>
+            <p className="post-item-date">{post.updated_at}</p>
           </div>
         </div>
       </header>
