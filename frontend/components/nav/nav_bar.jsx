@@ -34,7 +34,9 @@ class NavBar extends React.Component {
               <button className="newsfeed-btn">Home</button>
             </div>
 
-            <button className="logout-btn" onClick={() => this.props.logout()}>Logout</button>
+            <button
+              className="logout-btn"
+              onClick={() => this.props.logout()}>Logout</button>
           </div>
 
         </div>
