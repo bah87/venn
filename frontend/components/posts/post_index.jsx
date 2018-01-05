@@ -3,11 +3,13 @@ import PostIndexItem from './post_index_item';
 
 class PostIndex extends React.Component {
   componentDidMount() {
-    this.props.fetchPosts();
+    debugger
+    this.props.action(this.props.id);
   }
 
   render() {
     const posts = this.props.posts.map(post => {
+      debugger
       return (
         <PostIndexItem
           key={ post.id }

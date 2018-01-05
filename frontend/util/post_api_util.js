@@ -12,6 +12,21 @@ export const fetchPost = id => {
   });
 };
 
+export const fetchProfile = id => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/profile/${id}`,
+    data: { user_id: id }
+  });
+};
+
+export const fetchFeed = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/feed'
+  });
+};
+
 export const createPost = post => {
   return $.ajax({
     method: 'POST',
