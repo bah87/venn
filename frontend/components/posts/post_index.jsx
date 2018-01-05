@@ -8,7 +8,6 @@ class PostIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.id !== this.props.id) {
-      // debugger
       this.props.action(newProps.id);
     }
   }
@@ -17,7 +16,6 @@ class PostIndex extends React.Component {
 
     let user = this.props.user;
     if (!user && !this.props.friends) { return null; }
-    // debugger
 
     const posts = this.props.posts.map(post => {
 
