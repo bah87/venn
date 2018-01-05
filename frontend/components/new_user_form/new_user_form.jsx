@@ -132,7 +132,12 @@ class NewUserForm extends React.Component {
                 </div>
               </div>
 
-              <input id="signup-btn" type="submit" value="Create Account" />
+              <input
+                id="signup-btn"
+                type="submit"
+                value="Create Account">
+                <Link to="/" />
+              </input>
             </form>
           </div>
         </div>
