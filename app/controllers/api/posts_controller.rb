@@ -3,7 +3,15 @@ class Api::PostsController < ApplicationController
 
   def index
     @posts = Post.order(created_at: :desc).includes(:author)
-    # @posts = Post.order(created_at: :asc).includes(:author)
+  end
+
+  def show_profile
+    @posts = User.find(params[:user_id])
+    render :index
+  end
+
+  def show_feed
+    @posts = Post.order(created_at: :desc).includes(:author) # temporary until "friends" feature implemented
   end
 
   def show
