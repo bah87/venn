@@ -482,6 +482,26 @@
 
 .logout-btn {
   cursor: pointer;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  height: 20px;
+  border-left: 1px solid #3b5998;
+  padding: 0 10px;
+}
+
+.logout-btn-container {
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn-container:hover {
+  background-color: #3b5998;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .profile-btn-container {

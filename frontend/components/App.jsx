@@ -17,7 +17,7 @@ const App = () => {
         <AuthRoute exact path="/login" component={LandingPage} />
         <ProtectedRoute exact path="/profile"
           component={ProfileContainer} />
-        <ProtectedRoute exact path="/feed" component={NewsFeedContainer} />
+        <ProtectedRoute exact path="/" component={NewsFeedContainer} />
       </Switch>
     </div>
   );
