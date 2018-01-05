@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PostIndex from './post_index';
-import { fetchPosts, deletePost } from '../../actions/post_actions';
+import { fetchFeed, fetchProfile, deletePost } from '../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -9,9 +9,10 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const action = ownProps.page === "feed" ? fetchFeed : fetchProfile;
   return {
-    fetchPosts: () => dispatch(fetchPosts()),
+    action: id => dispatch(action(id)),
     deletePost: id => dispatch(deletePost(id))
   };
 };
