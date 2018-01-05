@@ -13,7 +13,6 @@ u1 = User.create!(
   last_name: "James",
   password: "starwars",
   gender: "M",
-  profile_pic_url: "lebron.jpeg",
   birthday: Date.new(1991,12,17)
 )
 u2 = User.create!(
@@ -22,7 +21,6 @@ u2 = User.create!(
   last_name: "Zuccarello",
   password: "starwars",
   gender: "M",
-  profile_pic_url: "zucc.jpeg",
   birthday: Date.new(1991,12,17)
 )
 u3 = User.create!(
@@ -31,7 +29,6 @@ u3 = User.create!(
   last_name: "Judge",
   password: "starwars",
   gender: "M",
-  profile_pic_url: "judge.jpeg",
   birthday: Date.new(1991,12,17)
 )
 u4 = User.create!(
@@ -40,7 +37,6 @@ u4 = User.create!(
   last_name: "Beckham Jr.",
   password: "starwars",
   gender: "M",
-  profile_pic_url: "odell.jpeg",
   birthday: Date.new(1991,12,17)
 )
 
@@ -50,7 +46,6 @@ u5 = User.create!(
   last_name: "User",
   password: "starwars",
   gender: "M",
-  profile_pic_url: "",
   birthday: Date.new(1991,12,17)
 )
 
