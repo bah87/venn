@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import BirthdayDropdown from './birthday_dropdown';
 
 class NewUserForm extends React.Component {
