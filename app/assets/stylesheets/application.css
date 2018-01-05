@@ -602,6 +602,21 @@
   height: 17px;
 }
 
+.post-item-delete-btn {
+  background-color: transparent;
+  border: none;
+  color: rgb(75, 79, 86);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 10px;
+}
+
+.post-item-delete-btn:hover {
+  background-color: lightgrey;
+  border-radius: 9px;
+}
+
 .post-item-date {
   color: #90949c;
   font-size: 12px;
