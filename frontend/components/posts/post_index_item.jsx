@@ -3,13 +3,6 @@ import { Link } from 'react-router-dom';
 
 const PostIndexItem = ({ user, post, deletePost }) => {
 
-  let postImageUrl = post.image_url;
-  if (!postImageUrl.includes("/assets/missing")) {
-    let urlSplit = postImageUrl.split("http://s3");
-    postImageUrl = "http://s3" + ".us-east-2" + urlSplit[1];
-  }
-  // debugger
-
   return (
     <li className="post-item">
 
@@ -38,7 +31,7 @@ const PostIndexItem = ({ user, post, deletePost }) => {
       </header>
 
       <main className="post-item-body">
-        <img src={postImageUrl}/>
+        <img src={post.image_url}/>
         <p>{ post.body }</p>
       </main>
 
