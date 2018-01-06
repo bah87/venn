@@ -349,36 +349,50 @@
   border-top: 1px solid rgb(221, 223, 226);
 }
 
-.post-body-footer i {
-  margin-left: 8px;
-}
-
-.post-body-footer button {
-  margin-right: 8px;
-  background-color: transparent;
-  border: none;
-  color: rgb(75, 79, 86);
-  font-size: 12px;
-  font-weight: 700;
+.file-upload-btn {
+  position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
   cursor: pointer;
 }
 
-.post-body-footer span {
-  color: rgb(75, 79, 86);
-  cursor: pointer;
+.file-upload-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+.file-upload-label i {
+  padding-right: 4px;
+}
+
+.file-upload-label span {
+  padding-left: 4px;
+}
+
+.file-upload {
+  position: relative;
+	overflow: hidden;
   font-size: 12px;
   font-weight: 700;
-  background-color: rgb(246, 247, 249);
+  color: rgb(75, 79, 86);
   border-radius: 18px;
   width: 122px;
   height: 32px;
+  background-color: rgb(246, 247, 249);
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
+  cursor: default;
 }
 
-.post-body-footer span:hover {
-  background-color: lightgrey;
+.file-upload:hover {
+  background-color: rgb(225, 225, 225);
 }
 
 .create-post-btn {
@@ -715,4 +729,8 @@
   color: rgb(29, 33, 41);
   font-size: 14px;
   font-weight: 400;
+}
+
+.post-body-img {
+  max-width: 492px;
 }

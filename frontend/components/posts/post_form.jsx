@@ -6,7 +6,9 @@ class PostForm extends React.Component {
     this.state = {
       body: "",
       author_id: this.props.currentUser.id,
-      recipient_id: null
+      recipient_id: null,
+      imageFile: null,
+      imageUrl: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -14,6 +16,11 @@ class PostForm extends React.Component {
 
   update(event) {
     this.setState({ body: event.target.value });
+  }
+
+  updateFile(event) {
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
   }
 
   handleSubmit(event) {
@@ -68,10 +75,22 @@ class PostForm extends React.Component {
             </div>
 
             <div className="post-body-footer">
-              <span>
-                <i className="fa fa-camera" aria-hidden="true"></i>
-                <button className="photo-video-modal-btn">Photo/Video</button>
-              </span>
+              <div className="file-upload">
+                <div>
+                  <div className="file-upload-label">
+                    <i className="fa fa-camera" aria-hidden="true"></i>
+                    <span>Photo/Video</span>
+                  </div>
+
+                  <input
+                    className="file-upload-btn"
+                    type="file"
+                    onChange={this.updateFile}
+                  />
+                </div>
+              </div>
+
+
             </div>
           </div>
 

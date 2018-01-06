@@ -31,7 +31,7 @@ const PostIndexItem = ({ user, post, deletePost }) => {
       </header>
 
       <main className="post-item-body">
-        <img src={post.image_url}/>
+        <img className="post-body-img" src={post.image_url}/>
         <p>{ post.body }</p>
       </main>
 
