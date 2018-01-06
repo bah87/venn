@@ -62,12 +62,10 @@ class PostForm extends React.Component {
 
   render() {
     let placeholderText;
-    if (!this.props.user) {
+    if (!this.props.user || !this.props.recipient) {
       placeholderText = "What's on your mind?";
-    } else if (this.props.recipient) {
-      placeholderText = `Write something to ${this.props.user.first_name}...`;
     } else {
-      placeholderText = "What's on your mind?";
+      placeholderText = `Write something to ${this.props.user.first_name}...`;
     }
 
     return (
