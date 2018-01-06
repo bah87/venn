@@ -5,13 +5,13 @@ class PostForm extends React.Component {
     super(props);
     this.state = {
       body: "",
-      author_id: this.props.currentUser.id,
       recipient_id: null,
       imageFile: null,
-      imageUrl: null
+      imageUrl: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   update(event) {
@@ -20,7 +20,16 @@ class PostForm extends React.Component {
 
   updateFile(event) {
     const reader = new FileReader();
-    const file = e.currentTarget.files[0];
+    const file = event.currentTarget.files[0];
+    reader.onloadend = () => {
+      this.setState({ imageUrl: reader.result, imageFile: file });
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
   }
 
   handleSubmit(event) {
@@ -29,11 +38,21 @@ class PostForm extends React.Component {
     const currentUser = this.props.currentUser;
     const id = user.id !== currentUser.id ? user.id: null;
 
-    this.setState(
-      { recipient_id: id },
-      () => this.props.createPost(this.state).then(() => {
-      this.setState({ body: "" });
-    }));
+    const formData = new FormData();
+    formData.append("post[body]", this.state.body);
+    formData.append("post[recipient_id]", id);
+    const file = this.state.imageFile;
+    if (file) formData.append("post[image]", file);
+
+    this.props.createPost(formData).then(() => {
+      this.setState({ body: "", imageUrl: "" });
+    });
+
+    // this.setState(
+    //   { recipient_id: id },
+    //   () => this.props.createPost(this.state).then(() => {
+    //   this.setState({ body: "" });
+    // }));
   }
 
   render() {
@@ -72,6 +91,7 @@ class PostForm extends React.Component {
                 value={this.state.body}
                 onChange={this.update}
               />
+              <img className="img-preview" src={this.state.imageUrl}/>
             </div>
 
             <div className="post-body-footer">

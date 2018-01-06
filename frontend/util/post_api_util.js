@@ -27,11 +27,14 @@ export const fetchFeed = () => {
   });
 };
 
-export const createPost = post => {
+export const createPost = formData => {
   return $.ajax({
     method: 'POST',
     url: '/api/posts',
-    data: { post }
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
   });
 };
 

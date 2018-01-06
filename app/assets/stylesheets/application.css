@@ -329,6 +329,11 @@
   border: none;
 }
 
+.img-preview {
+  max-width: 100px;
+  max-height: 100px;
+}
+
 .make-post-modal-btn {
 
 }
