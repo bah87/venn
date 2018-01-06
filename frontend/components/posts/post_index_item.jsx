@@ -31,6 +31,7 @@ const PostIndexItem = ({ user, post, deletePost }) => {
       </header>
 
       <main className="post-item-body">
+
         <p>{ post.body }</p>
       </main>
 
