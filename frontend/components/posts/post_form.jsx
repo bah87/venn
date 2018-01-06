@@ -36,11 +36,16 @@ class PostForm extends React.Component {
     event.preventDefault();
     const user = this.props.user;
     const currentUser = this.props.currentUser;
-    const id = user.id !== currentUser.id ? user.id: null;
+
 
     const formData = new FormData();
     formData.append("post[body]", this.state.body);
-    formData.append("post[recipient_id]", id);
+
+    if (user) {
+      const id = user.id !== currentUser.id ? user.id: null;
+      formData.append("post[recipient_id]", id);
+    }
+
     const file = this.state.imageFile;
     if (file) formData.append("post[image]", file);
 
@@ -58,7 +63,7 @@ class PostForm extends React.Component {
   render() {
     let placeholderText;
     if (!this.props.user) {
-      placeholderText = null;
+      placeholderText = "What's on your mind?";
     } else if (this.props.recipient) {
       placeholderText = `Write something to ${this.props.user.first_name}...`;
     } else {
