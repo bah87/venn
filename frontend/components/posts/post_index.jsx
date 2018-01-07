@@ -38,7 +38,9 @@ class PostIndex extends React.Component {
     });
 
     return (
-      <ul className="post-index-ul">{ posts }</ul>
+      <div className="post-index-modal-open">
+        <ul className="post-index-ul">{ posts }</ul>
+      </div>
     );
   }
 }

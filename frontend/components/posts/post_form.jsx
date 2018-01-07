@@ -8,7 +8,8 @@ class PostForm extends React.Component {
       body: "",
       recipient_id: null,
       imageFile: null,
-      imageUrl: null
+      imageUrl: null,
+      modal: this.props.modal
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -62,61 +63,75 @@ class PostForm extends React.Component {
       placeholderText = `Write something to ${this.props.user.first_name}...`;
     }
 
+    let modalFormClass = "";
+    let modalScreenClass = "";
+    if (this.state.modal) {
+      modalFormClass = "post-form-modal";
+      modalScreenClass = "post-form-modal-open";
+    }
+
     return (
-      <div className="post-form-container">
-        <div className="post-form-header">
-          <span>
-            <i className="fa fa-pencil" aria-hidden="true"></i>
-            <button className="make-post-modal-btn">Make Post</button>
-          </span>
-
-          <span>
-            <i className="fa fa-camera" aria-hidden="true"></i>
-            <button className="photo-video-modal-btn">Photo/Video Album</button>
-          </span>
+      <div>
+        <div className={modalScreenClass} onClick={() => console.log("div clicked!")}>
         </div>
+        <div className={modalFormClass}>
+          <div className="post-form-container">
+            <div className="post-form-header">
+              <span>
+                <i className="fa fa-pencil" aria-hidden="true"></i>
+                <button className="make-post-modal-btn">Make Post</button>
+              </span>
 
-        <form className="post-form" onSubmit={this.handleSubmit}>
-          <div className="post-form-main">
-            <div className="post-body-wrapper">
-              <div className="post-form-text">
-                <img className="post-profile-pic"
-                  src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
-                  />
-                <textarea
-                  className="post-body"
-                  placeholder={ placeholderText }
-                  value={this.state.body}
-                  onChange={this.update}
-                  />
-              </div>
-              <PostImage form={true} imageUrl={this.state.imageUrl} />
+              <span>
+                <i className="fa fa-camera" aria-hidden="true"></i>
+                <button className="photo-video-modal-btn">Photo/Video Album</button>
+              </span>
             </div>
 
-            <div className="post-body-footer">
-              <div className="file-upload">
-                <div>
-                  <div className="file-upload-label">
-                    <i className="fa fa-camera" aria-hidden="true"></i>
-                    <span>Photo/Video</span>
+            <form className="post-form" onSubmit={this.handleSubmit}>
+              <div className="post-form-main">
+                <div className="post-body-wrapper">
+                  <div className="post-form-text">
+                    <img className="post-profile-pic"
+                      src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
+                      />
+                    <textarea
+                      onClick={() => console.log("clicked!")}
+                      className="post-body"
+                      placeholder={ placeholderText }
+                      value={this.state.body}
+                      onChange={this.update}
+                      />
+                  </div>
+                  <PostImage form={true} imageUrl={this.state.imageUrl} />
+                </div>
+
+                <div className="post-body-footer">
+                  <div className="file-upload">
+                    <div>
+                      <div className="file-upload-label">
+                        <i className="fa fa-camera" aria-hidden="true"></i>
+                        <span>Photo/Video</span>
+                      </div>
+
+                      <input
+                        className="file-upload-btn"
+                        type="file"
+                        onChange={this.updateFile}
+                      />
+                    </div>
                   </div>
 
-                  <input
-                    className="file-upload-btn"
-                    type="file"
-                    onChange={this.updateFile}
-                  />
+
                 </div>
               </div>
 
-
-            </div>
+              <div className="post-form-footer">
+                <button className="create-post-btn">Post</button>
+              </div>
+            </form>
           </div>
-
-          <div className="post-form-footer">
-            <button className="create-post-btn">Post</button>
-          </div>
-        </form>
+        </div>
       </div>
     );
   }

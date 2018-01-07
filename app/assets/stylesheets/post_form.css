@@ -142,3 +142,26 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.post-form-modal-open {
+  position: fixed;
+  background-color: black;
+  opacity: 0.6;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.post-form-modal {
+  position: absolute;
+  z-index: 2;
+}
+
+.post-index-modal-open {
+  margin-top: 210px;
+}
+
+.post-form-modal-close {
+
+}
