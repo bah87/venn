@@ -4,7 +4,7 @@ const PostImage = ({ imageUrl, form }) => {
 
   if (imageUrl && form) {
     return (
-      <div className="img-preview-container" >
+      <div className="img-preview-container">
         <img className="img-preview" src={imageUrl}/>
       </div>
     );

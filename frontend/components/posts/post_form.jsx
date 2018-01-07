@@ -72,23 +72,25 @@ class PostForm extends React.Component {
 
           <span>
             <i className="fa fa-camera" aria-hidden="true"></i>
-            <button className="photo-video-modal-btn">Photo/Video</button>
+            <button className="photo-video-modal-btn">Photo/Video Album</button>
           </span>
         </div>
 
         <form className="post-form" onSubmit={this.handleSubmit}>
           <div className="post-form-main">
             <div className="post-body-wrapper">
-              <img className="post-profile-pic"
-                src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
-              />
-              <textarea
-                className="post-body"
-                placeholder={ placeholderText }
-                value={this.state.body}
-                onChange={this.update}
-              />
-            <PostImage form={true} imageUrl={this.state.imageUrl} />
+              <div className="post-form-text">
+                <img className="post-profile-pic"
+                  src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
+                  />
+                <textarea
+                  className="post-body"
+                  placeholder={ placeholderText }
+                  value={this.state.body}
+                  onChange={this.update}
+                  />
+              </div>
+              <PostImage form={true} imageUrl={this.state.imageUrl} />
             </div>
 
             <div className="post-body-footer">
