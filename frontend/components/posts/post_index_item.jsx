@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import PostImage from './post_image';
 
 const PostIndexItem = ({ user, post, deletePost }) => {
+  let date = new Date(post.updated_at);
+  const options = { year: "numeric", month: "short", day: "numeric",
+    hour: "2-digit", minute: "2-digit" };
+  date = date.toLocaleTimeString("en-us", options).split(",");
+  date = `${date[0]}${date[1]} at${date[2]}`;
+
   return (
     <li className="post-item">
 
@@ -28,7 +34,7 @@ const PostIndexItem = ({ user, post, deletePost }) => {
             <Link to={`/users/${post.author_id}/posts/${post.id}`}
               style={{ textDecoration: 'none'}}>
               <p className="post-item-date">
-                {(new Date(post.updated_at)).toString().slice(0,15)}
+                { date }
               </p>
             </Link>
           </div>
