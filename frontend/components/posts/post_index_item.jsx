@@ -25,7 +25,8 @@ const PostIndexItem = ({ user, post, deletePost }) => {
           </div>
 
           <div className="post-item-date-container">
-            <Link to={`/posts/${post.id}`}>
+            <Link to={`/users/${post.author_id}/posts/${post.id}`}
+              style={{ textDecoration: 'none'}}>
               <p className="post-item-date">
                 {(new Date(post.updated_at)).toString().slice(0,15)}
               </p>
