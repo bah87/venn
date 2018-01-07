@@ -1,0 +1,144 @@
+.post-form-main {
+  min-height: 122px;
+  border-bottom: 1px solid rgb(221, 223, 226);
+}
+
+.post-form-container {
+  width: 516px;
+  min-height: 194px;
+  border: 1px solid rgb(221, 223, 226);
+  background-color: white;
+  border-radius: 1px;
+}
+
+.post-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: rgb(246, 247, 249);
+  height: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgb(221, 223, 226);
+}
+
+.post-form-header span {
+  padding: 0 8px;
+  border-right: 1px solid rgb(221, 223, 226);
+}
+
+.post-form-header i {
+  color: rgb(75, 79, 86);
+  font-size: 12px;
+}
+
+.post-form-header button {
+  color: rgb(75, 79, 86);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.post-body-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 516px;
+  flex-direction: column;
+}
+
+.post-form-text {
+  display: flex;
+  justify-content: flex-start;
+  width: 516px;
+}
+
+.img-preview-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 516px;
+  align-items: center;
+  max-height: 100px;
+  margin: 15px 0 15px 12px;
+}
+
+.img-preview {
+  width: 100px;
+  height: 100px;
+  margin-right: 5px;
+}
+
+.post-body-footer {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 32px;
+  width: 492px;
+  padding: 8px 0;
+  margin: 0 12px;
+  border-top: 1px solid rgb(221, 223, 226);
+}
+
+.file-upload-btn {
+  position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+  cursor: pointer;
+}
+
+.file-upload-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+.file-upload-label i {
+  padding-right: 4px;
+}
+
+.file-upload-label span {
+  padding-left: 4px;
+}
+
+.file-upload {
+  position: relative;
+	overflow: hidden;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgb(75, 79, 86);
+  border-radius: 18px;
+  width: 122px;
+  height: 32px;
+  background-color: rgb(246, 247, 249);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.file-upload:hover {
+  background-color: rgb(225, 225, 225);
+}
+
+.create-post-btn {
+  background-color: rgb(66, 103, 178);
+  color: white;
+  box-sizing: content-box;
+  cursor: pointer;
+  font-size: 12px;
+  border: 1px solid rgb(66, 103, 178);
+  padding: 0 16px;
+  border-radius: 2px;
+  line-height: 22px;
+  margin: 7.5px;
+}
+
+.post-form-footer {
+  display: flex;
+  justify-content: flex-end;
+}
