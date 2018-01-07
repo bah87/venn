@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @posts = Post.order(created_at: :desc).includes(:author)
+    @posts = Post.all.includes(:author)
   end
 
   def show_profile
