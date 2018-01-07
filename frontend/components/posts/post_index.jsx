@@ -21,7 +21,7 @@ class PostIndex extends React.Component {
 
     if (!user && !this.props.friends) { return null; }
 
-    const posts = this.props.posts.map(post => {
+    const posts = this.props.posts.reverse().map(post => {
 
       if (this.props.page === "feed") {
         user = this.props.friends[post.author_id];

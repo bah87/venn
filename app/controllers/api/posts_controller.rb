@@ -1,9 +1,9 @@
 class Api::PostsController < ApplicationController
   before_action :require_logged_in
 
-  def index
-    @posts = Post.all.includes(:author)
-  end
+  # def index
+  #   @posts = Post.all.includes(:author)
+  # end
 
   def show_profile
     # my_posts_no_recipient = User.find(params[:user_id]).posts.reject do |post|
@@ -18,7 +18,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show_feed
-    @posts = Post.order(created_at: :desc).includes(:author) # temporary until "friends" feature implemented
+    @posts = Post.all.includes(:author) # temporary until "friends" feature implemented
     render :index
   end
 
