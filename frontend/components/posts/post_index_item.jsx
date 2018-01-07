@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PostImage from './post_image';
+import PostDropdown from './post_dropdown';
 
 const PostIndexItem = ({ user, post, deletePost }) => {
   let date = new Date(post.updated_at);
@@ -8,6 +9,12 @@ const PostIndexItem = ({ user, post, deletePost }) => {
     hour: "2-digit", minute: "2-digit" };
   date = date.toLocaleTimeString("en-us", options).split(",");
   date = `${date[0]}${date[1]} at${date[2]}`;
+
+  // <button
+  //   className="post-item-delete-btn"
+  //   onClick={() => deletePost(post.id)}>
+  //
+  // </button>
 
   return (
     <li className="post-item">
@@ -25,9 +32,8 @@ const PostIndexItem = ({ user, post, deletePost }) => {
                   {`${user.first_name} ${user.last_name}`}
                 </p>
               </Link>
-            <button
-              className="post-item-delete-btn"
-              onClick={() => deletePost(post.id)}>Delete</button>
+
+              <PostDropdown />
           </div>
 
           <div className="post-item-date-container">

@@ -662,8 +662,7 @@
 }
 
 .post-item-delete-btn:hover {
-  background-color: lightgrey;
-  border-radius: 9px;
+  color: black;
 }
 
 .post-item-date {
