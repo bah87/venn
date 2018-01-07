@@ -1,0 +1,47 @@
+.newsfeed-main {
+  display: flex;
+  justify-content: flex-start;
+  margin: 13px;
+}
+
+.newsfeed-sidebar {
+  width: 184px;
+  margin: 0 13px 0 17px;
+}
+
+.newsfeed-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.newsfeed-sidebar li {
+  font-size: 12px;
+  width: 184px;
+  height: 29px;
+  border-radius: 1px;
+  color: rgb(29, 33, 41);
+  margin-bottom: 13px;
+}
+
+.newsfeed-li-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.newsfeed-li-name p {
+  margin: 0;
+}
+
+.newsfeed-sidebar-profile-pic {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 4px;
+}
+
+.newsfeed-sidebar li:hover {
+  background-color: rgb(246, 247, 249);
+  cursor: pointer;
+}
