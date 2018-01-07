@@ -1,4 +1,5 @@
 import React from 'react';
+import PostImage from './post_image';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class PostForm extends React.Component {
       body: "",
       recipient_id: null,
       imageFile: null,
-      imageUrl: ""
+      imageUrl: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -37,7 +38,6 @@ class PostForm extends React.Component {
     const user = this.props.user;
     const currentUser = this.props.currentUser;
 
-
     const formData = new FormData();
     formData.append("post[body]", this.state.body);
 
@@ -52,12 +52,6 @@ class PostForm extends React.Component {
     this.props.createPost(formData).then(() => {
       this.setState({ body: "", imageUrl: "" });
     });
-
-    // this.setState(
-    //   { recipient_id: id },
-    //   () => this.props.createPost(this.state).then(() => {
-    //   this.setState({ body: "" });
-    // }));
   }
 
   render() {
@@ -94,7 +88,7 @@ class PostForm extends React.Component {
                 value={this.state.body}
                 onChange={this.update}
               />
-              <img className="img-preview" src={this.state.imageUrl}/>
+            <PostImage form={true} imageUrl={this.state.imageUrl} />
             </div>
 
             <div className="post-body-footer">

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PostImage from './post_image';
 
 const PostIndexItem = ({ user, post, deletePost }) => {
-
   return (
     <li className="post-item">
 
@@ -32,7 +32,7 @@ const PostIndexItem = ({ user, post, deletePost }) => {
 
       <main className="post-item-body">
         <p>{ post.body }</p>
-        <img className="post-body-img" src={ post.image_url }/>
+        <PostImage form={false} imageUrl={post.image_url} />
       </main>
 
       <footer className="post-item-footer">
