@@ -26,7 +26,6 @@ export const removePost = postId => {
 };
 
 export const fetchPost = id => dispatch => {
-  debugger
   return PostApiUtil.fetchPost(id).then(post => {
     dispatch(receivePost(post));
   });

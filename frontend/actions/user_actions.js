@@ -18,7 +18,6 @@ export const receiveFriends = friends => {
 };
 
 export const fetchUser = id => dispatch => {
-  debugger
   return UserApiUtil.fetchUser(id).then(user => {
     dispatch(receiveUser(user));
   });
