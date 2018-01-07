@@ -38,14 +38,41 @@ class Profile extends React.Component {
     }
 
     return (
-      <main className="post-index">
-        { postForm }
-        <PostIndexContainer
-          page={"profile"}
-          user={ this.props.user }
-          id={ this.props.match.params.userId }
-        />
-      </main>
+      <div className="profile-main">
+        <header className="profile-cover">
+          <div className="profile-cover-photo">
+          </div>
+
+          <div className="profile-cover-nav">
+          </div>
+        </header>
+
+        <main className="profile-body">
+          <aside className="profile-aside">
+            <div className="profile-intro">
+            </div>
+
+            <div className="profile-photos">
+            </div>
+
+            <div className="profile-friends">
+            </div>
+          </aside>
+
+          <div className="profile-post-index">
+            { postForm }
+            <PostIndexContainer
+              page={"profile"}
+              user={ this.props.user }
+              id={ this.props.match.params.userId }
+              />
+          </div>
+        </main>
+      </div>
+
+
+
+
     );
   }
 }

@@ -17,7 +17,6 @@
    margin: 0;
    padding: 0;
    font-family: "Lucida Grande";
-   /* font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif; */
    background-color: #edf0f5;
  }
 
@@ -295,7 +294,6 @@
   width: 516px;
   min-height: 194px;
   border: 1px solid rgb(221, 223, 226);
-  margin: 13px;
   background-color: white;
   border-radius: 1px;
 }
@@ -612,15 +610,12 @@
 .post-item {
   width: 516px;
   border: 1px solid rgb(221, 223, 226);
-  margin: 13px;
+  margin-bottom: 13px;
   background-color: white;
   border-radius: 1px;
 }
 
-.post-index {
-  width: 516px;
-  margin: auto;
-}
+
 
 .post-item-header {
   display: flex;

@@ -1,0 +1,62 @@
+.profile-post-index {
+  width: 516px;
+  margin-left: 13px;
+  margin-top: 13px;
+}
+
+.profile-aside {
+  width: 321px;
+  margin-top: 13px;
+}
+
+.profile-intro {
+  width: 321px;
+  height: 350px;
+  margin-bottom: 13px;
+  background-color: gray;
+}
+
+.profile-photos {
+  width: 321px;
+  height: 350px;
+  margin-bottom: 13px;
+  background-color: gray;
+}
+
+.profile-friends {
+  width: 321px;
+  height: 350px;
+  margin-bottom: 13px;
+  background-color: gray;
+}
+
+.profile-body {
+  width: 851px;
+  /* margin: auto; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-main {
+  width: 851px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-cover {
+  width: 851px;
+}
+
+.profile-cover-photo {
+  width: 851px;
+  height: 315px;
+  background-color: gray;
+}
+
+.profile-cover-nav {
+  width: 851px;
+  height: 43px;
+  background-color: white;
+}
