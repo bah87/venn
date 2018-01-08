@@ -163,12 +163,18 @@
   z-index: 2;
 }
 
-.post-index-modal-open {
+/* .post-index-modal-open {
   margin-top: 210px;
+} */
+
+.post-form-modal-hidden {
+  height: 194px;
+  width: 10px;
 }
 
-.post-form-modal-close {
-
+.post-form-modal-hidden-picture {
+  height: 324px;
+  width: 10px;
 }
 
 .post-form-text textarea {

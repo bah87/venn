@@ -30,6 +30,7 @@ class PostForm extends React.Component {
     const file = event.currentTarget.files[0];
     reader.onloadend = () => {
       this.setState({ imageUrl: reader.result, imageFile: file });
+      this.props.togglePostFormModal();
     };
 
     if (file) {
@@ -77,15 +78,21 @@ class PostForm extends React.Component {
 
     let modalFormClass = "";
     let modalScreenClass = "";
+    let modalHiddenForm = "";
     if (this.state.modal) {
       modalFormClass = "post-form-modal";
       modalScreenClass = "post-form-modal-open";
+      modalHiddenForm = "post-form-modal-hidden";
+    }
+    if (this.state.modal && this.state.imageFile) {
+      modalHiddenForm = "post-form-modal-hidden-picture";
     }
 
     return (
       <div>
         <div className={modalScreenClass} onClick={() => this.props.togglePostFormModal()}>
         </div>
+
         <div className={modalFormClass}>
           <div className="post-form-container">
             <div className="post-form-header">
@@ -144,6 +151,8 @@ class PostForm extends React.Component {
             </form>
           </div>
         </div>
+
+        <div className={modalHiddenForm}></div>
       </div>
     );
   }

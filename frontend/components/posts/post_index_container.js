@@ -9,8 +9,7 @@ import {
 const mapStateToProps = (state, ownProps) => {
   return {
     posts: Object.values(state.entities.posts),
-    friends: ownProps.friends,
-    modal: state.ui.postFormModal
+    friends: ownProps.friends
   };
 };
 
