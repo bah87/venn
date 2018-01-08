@@ -6,7 +6,9 @@ class ProfilePicture extends React.Component {
     this.state = {
       imageFile: null,
       imageUrl: null,
-      modal: this.props.modal
+      modal: this.props.modal,
+      cancelCoverUpload: "cover-upload-hidden",
+      saveCoverUpload: "cover-upload-hidden"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -23,7 +25,9 @@ class ProfilePicture extends React.Component {
     reader.onloadend = () => {
       this.setState({
         imageUrl: reader.result,
-        imageFile: file
+        imageFile: file,
+        cancelCoverUpload: "cancel-cover-upload",
+        saveCoverUpload: "save-cover-upload"
       });
     };
 
@@ -32,7 +36,9 @@ class ProfilePicture extends React.Component {
     } else {
       this.setState({
         imageUrl: null,
-        imageFile: null
+        imageFile: null,
+        cancelCoverUpload: "cover-upload-hidden",
+        saveCoverUpload: "cover-upload-hidden"
       });
     }
   }
@@ -40,7 +46,9 @@ class ProfilePicture extends React.Component {
   cancelUpload() {
     this.setState({
       imageUrl: null,
-      imageFile: null
+      imageFile: null,
+      cancelCoverUpload: "cover-upload-hidden",
+      saveCoverUpload: "cover-upload-hidden"
     });
   }
 
@@ -53,7 +61,9 @@ class ProfilePicture extends React.Component {
       this.props.saveUserPhoto(formData).then(() => {
         this.setState({
           imageUrl: null,
-          imageFile: null
+          imageFile: null,
+          cancelCoverUpload: "cover-upload-hidden",
+          saveCoverUpload: "cover-upload-hidden"
         });
       });
     }

@@ -118,7 +118,7 @@
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .cancel-cover-upload {
@@ -131,7 +131,6 @@
   border-radius: 2px;
   cursor: pointer;
   height: 26px;
-  margin-left: 685px;
 }
 
 .cancel-cover-upload:hover {
@@ -140,6 +139,7 @@
 
 .save-cover-upload {
   margin-left: 4px;
+  margin-right: 8px;
   padding: 0 6px;
   color: white;
   border: 1px solid rgb(66, 103, 178);
@@ -250,4 +250,13 @@
   border-bottom: 1px solid rgb(229, 229, 229);
   padding: 10px 12px;
   border-radius: 3px;
+}
+
+.modal-upload-footer {
+  background-color: rgb(246, 247, 249);
+  border-top: 1px solid rgb(229, 229, 229);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 36px;
 }
