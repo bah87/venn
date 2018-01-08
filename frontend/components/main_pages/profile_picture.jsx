@@ -45,6 +45,8 @@ class ProfilePicture extends React.Component {
   }
 
   cancelUpload() {
+    this.fileInput.value = "";
+
     this.setState({
       imageUrl: null,
       imageFile: null,
@@ -124,6 +126,7 @@ class ProfilePicture extends React.Component {
               <input
                 id="profile-pic-upload"
                 type="file"
+                ref={(element) => { this.fileInput = element; }}
                 onChange={this.updateFile}
               />
             <PhotoPreview cover={ false }
