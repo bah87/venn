@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PostImage from './post_image';
 import PostDropdown from './post_dropdown';
 
-const PostIndexItem = ({ user, post, deletePost }) => {
+const PostIndexItem = ({ currentUser, author, post, deletePost }) => {
   let date = new Date(post.updated_at);
   const options = { year: "numeric", month: "short", day: "numeric",
     hour: "2-digit", minute: "2-digit" };
@@ -21,19 +21,22 @@ const PostIndexItem = ({ user, post, deletePost }) => {
 
       <header className="post-item-header">
         <img className="post-item-profile-pic"
-          src={window.staticImages[user.profile_pic_url.split('.')[0]]}
+          src={window.staticImages[author.profile_pic_url.split('.')[0]]}
         />
 
         <div className="post-item-header-right">
           <div className="post-item-name-and-options">
               <Link
-                to={`/profile/${user.id}`} style={{ textDecoration: 'none'}}>
+                to={`/profile/${author.id}`} style={{ textDecoration: 'none'}}>
                 <p className="post-item-name">
-                  {`${user.first_name} ${user.last_name}`}
+                  {`${author.first_name} ${author.last_name}`}
                 </p>
               </Link>
 
-              <PostDropdown />
+              <PostDropdown
+                currentUser={ currentUser }
+                author={ author }
+              />
           </div>
 
           <div className="post-item-date-container">

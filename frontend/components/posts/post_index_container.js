@@ -9,7 +9,8 @@ import {
 const mapStateToProps = (state, ownProps) => {
   return {
     posts: Object.values(state.entities.posts),
-    friends: ownProps.friends
+    friends: ownProps.friends,
+    currentUser: state.session.currentUser
   };
 };
 
