@@ -1,7 +1,7 @@
 import React from 'react';
 
-const PhotoPreview = ({ imageUrl }) => {
-  if (imageUrl) {
+const PhotoPreview = ({ imageUrl, cover }) => {
+  if (imageUrl && cover) {
     return (
       <div
         style={{
@@ -11,6 +11,10 @@ const PhotoPreview = ({ imageUrl }) => {
         }}
         className="profile-cover-photo-container">
       </div>
+    );
+  } else if (imageUrl) {
+    return (
+      <img className="profile-pic-preview" src={ imageUrl }></img>
     );
   } else {
     return null;

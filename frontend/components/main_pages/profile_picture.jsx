@@ -1,4 +1,5 @@
 import React from 'react';
+import PhotoPreview from './photo_preview';
 
 class ProfilePicture extends React.Component {
   constructor(props) {
@@ -81,6 +82,12 @@ class ProfilePicture extends React.Component {
       modalProfPicScreen = "prof-pic-modal-screen";
     }
 
+    let profPicBtnUpload = "prof-pic-btn-upload";
+    if (this.state.imageFile) {
+      profPicBtnUpload = "prof-pic-btn-upload-hidden";
+    }
+
+
     return (
       <div>
         <div className="profile-picture-container">
@@ -111,7 +118,7 @@ class ProfilePicture extends React.Component {
             <div>
               <label
                 for="profile-pic-upload"
-                className="prof-pic-btn-upload">
+                className={ profPicBtnUpload }>
                 <p>+ Upload Photo</p>
               </label>
               <input
@@ -119,6 +126,8 @@ class ProfilePicture extends React.Component {
                 type="file"
                 onChange={this.updateFile}
               />
+            <PhotoPreview cover={ false }
+              imageUrl={this.state.imageUrl} />
             </div>
           </div>
 

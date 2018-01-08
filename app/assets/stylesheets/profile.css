@@ -61,6 +61,11 @@
   position: relative;
 }
 
+.profile-pic-preview {
+  width: 100px;
+  height: 100px;
+}
+
 .cover-photo-screen {
   width: 851px;
   height: 315px;
@@ -253,6 +258,7 @@
 }
 
 .modal-upload-footer {
+  border-radius: 3px;
   background-color: rgb(246, 247, 249);
   border-top: 1px solid rgb(229, 229, 229);
   display: flex;
@@ -287,4 +293,8 @@
   width: 360px;
   height: 130px;
   justify-content: center;
+}
+
+.prof-pic-btn-upload-hidden {
+  display: none;
 }
