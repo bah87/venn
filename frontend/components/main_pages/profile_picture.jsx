@@ -5,23 +5,58 @@ class ProfilePicture extends React.Component {
     super(props);
     this.state = {
       imageFile: null,
-      imageUrl: null
+      imageUrl: null,
+      modal: this.props.modal
     };
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.updateFile = this.updateFile.bind(this);
-    // this.cancelUpload = this.cancelUpload.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
+    this.cancelUpload = this.cancelUpload.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({ modal: newProps.modal });
   }
 
   handleFile(event) {
+    const reader = new FileReader();
+    const file = event.currentTarget.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        imageUrl: reader.result,
+        imageFile: file
+      });
+    };
 
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({
+        imageUrl: null,
+        imageFile: null
+      });
+    }
   }
 
   cancelUpload() {
-
+    this.setState({
+      imageUrl: null,
+      imageFile: null
+    });
   }
 
   handleSubmit() {
-
+    event.preventDefault();
+    const formData = new FormData();
+    if (this.state.imageFile) {
+      formData.append("user[image]", this.state.imageFile);
+      formData.append("user[id]", this.props.user.id);
+      this.props.saveUserPhoto(formData).then(() => {
+        this.setState({
+          imageUrl: null,
+          imageFile: null
+        });
+      });
+    }
   }
 
   render() {

@@ -50,6 +50,7 @@ class Profile extends React.Component {
             user={ this.props.user }
             saveUserPhoto={ this.props.saveUserPhoto }
             toggleProfPicModal={ this.props.toggleProfPicModal }
+            modal={this.props.modal}
           />
         </header>
 

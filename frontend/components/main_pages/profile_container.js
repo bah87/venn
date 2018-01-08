@@ -6,7 +6,8 @@ import Profile from './profile';
 const mapStateToProps = (state, ownProps) => {
   return {
     user: state.entities.users[ownProps.match.params.userId],
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    modal: state.ui.profPicModal
   };
 };
 
