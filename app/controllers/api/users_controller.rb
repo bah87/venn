@@ -11,6 +11,9 @@ class Api::UsersController < ApplicationController
   end
 
   def update
+
+    debugger
+    
     @user = User.new(user_params)
 
     if @user.update_attributes(user_params)

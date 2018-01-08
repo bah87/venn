@@ -15,8 +15,8 @@ export const fetchFriends = () => {
 export const saveUserPhoto = formData => {
   debugger
   return $.ajax({
-    method: 'POST',
-    url: `/api/users/${formData.get("id")}`,
+    method: 'PATCH',
+    url: `/api/users/${formData.get("user[id]")}`,
     processData: false,
     contentType: false,
     dataType: 'json',
