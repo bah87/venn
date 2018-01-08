@@ -1,5 +1,5 @@
 export const TOGGLE_POST_FORM_MODAL = 'TOGGLE_POST_FORM_MODAL';
-export const TOGGLE_COVER_PHOTO_MODAL = 'TOGGLE_COVER_PHOTO_MODAL';
+export const TOGGLE_PROF_PIC_MODAL = 'TOGGLE_PROF_PIC_MODAL';
 
 export const togglePostFormModal = () => {
   return {
@@ -7,8 +7,8 @@ export const togglePostFormModal = () => {
   };
 };
 
-export const toggleCoverPhotoModal = () => {
+export const toggleProfPicModal = () => {
   return {
-    type: TOGGLE_COVER_PHOTO_MODAL
+    type: TOGGLE_PROF_PIC_MODAL
   };
 };
