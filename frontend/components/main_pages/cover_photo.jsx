@@ -1,4 +1,5 @@
 import React from 'react';
+import PhotoPreview from './photo_preview';
 
 class CoverPhoto extends React.Component {
   constructor(props) {
@@ -52,11 +53,13 @@ class CoverPhoto extends React.Component {
 
     return (
       <div>
-        <div className="profile-cover-photo">
-          <img src={coverPhotoUrl}
+        <div className="profile-cover-photo-container">
+          <img className="profile-cover-photo" src={coverPhotoUrl}
             />
-          <img src={this.state.imageUrl}/>
-          <i className="fa fa-camera" aria-hidden="true"></i>
+          <PhotoPreview />
+          <div className="cover-photo-screen">
+            <i className="fa fa-camera" aria-hidden="true"></i>
+          </div>
           <input
             type="file"
             onChange={this.updateFile}

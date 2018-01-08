@@ -43,7 +43,9 @@ class Profile extends React.Component {
         <header className="profile-cover">
           <CoverPhoto
             user={ this.props.user }
-            saveUserPhoto={ this.props.saveUserPhoto } />
+            saveUserPhoto={ this.props.saveUserPhoto }
+            toggleCoverPhotoModal={ this.props.toggleCoverPhotoModal } 
+          />
         </header>
 
         <main className="profile-body">

@@ -51,7 +51,32 @@
 .profile-cover-photo {
   width: 851px;
   height: 315px;
+}
+
+.profile-cover-photo-container {
+  width: 851px;
+  height: 315px;
   background-color: gray;
+}
+
+.cover-photo-screen {
+  width: 851px;
+  height: 315px;
+  background-color: black;
+  opacity: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 2;
+}
+
+.cover-photo-screen i {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.cover-photo-screen:hover {
+  opacity: .2;
 }
 
 .profile-cover-nav {
