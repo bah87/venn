@@ -163,9 +163,17 @@
   z-index: 2;
 }
 
-/* .post-index-modal-open {
-  margin-top: 210px;
-} */
+#post-form-close-btn {
+  margin-left: 215px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-right: none;
+}
+
+#post-form-close-btn-hidden {
+  display: none;
+}
 
 .post-form-modal-hidden {
   height: 194px;
@@ -185,4 +193,5 @@
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  resize: none;
 }

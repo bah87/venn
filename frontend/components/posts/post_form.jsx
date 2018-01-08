@@ -95,18 +95,16 @@ class PostForm extends React.Component {
   }
 
   render() {
-    // debugger
-    // if (this.state.imageFile) {
-    //   placeholderText = "Say something about this photo...";
-    // }
 
     let modalFormClass = "";
     let modalScreenClass = "";
     let modalHiddenForm = "";
+    let modalCloseBtn = "post-form-close-btn-hidden";
     if (this.state.modal) {
       modalFormClass = "post-form-modal";
       modalScreenClass = "post-form-modal-open";
       modalHiddenForm = "post-form-modal-hidden";
+      modalCloseBtn = "post-form-close-btn";
     }
     if (this.state.modal && this.state.imageFile) {
       modalHiddenForm = "post-form-modal-hidden-picture";
@@ -114,7 +112,9 @@ class PostForm extends React.Component {
 
     return (
       <div>
-        <div className={modalScreenClass} onClick={() => this.props.togglePostFormModal()}>
+        <div
+          className={modalScreenClass}
+          onClick={() => this.props.togglePostFormModal()}>
         </div>
 
         <div className={modalFormClass}>
@@ -127,7 +127,15 @@ class PostForm extends React.Component {
 
               <span>
                 <i className="fa fa-camera" aria-hidden="true"></i>
-                <button className="photo-video-modal-btn">Photo/Video Album</button>
+                <button
+                  className="photo-video-modal-btn">Photo/Video Album
+                </button>
+              </span>
+
+              <span
+                id={modalCloseBtn}
+                onClick={() => this.props.togglePostFormModal()}>
+                <i className="fa fa-times" aria-hidden="true"></i>
               </span>
             </div>
 
