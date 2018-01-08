@@ -24,6 +24,7 @@ class PostForm extends React.Component {
     this.update = this.update.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.handleFormClick = this.handleFormClick.bind(this);
+    this.cancelUpload = this.cancelUpload.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -53,6 +54,10 @@ class PostForm extends React.Component {
     } else {
       this.setState({ imageUrl: "", imageFile: null });
     }
+  }
+
+  cancelUpload() {
+    this.setState({ imageUrl: "", imageFile: null });
   }
 
   handleFormClick() {
@@ -100,6 +105,7 @@ class PostForm extends React.Component {
     let modalScreenClass = "";
     let modalHiddenForm = "";
     let modalCloseBtn = "post-form-close-btn-hidden";
+    let modalImgPreview = "cancel-upload-btn-hidden";
     if (this.state.modal) {
       modalFormClass = "post-form-modal";
       modalScreenClass = "post-form-modal-open";
@@ -107,6 +113,7 @@ class PostForm extends React.Component {
       modalCloseBtn = "post-form-close-btn";
     }
     if (this.state.modal && this.state.imageFile) {
+      modalImgPreview = "cancel-upload-btn";
       modalHiddenForm = "post-form-modal-hidden-picture";
     }
 
@@ -133,7 +140,7 @@ class PostForm extends React.Component {
               </span>
 
               <span
-                id={modalCloseBtn}
+                className={modalCloseBtn}
                 onClick={() => this.props.togglePostFormModal()}>
                 <i className="fa fa-times" aria-hidden="true"></i>
               </span>
@@ -154,7 +161,17 @@ class PostForm extends React.Component {
                       onChange={this.update}
                       />
                   </div>
-                  <PostImage form={true} imageUrl={this.state.imageUrl} />
+
+                  <div className={modalImgPreview}>
+                    <PostImage form={true} imageUrl={this.state.imageUrl} />
+                    <span>
+                      <i
+                        className="fa fa-times"
+                        aria-hidden="true"
+                        onClick={this.cancelUpload}>
+                      </i>
+                    </span>
+                  </div>
                 </div>
 
                 <div className="post-body-footer">
@@ -172,7 +189,6 @@ class PostForm extends React.Component {
                       />
                     </div>
                   </div>
-
 
                 </div>
               </div>

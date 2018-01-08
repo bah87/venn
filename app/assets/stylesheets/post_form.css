@@ -163,15 +163,19 @@
   z-index: 2;
 }
 
-#post-form-close-btn {
+.post-form-close-btn {
   margin-left: 215px;
   cursor: pointer;
-  width: 20px;
-  height: 20px;
   border-right: none;
 }
 
-#post-form-close-btn-hidden {
+.post-form-close-btn i {
+  color: rgb(144, 148, 156);
+  width: 20px;
+  height: 20px;
+}
+
+.post-form-close-btn-hidden {
   display: none;
 }
 
@@ -186,6 +190,7 @@
 }
 
 .post-form-text textarea {
+  color: rgb(144, 148, 156);
   border: none;
   overflow: auto;
   outline: none;
@@ -194,4 +199,46 @@
   -moz-box-shadow: none;
   box-shadow: none;
   resize: none;
+}
+
+.cancel-upload-btn {
+  height: 130px;
+}
+
+.cancel-upload-btn span {
+  background-color: black;
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+  top: -115px;
+  left: 12px;
+}
+
+.cancel-upload-btn span:hover {
+  background-color: black;
+  opacity: 0.2;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+  top: -115px;
+  left: 12px;
+}
+
+.cancel-upload-btn span i:hover {
+  color: white;
+  cursor: pointer;
+  margin-top: 3px;
+  margin-right: 3px;
+  z-index: 2;
+}
+
+.cancel-upload-btn-hidden {
+  display: none;
 }
