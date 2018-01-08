@@ -63,6 +63,13 @@ class ProfilePicture extends React.Component {
     let profPicUrl = "";
     if (this.props.user) profPicUrl = this.props.user.profile_pic_url;
 
+    let modalPicUploadClass = "pic-upload-hidden";
+    let modalProfPicScreen = "pic-upload-hidden";
+    if (this.state.modal) {
+      modalPicUploadClass = "prof-pic-modal-upload";
+      modalProfPicScreen = "prof-pic-modal-screen";
+    }
+
     return (
       <div>
         <div className="profile-picture-container">
@@ -84,6 +91,41 @@ class ProfilePicture extends React.Component {
             type="file"
             onChange={this.updateFile}
           />
+        </div>
+
+        <div className={modalProfPicScreen}></div>
+
+        <div className={modalPicUploadClass}>
+          <div className="modal-upload-header">
+            Update Profile Picture
+          </div>
+
+          <div className="prof-pic-upload-btn">
+            <label
+              for="profile-pic-upload"
+              className="prof-pic-btn-label">
+              <i className="fa fa-camera" aria-hidden="true"></i>
+              <p>+ Upload Photo</p>
+            </label>
+            <input
+              id="profile-pic-upload"
+              type="file"
+              onChange={this.updateFile}
+            />
+          </div>
+
+          <div className="modal-upload-footer">
+            <button
+              className={this.state.cancelCoverUpload}
+              onClick={this.cancelUpload}>
+              Cancel
+            </button>
+            <button
+              className={this.state.saveCoverUpload}
+              onClick={this.handleSubmit}>
+              Save Changes
+            </button>
+          </div>
         </div>
       </div>
     );
