@@ -58,4 +58,43 @@
   width: 851px;
   height: 43px;
   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cancelCoverUpload {
+  padding: 0 6px;
+  border: 1px solid rgb(206, 208, 212);
+  color: rgb(75, 79, 86);
+  background-color: rgb(233, 235, 238);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 41px;
+  height: 26px;
+}
+
+.cancelCoverUpload:hover {
+  background-color: #e9ebee;
+}
+
+.saveCoverUpload {
+  margin-left: 4px;
+  padding: 0 6px;
+  color: white;
+  border: 1px solid rgb(66, 103, 178);
+  background-color: rgb(66, 103, 178);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 83px;
+  height: 26px;
+}
+
+.saveCoverUpload:hover {
+  border: 1px solid #365899;
+  background-color: #365899;
 }
