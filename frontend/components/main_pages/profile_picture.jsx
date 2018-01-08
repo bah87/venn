@@ -54,7 +54,7 @@ class ProfilePicture extends React.Component {
 
   handleSubmit() {
     event.preventDefault();
-    this.props.togglePostFormModal();
+    this.props.toggleProfPicModal();
     const formData = new FormData();
     if (this.state.imageFile) {
       formData.append("user[image]", this.state.imageFile);
@@ -108,17 +108,18 @@ class ProfilePicture extends React.Component {
           </div>
 
           <div className="prof-pic-upload-btn">
-            <label
-              for="profile-pic-upload"
-              className="prof-pic-btn-label">
-              <i className="fa fa-camera" aria-hidden="true"></i>
-              <p>+ Upload Photo</p>
-            </label>
-            <input
-              id="profile-pic-upload"
-              type="file"
-              onChange={this.updateFile}
-            />
+            <div>
+              <label
+                for="profile-pic-upload"
+                className="prof-pic-btn-upload">
+                <p>+ Upload Photo</p>
+              </label>
+              <input
+                id="profile-pic-upload"
+                type="file"
+                onChange={this.updateFile}
+              />
+            </div>
           </div>
 
           <div className="modal-upload-footer">

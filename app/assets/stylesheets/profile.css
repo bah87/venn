@@ -263,5 +263,28 @@
 
 .prof-pic-upload-btn {
   height: 100px;
-  margin: 15px 12px;
+  padding: 15px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prof-pic-upload-btn input[type="file"] {
+  display: none;
+}
+
+.prof-pic-upload-btn:hover {
+  background-color: #f6f7f9;
+}
+
+.prof-pic-btn-upload {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(29, 33, 41);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 360px;
+  height: 130px;
+  justify-content: center;
 }
