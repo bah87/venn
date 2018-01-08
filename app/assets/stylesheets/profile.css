@@ -113,8 +113,8 @@
   border-right: 1px solid rgb(221, 223, 226);
   border-left: 1px solid rgb(221, 223, 226);
   border-bottom: 1px solid rgb(221, 223, 226);
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
   background-color: white;
   display: flex;
   align-items: center;
@@ -158,4 +158,12 @@
 
 .cover-upload-hidden {
   display: none;
+}
+
+.profile-picture-container {
+
+}
+
+.profile-picture {
+
 }

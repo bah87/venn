@@ -10,9 +10,14 @@ class ProfilePicture extends React.Component {
   }
 
   render() {
-    <div>
-      
-    </div>
+    return (
+      <div className="profile-picture-container">
+        <img
+          className="profile-picture"
+          src={this.props.user.profile_pic_url}
+        />
+      </div>
+    );
   }
 }
 
