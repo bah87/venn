@@ -63,36 +63,55 @@
 .cover-photo-screen {
   width: 851px;
   height: 315px;
-  background-color: black;
-  opacity: 0;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  z-index: 2;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  cursor: pointer;
 }
 
-/* .cover-photo-btn {
-  background-color: black;
-  opacity: 0;
-  display: flex;
-} */
+.cover-photo-btn input[type="file"] {
+  display: none;
+}
 
-.cover-photo-screen i {
+.custom-file-upload:hover {
+  border: 1px solid white;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+  background-color: black;
+}
+
+.custom-file-upload {
+  color: transparent;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-file-upload i {
+  color: white;
+  opacity: .2;
+  margin-right: 10px;
+}
+
+/* .cover-photo-screen i {
   margin-left: 10px;
   margin-top: 10px;
   z-index: 2;
   color: white;
   cursor: pointer;
-}
+} */
 
-.cover-photo-screen:hover {
-  opacity: .2;
+.cover-photo-btn {
+  margin-left: 22px;
+  margin-top: 22px;
+  cursor: pointer;
 }
 
 .profile-cover-nav {

@@ -63,11 +63,15 @@ class CoverPhoto extends React.Component {
           <PhotoPreview />
           <div className="cover-photo-screen">
             <div className="cover-photo-btn">
-              <i className="fa fa-camera" aria-hidden="true"></i>
+              <label for="file-upload" className="custom-file-upload">
+                  <i className="fa fa-camera" aria-hidden="true"></i>
+                  Upload Cover Photo
+              </label>
               <input
+                id="file-upload"
                 type="file"
                 onChange={this.updateFile}
-                />
+              />
             </div>
           </div>
         </div>
