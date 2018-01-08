@@ -17,7 +17,7 @@ class ProfilePicture extends React.Component {
     this.setState({ modal: newProps.modal });
   }
 
-  handleFile(event) {
+  updateFile(event) {
     const reader = new FileReader();
     const file = event.currentTarget.files[0];
     reader.onloadend = () => {
@@ -79,23 +79,18 @@ class ProfilePicture extends React.Component {
             />
         </div>
 
-        <div className="profile-pic-btn">
-          <label
-            for="profile-pic-upload"
-            className="prof-pic-btn-label">
+        <div onClick={() => this.props.toggleProfPicModal()}
+          className="profile-pic-btn">
+          <label className="prof-pic-btn-label">
             <i className="fa fa-camera" aria-hidden="true"></i>
             <p>Update Profile Picture</p>
           </label>
-          <input
-            id="profile-pic-upload"
-            type="file"
-            onChange={this.updateFile}
-          />
         </div>
 
         <div className={modalProfPicScreen}></div>
 
-        <div className={modalPicUploadClass}>
+        <div onClick={() => this.props.toggleProfPicModal()}
+          className={modalPicUploadClass}>
           <div className="modal-upload-header">
             Update Profile Picture
           </div>

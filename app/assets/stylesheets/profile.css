@@ -188,6 +188,7 @@
   position: absolute;
   top: 334px;
   left: 225px;
+  cursor: pointer;
 }
 
 .profile-pic-btn:hover {
