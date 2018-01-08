@@ -3,8 +3,13 @@ import React from 'react';
 const PhotoPreview = ({ imageUrl }) => {
   if (imageUrl) {
     return (
-      <div>
-        <img src={imageUrl}/>
+      <div
+        style={{
+          backgroundImage: "url(" + imageUrl + ")",
+          backgroundPositionY: "0px",
+          backgroundSize: "851px"
+        }}
+        className="profile-cover-photo-container">
       </div>
     );
   } else {

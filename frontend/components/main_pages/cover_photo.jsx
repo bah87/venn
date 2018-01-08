@@ -55,12 +55,13 @@ class CoverPhoto extends React.Component {
       <div>
         <div
           style={{
-            backgroundImage: "url("+coverPhotoUrl+")",
-            backgroundPositionY: "0px"
+            backgroundImage: "url(" + coverPhotoUrl + ")",
+            backgroundPositionY: "0px",
+            backgroundSize: "851px"
           }}
           className="profile-cover-photo-container">
 
-          <PhotoPreview />
+          <PhotoPreview imageUrl={this.state.imageUrl} />
           <div className="cover-photo-screen">
             <div className="cover-photo-btn">
               <label for="file-upload" className="custom-file-upload">
