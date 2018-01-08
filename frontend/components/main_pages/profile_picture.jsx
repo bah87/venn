@@ -10,12 +10,21 @@ class ProfilePicture extends React.Component {
   }
 
   render() {
+    let profPicUrl = "";
+    if (this.props.user) profPicUrl = this.props.user.profile_pic_url;
+
     return (
-      <div className="profile-picture-container">
-        <img
-          className="profile-picture"
-          src={this.props.user.profile_pic_url}
-        />
+      <div>
+        <div className="profile-picture-container">
+          <img
+            className="profile-picture"
+            src={profPicUrl}
+            />
+        </div>
+
+        <div className="profile-pic-btn">
+          
+        </div>
       </div>
     );
   }
