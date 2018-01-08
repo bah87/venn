@@ -20,9 +20,11 @@ const PostIndexItem = ({ currentUser, author, post, deletePost }) => {
     <li className="post-item">
 
       <header className="post-item-header">
-        <img className="post-item-profile-pic"
-          src={author.profile_pic_url}
-        />
+        <Link to={`/profile/${author.id}`}>
+          <img className="post-item-profile-pic"
+            src={author.profile_pic_url}
+            />
+        </Link>
 
         <div className="post-item-header-right">
           <div className="post-item-name-and-options">

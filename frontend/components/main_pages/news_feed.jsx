@@ -20,7 +20,7 @@ class NewsFeed extends React.Component {
                 style={{ textDecoration: 'none'}}>
                 <div className="newsfeed-li-name">
                   <img className="newsfeed-sidebar-profile-pic"
-                    src={window.staticImages[currentUser.profile_pic_url.split('.')[0]]}
+                    src={currentUser.profile_pic_url}
                     />
                   <p>
                     {`${currentUser.first_name} ${currentUser.last_name}`}
