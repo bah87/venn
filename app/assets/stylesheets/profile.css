@@ -176,3 +176,33 @@
   border: 4px solid white;
   border-radius: 2px;
 }
+
+.profile-pic-btn input[type="file"] {
+  display: none;
+}
+
+.profile-pic-btn {
+  width: 168px;
+  height: 48px;
+  background-color: black;
+  opacity: .9;
+  position: absolute;
+  top: 334px;
+  left: 225px;
+}
+
+.prof-pic-btn-label {
+  width: 168px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.prof-pic-btn-label p {
+  width: 90px;
+  margin-left: 10px;
+}
