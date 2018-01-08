@@ -11,3 +11,14 @@ export const fetchFriends = () => {
     url: '/api/friends'
   });
 };
+
+export const saveCoverPhoto = formData => {
+  return $.ajax({
+    method: 'POST',
+    url: '',
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
+  });
+};

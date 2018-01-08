@@ -1,10 +1,6 @@
 class Api::PostsController < ApplicationController
   before_action :require_logged_in
 
-  # def index
-  #   @posts = Post.all.includes(:author)
-  # end
-
   def show_profile
     # my_posts_no_recipient = User.find(params[:user_id]).posts.reject do |post|
     #   !post.recipient_id.nil

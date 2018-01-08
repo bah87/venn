@@ -10,6 +10,16 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.new(user_params)
+
+    if @user.update_attributes(user_params)
+      render :show
+    else
+      render json: @user.errors.full_messages
+    end
+  end
+
   def get_friends
     # @users = current_user.friends # once friends feature is implemented
     @users = User.all
@@ -29,7 +39,8 @@ class Api::UsersController < ApplicationController
       :first_name,
       :last_name,
       :gender,
-      :birthday
+      :birthday,
+      :cover_photo
     )
   end
 end
