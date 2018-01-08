@@ -151,7 +151,7 @@ class PostForm extends React.Component {
                 <div className="post-body-wrapper">
                   <div className="post-form-text">
                     <img className="post-profile-pic"
-                      src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
+                      src={this.props.currentUser.profile_pic_url}
                       />
                     <textarea
                       onClick={this.handleFormClick}

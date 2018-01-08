@@ -32,7 +32,7 @@ class NavBar extends React.Component {
               style={{ textDecoration: 'none' }}>
               <div className="profile-btn-container">
                 <img className="nav-profile-pic"
-                  src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
+                  src={this.props.currentUser.profile_pic_url}
                 />
               <button className="profile-btn">{ currentUser.first_name }</button>
               </div>

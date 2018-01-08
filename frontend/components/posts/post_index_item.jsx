@@ -21,7 +21,7 @@ const PostIndexItem = ({ currentUser, author, post, deletePost }) => {
 
       <header className="post-item-header">
         <img className="post-item-profile-pic"
-          src={window.staticImages[author.profile_pic_url.split('.')[0]]}
+          src={author.profile_pic_url}
         />
 
         <div className="post-item-header-right">
