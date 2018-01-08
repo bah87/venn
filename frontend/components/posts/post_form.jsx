@@ -14,14 +14,11 @@ class PostForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.handleFormClick = this.handleFormClick.bind(this);
   }
 
-  componentDidMount() {
-    debugger
-  }
-
-  componentWillReceiveProps() {
-    debugger
+  componentWillReceiveProps(newProps) {
+    this.setState({ modal: newProps.modal });
   }
 
   update(event) {
@@ -42,8 +39,15 @@ class PostForm extends React.Component {
     }
   }
 
+  handleFormClick() {
+    if (!this.state.modal) {
+      this.props.togglePostFormModal();
+    }
+  }
+
   handleSubmit(event) {
     event.preventDefault();
+    this.setState({ modal: false });
     const user = this.props.user;
     const currentUser = this.props.currentUser;
 
@@ -78,8 +82,6 @@ class PostForm extends React.Component {
       modalScreenClass = "post-form-modal-open";
     }
 
-    debugger
-
     return (
       <div>
         <div className={modalScreenClass} onClick={() => this.props.togglePostFormModal()}>
@@ -106,7 +108,7 @@ class PostForm extends React.Component {
                       src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
                       />
                     <textarea
-                      onClick={() => this.props.togglePostFormModal()}
+                      onClick={this.handleFormClick}
                       className="post-body"
                       placeholder={ placeholderText }
                       value={this.state.body}

@@ -136,6 +136,11 @@
   border-radius: 2px;
   line-height: 22px;
   margin: 7.5px;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 .post-form-footer {
@@ -164,4 +169,14 @@
 
 .post-form-modal-close {
 
+}
+
+.post-form-text textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
