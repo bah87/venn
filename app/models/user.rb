@@ -34,7 +34,7 @@ class User < ApplicationRecord
   has_attached_file :image, default_url: "missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :cover_photo, default_url: "missing.png"
+  has_attached_file :cover_photo, default_url: "missing.png", styles: { large: "851x851#" }
   validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token

@@ -53,17 +53,23 @@ class CoverPhoto extends React.Component {
 
     return (
       <div>
-        <div className="profile-cover-photo-container">
-          <img className="profile-cover-photo" src={coverPhotoUrl}
-            />
+        <div
+          style={{
+            backgroundImage: "url("+coverPhotoUrl+")",
+            backgroundPositionY: "0px"
+          }}
+          className="profile-cover-photo-container">
+
           <PhotoPreview />
           <div className="cover-photo-screen">
-            <i className="fa fa-camera" aria-hidden="true"></i>
+            <div className="cover-photo-btn">
+              <i className="fa fa-camera" aria-hidden="true"></i>
+              <input
+                type="file"
+                onChange={this.updateFile}
+                />
+            </div>
           </div>
-          <input
-            type="file"
-            onChange={this.updateFile}
-            />
         </div>
 
         <div className="profile-cover-nav">
