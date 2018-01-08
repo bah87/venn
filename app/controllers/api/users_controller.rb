@@ -10,18 +10,13 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def update
-    # @user = User.new(user_params)
-    # @user.first_name = current_user.first_name
-    # @user.last_name = current_user.last_name
-    # @user.email = current_user.email
-    # @user.birthday = current_user.birthday
-    # @user.gender = current_user.gender
-
-    debugger
-
+  def update_user_photo
     @user = current_user
-    @user.cover_photo = user_params[:cover_photo]
+    if user_params[:cover_photo]
+      @user.cover_photo = user_params[:cover_photo]
+    elsif user_params[:image]
+      @user.image = user_params[:image]
+    end
 
     if @user.save!
       render :show
