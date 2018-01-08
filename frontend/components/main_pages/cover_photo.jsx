@@ -39,7 +39,7 @@ class CoverPhoto extends React.Component {
     if (this.state.imageFile) {
       formData.append("user[cover_photo]", this.state.imageFile);
     }
-    this.props.saveCoverPhoto(formData).then(() => {
+    this.props.saveUserPhoto(formData).then(() => {
       this.setState({ imageUrl: "", imageFile: null });
     });
   }

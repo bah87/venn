@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUser, saveCoverPhoto } from '../../actions/user_actions';
+import { fetchUser, saveUserPhoto } from '../../actions/user_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchUser: id => dispatch(fetchUser(id)),
-    saveCoverPhoto: photo => dispatch(saveCoverPhoto(photo))
+    saveUserPhoto: photo => dispatch(saveUserPhoto(photo))
   };
 };
 

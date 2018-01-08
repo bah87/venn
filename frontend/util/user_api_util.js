@@ -12,10 +12,11 @@ export const fetchFriends = () => {
   });
 };
 
-export const saveCoverPhoto = formData => {
+export const saveUserPhoto = formData => {
+  debugger
   return $.ajax({
     method: 'POST',
-    url: '',
+    url: `/api/users/${formData.get("id")}`,
     processData: false,
     contentType: false,
     dataType: 'json',

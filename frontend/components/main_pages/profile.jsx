@@ -41,7 +41,7 @@ class Profile extends React.Component {
     return (
       <div className="profile-main">
         <header className="profile-cover">
-          <CoverPhoto />
+          <CoverPhoto saveUserPhoto={ this.props.saveUserPhoto } />
 
           <div className="profile-cover-nav">
           </div>
