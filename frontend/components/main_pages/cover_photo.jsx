@@ -46,12 +46,28 @@ class CoverPhoto extends React.Component {
 
   render() {
     return (
-      <div className="profile-cover-photo">
-        <input
-          className="file-upload-btn"
-          type="file"
-          onChange={this.updateFile}
-          />
+      <div>
+        <div className="profile-cover-photo">
+          <i className="fa fa-camera" aria-hidden="true"></i>
+          <input
+            className="file-upload-btn"
+            type="file"
+            onChange={this.updateFile}
+            />
+        </div>
+
+        <div className="profile-cover-nav">
+          <button
+            className="cancelCoverUpload"
+            onClick={this.cancelUpload}>
+            Cancel
+          </button>
+          <button
+            className="saveCoverUpload"
+            onClick={this.handleSubmit}>
+            Save Changes
+          </button>
+        </div>
       </div>
     );
   }
