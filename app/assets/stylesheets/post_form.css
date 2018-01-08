@@ -1,0 +1,244 @@
+.post-form-main {
+  min-height: 122px;
+  border-bottom: 1px solid rgb(221, 223, 226);
+}
+
+.post-form-container {
+  width: 516px;
+  min-height: 194px;
+  border: 1px solid rgb(221, 223, 226);
+  background-color: white;
+  border-radius: 1px;
+}
+
+.post-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: rgb(246, 247, 249);
+  height: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgb(221, 223, 226);
+}
+
+.post-form-header span {
+  padding: 0 8px;
+  border-right: 1px solid rgb(221, 223, 226);
+}
+
+.post-form-header i {
+  color: rgb(75, 79, 86);
+  font-size: 12px;
+}
+
+.post-form-header button {
+  color: rgb(75, 79, 86);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.post-body-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 516px;
+  flex-direction: column;
+}
+
+.post-form-text {
+  display: flex;
+  justify-content: flex-start;
+  width: 516px;
+}
+
+.img-preview-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 516px;
+  align-items: center;
+  max-height: 100px;
+  margin: 15px 0 15px 12px;
+}
+
+.img-preview {
+  width: 100px;
+  height: 100px;
+  margin-right: 5px;
+}
+
+.post-body-footer {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 32px;
+  width: 492px;
+  padding: 8px 0;
+  margin: 0 12px;
+  border-top: 1px solid rgb(221, 223, 226);
+}
+
+.file-upload-btn {
+  position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+  cursor: pointer;
+}
+
+.file-upload-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+.file-upload-label i {
+  padding-right: 4px;
+}
+
+.file-upload-label span {
+  padding-left: 4px;
+}
+
+.file-upload {
+  position: relative;
+	overflow: hidden;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgb(75, 79, 86);
+  border-radius: 18px;
+  width: 122px;
+  height: 32px;
+  background-color: rgb(246, 247, 249);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.file-upload:hover {
+  background-color: rgb(225, 225, 225);
+}
+
+.create-post-btn {
+  background-color: rgb(66, 103, 178);
+  color: white;
+  box-sizing: content-box;
+  cursor: pointer;
+  font-size: 12px;
+  border: 1px solid rgb(66, 103, 178);
+  padding: 0 16px;
+  border-radius: 2px;
+  line-height: 22px;
+  margin: 7.5px;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.post-form-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-form-modal-open {
+  position: fixed;
+  background-color: black;
+  opacity: 0.6;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.post-form-modal {
+  position: absolute;
+  z-index: 2;
+}
+
+.post-form-close-btn {
+  margin-left: 215px;
+  cursor: pointer;
+  border-right: none;
+}
+
+.post-form-close-btn i {
+  color: rgb(144, 148, 156);
+  width: 20px;
+  height: 20px;
+}
+
+.post-form-close-btn-hidden {
+  display: none;
+}
+
+.post-form-modal-hidden {
+  height: 194px;
+  width: 10px;
+}
+
+.post-form-modal-hidden-picture {
+  height: 324px;
+  width: 10px;
+}
+
+.post-form-text textarea {
+  color: rgb(144, 148, 156);
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+}
+
+.cancel-upload-btn {
+  height: 130px;
+}
+
+.cancel-upload-btn span {
+  background-color: black;
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+  top: -115px;
+  left: 12px;
+}
+
+.cancel-upload-btn span:hover {
+  background-color: black;
+  opacity: 0.2;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+  top: -115px;
+  left: 12px;
+}
+
+.cancel-upload-btn span i:hover {
+  color: white;
+  cursor: pointer;
+  margin-top: 3px;
+  margin-right: 3px;
+  z-index: 2;
+}
+
+.cancel-upload-btn-hidden {
+  display: none;
+}

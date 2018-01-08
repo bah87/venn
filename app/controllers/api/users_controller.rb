@@ -10,6 +10,21 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update_user_photo
+    @user = current_user
+    if user_params[:cover_photo]
+      @user.cover_photo = user_params[:cover_photo]
+    elsif user_params[:image]
+      @user.image = user_params[:image]
+    end
+
+    if @user.save!
+      render :show
+    else
+      render json: @user.errors.full_messages
+    end
+  end
+
   def get_friends
     # @users = current_user.friends # once friends feature is implemented
     @users = User.all
@@ -24,12 +39,15 @@ class Api::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(
+      :id,
       :email,
       :password,
       :first_name,
       :last_name,
       :gender,
-      :birthday
+      :birthday,
+      :cover_photo,
+      :image
     )
   end
 end

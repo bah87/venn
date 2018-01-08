@@ -15,9 +15,13 @@ class PostIndex extends React.Component {
   render() {
 
     let user = this.props.user;
+
+    //  use currentUser!!!!!
+    // debugger
+
     if (!user && !this.props.friends) { return null; }
 
-    const posts = this.props.posts.map(post => {
+    const posts = this.props.posts.reverse().map(post => {
 
       if (this.props.page === "feed") {
         user = this.props.friends[post.author_id];
@@ -28,13 +32,16 @@ class PostIndex extends React.Component {
           key={ post.id }
           deletePost={ this.props.deletePost }
           post={ post }
-          user={ user }
+          author={ user }
+          currentUser={ this.props.currentUser }
         />
       );
     });
 
     return (
-      <ul className="post-index-ul">{ posts }</ul>
+      <div >
+        <ul className="post-index-ul">{ posts }</ul>
+      </div>
     );
   }
 }

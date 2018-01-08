@@ -11,3 +11,14 @@ export const fetchFriends = () => {
     url: '/api/friends'
   });
 };
+
+export const saveUserPhoto = formData => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${formData.get("user[id]")}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
+  });
+};

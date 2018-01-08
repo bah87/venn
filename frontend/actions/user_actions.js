@@ -28,3 +28,9 @@ export const fetchFriends = () => dispatch => {
     dispatch(receiveFriends(friends));
   });
 };
+
+export const saveUserPhoto = photo => dispatch => {
+  return UserApiUtil.saveUserPhoto(photo).then(user => {
+    dispatch(receiveUser(user));
+  });
+};

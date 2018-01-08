@@ -4,6 +4,7 @@ import { fetchFriends } from '../../actions/user_actions';
 
 const mapStateToProps = state => {
   return {
+    currentUser: state.session.currentUser,
     friends: state.entities.users
   };
 };

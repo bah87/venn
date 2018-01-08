@@ -1,11 +1,16 @@
 import { connect } from 'react-redux';
 import PostIndex from './post_index';
-import { fetchFeed, fetchProfile, deletePost } from '../../actions/post_actions';
+import {
+  fetchFeed,
+  fetchProfile,
+  deletePost
+} from '../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
     posts: Object.values(state.entities.posts),
-    friends: ownProps.friends
+    friends: ownProps.friends,
+    currentUser: state.session.currentUser
   };
 };
 

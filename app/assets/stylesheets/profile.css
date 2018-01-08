@@ -1,0 +1,300 @@
+.profile-post-index {
+  width: 516px;
+  margin-left: 13px;
+  margin-top: 13px;
+}
+
+.profile-aside {
+  width: 321px;
+  margin-top: 13px;
+}
+
+.profile-intro {
+  width: 321px;
+  height: 350px;
+  margin-bottom: 13px;
+  background-color: gray;
+}
+
+.profile-photos {
+  width: 321px;
+  height: 350px;
+  margin-bottom: 13px;
+  background-color: gray;
+}
+
+.profile-friends {
+  width: 321px;
+  height: 350px;
+  margin-bottom: 13px;
+  background-color: gray;
+}
+
+.profile-body {
+  width: 851px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-main {
+  width: 851px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-cover {
+  width: 851px;
+}
+
+.profile-cover-photo {
+  width: 851px;
+  height: 315px;
+}
+
+.profile-cover-photo-container {
+  width: 851px;
+  height: 315px;
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.profile-pic-preview {
+  width: 100px;
+  height: 100px;
+}
+
+.cover-photo-screen {
+  width: 851px;
+  height: 315px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.cover-photo-btn input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload:hover {
+  border: 1px solid white;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+  background-color: black;
+}
+
+.custom-file-upload {
+  color: transparent;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-file-upload i {
+  color: white;
+  opacity: .2;
+  margin-right: 10px;
+}
+
+.cover-photo-btn {
+  margin-left: 22px;
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+.profile-cover-nav {
+  width: 851px;
+  height: 43px;
+  border-right: 1px solid rgb(221, 223, 226);
+  border-left: 1px solid rgb(221, 223, 226);
+  border-bottom: 1px solid rgb(221, 223, 226);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cancel-cover-upload {
+  padding: 0 6px;
+  border: 1px solid rgb(206, 208, 212);
+  color: rgb(75, 79, 86);
+  background-color: rgb(233, 235, 238);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 26px;
+}
+
+.cancel-cover-upload:hover {
+  background-color: #d6d8db;
+}
+
+.save-cover-upload {
+  margin-left: 4px;
+  margin-right: 8px;
+  padding: 0 6px;
+  color: white;
+  border: 1px solid rgb(66, 103, 178);
+  background-color: rgb(66, 103, 178);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 26px;
+}
+
+.save-cover-upload:hover {
+  border: 1px solid #365899;
+  background-color: #365899;
+}
+
+.cover-upload-hidden {
+  display: none;
+}
+
+.profile-picture-container {
+  width: 176px;
+  height: 176px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  position: absolute;
+  top: 208px;
+  left: 220px;
+}
+
+.profile-picture {
+  width: 168px;
+  height: 168px;
+  border: 4px solid white;
+  border-radius: 2px;
+}
+
+.profile-pic-btn input[type="file"] {
+  display: none;
+}
+
+.profile-pic-btn {
+  width: 168px;
+  height: 48px;
+  opacity: .9;
+  position: absolute;
+  top: 334px;
+  left: 225px;
+  cursor: pointer;
+}
+
+.profile-pic-btn:hover {
+  background-color: black;
+}
+
+.prof-pic-btn-label {
+  width: 168px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: transparent;
+  font-size: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.prof-pic-btn-label:hover {
+  color: white;
+}
+
+.prof-pic-btn-label p {
+  width: 90px;
+  margin-left: 10px;
+}
+
+.prof-pic-modal-screen {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.prof-pic-modal-upload {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -220px;
+  width: 360px;
+  background: #fff;
+  z-index: 3;
+  border-radius: 3px;
+  border: 1px solid #000;
+}
+
+.pic-upload-hidden {
+  display: none;
+}
+
+.modal-upload-header {
+  color: rgb(29, 33, 41);
+  background-color: rgb(246, 247, 249);
+  font-size: 12px;
+  font-weight: 700;
+  border-bottom: 1px solid rgb(229, 229, 229);
+  padding: 10px 12px;
+  border-radius: 3px;
+}
+
+.modal-upload-footer {
+  border-radius: 3px;
+  background-color: rgb(246, 247, 249);
+  border-top: 1px solid rgb(229, 229, 229);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 36px;
+}
+
+.prof-pic-upload-btn {
+  height: 100px;
+  padding: 15px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prof-pic-upload-btn input[type="file"] {
+  display: none;
+}
+
+.prof-pic-upload-btn:hover {
+  background-color: #f6f7f9;
+}
+
+.prof-pic-btn-upload {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(29, 33, 41);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 360px;
+  height: 130px;
+  justify-content: center;
+}
+
+.prof-pic-btn-upload-hidden {
+  display: none;
+}

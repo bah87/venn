@@ -1,17 +1,20 @@
 class Api::PostsController < ApplicationController
   before_action :require_logged_in
 
-  def index
-    @posts = Post.order(created_at: :desc).includes(:author)
-  end
-
   def show_profile
+    # my_posts_no_recipient = User.find(params[:user_id]).posts.reject do |post|
+    #   !post.recipient_id.nil
+    # end
+    #
+    # posts_to_me = Post.find_by(recipient_id: current_user.id)
+    #
+    # @posts = my_posts_no_recipient + posts_to_me
     @posts = User.find(params[:user_id]).posts
     render :index
   end
 
   def show_feed
-    @posts = Post.order(created_at: :desc).includes(:author) # temporary until "friends" feature implemented
+    @posts = Post.all.includes(:author) # temporary until "friends" feature implemented
     render :index
   end
 
@@ -24,10 +27,9 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.author_id = current_user.id
 
-    debugger
-
-    if @post.save
+    if @post.save!
       render :show
     else
       render json: @post.errors.full_messages, status: 422
@@ -60,6 +62,10 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body, :author_id, :recipient_id)
+    params.require(:post).permit(
+      :body,
+      :recipient_id,
+      :image
+    )
   end
 end

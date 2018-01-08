@@ -28,13 +28,13 @@ class NavBar extends React.Component {
 
           <div className="right-nav">
             <Link
-              to={`/profile/${this.props.currentUser.id}`} 
+              to={`/profile/${this.props.currentUser.id}`}
               style={{ textDecoration: 'none' }}>
               <div className="profile-btn-container">
                 <img className="nav-profile-pic"
-                  src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
+                  src={this.props.currentUser.profile_pic_url}
                 />
-                <button className="profile-btn">{ currentUser.email }</button>
+              <button className="profile-btn">{ currentUser.first_name }</button>
               </div>
             </Link>
 

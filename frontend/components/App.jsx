@@ -4,6 +4,7 @@ import NavBarContainer from './nav/nav_bar_container';
 import LandingPage from './new_user_form/landing_page';
 import ProfileContainer from './main_pages/profile_container';
 import NewsFeedContainer from './main_pages/news_feed_container';
+import PostShowContainer from './posts/post_show_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -18,6 +19,8 @@ const App = () => {
         <ProtectedRoute exact path="/profile/:userId"
           component={ProfileContainer} />
         <ProtectedRoute exact path="/" component={NewsFeedContainer} />
+        <ProtectedRoute exact path="/users/:userId/posts/:postId"
+          component={PostShowContainer} />
       </Switch>
     </div>
   );

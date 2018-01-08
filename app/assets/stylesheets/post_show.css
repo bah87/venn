@@ -1,0 +1,10 @@
+.post-show-ul {
+  list-style: none;
+  margin: auto;
+  width: 516px;
+}
+
+.post-show-ul li {
+  border-radius: 3px;
+  margin-top: 24px;
+}
