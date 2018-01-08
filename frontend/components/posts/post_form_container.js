@@ -1,12 +1,13 @@
 import { createPost, fetchPost, updatePost } from '../../actions/post_actions';
 import { connect } from 'react-redux';
 import PostForm from './post_form';
-import { postFormModal, closeModal } from '../../actions/ui_actions';
+import { togglePostFormModal } from '../../actions/ui_actions';
 
 const mapStateToProps = state => {
+  debugger
   return {
     currentUser: state.session.currentUser,
-    modal: state.entities.ui.postFormModal
+    modal: state.ui.postFormModal
   };
 };
 
@@ -15,7 +16,7 @@ const mapDispatchToProps = dispatch => {
     createPost: post => dispatch(createPost(post)),
     updatePost: post => dispatch(updatePost(post)),
     fetchPost: id => dispatch(fetchPost(id)),
-    postFormModal: () => dispatch
+    togglePostFormModal: () => dispatch(togglePostFormModal())
   };
 };
 

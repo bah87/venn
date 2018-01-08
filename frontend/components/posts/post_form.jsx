@@ -16,6 +16,14 @@ class PostForm extends React.Component {
     this.updateFile = this.updateFile.bind(this);
   }
 
+  componentDidMount() {
+    debugger
+  }
+
+  componentWillReceiveProps() {
+    debugger
+  }
+
   update(event) {
     this.setState({ body: event.target.value });
   }
@@ -70,9 +78,11 @@ class PostForm extends React.Component {
       modalScreenClass = "post-form-modal-open";
     }
 
+    debugger
+
     return (
       <div>
-        <div className={modalScreenClass} onClick={() => console.log("div clicked!")}>
+        <div className={modalScreenClass} onClick={() => this.props.togglePostFormModal()}>
         </div>
         <div className={modalFormClass}>
           <div className="post-form-container">
@@ -96,7 +106,7 @@ class PostForm extends React.Component {
                       src={window.staticImages[this.props.currentUser.profile_pic_url.split('.')[0]]}
                       />
                     <textarea
-                      onClick={() => console.log("clicked!")}
+                      onClick={() => this.props.togglePostFormModal()}
                       className="post-body"
                       placeholder={ placeholderText }
                       value={this.state.body}
