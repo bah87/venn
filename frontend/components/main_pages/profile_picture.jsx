@@ -54,6 +54,7 @@ class ProfilePicture extends React.Component {
 
   handleSubmit() {
     event.preventDefault();
+    this.props.togglePostFormModal();
     const formData = new FormData();
     if (this.state.imageFile) {
       formData.append("user[image]", this.state.imageFile);

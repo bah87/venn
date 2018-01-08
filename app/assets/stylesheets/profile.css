@@ -260,3 +260,8 @@
   align-items: center;
   height: 36px;
 }
+
+.prof-pic-upload-btn {
+  height: 100px;
+  margin: 15px 12px;
+}
