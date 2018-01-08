@@ -2,6 +2,7 @@ import React from 'react';
 import PostFormContainer from '../posts/post_form_container';
 import PostIndexContainer from '../posts/post_index_container';
 import CoverPhoto from './cover_photo';
+import ProfilePicture from './profile_picture';
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -44,7 +45,7 @@ class Profile extends React.Component {
           <CoverPhoto
             user={ this.props.user }
             saveUserPhoto={ this.props.saveUserPhoto }
-            toggleCoverPhotoModal={ this.props.toggleCoverPhotoModal } 
+            toggleCoverPhotoModal={ this.props.toggleCoverPhotoModal }
           />
         </header>
 

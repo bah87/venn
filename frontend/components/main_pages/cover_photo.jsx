@@ -6,7 +6,9 @@ class CoverPhoto extends React.Component {
     super(props);
     this.state = {
       imageFile: null,
-      imageUrl: null
+      imageUrl: null,
+      cancelCoverUpload: "cover-upload-hidden",
+      saveCoverUpload: "cover-upload-hidden"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -19,20 +21,33 @@ class CoverPhoto extends React.Component {
     reader.onloadend = () => {
       this.setState({
         imageUrl: reader.result,
-        imageFile: file
+        imageFile: file,
+        cancelCoverUpload: "cancel-cover-upload",
+        saveCoverUpload: "save-cover-upload"
       });
     };
 
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      this.setState({ imageUrl: "", imageFile: null });
+      this.setState({
+        imageUrl: null,
+        imageFile: null,
+        cancelCoverUpload: "cover-upload-hidden",
+        saveCoverUpload: "cover-upload-hidden"
+      });
     }
   }
 
   cancelUpload() {
-    this.setState({ imageUrl: "", imageFile: null });
-    debugger
+    this.fileInput.value = "";
+
+    this.setState({
+      imageUrl: null,
+      imageFile: null,
+      cancelCoverUpload: "cover-upload-hidden",
+      saveCoverUpload: "cover-upload-hidden"
+    });
   }
 
   handleSubmit() {
@@ -42,20 +57,17 @@ class CoverPhoto extends React.Component {
       formData.append("user[cover_photo]", this.state.imageFile);
       formData.append("user[id]", this.props.user.id);
       this.props.saveUserPhoto(formData).then(() => {
-        this.setState({ imageUrl: "", imageFile: null });
+        this.setState({
+          imageUrl: null,
+          imageFile: null,
+          cancelCoverUpload: "cover-upload-hidden",
+          saveCoverUpload: "cover-upload-hidden"
+        });
       });
     }
   }
 
   render() {
-    debugger
-    let cancelCoverUpload = "cover-upload-hidden";
-    let saveCoverUpload = "cover-upload-hidden";
-    if (this.state.imageFile) {
-      cancelCoverUpload = "cancel-cover-upload";
-      saveCoverUpload = "save-cover-upload";
-    }
-
     let coverPhotoUrl = "";
     if (this.props.user) coverPhotoUrl = this.props.user.cover_photo_url;
 
@@ -79,6 +91,7 @@ class CoverPhoto extends React.Component {
               <input
                 id="file-upload"
                 type="file"
+                ref={(element) => { this.fileInput = element; }}
                 onChange={this.updateFile}
               />
             </div>
@@ -87,12 +100,12 @@ class CoverPhoto extends React.Component {
 
         <div className="profile-cover-nav">
           <button
-            className={cancelCoverUpload}
+            className={this.state.cancelCoverUpload}
             onClick={this.cancelUpload}>
             Cancel
           </button>
           <button
-            className={saveCoverUpload}
+            className={this.state.saveCoverUpload}
             onClick={this.handleSubmit}>
             Save Changes
           </button>
