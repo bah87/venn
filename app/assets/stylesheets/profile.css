@@ -56,7 +56,8 @@
 .profile-cover-photo-container {
   width: 851px;
   height: 315px;
-  background-color: gray;
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
   position: relative;
 }
 
@@ -109,13 +110,18 @@
 .profile-cover-nav {
   width: 851px;
   height: 43px;
+  border-right: 1px solid rgb(221, 223, 226);
+  border-left: 1px solid rgb(221, 223, 226);
+  border-bottom: 1px solid rgb(221, 223, 226);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.cancelCoverUpload {
+.cancel-cover-upload {
   padding: 0 6px;
   border: 1px solid rgb(206, 208, 212);
   color: rgb(75, 79, 86);
@@ -128,11 +134,11 @@
   margin-left: 685px;
 }
 
-.cancelCoverUpload:hover {
+.cancel-cover-upload:hover {
   background-color: #d6d8db;
 }
 
-.saveCoverUpload {
+.save-cover-upload {
   margin-left: 4px;
   padding: 0 6px;
   color: white;
@@ -145,7 +151,11 @@
   height: 26px;
 }
 
-.saveCoverUpload:hover {
+.save-cover-upload:hover {
   border: 1px solid #365899;
   background-color: #365899;
+}
+
+.cover-upload-hidden {
+  display: none;
 }

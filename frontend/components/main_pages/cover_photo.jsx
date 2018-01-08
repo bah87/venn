@@ -32,6 +32,7 @@ class CoverPhoto extends React.Component {
 
   cancelUpload() {
     this.setState({ imageUrl: "", imageFile: null });
+    debugger
   }
 
   handleSubmit() {
@@ -47,6 +48,13 @@ class CoverPhoto extends React.Component {
   }
 
   render() {
+    debugger
+    let cancelCoverUpload = "cover-upload-hidden";
+    let saveCoverUpload = "cover-upload-hidden";
+    if (this.state.imageFile) {
+      cancelCoverUpload = "cancel-cover-upload";
+      saveCoverUpload = "save-cover-upload";
+    }
 
     let coverPhotoUrl = "";
     if (this.props.user) coverPhotoUrl = this.props.user.cover_photo_url;
@@ -79,12 +87,12 @@ class CoverPhoto extends React.Component {
 
         <div className="profile-cover-nav">
           <button
-            className="cancelCoverUpload"
+            className={cancelCoverUpload}
             onClick={this.cancelUpload}>
             Cancel
           </button>
           <button
-            className="saveCoverUpload"
+            className={saveCoverUpload}
             onClick={this.handleSubmit}>
             Save Changes
           </button>
