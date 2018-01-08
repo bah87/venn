@@ -47,7 +47,7 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ modal: false });
+    this.props.togglePostFormModal();
     const user = this.props.user;
     const currentUser = this.props.currentUser;
 

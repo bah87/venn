@@ -37,8 +37,10 @@ class PostIndex extends React.Component {
       );
     });
 
+    const modalClass = this.props.modal ? "post-index-modal-open" : "";
+
     return (
-      <div className="post-index-modal-open">
+      <div className={modalClass}>
         <ul className="post-index-ul">{ posts }</ul>
       </div>
     );

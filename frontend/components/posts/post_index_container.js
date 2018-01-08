@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PostIndex from './post_index';
-import { 
+import {
   fetchFeed,
   fetchProfile,
   deletePost
@@ -9,7 +9,8 @@ import {
 const mapStateToProps = (state, ownProps) => {
   return {
     posts: Object.values(state.entities.posts),
-    friends: ownProps.friends
+    friends: ownProps.friends,
+    modal: state.ui.postFormModal
   };
 };
 
