@@ -232,13 +232,22 @@
   left: 50%;
   margin-left: -220px;
   width: 360px;
-  padding: 20px;
   background: #fff;
   z-index: 3;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 1px solid #000;
 }
 
 .pic-upload-hidden {
   display: none;
+}
+
+.modal-upload-header {
+  color: rgb(29, 33, 41);
+  background-color: rgb(246, 247, 249);
+  font-size: 12px;
+  font-weight: 700;
+  border-bottom: 1px solid rgb(229, 229, 229);
+  padding: 10px 12px;
+  border-radius: 3px;
 }

@@ -87,10 +87,11 @@ class ProfilePicture extends React.Component {
           </label>
         </div>
 
-        <div className={modalProfPicScreen}></div>
-
         <div onClick={() => this.props.toggleProfPicModal()}
-          className={modalPicUploadClass}>
+          className={modalProfPicScreen}>
+        </div>
+
+        <div className={modalPicUploadClass}>
           <div className="modal-upload-header">
             Update Profile Picture
           </div>
