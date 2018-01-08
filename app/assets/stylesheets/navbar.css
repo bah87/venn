@@ -1,0 +1,149 @@
+.main-nav-bar {
+  background-color: #4267b2;
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.main-nav-bar p {
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nav-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.nav-search {
+  width: 400px;
+  height: 24px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-search input {
+  color: rgb(29, 33, 41);
+  font-size: 14px;
+  font-weight: 400;
+  box-sizing: border-box;
+  width: 388px;
+  height: 23px;
+  padding-right: 5px;
+  border: none;
+}
+
+.nav-search-btn {
+  background-color: rgb(246, 247, 249);
+  width: 46px;
+  height: 24px;
+  cursor: pointer;
+  border: none;
+}
+
+.nav-search-btn:hover {
+  background-color: lightgrey;
+}
+
+.logout-btn {
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  height: 20px;
+  border-left: 1px solid #3b5998;
+  padding: 0 10px;
+}
+
+.logout-btn-container {
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn-container:hover {
+  background-color: #3b5998;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.profile-btn-container {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 28px;
+  padding: 0 10px;
+}
+
+.profile-btn-container:hover {
+  background-color: #3b5998;
+  border-radius: 2px;
+}
+
+.profile-btn {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.nav-profile-pic {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  left: 30px;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 450px;
+}
+
+.newsfeed-btn {
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  height: 20px;
+  border-left: 1px solid #3b5998;
+  padding: 0 10px;
+}
+
+.newsfeed-btn-container {
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.newsfeed-btn-container:hover {
+  background-color: #3b5998;
+  border-radius: 2px;
+  cursor: pointer;
+}
