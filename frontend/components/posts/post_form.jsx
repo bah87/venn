@@ -4,12 +4,21 @@ import PostImage from './post_image';
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
+
+    let placeholderText;
+    if (!this.props.user || !this.props.recipient) {
+      placeholderText = "What's on your mind?";
+    } else {
+      placeholderText = `Write something to ${this.props.user.first_name}...`;
+    }
+
     this.state = {
       body: "",
       recipient_id: null,
       imageFile: null,
       imageUrl: null,
-      modal: this.props.modal
+      modal: this.props.modal,
+      placeholderText: placeholderText
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -29,8 +38,14 @@ class PostForm extends React.Component {
     const reader = new FileReader();
     const file = event.currentTarget.files[0];
     reader.onloadend = () => {
-      this.setState({ imageUrl: reader.result, imageFile: file });
-      this.props.togglePostFormModal();
+      this.setState({
+        imageUrl: reader.result,
+        imageFile: file,
+        placeholderText: "Say something about this photo..."
+      });
+      if (!this.state.modal) {
+        this.props.togglePostFormModal();
+      }
     };
 
     if (file) {
@@ -63,18 +78,27 @@ class PostForm extends React.Component {
     const file = this.state.imageFile;
     if (file) formData.append("post[image]", file);
 
-    this.props.createPost(formData).then(() => {
-      this.setState({ body: "", imageUrl: "" });
-    });
-  }
-
-  render() {
     let placeholderText;
     if (!this.props.user || !this.props.recipient) {
       placeholderText = "What's on your mind?";
     } else {
       placeholderText = `Write something to ${this.props.user.first_name}...`;
     }
+
+    this.props.createPost(formData).then(() => {
+      this.setState({
+        body: "",
+        imageUrl: "",
+        placeholderText: placeholderText
+      });
+    });
+  }
+
+  render() {
+    // debugger
+    // if (this.state.imageFile) {
+    //   placeholderText = "Say something about this photo...";
+    // }
 
     let modalFormClass = "";
     let modalScreenClass = "";
@@ -117,7 +141,7 @@ class PostForm extends React.Component {
                     <textarea
                       onClick={this.handleFormClick}
                       className="post-body"
-                      placeholder={ placeholderText }
+                      placeholder={ this.state.placeholderText }
                       value={this.state.body}
                       onChange={this.update}
                       />
