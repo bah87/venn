@@ -1,6 +1,7 @@
 import React from 'react';
 import PostFormContainer from '../posts/post_form_container';
 import PostIndexContainer from '../posts/post_index_container';
+import CoverPhoto from './cover_photo';
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -40,8 +41,7 @@ class Profile extends React.Component {
     return (
       <div className="profile-main">
         <header className="profile-cover">
-          <div className="profile-cover-photo">
-          </div>
+          <CoverPhoto />
 
           <div className="profile-cover-nav">
           </div>
