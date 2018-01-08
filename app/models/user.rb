@@ -2,17 +2,21 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string           not null
-#  session_token   :string           not null
-#  password_digest :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  first_name      :string           not null
-#  last_name       :string           not null
-#  birthday        :date             not null
-#  gender          :string           not null
-#  profile_pic_url :string
+#  id                 :integer          not null, primary key
+#  email              :string           not null
+#  session_token      :string           not null
+#  password_digest    :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  first_name         :string           not null
+#  last_name          :string           not null
+#  birthday           :date             not null
+#  gender             :string           not null
+#  profile_pic_url    :string
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -23,6 +27,9 @@ class User < ApplicationRecord
   validates :gender, inclusion: { in: ["M", "F"] }
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+
+  has_attached_file :image, default_url: "missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token
 
