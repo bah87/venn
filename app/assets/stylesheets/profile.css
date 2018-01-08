@@ -184,11 +184,14 @@
 .profile-pic-btn {
   width: 168px;
   height: 48px;
-  background-color: black;
   opacity: .9;
   position: absolute;
   top: 334px;
   left: 225px;
+}
+
+.profile-pic-btn:hover {
+  background-color: black;
 }
 
 .prof-pic-btn-label {
@@ -197,9 +200,14 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: white;
+  color: transparent;
   font-size: 12px;
   margin-left: 10px;
+  cursor: pointer;
+}
+
+.prof-pic-btn-label:hover {
+  color: white;
 }
 
 .prof-pic-btn-label p {
