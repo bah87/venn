@@ -15,7 +15,7 @@ const uiReducer = (state = defaultState, action) => {
     case TOGGLE_POST_FORM_MODAL:
       return merge({}, state, { postFormModal: !state.postFormModal });
     case TOGGLE_PROF_PIC_MODAL:
-      return merge({}, state, { coverPhotoModal: !state.coverPhotoModal });
+      return merge({}, state, { coverPhotoModal: !state.profPicModal });
     default:
       return state;
   }
