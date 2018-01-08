@@ -37,7 +37,6 @@ class CoverPhoto extends React.Component {
     event.preventDefault();
     const formData = new FormData();
     if (this.state.imageFile) {
-      // debugger
       formData.append("user[cover_photo]", this.state.imageFile);
       formData.append("user[id]", this.props.user.id);
       this.props.saveUserPhoto(formData).then(() => {
@@ -50,8 +49,6 @@ class CoverPhoto extends React.Component {
 
     let coverPhotoUrl = "";
     if (this.props.user) coverPhotoUrl = this.props.user.cover_photo_url;
-
-    // debugger
 
     return (
       <div>

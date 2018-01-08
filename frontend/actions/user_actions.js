@@ -30,7 +30,6 @@ export const fetchFriends = () => dispatch => {
 };
 
 export const saveUserPhoto = photo => dispatch => {
-  // debugger
   return UserApiUtil.saveUserPhoto(photo).then(user => {
     dispatch(receiveUser(user));
   });
