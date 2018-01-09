@@ -3,6 +3,10 @@
   height: 339px;
   border-radius: 3px;
   z-index: 3;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -220px;
 }
 
 .edit-post-modal-screen {

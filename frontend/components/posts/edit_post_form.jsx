@@ -21,6 +21,26 @@ class EditPostForm extends React.Component {
     this.setState({ body: event.target.value });
   }
 
+  updateFile(event) {
+    const reader = new FileReader();
+    const file = event.currentTarget.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        imageUrl: reader.result,
+        imageFile: file
+      });
+      if (!this.state.modal) {
+        this.props.toggleEditPostModal();
+      }
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     this.props.toggleModal();

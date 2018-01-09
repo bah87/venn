@@ -11,7 +11,7 @@ const defaultState = {
   editPostModal: false
 };
 
-const uiReducer = (state = { modal: false }, action) => {
+const uiReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case TOGGLE_POST_FORM_MODAL:

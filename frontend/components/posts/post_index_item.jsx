@@ -30,18 +30,18 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser,
 
         <div className="post-item-header-right">
           <div className="post-item-name-and-options">
-              <Link
-                to={`/profile/${author.id}`} style={{ textDecoration: 'none'}}>
-                <p className="post-item-name">
-                  {`${author.first_name} ${author.last_name}`}
-                </p>
-              </Link>
+            <Link
+              to={`/profile/${author.id}`} style={{ textDecoration: 'none'}}>
+              <p className="post-item-name">
+                {`${author.first_name} ${author.last_name}`}
+              </p>
+            </Link>
 
-              <PostDropdown
-                currentUser={ currentUser }
-                author={ author }
-                toggleEditPostModal={ toggleEditPostModal }
-              />
+            <PostDropdown
+              currentUser={ currentUser }
+              author={ author }
+              toggleEditPostModal={ toggleEditPostModal }
+            />
             <EditPostForm
               modal={ modal }
               post={ post }
