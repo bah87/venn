@@ -83,7 +83,7 @@ class ProfilePicture extends React.Component {
     if (this.state.modal) {
       modalPicUploadClass = "prof-pic-modal-upload";
       modalProfPicScreen = "prof-pic-modal-screen";
-      modalCloseBtn = "post-form-close-btn";
+      modalCloseBtn = "prof-modal-close-btn";
     }
 
     let profPicBtnUpload = "prof-pic-btn-upload";
@@ -113,47 +113,50 @@ class ProfilePicture extends React.Component {
           className={modalProfPicScreen}>
         </div>
 
-        <div className={modalPicUploadClass}>
-          <div className="modal-upload-header">
-            <p>Update Profile Picture</p>
-            <span
-              className={modalCloseBtn}
-              onClick={() => this.props.toggleProfPicModal()}>
-              <i className="fa fa-times" aria-hidden="true"></i>
-            </span>
-          </div>
+        <div className="modal-prof-pic-upload-anchor">
+          <div className={modalPicUploadClass}>
+            <div className="modal-upload-header">
+              <p>Update Profile Picture</p>
+              <span
+                className={modalCloseBtn}
+                onClick={() => this.props.toggleProfPicModal()}>
+                <i className="fa fa-times" aria-hidden="true"></i>
+              </span>
+            </div>
 
-          <div className="prof-pic-upload-btn">
-            <div>
-              <label
-                for="profile-pic-upload"
-                className={ profPicBtnUpload }>
-                <p>+ Upload Photo</p>
-              </label>
-              <input
-                id="profile-pic-upload"
-                type="file"
-                ref={(element) => { this.fileInput = element; }}
-                onChange={this.updateFile}
-              />
-            <PhotoPreview cover={ false }
-              imageUrl={this.state.imageUrl} />
+            <div className="prof-pic-upload-btn">
+              <div>
+                <label
+                  for="profile-pic-upload"
+                  className={ profPicBtnUpload }>
+                  <p>+ Upload Photo</p>
+                </label>
+                <input
+                  id="profile-pic-upload"
+                  type="file"
+                  ref={(element) => { this.fileInput = element; }}
+                  onChange={this.updateFile}
+                />
+              <PhotoPreview cover={ false }
+                imageUrl={this.state.imageUrl} />
+              </div>
+            </div>
+
+            <div className="modal-upload-footer">
+              <button
+                className={this.state.cancelCoverUpload}
+                onClick={this.cancelUpload}>
+                Cancel
+              </button>
+              <button
+                className={this.state.saveCoverUpload}
+                onClick={this.handleSubmit}>
+                Save Changes
+              </button>
             </div>
           </div>
-
-          <div className="modal-upload-footer">
-            <button
-              className={this.state.cancelCoverUpload}
-              onClick={this.cancelUpload}>
-              Cancel
-            </button>
-            <button
-              className={this.state.saveCoverUpload}
-              onClick={this.handleSubmit}>
-              Save Changes
-            </button>
-          </div>
         </div>
+
       </div>
     );
   }

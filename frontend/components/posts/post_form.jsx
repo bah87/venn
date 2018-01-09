@@ -139,11 +139,11 @@ class PostForm extends React.Component {
                 </button>
               </span>
 
-              <span
+              <div
                 className={modalCloseBtn}
                 onClick={() => this.props.togglePostFormModal()}>
                 <i className="fa fa-times" aria-hidden="true"></i>
-              </span>
+              </div>
             </div>
 
             <form className="post-form" onSubmit={this.handleSubmit}>

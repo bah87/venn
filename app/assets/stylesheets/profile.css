@@ -235,11 +235,28 @@
   z-index: 2;
 }
 
+.prof-modal-close-btn {
+  width: 200px;
+  display: flex;
+  cursor: pointer;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.prof-modal-close-btn i {
+  display: flex;
+  align-items: center;
+  color: rgb(144, 148, 156);
+}
+
+.modal-prof-pic-upload-anchor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 .prof-pic-modal-upload {
   position: absolute;
-  top: 100px;
-  left: 50%;
-  margin-left: -220px;
   width: 360px;
   background: #fff;
   z-index: 3;
@@ -269,7 +286,6 @@
 }
 
 .modal-upload-header span {
-  margin-left: 180px;
   display: flex;
   align-items: center;
 }

@@ -164,15 +164,19 @@
 }
 
 .post-form-close-btn {
-  margin-left: 215px;
+  width: 250px;
+  display: flex;
   cursor: pointer;
-  border-right: none;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .post-form-close-btn i {
   color: rgb(144, 148, 156);
   width: 20px;
   height: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .post-form-close-btn-hidden {
