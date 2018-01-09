@@ -83,7 +83,7 @@
   display: none;
 }
 
-.custom-file-upload:hover {
+.cover-photo-screen:hover .custom-file-upload {
   border: 1px solid white;
   display: inline-block;
   padding: 6px 12px;
