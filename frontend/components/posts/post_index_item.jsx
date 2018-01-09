@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PostImage from './post_image';
 import PostDropdown from './post_dropdown';
+import EditPostForm from './edit_post_form';
 
-const PostIndexItem = ({ currentUser, author, post, deletePost }) => {
+const PostIndexItem = ({ toggleEditPostModal, currentUser,
+  author, post, modal, deletePost, updatePost }) => {
   let date = new Date(post.updated_at);
   const options = { year: "numeric", month: "short", day: "numeric",
     hour: "2-digit", minute: "2-digit" };
@@ -38,7 +40,14 @@ const PostIndexItem = ({ currentUser, author, post, deletePost }) => {
               <PostDropdown
                 currentUser={ currentUser }
                 author={ author }
+                toggleEditPostModal={ toggleEditPostModal }
               />
+            <EditPostForm
+              modal={ modal }
+              post={ post }
+              toggleModal={ toggleEditPostModal }
+              updatePost={ updatePost }
+            />
           </div>
 
           <div className="post-item-date-container">

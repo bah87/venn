@@ -1,7 +1,18 @@
 .edit-post-container {
   width: 600px;
-  min-height: 339px;
+  height: 339px;
   border-radius: 3px;
+  z-index: 3;
+}
+
+.edit-post-modal-screen {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
 .edit-post-header {
@@ -53,7 +64,7 @@
 
 .edit-post-img {
   width: 600px;
-  max-height: 130px;
+  height: 130px;
   display: flex;
   justify-content: flex-start;
 }

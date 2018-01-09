@@ -38,11 +38,14 @@ export const createPost = formData => {
   });
 };
 
-export const updatePost = post => {
+export const updatePost = formData => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/posts/${post.id}`,
-    data: { post }
+    url: `/api/posts/${formData.get("post[id]")}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
   });
 };
 

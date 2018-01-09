@@ -31,9 +31,12 @@ class PostIndex extends React.Component {
         <PostIndexItem
           key={ post.id }
           deletePost={ this.props.deletePost }
+          updatePost={ this.props.updatePost }
+          modal={ this.props.modal }
           post={ post }
           author={ user }
           currentUser={ this.props.currentUser }
+          toggleEditPostModal={ this.props.toggleEditPostModal }
         />
       );
     });
