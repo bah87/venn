@@ -145,8 +145,3 @@ class EditPostForm extends React.Component {
 }
 
 export default EditPostForm;
-
-// <div className="edit-post-img-preview">
-//   <PhotoPreview cover={ false }
-//     imageUrl={this.state.imageUrl} />
-// </div>

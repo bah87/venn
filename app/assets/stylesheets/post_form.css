@@ -205,7 +205,7 @@
 
 .cancel-upload-btn span:hover {
   background-color: black;
-  opacity: 0.2;
+  opacity: 0.5;
   width: 100px;
   height: 100px;
   display: flex;
@@ -216,12 +216,12 @@
   left: 12px;
 }
 
-.cancel-upload-btn span i:hover {
-  color: white;
+.cancel-upload-btn span:hover i {
+  color: red;
   cursor: pointer;
   margin-top: 3px;
   margin-right: 3px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .cancel-upload-btn-hidden {
