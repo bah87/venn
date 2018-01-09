@@ -44,7 +44,7 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser,
               toggleModal={ toggleEditPostModal }
               updatePost={ updatePost }
               deletePostPhoto={ deletePostPhoto }
-              currentUser={ currentUser }
+              currentUser={ author }
             />
           </div>
 
