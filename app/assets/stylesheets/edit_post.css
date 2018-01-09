@@ -1,0 +1,44 @@
+.edit-post-container {
+  width: 600px;
+  min-height: 339px;
+  border-radius: 3px;
+}
+
+.edit-post-header {
+  width: 600px;
+  height: 40px;
+  background-color: rgb(246, 247, 249);
+  border-bottom: 1px solid rgb(229, 229, 229);
+  color: rgb(29, 33, 41);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.edit-post-header p {
+  margin: 0;
+}
+
+.edit-post-header span {
+  display: flex;
+  align-items: center;
+  margin-left: 500px
+}
+
+.edit-post-body {
+  background-color: ;
+  font-size: ;
+  color: ;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.edit-post-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
