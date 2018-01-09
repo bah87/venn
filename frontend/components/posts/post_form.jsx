@@ -44,6 +44,7 @@ class PostForm extends React.Component {
     } else {
       placeholderText = `Write something to ${this.props.user.first_name}...`;
     }
+    if (this.state.imageFile) placeholderText = "Say something about this photo...";
 
     this.setState({ placeholderText: placeholderText });
   }
