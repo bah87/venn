@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
-    resources :posts
+    resources :posts do
+      resources :comments, on: :member, only: :index
+    end
+    resources :comments, only: [:destroy]
   end
 
   get '/api/profile/:user_id', to: 'api/posts#show_profile'
