@@ -16,6 +16,7 @@ class EditPostForm extends React.Component {
     this.update = this.update.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.cancelChanges = this.cancelChanges.bind(this);
+    this.cancelUpload = this.cancelUpload.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -58,6 +59,11 @@ class EditPostForm extends React.Component {
     });
   }
 
+  cancelUpload() {
+    this.fileInput.value = "";
+    this.setState({ imageUrl: "", imageFile: null });
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     this.props.toggleModal();
@@ -75,7 +81,9 @@ class EditPostForm extends React.Component {
   render() {
 
     let editPostUpload = "edit-post-upload-label";
+    let modalImgPreview = "cancel-upload-btn-hidden";
     if (this.state.imageUrl) {
+      modalImgPreview = "cancel-upload-btn";
       editPostUpload = "edit-post-upload-label-hidden";
     }
 
@@ -119,8 +127,17 @@ class EditPostForm extends React.Component {
                   onChange={this.updateFile}
                 />
               <div className="edit-post-img-preview">
-                  <PhotoPreview cover={ false }
-                    imageUrl={this.state.imageUrl} />
+                  <div className={modalImgPreview}>
+                      <PhotoPreview cover={ false }
+                        imageUrl={this.state.imageUrl} />
+                        <span>
+                          <i
+                            className="fa fa-times"
+                            aria-hidden="true"
+                            onClick={this.cancelUpload}>
+                          </i>
+                        </span>
+                    </div>
                 </div>
               </div>
             </div>

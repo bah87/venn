@@ -83,9 +83,14 @@
 .edit-post-img-preview img {
   margin: 15px 0 15px 12px;
 }
+
 .edit-post-img-preview {
   width: 600px;
   background-color: white;
+}
+
+.edit-post-img-preview span {
+  margin-top: -3px;
 }
 
 .edit-post-upload-label-hidden {
