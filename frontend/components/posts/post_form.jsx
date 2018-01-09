@@ -129,6 +129,11 @@ class PostForm extends React.Component {
       modalHiddenForm = "post-form-modal-hidden-picture";
     }
 
+    let profPicUrl = "";
+    if (this.props.currentUser) {
+      profPicUrl = this.props.currentUser.profile_pic_url;
+    }
+
     return (
       <div>
         <div
@@ -164,7 +169,7 @@ class PostForm extends React.Component {
                 <div className="post-body-wrapper">
                   <div className="post-form-text">
                     <img className="post-profile-pic"
-                      src={this.props.currentUser.profile_pic_url}
+                      src={profPicUrl}
                       />
                     <textarea
                       onClick={this.handleFormClick}

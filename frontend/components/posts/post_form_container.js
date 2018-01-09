@@ -5,7 +5,7 @@ import { togglePostFormModal } from '../../actions/ui_actions';
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.session.currentUser,
+    currentUser: state.entities.users[state.session.currentUser.id],
     modal: state.ui.postFormModal
   };
 };
