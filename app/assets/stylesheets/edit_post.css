@@ -29,16 +29,37 @@
 }
 
 .edit-post-body {
-  background-color: ;
-  font-size: ;
-  color: ;
+  background-color: white;
+  font-size: 14px;
+  color: rgb(29, 33, 41);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  width: 600px;
+  height: 144px;
 }
 
 .edit-post-img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.edit-post-text {
+  width: 500px;
+  height: 108px;
+  padding: 23px 34px 13px 12px;
+}
+
+.edit-post-img {
+  width: 600px;
+  max-height: 130px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.edit-post-img img {
+  margin: 15px 0 15px 5px;
+  width: 100px;
+  height: 100px;
 }
