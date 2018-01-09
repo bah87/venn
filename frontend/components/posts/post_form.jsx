@@ -133,13 +133,14 @@ class PostForm extends React.Component {
             <div className="post-form-header">
               <span>
                 <i className="fa fa-pencil" aria-hidden="true"></i>
-                <button className="make-post-modal-btn">Make Post</button>
+                <button onClick={this.handleFormClick}
+                  className="make-post-modal-btn">Make Post</button>
               </span>
 
               <span>
                 <i className="fa fa-camera" aria-hidden="true"></i>
                 <button
-                  className="photo-video-modal-btn">Photo/Video Album
+                  className="photo-video-modal-btn">Photo/Video
                 </button>
               </span>
 
