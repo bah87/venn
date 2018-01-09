@@ -5,7 +5,7 @@ import PostDropdown from './post_dropdown';
 import EditPostForm from './edit_post_form';
 
 const PostIndexItem = ({ toggleEditPostModal, currentUser,
-  author, post, modal, deletePost, updatePost }) => {
+  author, post, modal, deletePost, updatePost, deletePostPhoto }) => {
   let date = new Date(post.updated_at);
   const options = { year: "numeric", month: "short", day: "numeric",
     hour: "2-digit", minute: "2-digit" };
@@ -43,6 +43,7 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser,
               post={ post }
               toggleModal={ toggleEditPostModal }
               updatePost={ updatePost }
+              deletePostPhoto={ deletePostPhoto }
               currentUser={ currentUser }
             />
           </div>

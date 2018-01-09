@@ -66,3 +66,9 @@ export const deletePost = id => dispatch => {
     dispatch(removePost(post.id));
   });
 };
+
+export const deletePostPhoto = id => dispatch => {
+  return PostApiUtil.deletePostPhoto(id).then(post => {
+    dispatch(receivePost(post));
+  });
+};

@@ -5,7 +5,8 @@ import {
   fetchFeed,
   fetchProfile,
   deletePost,
-  updatePost
+  updatePost,
+  deletePostPhoto
 } from '../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,7 +24,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     action: id => dispatch(action(id)),
     deletePost: id => dispatch(deletePost(id)),
     updatePost: post => dispatch(updatePost(post)),
-    toggleEditPostModal: id => dispatch(toggleEditPostModal(id))
+    toggleEditPostModal: id => dispatch(toggleEditPostModal(id)),
+    deletePostPhoto: id => dispatch(deletePostPhoto(id))
   };
 };
 

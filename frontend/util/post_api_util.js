@@ -55,3 +55,10 @@ export const deletePost = id => {
     url: `/api/posts/${id}`
   });
 };
+
+export const deletePostPhoto = id => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/posts/${id}`
+  });
+};

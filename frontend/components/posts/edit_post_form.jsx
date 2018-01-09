@@ -60,6 +60,10 @@ class EditPostForm extends React.Component {
   }
 
   cancelUpload() {
+    if (this.props.post.image_url) {
+      this.props.deletePostPhoto(this.props.post.id);
+    }
+
     this.fileInput.value = "";
     this.setState({ imageUrl: "", imageFile: null });
   }
