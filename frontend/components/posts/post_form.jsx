@@ -57,6 +57,7 @@ class PostForm extends React.Component {
   }
 
   cancelUpload() {
+    this.fileInput.value = "";
     this.setState({ imageUrl: "", imageFile: null });
   }
 
@@ -90,10 +91,13 @@ class PostForm extends React.Component {
       placeholderText = `Write something to ${this.props.user.first_name}...`;
     }
 
+    this.fileInput.value = "";
+
     this.props.createPost(formData).then(() => {
       this.setState({
         body: "",
         imageUrl: "",
+        imageFile: null,
         placeholderText: placeholderText
       });
     });
@@ -185,6 +189,7 @@ class PostForm extends React.Component {
                       <input
                         className="file-upload-btn"
                         type="file"
+                        ref={(element) => { this.fileInput = element; }}
                         onChange={this.updateFile}
                       />
                     </div>
