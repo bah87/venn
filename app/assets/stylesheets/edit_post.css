@@ -104,3 +104,25 @@
   height: 26px;
   margin-right: 6px;
 }
+
+.save-post-edits-btn:hover {
+  border: 1px solid #365899;
+  background-color: #365899;
+}
+
+.cancel-post-edits-btn {
+  padding: 0 6px;
+  border: 1px solid rgb(206, 208, 212);
+  background-color: rgb(233, 235, 238);
+  color: rgb(75, 79, 86);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 26px;
+  margin-right: 4px;
+}
+
+.cancel-post-edits-btn:hover {
+  background-color: #d6d8db;
+}

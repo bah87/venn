@@ -15,6 +15,7 @@ class EditPostForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.cancelChanges = this.cancelChanges.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -43,6 +44,18 @@ class EditPostForm extends React.Component {
     } else {
       this.setState({ imageUrl: "", imageFile: null });
     }
+  }
+
+  cancelChanges() {
+    this.fileInput.value = "";
+
+    this.props.toggleModal();
+
+    this.setState({
+      body: this.props.post.body,
+      imageFile: null,
+      imageUrl: this.props.post.image_url,
+    });
   }
 
   handleSubmit(event) {
@@ -92,6 +105,11 @@ class EditPostForm extends React.Component {
             </div>
 
             <div className="edit-post-footer">
+              <button
+                className="cancel-post-edits-btn"
+                onClick={this.cancelChanges}>
+                Cancel
+              </button>
               <button className="save-post-edits-btn"
                 onClick={this.handleSubmit}>
                 Save
