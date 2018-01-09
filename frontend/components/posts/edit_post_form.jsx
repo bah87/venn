@@ -74,9 +74,9 @@ class EditPostForm extends React.Component {
 
   render() {
 
-    let editPostUpload = "prof-pic-btn-upload";
-    if (this.state.imageFile) {
-      editPostUpload = "prof-pic-btn-upload-hidden";
+    let editPostUpload = "edit-post-upload-label";
+    if (this.state.imageUrl) {
+      editPostUpload = "edit-post-upload-label-hidden";
     }
 
     if (this.state.modal === this.props.post.id) {
@@ -105,7 +105,7 @@ class EditPostForm extends React.Component {
                 />
             </div>
 
-            <div className="prof-pic-upload-btn">
+            <div className="edit-post-upload-btn">
               <div>
                 <label
                   for="edit-post-upload"
@@ -118,8 +118,10 @@ class EditPostForm extends React.Component {
                   ref={(element) => { this.fileInput = element; }}
                   onChange={this.updateFile}
                 />
-              <PhotoPreview cover={ false }
-                imageUrl={this.state.imageUrl} />
+              <div className="edit-post-img-preview">
+                  <PhotoPreview cover={ false }
+                    imageUrl={this.state.imageUrl} />
+                </div>
               </div>
             </div>
 
