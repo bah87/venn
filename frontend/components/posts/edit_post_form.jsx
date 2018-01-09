@@ -88,7 +88,7 @@ class EditPostForm extends React.Component {
             </div>
 
             <div className="edit-post-img">
-              <PhotoPreview cover={ true }
+              <PhotoPreview cover={ false }
                 imageUrl={this.state.imageUrl} />
             </div>
 
