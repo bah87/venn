@@ -77,11 +77,13 @@ class ProfilePicture extends React.Component {
     let profPicUrl = "";
     if (this.props.user) profPicUrl = this.props.user.profile_pic_url;
 
+    let modalCloseBtn = "post-form-close-btn-hidden";
     let modalPicUploadClass = "pic-upload-hidden";
     let modalProfPicScreen = "pic-upload-hidden";
     if (this.state.modal) {
       modalPicUploadClass = "prof-pic-modal-upload";
       modalProfPicScreen = "prof-pic-modal-screen";
+      modalCloseBtn = "post-form-close-btn";
     }
 
     let profPicBtnUpload = "prof-pic-btn-upload";
@@ -113,7 +115,12 @@ class ProfilePicture extends React.Component {
 
         <div className={modalPicUploadClass}>
           <div className="modal-upload-header">
-            Update Profile Picture
+            <p>Update Profile Picture</p>
+            <span
+              className={modalCloseBtn}
+              onClick={() => this.props.toggleProfPicModal()}>
+              <i className="fa fa-times" aria-hidden="true"></i>
+            </span>
           </div>
 
           <div className="prof-pic-upload-btn">
