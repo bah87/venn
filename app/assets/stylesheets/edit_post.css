@@ -1,7 +1,6 @@
 .edit-post-container {
   width: 600px;
   height: 339px;
-  border-radius: 3px;
   z-index: 3;
   position: absolute;
   top: 100px;
@@ -31,12 +30,23 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
 }
 
 .edit-post-header span {
   display: flex;
   align-items: center;
-  margin-left: 405px;
+  margin-left: 498px;
+}
+
+.edit-post-header i {
+  color: rgb(144, 148, 156);
+}
+
+.edit-post-header i:hover {
+  color: rgb(29, 33, 41);
+  cursor: pointer;
 }
 
 .edit-post-body {
@@ -90,6 +100,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .save-post-edits-btn {
@@ -110,19 +122,9 @@
   background-color: #365899;
 }
 
-.cancel-post-edits-btn {
-  padding: 0 6px;
-  border: 1px solid rgb(206, 208, 212);
-  background-color: rgb(233, 235, 238);
-  color: rgb(75, 79, 86);
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: 2px;
-  cursor: pointer;
-  height: 26px;
-  margin-right: 4px;
-}
-
-.cancel-post-edits-btn:hover {
-  background-color: #d6d8db;
+.edit-delete-post-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 200px;
 }

@@ -47,7 +47,7 @@ class EditPostForm extends React.Component {
   }
 
   cancelChanges() {
-    this.fileInput.value = "";
+    if (this.state.imageFile) this.fileInput.value = "";
 
     this.props.toggleModal();
 
@@ -80,9 +80,9 @@ class EditPostForm extends React.Component {
 
           <div className="edit-post-container">
             <div className="edit-post-header">
-              Update Profile Picture
+              Edit Post
               <span
-                onClick={() => this.props.toggleModal()}>
+                onClick={this.cancelChanges}>
                 <i className="fa fa-times" aria-hidden="true"></i>
               </span>
             </div>
@@ -105,11 +105,6 @@ class EditPostForm extends React.Component {
             </div>
 
             <div className="edit-post-footer">
-              <button
-                className="cancel-post-edits-btn"
-                onClick={this.cancelChanges}>
-                Cancel
-              </button>
               <button className="save-post-edits-btn"
                 onClick={this.handleSubmit}>
                 Save

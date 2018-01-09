@@ -12,12 +12,6 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser,
   date = date.toLocaleTimeString("en-us", options).split(",");
   date = `${date[0]}${date[1]} at${date[2]}`;
 
-  // <button
-  //   className="post-item-delete-btn"
-  //   onClick={() => deletePost(post.id)}>
-  //
-  // </button>
-
   return (
     <li className="post-item">
 
@@ -42,6 +36,7 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser,
               currentUser={ currentUser }
               author={ author }
               toggleEditPostModal={ toggleEditPostModal }
+              deletePost={ deletePost }
             />
             <EditPostForm
               modal={ modal }
