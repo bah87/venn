@@ -165,7 +165,7 @@
   display: none;
 }
 
-.profile-pic-anchor {
+.prof-pic-anchor {
   position: relative;
 }
 
@@ -195,8 +195,8 @@
   height: 48px;
   opacity: .9;
   position: absolute;
-  top: 334px;
-  left: 225px;
+  bottom: 24px;
+  left: 24px;
   cursor: pointer;
 }
 
