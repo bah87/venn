@@ -24,15 +24,28 @@ class PostForm extends React.Component {
     this.update = this.update.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.handleFormClick = this.handleFormClick.bind(this);
+    this.handlePlaceholderText = this.handlePlaceholderText.bind(this);
     this.cancelUpload = this.cancelUpload.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
     this.setState({ modal: newProps.modal });
+    this.handlePlaceholderText();
   }
 
   update(event) {
     this.setState({ body: event.target.value });
+  }
+
+  handlePlaceholderText() {
+    let placeholderText;
+    if (!this.props.user || !this.props.recipient) {
+      placeholderText = "What's on your mind?";
+    } else {
+      placeholderText = `Write something to ${this.props.user.first_name}...`;
+    }
+
+    this.setState({ placeholderText: placeholderText });
   }
 
   updateFile(event) {
@@ -59,6 +72,7 @@ class PostForm extends React.Component {
   cancelUpload() {
     this.fileInput.value = "";
     this.setState({ imageUrl: "", imageFile: null });
+    this.handlePlaceholderText();
   }
 
   handleFormClick() {
@@ -84,12 +98,7 @@ class PostForm extends React.Component {
     const file = this.state.imageFile;
     if (file) formData.append("post[image]", file);
 
-    let placeholderText;
-    if (!this.props.user || !this.props.recipient) {
-      placeholderText = "What's on your mind?";
-    } else {
-      placeholderText = `Write something to ${this.props.user.first_name}...`;
-    }
+    this.handlePlaceholderText();
 
     this.fileInput.value = "";
 
@@ -97,8 +106,7 @@ class PostForm extends React.Component {
       this.setState({
         body: "",
         imageUrl: "",
-        imageFile: null,
-        placeholderText: placeholderText
+        imageFile: null
       });
     });
   }
