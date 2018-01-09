@@ -81,8 +81,8 @@ class EditPostForm extends React.Component {
     if (file) formData.append("post[image]", file);
 
     if (this.state.deleteReq) {
-      this.props.deletePostPhoto(this.props.post.id).then(() => {
-        this.props.updatePost(formData);
+      this.props.updatePost(formData).then(() => {
+        this.props.deletePostPhoto(this.props.post.id);
       }).then(() => {
         this.setState({ deleteReq: false });
       });
