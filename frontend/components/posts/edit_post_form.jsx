@@ -1,4 +1,5 @@
 import React from 'react';
+import PhotoPreview from '../main_pages/photo_preview';
 
 class EditPostForm extends React.Component {
   constructor(props) {
@@ -61,11 +62,15 @@ class EditPostForm extends React.Component {
         </div>
 
         <div className="edit-post-img">
-
+          <PhotoPreview cover={ true }
+            imageUrl={this.state.imageUrl} />
         </div>
 
         <div className="edit-post-footer">
-
+          <button className="save-post-edits-btn"
+            onClick={this.handleSubmit}>
+            Save
+          </button>
         </div>
 
       </div>

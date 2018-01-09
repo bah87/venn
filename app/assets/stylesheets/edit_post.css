@@ -59,7 +59,30 @@
 }
 
 .edit-post-img img {
-  margin: 15px 0 15px 5px;
-  width: 100px;
-  height: 100px;
+  margin: 15px 0 15px 5px;]
+}
+
+.edit-post-footer {
+  width: 600px;
+  height: 40px;
+  background-color: rgb(246, 247, 249);
+  border-top: 1px solid rgb(229, 229, 229);
+  color: rgb(29, 33, 41);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.save-post-edits-btn {
+  padding: 0 6px;
+  color: white;
+  border: 1px solid rgb(66, 103, 178);
+  background-color: rgb(66, 103, 178);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 26px;
 }
