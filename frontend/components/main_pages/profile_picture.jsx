@@ -94,19 +94,21 @@ class ProfilePicture extends React.Component {
     if ((this.props.user) && (this.props.currentUser.id === this.props.user.id)) {
       return (
         <div className="prof-pic-anchor">
-          <div className="profile-picture-container">
-            <img
-              className="profile-picture"
-              src={profPicUrl}
-              />
-          </div>
+          <div className="prof-pic-hover">
+            <div className="profile-picture-container">
+              <img
+                className="profile-picture"
+                src={profPicUrl}
+                />
+            </div>
 
-          <div onClick={() => this.props.toggleProfPicModal()}
-            className="profile-pic-btn">
-            <label className="prof-pic-btn-label">
-              <i className="fa fa-camera" aria-hidden="true"></i>
-              <p>Update Profile Picture</p>
-            </label>
+            <div onClick={() => this.props.toggleProfPicModal()}
+              className="profile-pic-btn">
+              <label className="prof-pic-btn-label">
+                <i className="fa fa-camera" aria-hidden="true"></i>
+                <p>Update Profile Picture</p>
+              </label>
+            </div>
           </div>
 
           <div onClick={() => this.props.toggleProfPicModal()}

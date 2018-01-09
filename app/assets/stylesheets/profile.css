@@ -200,7 +200,11 @@
   cursor: pointer;
 }
 
-.profile-pic-btn:hover {
+/* .profile-picture:hover .profile-pic-btn {
+  background-color: black;
+} */
+
+.prof-pic-hover:hover .profile-pic-btn {
   background-color: black;
 }
 
