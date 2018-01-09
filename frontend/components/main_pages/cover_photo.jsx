@@ -71,6 +71,11 @@ class CoverPhoto extends React.Component {
     let coverPhotoUrl = "";
     if (this.props.user) coverPhotoUrl = this.props.user.cover_photo_url;
 
+    let coverPhotoClass = "cover-photo-screen-hidden";
+    if (this.props.user && (this.props.user.id === this.props.currentUser.id)) {
+      coverPhotoClass = "cover-photo-screen";
+    }
+
     return (
       <div>
         <div
@@ -83,7 +88,7 @@ class CoverPhoto extends React.Component {
 
           <PhotoPreview cover={ true }
             imageUrl={this.state.imageUrl} />
-          <div className="cover-photo-screen">
+          <div className={coverPhotoClass}>
             <div className="cover-photo-btn">
               <label for="file-upload" className="custom-file-upload">
                   <i className="fa fa-camera" aria-hidden="true"></i>

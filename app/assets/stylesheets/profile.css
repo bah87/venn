@@ -66,6 +66,10 @@
   height: 100px;
 }
 
+.cover-photo-screen-hidden {
+  display: none;
+}
+
 .cover-photo-screen {
   width: 851px;
   height: 315px;

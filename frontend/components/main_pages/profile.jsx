@@ -43,6 +43,7 @@ class Profile extends React.Component {
       <div className="profile-main">
         <header className="profile-cover">
           <CoverPhoto
+            currentUser={ this.props.currentUser }
             user={ this.props.user }
             saveUserPhoto={ this.props.saveUserPhoto }
           />
