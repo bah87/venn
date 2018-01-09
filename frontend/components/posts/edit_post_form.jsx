@@ -17,6 +17,10 @@ class EditPostForm extends React.Component {
     this.updateFile = this.updateFile.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState({ modal: newProps.modal });
+  }
+
   update(event) {
     this.setState({ body: event.target.value });
   }
@@ -56,10 +60,6 @@ class EditPostForm extends React.Component {
   }
 
   render() {
-    // current user - prof pic thumb
-    // post - body and picture (if any)
-    // updatePost - updates
-    // toggleModal
 
     if (this.state.modal) {
       return (
@@ -78,7 +78,7 @@ class EditPostForm extends React.Component {
             <div className="edit-post-body">
               <img
                 className="edit-post-img"
-                src={this.props.post.image_url}>
+                src={this.props.currentUser.profile_pic_url}>
               </img>
               <textarea
                 className="edit-post-text"
