@@ -96,6 +96,10 @@
   width: 600px;
   background-color: white;
   cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
 }
 
 .edit-post-upload-label:hover {
