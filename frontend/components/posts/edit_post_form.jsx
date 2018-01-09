@@ -9,7 +9,8 @@ class EditPostForm extends React.Component {
       body: this.props.post.body,
       imageFile: null,
       imageUrl: this.props.post.image_url,
-      modal: this.props.modal
+      modal: this.props.modal,
+      deleteReq: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -61,7 +62,7 @@ class EditPostForm extends React.Component {
 
   cancelUpload() {
     if (this.props.post.image_url) {
-      this.props.deletePostPhoto(this.props.post.id);
+      this.setState({ deleteReq: true });
     }
 
     this.fileInput.value = "";
@@ -78,6 +79,14 @@ class EditPostForm extends React.Component {
 
     const file = this.state.imageFile;
     if (file) formData.append("post[image]", file);
+
+    if (this.state.deleteReq) {
+      this.props.deletePostPhoto(this.props.post.id).then(() => {
+        this.props.updatePost(formData);
+      }).then(() => {
+        this.setState({ deleteReq: false });
+      });
+    }
 
     this.props.updatePost(formData);
   }

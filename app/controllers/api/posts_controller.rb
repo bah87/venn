@@ -37,7 +37,7 @@ class Api::PostsController < ApplicationController
   end
 
   def delete_post_photo
-    @post = Post.find(:id)
+    @post = Post.find(params[:post_id])
     @post.image = nil
     render :show
   end
