@@ -93,7 +93,7 @@ class ProfilePicture extends React.Component {
 
 
     return (
-      <div>
+      <div className="prof-pic-anchor">
         <div className="profile-picture-container">
           <img
             className="profile-picture"

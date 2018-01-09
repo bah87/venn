@@ -165,14 +165,18 @@
   display: none;
 }
 
+.profile-pic-anchor {
+  position: relative;
+}
+
 .profile-picture-container {
   width: 176px;
   height: 176px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 2px;
   position: absolute;
-  top: 208px;
-  left: 220px;
+  bottom: 20px;
+  left: 20px;
 }
 
 .profile-picture {
