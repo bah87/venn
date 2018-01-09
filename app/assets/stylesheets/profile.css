@@ -193,19 +193,24 @@
 .profile-pic-btn {
   width: 168px;
   height: 48px;
-  opacity: .9;
+  opacity: .7;
   position: absolute;
-  bottom: 24px;
-  left: 24px;
+  bottom: 25px;
+  left: 25px;
   cursor: pointer;
 }
 
-/* .profile-picture:hover .profile-pic-btn {
-  background-color: black;
-} */
-
 .prof-pic-hover:hover .profile-pic-btn {
   background-color: black;
+}
+
+.profile-pic-btn:hover {
+  background-color: black;
+  opacity: .9;
+}
+
+.prof-pic-hover:hover .prof-pic-btn-label {
+  color: white;
 }
 
 .prof-pic-btn-label {
@@ -218,10 +223,6 @@
   font-size: 12px;
   margin-left: 10px;
   cursor: pointer;
-}
-
-.prof-pic-btn-label:hover {
-  color: white;
 }
 
 .prof-pic-btn-label p {
