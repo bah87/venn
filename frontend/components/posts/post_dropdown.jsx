@@ -14,7 +14,7 @@ class PostDropdown extends React.Component {
           <div
             className="post-item-delete-btn"
             onClick={() => this.props.deletePost(this.props.postId)}>
-            Delete Post
+            Delete
           </div>
         </div>
       );
