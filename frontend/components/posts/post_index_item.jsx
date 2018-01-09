@@ -38,6 +38,7 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser,
             </Link>
 
             <PostDropdown
+              postId={ post.id }
               currentUser={ currentUser }
               author={ author }
               toggleEditPostModal={ toggleEditPostModal }

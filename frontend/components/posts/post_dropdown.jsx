@@ -6,7 +6,7 @@ class PostDropdown extends React.Component {
     if (this.props.author.id === this.props.currentUser.id) {
       return (
         <div className="post-item-delete-btn"
-          onClick={() => this.props.toggleEditPostModal()}>
+          onClick={() => this.props.toggleEditPostModal(this.props.postId)}>
           Edit Post
         </div>
       );

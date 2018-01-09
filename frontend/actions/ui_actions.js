@@ -14,8 +14,9 @@ export const toggleProfPicModal = () => {
   };
 };
 
-export const toggleEditPostModal = () => {
+export const toggleEditPostModal = modalId => {
   return {
-    type: TOGGLE_EDIT_POST_MODAL
+    type: TOGGLE_EDIT_POST_MODAL,
+    modalId
   };
 };

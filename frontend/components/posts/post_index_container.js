@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     action: id => dispatch(action(id)),
     deletePost: id => dispatch(deletePost(id)),
     updatePost: post => dispatch(updatePost(post)),
-    toggleEditPostModal: () => dispatch(toggleEditPostModal())
+    toggleEditPostModal: id => dispatch(toggleEditPostModal(id))
   };
 };
 

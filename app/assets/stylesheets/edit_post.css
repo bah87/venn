@@ -11,7 +11,7 @@
 
 .edit-post-modal-screen {
   position: fixed;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.7);
   top: 0;
   bottom: 0;
   left: 0;
@@ -20,12 +20,12 @@
 }
 
 .edit-post-header {
-  width: 600px;
-  height: 40px;
+  width: 576px;
+  height: 20px;
   background-color: rgb(246, 247, 249);
   border-bottom: 1px solid rgb(229, 229, 229);
   color: rgb(29, 33, 41);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   padding: 10px 12px;
   display: flex;
@@ -33,48 +33,50 @@
   justify-content: flex-start;
 }
 
-.edit-post-header p {
-  margin: 0;
-}
-
 .edit-post-header span {
   display: flex;
   align-items: center;
-  margin-left: 500px
+  margin-left: 405px;
 }
 
 .edit-post-body {
   background-color: white;
-  font-size: 14px;
-  color: rgb(29, 33, 41);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   width: 600px;
-  height: 144px;
 }
 
 .edit-post-img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  margin: 12px;
 }
 
 .edit-post-text {
   width: 500px;
-  height: 108px;
   padding: 23px 34px 13px 12px;
+  font-size: 14px;
+  color: rgb(29, 33, 41);
+
+  color: rgb(144, 148, 156);
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
 }
 
-.edit-post-img {
+.edit-post-img-preview img {
+  margin: 15px 0 15px 12px;
+}
+.edit-post-img-preview {
   width: 600px;
-  height: 130px;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.edit-post-img img {
-  margin: 15px 0 15px 5px;]
+  background-color: white;
 }
 
 .edit-post-footer {
@@ -100,4 +102,5 @@
   border-radius: 2px;
   cursor: pointer;
   height: 26px;
+  margin-right: 6px;
 }

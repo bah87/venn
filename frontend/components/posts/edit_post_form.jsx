@@ -60,15 +60,14 @@ class EditPostForm extends React.Component {
   }
 
   render() {
-
-    if (this.state.modal) {
+    if (this.state.modal === this.props.post.id) {
       return (
         <div>
           <div className="edit-post-modal-screen"></div>
 
           <div className="edit-post-container">
             <div className="edit-post-header">
-              <p>Update Profile Picture</p>
+              Update Profile Picture
               <span
                 onClick={() => this.props.toggleModal()}>
                 <i className="fa fa-times" aria-hidden="true"></i>
@@ -87,7 +86,7 @@ class EditPostForm extends React.Component {
                 />
             </div>
 
-            <div className="edit-post-img">
+            <div className="edit-post-img-preview">
               <PhotoPreview cover={ false }
                 imageUrl={this.state.imageUrl} />
             </div>
