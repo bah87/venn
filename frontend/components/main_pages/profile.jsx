@@ -6,6 +6,7 @@ import ProfilePicture from './profile_picture';
 
 class Profile extends React.Component {
   componentDidMount() {
+    window.scrollTo(0, 0);
     const id = this.props.match.params.userId;
     this.props.fetchUser(id);
   }
