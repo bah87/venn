@@ -79,7 +79,7 @@
   border-top: 1px solid rgb(221, 223, 226);
 }
 
-.file-upload-btn {
+/* .file-upload-btn {
   position: absolute;
 	top: 0;
 	right: 0;
@@ -119,9 +119,31 @@
   align-items: center;
   justify-content: center;
   cursor: default;
+}*/
+
+.post-file-upload-container input[type="file"] {
+  display: none;
 }
 
-.file-upload:hover {
+#post-form-upload-label {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  width: 122px;
+  height: 32px;
+  background-color: rgb(246, 247, 249);
+  color: rgb(75, 79, 86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+}
+
+#post-form-upload-label i {
+  margin-right: 4px;
+}
+
+#post-form-upload-label:hover {
   background-color: rgb(225, 225, 225);
 }
 

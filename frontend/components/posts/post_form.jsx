@@ -179,20 +179,18 @@ class PostForm extends React.Component {
                 </div>
 
                 <div className="post-body-footer">
-                  <div className="file-upload">
-                    <div>
-                      <div className="file-upload-label">
-                        <i className="fa fa-camera" aria-hidden="true"></i>
-                        <span>Photo/Video</span>
-                      </div>
+                  <div className="post-file-upload-container">
+                    <label for="file-upload" id="post-form-upload-label">
+                      <i className="fa fa-camera" aria-hidden="true"></i>
+                      Photo/Video
+                    </label>
 
-                      <input
-                        className="file-upload-btn"
-                        type="file"
-                        ref={(element) => { this.fileInput = element; }}
-                        onChange={this.updateFile}
-                      />
-                    </div>
+                    <input
+                      id="file-upload"
+                      type="file"
+                      ref={(element) => { this.fileInput = element; }}
+                      onChange={this.updateFile}
+                    />
                   </div>
 
                 </div>
