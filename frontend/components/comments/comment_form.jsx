@@ -28,7 +28,8 @@ class CommentForm extends React.Component {
         imageUrl: reader.result,
         imageFile: file
       });
-      document.getElementById("comment-input-focus").focus();
+      let inputFocus = "comment-input-focus-" + `${this.props.post.id}`;
+      document.getElementById(inputFocus).focus();
     };
 
     if (file) {
@@ -41,7 +42,8 @@ class CommentForm extends React.Component {
   cancelUpload() {
     this.fileInput.value = "";
     this.setState({ imageUrl: null, imageFile: null });
-    document.getElementById("comment-input-focus").focus();
+    let inputFocus = "comment-input-focus-" + `${this.props.post.id}`;
+    document.getElementById(inputFocus).focus();
   }
 
   handleSubmit(event) {
@@ -76,6 +78,8 @@ class CommentForm extends React.Component {
     if (this.state.imageFile) {
       imgPreview = "comment-cancel-upload-btn";
     }
+    let fileUploadId = "file-upload-comment-" + `${this.props.post.id}`;
+    let inputFocus = "comment-input-focus-" + `${this.props.post.id}`;
 
     if (this.props.currentUser) {
       return (
@@ -86,7 +90,7 @@ class CommentForm extends React.Component {
             <div className="comment-form-wrapper">
               <form className="comment-form" onSubmit={this.handleSubmit}>
                 <input className="comment-input"
-                  id="comment-input-focus"
+                  id={inputFocus}
                   placeholder="Write a comment..."
                   value={this.state.body}
                   onChange={this.update}>
@@ -107,12 +111,12 @@ class CommentForm extends React.Component {
               </div>
             </div>
             <div className="comment-file-upload-container">
-              <label htmlFor="file-upload-comment" id="comment-form-upload-label">
+              <label htmlFor={fileUploadId} id="comment-form-upload-label">
                 <i className="fa fa-camera" aria-hidden="true"></i>
               </label>
 
               <input
-                id="file-upload-comment"
+                id={fileUploadId}
                 type="file"
                 ref={(element) => { this.fileInput = element; }}
                 onChange={this.updateFile}

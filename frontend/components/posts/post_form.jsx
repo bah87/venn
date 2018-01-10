@@ -200,7 +200,7 @@ class PostForm extends React.Component {
 
                 <div className="post-body-footer">
                   <div className="post-file-upload-container">
-                    <label for="file-upload-post" id="post-form-upload-label">
+                    <label htmlFor="file-upload-post" id="post-form-upload-label">
                       <i className="fa fa-camera" aria-hidden="true"></i>
                       Photo/Video
                     </label>

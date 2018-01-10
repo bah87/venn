@@ -129,7 +129,7 @@ class EditPostForm extends React.Component {
             <div className="edit-post-upload-btn">
               <div>
                 <label
-                  for="edit-post-upload"
+                  htmlFor="edit-post-upload"
                   className={ editPostUpload }>
                   <p>+ Upload Photo</p>
                 </label>

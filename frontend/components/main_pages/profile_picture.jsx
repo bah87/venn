@@ -129,7 +129,7 @@ class ProfilePicture extends React.Component {
               <div className="prof-pic-upload-btn">
                 <div>
                   <label
-                    for="profile-pic-upload"
+                    htmlFor="profile-pic-upload"
                     className={ profPicBtnUpload }>
                     <p>+ Upload Photo</p>
                   </label>
