@@ -1,14 +1,16 @@
 import {
   TOGGLE_POST_FORM_MODAL,
   TOGGLE_PROF_PIC_MODAL,
-  TOGGLE_EDIT_POST_MODAL
+  TOGGLE_EDIT_POST_MODAL,
+  TOGGLE_EDIT_COMMENT
  } from '../actions/ui_actions';
 import merge from 'lodash/merge';
 
 const defaultState = {
   postFormModal: false,
   profPicModal: false,
-  editPostModal: false
+  editPostModal: false,
+  editComment: false
 };
 
 const uiReducer = (state = defaultState, action) => {

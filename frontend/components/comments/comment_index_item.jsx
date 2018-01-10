@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { DateFormat } from '../../util/date_util';
 import PostImage from '../posts/post_image';
+import CommentDropdown from './comment_dropdown';
 
-const CommentIndexItem = ({ comment, removeComment, updateComment }) => {
+const CommentIndexItem = ({ comment, removeComment, editComment }) => {
   let date = DateFormat(comment.updated_at);
 
   return (
@@ -37,6 +38,12 @@ const CommentIndexItem = ({ comment, removeComment, updateComment }) => {
           { date.slice(0,11) }
         </div>
       </div>
+      <CommentDropdown
+        authorId={comment.author_id}
+        removeComment={removeComment}
+        editComment={editComment}
+        currentUserId={currentUserId}
+      />
     </li>
   );
 };

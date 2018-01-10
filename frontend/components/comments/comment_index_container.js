@@ -15,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
     }
   });
   return {
-    comments
+    comments,
+    currentUserId: state.session.currentUser.id
   };
 };
 

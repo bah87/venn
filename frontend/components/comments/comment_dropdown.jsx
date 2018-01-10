@@ -1,20 +1,20 @@
 import React from 'react';
 
-class PostDropdown extends React.Component {
+class CommentDropdown extends React.Component {
   render() {
     // <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
 
-    if (this.props.author.id === this.props.currentUser.id) {
+    if (this.props.authorId === this.props.currentUserId) {
       return (
-        <div className="edit-delete-post-container">
+        <div className="edit-delete-comment-container">
           <div
-            className="post-item-delete-btn"
-            onClick={() => this.props.toggleEditPostModal(this.props.postId)}>
-            Edit Post
+            className="comment-item-delete-btn"
+            onClick={() => this.props.editComment(this.props.commentId)}>
+            Edit
           </div>
           <div
-            className="post-item-delete-btn"
-            onClick={() => this.props.deletePost(this.props.postId)}>
+            className="comment-item-delete-btn"
+            onClick={() => this.props.removeComment(this.props.commentId)}>
             Delete
           </div>
         </div>
@@ -27,4 +27,4 @@ class PostDropdown extends React.Component {
   }
 }
 
-export default PostDropdown;
+export default CommentDropdown;
