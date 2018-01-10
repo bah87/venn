@@ -2,9 +2,15 @@ import { connect } from 'react-redux';
 import { fetchComments, removeComment } from '../../actions/comment_actions';
 import CommentIndex from './comment_index';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+  const comments = [];
+  ownProps.post.commentIds.forEach((commentId) => {
+    if (state.entities.comments[commentId]) {
+      comments.push(state.entities.comments[commentId]);
+    }
+  });
   return {
-    comments: Object.values(state.entities.comments)
+    comments
   };
 };
 

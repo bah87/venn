@@ -1,6 +1,7 @@
 import React from 'react';
 import PostIndexItem from './post_index_item';
 import CommentFormContainer from '../comments/comment_form_container';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class PostIndex extends React.Component {
   componentDidMount() {
@@ -41,8 +42,10 @@ class PostIndex extends React.Component {
             toggleEditPostModal={ this.props.toggleEditPostModal }
             deletePostPhoto={ this.props.deletePostPhoto }
             />
+          <CommentIndexContainer
+            post={ post }
+          />
           <CommentFormContainer
-            key={ post.id }
             type={ "create" }
             post={ post }
           />
