@@ -6,6 +6,11 @@ class CommentIndex extends React.Component {
     this.props.fetchComments(this.props.post.id);
   }
 
+  componentWillReceiveProps(newProps) {
+    // debugger
+    // this.props.fetchComments(newProps.post.id);
+  }
+
   render() {
     const comments = this.props.comments.map(comment => {
       return (
