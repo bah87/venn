@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import PostImage from './post_image';
 import PostDropdown from './post_dropdown';
 import EditPostForm from './edit_post_form';
-import { DateFormat } from '../../util/date_util';
+import { postDateFormat } from '../../util/date_util';
 
 const PostIndexItem = ({ toggleEditPostModal, currentUser,
   author, post, modal, deletePost, updatePost, deletePostPhoto }) => {
-  let date = DateFormat(post.updated_at);
+  let date = postDateFormat(post.updated_at);
 
   if (author) {
     return (

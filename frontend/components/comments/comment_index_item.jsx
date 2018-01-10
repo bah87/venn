@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { DateFormat } from '../../util/date_util';
+import { commentDateFormat } from '../../util/date_util';
 import PostImage from '../posts/post_image';
 import CommentDropdown from './comment_dropdown';
 import CommentFormContainer from './comment_form_container';
 
 const CommentIndexItem = ({ comment, deleteComment, toggleEditComment,
   currentUserId, post, editComment }) => {
-  let date = DateFormat(comment.updated_at);
+  let date = commentDateFormat(comment.updated_at);
 
   if (editComment === comment.id) {
     return (
