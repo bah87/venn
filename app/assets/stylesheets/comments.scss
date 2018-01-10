@@ -30,6 +30,12 @@
   margin-left: 12px;
 }
 
+.comment-img-preview {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
 .comment-input {
   color: rgb(29, 33, 41);
   font-size: 12px;
@@ -157,10 +163,12 @@
 .comment-body-img {
   width: 60px;
   height: 60px;
+  border-radius: 10px;
 }
 
 .comment-cancel-upload-btn {
-  height: 130px;
+  height: 60px;
+  margin: 5px 0;
 
   span {
     background-color: black;
@@ -173,19 +181,21 @@
     position: relative;
     top: -115px;
     left: 12px;
+    border-radius: 10px;
   }
 
   span:hover {
     opacity: 0.5;
     background-color: black;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
     position: relative;
-    top: -115px;
+    top: -65px;
     left: 12px;
+    border-radius: 10px;
   }
 
   span:hover i {

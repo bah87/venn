@@ -101,7 +101,7 @@ class CommentForm extends React.Component {
               </div>
             </div>
             <div className="comment-file-upload-container">
-              <label for="file-upload-comment" id="comment-form-upload-label">
+              <label htmlFor="file-upload-comment" id="comment-form-upload-label">
                 <i className="fa fa-camera" aria-hidden="true"></i>
               </label>
 

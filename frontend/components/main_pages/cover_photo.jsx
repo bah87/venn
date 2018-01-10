@@ -90,7 +90,7 @@ class CoverPhoto extends React.Component {
             imageUrl={this.state.imageUrl} />
           <div className={coverPhotoClass}>
             <div className="cover-photo-btn">
-              <label for="file-upload" className="custom-file-upload">
+              <label htmlFor="file-upload" className="custom-file-upload">
                   <i className="fa fa-camera" aria-hidden="true"></i>
                   Update Cover Photo
               </label>
