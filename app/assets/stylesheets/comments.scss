@@ -68,6 +68,10 @@
   display: none;
 }
 
+.comment-form-upload-label {
+  display: flex;
+}
+
 .comment-list {
   list-style: none;
   padding: 0;
@@ -117,4 +121,9 @@
 
 .comment-body {
   color: rgb(29, 33, 41);
+}
+
+.comment-body-img {
+  max-width: 60px;
+  max-height: 60px;
 }

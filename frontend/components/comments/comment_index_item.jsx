@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { DateFormat } from '../../util/date_util';
+import PostImage from '../posts/post_image';
 
 const CommentIndexItem = ({ comment }) => {
   let date = DateFormat(comment.updated_at);
@@ -24,6 +25,11 @@ const CommentIndexItem = ({ comment }) => {
                   { comment.author_fname + " " + comment.author_lname }
                 </strong>
               </Link> { comment.body }
+              <PostImage
+                comment={true}
+                form={false}
+                imageUrl={comment.image_url}
+              />
             </div>
           </div>
         </div>
