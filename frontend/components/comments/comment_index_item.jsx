@@ -7,14 +7,16 @@ const CommentIndexItem = ({ comment }) => {
 
   return (
     <li className="comment-list-item">
-      <img src={ comment.author_pic_url }
-        className="comment-img"></img>
+      <div className="comment-img-container">
+        <img src={ comment.author_pic_url }
+          className="comment-img"></img>
+      </div>
       <div className="comment-body-container">
-        <div className="comment-name">
-          { comment.author_fname + " " + comment.author_lname }
-        </div>
+
         <div className="comment-body">
-          { comment.body }
+          <strong className="comment-name">
+            { comment.author_fname + " " + comment.author_lname }
+          </strong> { comment.body }
         </div>
       </div>
     </li>
@@ -22,3 +24,7 @@ const CommentIndexItem = ({ comment }) => {
 };
 
 export default CommentIndexItem;
+
+// <div className="comment-name">
+//   { comment.author_fname + " " + comment.author_lname }
+// </div>

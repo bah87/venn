@@ -1,7 +1,7 @@
 .comment-container {
   width: 518px;
   height: 51px;
-  padding: 8px 12px;
+  padding: 8px 12px 8px 0;
   background-color: rgb(242, 243, 245);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -15,11 +15,18 @@
   margin-bottom: 13px;
 }
 
+// .comment-img-container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-start;
+// }
+
 .comment-img {
   border-radius: 50%;
   width: 32px;
   height: 32px;
   margin-right: 8px;
+  margin-left: 12px;
 }
 
 .comment-input {
@@ -77,8 +84,12 @@
   padding: 4px 0;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
+}
+
+.comment-list-item:first-child {
+  margin-top: 8px;
 }
 
 .comment-body-container {
