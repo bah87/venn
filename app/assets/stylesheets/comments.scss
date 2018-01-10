@@ -65,16 +65,16 @@
 
 .comment-list {
   list-style: none;
+  padding: 0;
 }
 
 .comment-list-item {
   border-left: 1px solid rgb(225, 226, 227);
   border-right: 1px solid rgb(225, 226, 227);
-  background-color: ;
-  width: ;
-  min-height: ;
-  margin: ;
-  padding: ;
+  background-color: rgb(242, 243, 245);
+  width: 518px;
+  min-height: 57px;
+  padding: 4px 0;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -82,20 +82,22 @@
 }
 
 .comment-body-container {
-  max-width: ;
+  max-width: 454px;
+  box-sizing: border-box;
+  padding: 8px 10px;
   background-color: white;
   border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  font-size: 13px;
 }
 
 .comment-name {
-  font-size: ;
-  color: ;
+  font-weight: 700;
+  color: rgb(54, 88, 153);
 }
 
 .comment-body {
-  font-size: 13px;
   color: rgb(29, 33, 41);
 }
