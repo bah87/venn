@@ -12,7 +12,6 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-    // debugger
     const comments = this.props.comments.map(comment => {
       return (
         <CommentIndexItem

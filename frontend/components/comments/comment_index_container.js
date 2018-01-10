@@ -7,7 +7,6 @@ import {
 import CommentIndex from './comment_index';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   const comments = [];
   ownProps.post.commentIds.forEach((commentId) => {
     if (state.entities.comments[commentId]) {
