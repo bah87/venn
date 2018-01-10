@@ -28,7 +28,7 @@ class CommentForm extends React.Component {
         imageUrl: reader.result,
         imageFile: file
       });
-      let inputFocus = "comment-input-focus-" + `${this.props.post.id}`;
+      let inputFocus = `comment-input-focus-${this.props.post.id}`;
       document.getElementById(inputFocus).focus();
     };
 
