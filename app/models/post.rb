@@ -21,6 +21,7 @@ class Post < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :author,
-  foreign_key: :author_id,
   class_name: 'User'
+
+  has_many :comments
 end
