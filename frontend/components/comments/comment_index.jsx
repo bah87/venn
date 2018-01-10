@@ -3,12 +3,7 @@ import CommentIndexItem from './comment_index_item';
 
 class CommentIndex extends React.Component {
   componentDidMount() {
-    // debugger
     this.props.fetchComments(this.props.post.id);
-  }
-
-  componentWillReceiveProps(newProps) {
-    // debugger
   }
 
   render() {
@@ -22,7 +17,7 @@ class CommentIndex extends React.Component {
     });
 
     return (
-      <ul>
+      <ul className="comment-list">
         { comments }
       </ul>
     );
