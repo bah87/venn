@@ -62,23 +62,27 @@ class CommentForm extends React.Component {
   }
 
   render() {
-    return (
-      <div className="comment-container">
-        <img src={ this.props.currentUser.profile_pic_url }
-          className="comment-img"></img>
-        <div className="comment-box">
-          <form className="comment-form" onSubmit={this.handleSubmit}>
-            <input className="comment-input"
-              placeholder="Write a comment..."
-              value={this.state.body}
-              onChange={this.update}>
-            </input>
-            <button className="comment-btn-hidden"></button>
-          </form>
-          <i className="fa fa-camera" aria-hidden="true"></i>
+    if (this.props.currentUser) {
+      return (
+        <div className="comment-container">
+          <img src={ this.props.currentUser.profile_pic_url }
+            className="comment-img"></img>
+          <div className="comment-box">
+            <form className="comment-form" onSubmit={this.handleSubmit}>
+              <input className="comment-input"
+                placeholder="Write a comment..."
+                value={this.state.body}
+                onChange={this.update}>
+              </input>
+              <button className="comment-btn-hidden"></button>
+            </form>
+            <i className="fa fa-camera" aria-hidden="true"></i>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return null;
+    }
   }
 }
 
