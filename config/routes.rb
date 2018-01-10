@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :posts do
       resources :comments, on: :member, only: :index
     end
-    resources :comments, only: [:destroy]
+    resources :comments, only: [:create, :update, :show, :destroy]
   end
 
   get '/api/profile/:user_id', to: 'api/posts#show_profile'

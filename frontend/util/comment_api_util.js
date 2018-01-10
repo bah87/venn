@@ -23,7 +23,7 @@ export const createComment = comment => {
 export const fetchComment = commentId => {
   return $.ajax({
     method: 'GET',
-    url: `/api/comments${commentId}`
+    url: `/api/comments/${commentId}`
   });
 };
 
