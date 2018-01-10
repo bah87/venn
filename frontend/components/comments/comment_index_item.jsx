@@ -44,7 +44,7 @@ const CommentIndexItem = ({ comment, deleteComment, toggleEditComment,
             imageUrl={comment.image_url}
           />
           <div id="comment-date" className="post-item-date">
-            { date.slice(0,11) }
+            { date }
           </div>
         </div>
         <CommentDropdown

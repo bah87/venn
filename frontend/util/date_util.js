@@ -9,17 +9,18 @@ export const postDateFormat = date => {
 };
 
 export const commentDateFormat = date => {
-  const diff = moment(date).fromNow().split(" ");
-  switch (diff[1]) {
-    case "hour":
-      return "1h";
-    case "hours":
-      return `${diff[0]}h`;
-    case "minutes":
-      return `${diff[0]}m`;
-    case "seconds":
-      return `${diff[0]}s`;
-    default:
-      return "";
-  }
+  // const diff = moment(date).fromNow().split(" ");
+  // switch (diff[1]) {
+  //   case "hour":
+  //     return "1h";
+  //   case "hours":
+  //     return `${diff[0]}h`;
+  //   case "minutes":
+  //     return `${diff[0]}m`;
+  //   case "seconds":
+  //     return `${diff[0]}s`;
+  //   default:
+  //     return "";
+  // }
+  return moment(date).fromNow();
 };
