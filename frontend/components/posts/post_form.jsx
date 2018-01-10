@@ -79,6 +79,7 @@ class PostForm extends React.Component {
   handleFormClick() {
     if (!this.state.modal) {
       this.props.togglePostFormModal();
+      document.getElementById("post-form-textarea").focus();
     }
   }
 
@@ -112,7 +113,7 @@ class PostForm extends React.Component {
           imageFile: null
         });
       });
-    }
+    } else { document.getElementById("post-form-textarea").focus(); }
   }
 
   render() {
@@ -176,6 +177,7 @@ class PostForm extends React.Component {
                       src={profPicUrl}
                       />
                     <textarea
+                      id="post-form-textarea"
                       onClick={this.handleFormClick}
                       className="post-body"
                       placeholder={ this.state.placeholderText }

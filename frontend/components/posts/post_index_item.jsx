@@ -66,7 +66,9 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser,
           <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
           <p>Like</p>
         </div>
-        <div className="comment-btn">
+        <div
+          onClick={() => document.getElementById("comment-input-focus").focus()}
+          className="comment-btn">
           <i className="fa fa-comment-o" aria-hidden="true"></i>
           <p>Comment</p>
         </div>

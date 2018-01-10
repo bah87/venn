@@ -3,7 +3,6 @@ import React from 'react';
 const PostImage = ({ imageUrl, form, comment }) => {
 
   if (comment && imageUrl) {
-    debugger
     return (
       <img className="comment-body-img" src={imageUrl}/>
     );
