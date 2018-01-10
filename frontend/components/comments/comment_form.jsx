@@ -74,9 +74,9 @@ class CommentForm extends React.Component {
 
   render() {
 
-    let imgPreview = "cancel-upload-btn-hidden";
+    let imgPreview = "comment-img-preview-box-hidden";
     if (this.state.imageFile) {
-      imgPreview = "comment-cancel-upload-btn";
+      imgPreview = "comment-img-preview-box";
     }
     let fileUploadId = "file-upload-comment-" + `${this.props.post.id}`;
     let inputFocus = "comment-input-focus-" + `${this.props.post.id}`;
@@ -86,41 +86,41 @@ class CommentForm extends React.Component {
         <div className="comment-container">
           <img src={ this.props.currentUser.profile_pic_url }
             className="comment-img"></img>
-          <div className="comment-box">
-            <div className="comment-form-wrapper">
-              <form className="comment-form" onSubmit={this.handleSubmit}>
-                <input className="comment-input"
-                  id={inputFocus}
-                  placeholder="Write a comment..."
-                  value={this.state.body}
-                  onChange={this.update}>
-                </input>
-                <button className="comment-btn-hidden"></button>
-              </form>
-              <div className={imgPreview}>
-                <PostImage form={true}
-                  comment={true}
-                  imageUrl={this.state.imageUrl} />
-                <span>
-                  <i
-                    className="fa fa-times"
-                    aria-hidden="true"
-                    onClick={this.cancelUpload}>
-                  </i>
-                </span>
+          <div>
+            <div className="comment-box">
+              <div className="comment-form-wrapper">
+                <form className="comment-form" onSubmit={this.handleSubmit}>
+                  <input className="comment-input"
+                    id={inputFocus}
+                    placeholder="Write a comment..."
+                    value={this.state.body}
+                    onChange={this.update}>
+                  </input>
+                  <button className="comment-btn-hidden"></button>
+                </form>
+              </div>
+              <div className="comment-file-upload-container">
+                <label htmlFor={fileUploadId} id="comment-form-upload-label">
+                  <i className="fa fa-camera" aria-hidden="true"></i>
+                </label>
+
+                <input
+                  id={fileUploadId}
+                  type="file"
+                  ref={(element) => { this.fileInput = element; }}
+                  onChange={this.updateFile}
+                />
               </div>
             </div>
-            <div className="comment-file-upload-container">
-              <label htmlFor={fileUploadId} id="comment-form-upload-label">
-                <i className="fa fa-camera" aria-hidden="true"></i>
-              </label>
-
-              <input
-                id={fileUploadId}
-                type="file"
-                ref={(element) => { this.fileInput = element; }}
-                onChange={this.updateFile}
-              />
+            <div className={imgPreview}>
+              <PostImage form={true}
+                comment={true}
+                imageUrl={this.state.imageUrl} />
+              <i
+                className="fa fa-times"
+                aria-hidden="true"
+                onClick={this.cancelUpload}>
+              </i>
             </div>
           </div>
         </div>
