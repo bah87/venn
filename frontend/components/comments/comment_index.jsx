@@ -8,7 +8,7 @@ class CommentIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
     // debugger
-    // this.props.fetchComments(newProps.post.id);
+    this.props.fetchComment(9);
   }
 
   render() {
