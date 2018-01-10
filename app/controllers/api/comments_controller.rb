@@ -15,6 +15,7 @@ class Api::CommentsController < ApplicationController
       render :show
     else
       render json: @comment.errors.full_messages
+    end
   end
 
   def update
