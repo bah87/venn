@@ -60,11 +60,13 @@ class CommentForm extends React.Component {
     this.fileInput.value = "";
 
     this.props.action(formData).then(() => {
-      this.setState({
-        body: "",
-        imageFile: null,
-        imageUrl: null
-      });
+      if (this.props.type === "new") {
+        this.setState({
+          body: "",
+          imageFile: null,
+          imageUrl: null
+        });
+      }
     });
   }
 
