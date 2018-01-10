@@ -2,7 +2,13 @@ import React from 'react';
 
 const PostImage = ({ imageUrl, form, comment }) => {
 
-  if (comment && imageUrl) {
+  if (comment && imageUrl && form) {
+    return (
+      <div className="img-preview-container">
+        <img className="img-preview" src={imageUrl}/>
+      </div>
+    );
+  } else if (comment && imageUrl) {
     return (
       <img className="comment-body-img" src={imageUrl}/>
     );

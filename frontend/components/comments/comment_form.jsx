@@ -1,4 +1,5 @@
 import React from 'react';
+import PostImage from '../posts/post_image';
 
 class CommentForm extends React.Component {
   constructor(props) {
@@ -62,21 +63,39 @@ class CommentForm extends React.Component {
   }
 
   render() {
+
+    let imgPreview = "cancel-upload-btn-hidden";
+    if (this.state.imageFile) {
+      imgPreview = "cancel-upload-btn";
+    }
+
     if (this.props.currentUser) {
       return (
         <div className="comment-container">
           <img src={ this.props.currentUser.profile_pic_url }
             className="comment-img"></img>
           <div className="comment-box">
-            <form className="comment-form" onSubmit={this.handleSubmit}>
-              <input className="comment-input"
-                id="comment-input-focus"
-                placeholder="Write a comment..."
-                value={this.state.body}
-                onChange={this.update}>
-              </input>
-              <button className="comment-btn-hidden"></button>
-            </form>
+            <div className="comment-form-wrapper">
+              <form className="comment-form" onSubmit={this.handleSubmit}>
+                <input className="comment-input"
+                  id="comment-input-focus"
+                  placeholder="Write a comment..."
+                  value={this.state.body}
+                  onChange={this.update}>
+                </input>
+                <button className="comment-btn-hidden"></button>
+              </form>
+              <div className={imgPreview}>
+                <PostImage form={true} imageUrl={this.state.imageUrl} />
+                <span>
+                  <i
+                    className="fa fa-times"
+                    aria-hidden="true"
+                    onClick={this.cancelUpload}>
+                  </i>
+                </span>
+              </div>
+            </div>
             <div className="comment-file-upload-container">
               <label for="file-upload-comment" id="comment-form-upload-label">
                 <i className="fa fa-camera" aria-hidden="true"></i>
