@@ -1,18 +1,25 @@
 .comment-container {
   width: 518px;
-  height: 51px;
   padding: 8px 12px 8px 0;
   background-color: rgb(242, 243, 245);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   border-left: 1px solid rgb(225, 226, 227);
   border-right: 1px solid rgb(225, 226, 227);
   border-bottom: 1px solid rgb(225, 226, 227);
   box-sizing: border-box;
   margin-bottom: 13px;
+}
+
+.comment-img-preview-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-height: 100px;
+  margin: 5px 0 5px 12px;
 }
 
 .comment-img {

@@ -28,6 +28,7 @@ class CommentForm extends React.Component {
         imageUrl: reader.result,
         imageFile: file
       });
+      document.getElementById("comment-input-focus").focus();
     };
 
     if (file) {
@@ -40,6 +41,7 @@ class CommentForm extends React.Component {
   cancelUpload() {
     this.fileInput.value = "";
     this.setState({ imageUrl: null, imageFile: null });
+    document.getElementById("comment-input-focus").focus();
   }
 
   handleSubmit(event) {
