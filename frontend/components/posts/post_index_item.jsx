@@ -3,14 +3,11 @@ import { Link } from 'react-router-dom';
 import PostImage from './post_image';
 import PostDropdown from './post_dropdown';
 import EditPostForm from './edit_post_form';
+import { DateFormat } from '../../util/date_util';
 
 const PostIndexItem = ({ toggleEditPostModal, currentUser,
   author, post, modal, deletePost, updatePost, deletePostPhoto }) => {
-  let date = new Date(post.updated_at);
-  const options = { year: "numeric", month: "short", day: "numeric",
-    hour: "2-digit", minute: "2-digit" };
-  date = date.toLocaleTimeString("en-us", options).split(",");
-  date = `${date[0]}${date[1]} at${date[2]}`;
+  let date = DateFormat(post.updated_at);
 
   return (
     <li className="post-item">
