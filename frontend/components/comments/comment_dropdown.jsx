@@ -14,7 +14,7 @@ class CommentDropdown extends React.Component {
           </div>
           <div
             className="comment-item-delete-btn"
-            onClick={() => this.props.removeComment(this.props.commentId)}>
+            onClick={() => this.props.deleteComment(this.props.commentId)}>
             Delete
           </div>
         </div>

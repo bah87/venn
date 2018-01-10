@@ -4,7 +4,7 @@ import { DateFormat } from '../../util/date_util';
 import PostImage from '../posts/post_image';
 import CommentDropdown from './comment_dropdown';
 
-const CommentIndexItem = ({ comment, removeComment, toggleEditComment,
+const CommentIndexItem = ({ comment, deleteComment, toggleEditComment,
   currentUserId }) => {
   let date = DateFormat(comment.updated_at);
 
@@ -41,7 +41,7 @@ const CommentIndexItem = ({ comment, removeComment, toggleEditComment,
       </div>
       <CommentDropdown
         authorId={comment.author_id}
-        removeComment={removeComment}
+        deleteComment={deleteComment}
         toggleEditComment={toggleEditComment}
         currentUserId={currentUserId}
         commentId={comment.id}

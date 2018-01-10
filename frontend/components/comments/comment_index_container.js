@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import {
   fetchComments,
-  removeComment
+  deleteComment
 } from '../../actions/comment_actions';
 import { toggleEditComment } from '../../actions/ui_actions';
 import CommentIndex from './comment_index';
@@ -22,7 +22,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchComments: postId => dispatch(fetchComments(postId)),
-    removeComment: commentId => dispatch(removeComment(commentId)),
+    deleteComment: commentId => dispatch(deleteComment(commentId)),
     toggleEditComment: commentId => dispatch(toggleEditComment(commentId))
   };
 };

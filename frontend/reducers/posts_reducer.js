@@ -3,12 +3,13 @@ import {
   RECEIVE_ALL_POSTS,
   REMOVE_POST
 } from '../actions/post_actions';
-import { RECEIVE_COMMENT } from '../actions/comment_actions';
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 import merge from 'lodash/merge';
 
 const postsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
+  let post;
   switch (action.type) {
     case RECEIVE_ALL_POSTS:
       return merge({}, action.posts);
@@ -20,9 +21,16 @@ const postsReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_COMMENT:
       newState = merge({}, state);
-      let post = newState[action.comment.post_id];
+      post = newState[action.comment.post_id];
       post.commentIds.push(action.comment.id);
       return merge(newState, { [post.id]: post });
+    case REMOVE_COMMENT:
+      newState = merge({}, state);
+      post = newState[action.postId];
+      post.commentIds = post.commentIds.filter((commentId) => {
+        return commentId !== action.commentId;
+      });
+      return newState;
     default:
       return state;
   }

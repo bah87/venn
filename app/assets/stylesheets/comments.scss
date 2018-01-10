@@ -90,6 +90,30 @@
   justify-content: flex-start;
 }
 
+.edit-delete-comment-container {
+  display: none;
+}
+
+.comment-item-delete-btn {
+  font-size: 8px;
+  color: rgb(29, 33, 41);
+  cursor: pointer;
+  background-color: #f6f7f9;;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.comment-item-delete-btn:hover {
+  background-color: #e1e1e1;
+}
+
+.comment-list-item:hover .edit-delete-comment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .comment-list-item:first-child {
   padding-top: 12px;
 }
