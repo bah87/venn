@@ -19,6 +19,7 @@
   border-radius: 50%;
   width: 32px;
   height: 32px;
+  margin-right: 8px;
 }
 
 .comment-input {
@@ -38,10 +39,26 @@
 }
 
 .comment-box {
+  width: 454px;
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   border-radius: 16px;
   border: 1px solid rgb(206, 208, 212);
+
+  i {
+    color: rgb(225, 226, 227);
+    font-size: 12px;
+    margin-right: 8px;
+  }
+
+  i:hover {
+    cursor: pointer;
+    color: rgb(29, 33, 41);
+  }
+
+  button {
+    display: none;
+  }
 }
