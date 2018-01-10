@@ -42,7 +42,7 @@ class PostIndex extends React.Component {
             post={ post }
           />
           <CommentFormContainer
-            type={ "create" }
+            type={ "new" }
             post={ post }
           />
         </div>

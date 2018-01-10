@@ -5,9 +5,9 @@ class CommentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: "",
+      body: this.props.comment.body,
       imageFile: null,
-      imageUrl: null
+      imageUrl: this.props.comment.image_url
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -52,6 +52,10 @@ class CommentForm extends React.Component {
     const file = this.state.imageFile;
     if (file) formData.append("comment[image]", file);
     formData.append("comment[post_id]", this.props.post.id);
+    if (this.props.type === "edit") {
+      formData.append("comment[id]", this.props.comment.id);
+      this.props.toggleEditComment();
+    }
 
     this.fileInput.value = "";
 

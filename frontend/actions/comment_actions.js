@@ -51,6 +51,6 @@ export const createComment = comment => dispatch => {
 
 export const updateComment = comment => dispatch => {
   return CommentApiUtil.updateComment(comment).then(response => {
-    dispatch(receiveComment(comment));
+    dispatch(receiveComment(response));
   });
 };

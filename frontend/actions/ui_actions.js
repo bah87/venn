@@ -3,9 +3,10 @@ export const TOGGLE_PROF_PIC_MODAL = 'TOGGLE_PROF_PIC_MODAL';
 export const TOGGLE_EDIT_POST_MODAL = 'TOGGLE_EDIT_POST_MODAL';
 export const TOGGLE_EDIT_COMMENT = 'TOGGLE_EDIT_COMMENT';
 
-export const toggleEditComment = () => {
+export const toggleEditComment = commentId => {
   return {
-    type: TOGGLE_EDIT_COMMENT
+    type: TOGGLE_EDIT_COMMENT,
+    commentId
   };
 };
 

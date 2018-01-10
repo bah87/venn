@@ -1,8 +1,5 @@
 import { connect } from 'react-redux';
-import {
-  fetchComments,
-  deleteComment
-} from '../../actions/comment_actions';
+import { deleteComment } from '../../actions/comment_actions';
 import { toggleEditComment } from '../../actions/ui_actions';
 import CommentIndex from './comment_index';
 
@@ -15,13 +12,14 @@ const mapStateToProps = (state, ownProps) => {
   });
   return {
     comments,
-    currentUserId: state.session.currentUser.id
+    currentUserId: state.session.currentUser.id,
+    post: ownProps.post,
+    editComment: state.ui.editComment
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchComments: postId => dispatch(fetchComments(postId)),
     deleteComment: commentId => dispatch(deleteComment(commentId)),
     toggleEditComment: commentId => dispatch(toggleEditComment(commentId))
   };
