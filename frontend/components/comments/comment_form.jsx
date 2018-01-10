@@ -41,7 +41,7 @@ class CommentForm extends React.Component {
   }
 
   cancelUpload() {
-    this.fileInput.value = "";
+    // this.fileInput.value = "";
     this.setState({ imageUrl: null, imageFile: null });
   }
 
@@ -54,7 +54,7 @@ class CommentForm extends React.Component {
     if (file) formData.append("comment[image]", file);
     formData.append("comment[post_id]", this.props.post.id);
 
-    this.fileInput.value = "";
+    // this.fileInput.value = "";
 
     this.props.action(formData).then(() => {
       this.setState({
