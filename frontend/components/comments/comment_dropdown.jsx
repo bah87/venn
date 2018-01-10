@@ -9,7 +9,7 @@ class CommentDropdown extends React.Component {
         <div className="edit-delete-comment-container">
           <div
             className="comment-item-delete-btn"
-            onClick={() => this.props.editComment(this.props.commentId)}>
+            onClick={() => this.props.toggleEditComment(this.props.commentId)}>
             Edit
           </div>
           <div
