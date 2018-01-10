@@ -27,11 +27,13 @@ const CommentIndexItem = ({ comment, deleteComment, toggleEditComment,
                   { comment.author_fname + " " + comment.author_lname }
                 </strong>
               </Link> { comment.body }
-              <PostImage
-                comment={true}
-                form={false}
-                imageUrl={comment.image_url}
-              />
+              <div>
+                <PostImage
+                  comment={true}
+                  form={false}
+                  imageUrl={comment.image_url}
+                />
+              </div>
             </div>
           </div>
         </div>
