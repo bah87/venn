@@ -11,10 +11,11 @@ export const receivePost = post => {
   };
 };
 
-export const receiveAllPosts = posts => {
+export const receiveAllPosts = ({ posts, comments }) => {
   return {
     type: RECEIVE_ALL_POSTS,
-    posts
+    posts,
+    comments
   };
 };
 
@@ -38,14 +39,14 @@ export const fetchPosts = () => dispatch => {
 };
 
 export const fetchProfile = id => dispatch => {
-  return PostApiUtil.fetchProfile(id).then(posts => {
-    dispatch(receiveAllPosts(posts));
+  return PostApiUtil.fetchProfile(id).then(payload => {
+    dispatch(receiveAllPosts(payload));
   });
 };
 
 export const fetchFeed = () => dispatch => {
-  return PostApiUtil.fetchFeed().then(posts => {
-    dispatch(receiveAllPosts(posts));
+  return PostApiUtil.fetchFeed().then(payload => {
+    dispatch(receiveAllPosts(payload));
   });
 };
 

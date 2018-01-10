@@ -27,9 +27,8 @@ class PostIndex extends React.Component {
       }
 
       return (
-        <div>
+        <div key={ post.id }>
           <PostIndexItem
-            key={ post.id }
             deletePost={ this.props.deletePost }
             updatePost={ this.props.updatePost }
             modal={ this.props.modal }
