@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexItem from './post_index_item';
+import CommentFormContainer from '../comments/comment_form_container';
 
 class PostIndex extends React.Component {
   componentDidMount() {
@@ -28,17 +29,24 @@ class PostIndex extends React.Component {
       }
 
       return (
-        <PostIndexItem
-          key={ post.id }
-          deletePost={ this.props.deletePost }
-          updatePost={ this.props.updatePost }
-          modal={ this.props.modal }
-          post={ post }
-          author={ user }
-          currentUser={ this.props.currentUser }
-          toggleEditPostModal={ this.props.toggleEditPostModal }
-          deletePostPhoto={ this.props.deletePostPhoto }
-        />
+        <div>
+          <PostIndexItem
+            key={ post.id }
+            deletePost={ this.props.deletePost }
+            updatePost={ this.props.updatePost }
+            modal={ this.props.modal }
+            post={ post }
+            author={ user }
+            currentUser={ this.props.currentUser }
+            toggleEditPostModal={ this.props.toggleEditPostModal }
+            deletePostPhoto={ this.props.deletePostPhoto }
+            />
+          <CommentFormContainer
+            key={ post.id }
+            type={ "create" }
+            post={ post }
+          />
+        </div>
       );
     });
 

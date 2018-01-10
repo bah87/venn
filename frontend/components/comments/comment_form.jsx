@@ -49,13 +49,14 @@ class CommentForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
+    let action;
     if (this.props.type === "create") {
-      let action = this.props.createPost;
+      action = this.props.createPost;
     } else {
-      let action = this.props.updatePost;
+      action = this.props.updatePost;
     }
 
-    this.props.action(this.state).then(() => {
+    action(this.state).then(() => {
       this.setState({
         body: "",
         imageFile: null,
@@ -67,6 +68,8 @@ class CommentForm extends React.Component {
   render() {
     return (
       <div className="comment-container">
+        <img src={ this.props.currentUser.profile_pic_url }
+          className="comment-img"></img>
         <div className="comment-box">
           <form className="comment-form" onSubmit={this.handleSubmit}>
             <input className="comment-input"
