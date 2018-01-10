@@ -12,8 +12,9 @@ class CommentIndex extends React.Component {
         <CommentIndexItem
           key={ comment.id }
           comment={ comment }
-          removeComment={ removeComment }
-          deleteComment={ deleteComment }
+          removeComment={ this.props.removeComment }
+          toggleEditComment={ this.props.toggleEditComment }
+          currentUserId={ this.props.currentUserId }
         />
       );
     });

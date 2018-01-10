@@ -4,7 +4,8 @@ import { DateFormat } from '../../util/date_util';
 import PostImage from '../posts/post_image';
 import CommentDropdown from './comment_dropdown';
 
-const CommentIndexItem = ({ comment, removeComment, toggleEditComment }) => {
+const CommentIndexItem = ({ comment, removeComment, toggleEditComment,
+  currentUserId }) => {
   let date = DateFormat(comment.updated_at);
 
   return (
