@@ -68,7 +68,7 @@ class CommentForm extends React.Component {
 
     let imgPreview = "cancel-upload-btn-hidden";
     if (this.state.imageFile) {
-      imgPreview = "cancel-upload-btn";
+      imgPreview = "comment-cancel-upload-btn";
     }
 
     if (this.props.currentUser) {
@@ -88,7 +88,9 @@ class CommentForm extends React.Component {
                 <button className="comment-btn-hidden"></button>
               </form>
               <div className={imgPreview}>
-                <PostImage form={true} imageUrl={this.state.imageUrl} />
+                <PostImage form={true}
+                  comment={true}
+                  imageUrl={this.state.imageUrl} />
                 <span>
                   <i
                     className="fa fa-times"

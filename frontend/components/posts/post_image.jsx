@@ -5,7 +5,7 @@ const PostImage = ({ imageUrl, form, comment }) => {
   if (comment && imageUrl && form) {
     return (
       <div className="comment-img-preview-container">
-        <img className="img-preview" src={imageUrl}/>
+        <img className="comment-img-preview" src={imageUrl}/>
       </div>
     );
   } else if (comment && imageUrl) {
