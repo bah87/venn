@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { DateFormat } from '../../util/date_util';
 import PostImage from '../posts/post_image';
 
-const CommentIndexItem = ({ comment }) => {
+const CommentIndexItem = ({ comment, removeComment, updateComment }) => {
   let date = DateFormat(comment.updated_at);
 
   return (

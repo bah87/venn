@@ -12,6 +12,8 @@ class CommentIndex extends React.Component {
         <CommentIndexItem
           key={ comment.id }
           comment={ comment }
+          removeComment={ removeComment }
+          deleteComment={ deleteComment }
         />
       );
     });
