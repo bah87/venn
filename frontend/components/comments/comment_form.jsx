@@ -37,7 +37,7 @@ class CommentForm extends React.Component {
   }
 
   cancelUpload() {
-    // this.fileInput.value = "";
+    this.fileInput.value = "";
     this.setState({ imageUrl: null, imageFile: null });
   }
 
@@ -50,7 +50,7 @@ class CommentForm extends React.Component {
     if (file) formData.append("comment[image]", file);
     formData.append("comment[post_id]", this.props.post.id);
 
-    // this.fileInput.value = "";
+    this.fileInput.value = "";
 
     this.props.action(formData).then(() => {
       this.setState({
@@ -76,7 +76,18 @@ class CommentForm extends React.Component {
               </input>
               <button className="comment-btn-hidden"></button>
             </form>
-            <i className="fa fa-camera" aria-hidden="true"></i>
+            <div className="comment-file-upload-container">
+              <label for="file-upload-comment" id="comment-form-upload-label">
+                <i className="fa fa-camera" aria-hidden="true"></i>
+              </label>
+
+              <input
+                id="file-upload-comment"
+                type="file"
+                ref={(element) => { this.fileInput = element; }}
+                onChange={this.updateFile}
+              />
+            </div>
           </div>
         </div>
       );

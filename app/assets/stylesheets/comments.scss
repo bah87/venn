@@ -15,12 +15,6 @@
   margin-bottom: 13px;
 }
 
-// .comment-img-container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: flex-start;
-// }
-
 .comment-img {
   border-radius: 50%;
   width: 32px;
@@ -68,6 +62,10 @@
   button {
     display: none;
   }
+}
+
+.comment-file-upload-container input[type="file"] {
+  display: none;
 }
 
 .comment-list {
