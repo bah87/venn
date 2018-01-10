@@ -9,17 +9,17 @@ class Api::PostsController < ApplicationController
     # posts_to_me = Post.find_by(recipient_id: current_user.id)
     #
     # @posts = my_posts_no_recipient + posts_to_me
-    @posts = User.find(params[:user_id]).posts
+    @posts = User.find(params[:user_id]).posts.includes(:comments)
     render :index
   end
 
   def show_feed
-    @posts = Post.all.includes(:author) # temporary until "friends" feature implemented
+    @posts = Post.all.includes(:author, :comments) # temporary until "friends" feature implemented
     render :index
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:id]).includes(:comments)
   end
 
   def new

@@ -40,10 +40,12 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :posts,
-  foreign_key: :author_id
+  foreign_key: :author_id,
+  dependent: :destroy
 
   has_many :comments,
-  foreign_key: :author_id
+  foreign_key: :author_id,
+  dependent: :destroy
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
