@@ -30,23 +30,19 @@ const CommentIndexItem = ({ comment, deleteComment, toggleEditComment,
         <div>
           <div className="comment-body-container">
             <div className="comment-body">
-              <div>
-                <Link
-                  to={`/profile/${comment.author_id}`} style={{ textDecoration: 'none'}}>
-                  <strong className="comment-name">
-                    { comment.author_fname + " " + comment.author_lname }
-                  </strong>
-                </Link> { comment.body }
-                <div>
-                  <PostImage
-                    comment={true}
-                    form={false}
-                    imageUrl={comment.image_url}
-                  />
-                </div>
-              </div>
+              <Link
+                to={`/profile/${comment.author_id}`} style={{ textDecoration: 'none'}}>
+                <strong className="comment-name">
+                  { comment.author_fname + " " + comment.author_lname }
+                </strong>
+              </Link> { comment.body }
             </div>
           </div>
+          <PostImage
+            comment={true}
+            form={false}
+            imageUrl={comment.image_url}
+          />
           <div id="comment-date" className="post-item-date">
             { date.slice(0,11) }
           </div>
