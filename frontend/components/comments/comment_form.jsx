@@ -5,7 +5,6 @@ class CommentForm extends React.Component {
     super(props);
     this.state = {
       body: "",
-      postId: this.props.post.id,
       imageFile: null,
       imageUrl: null
     };
@@ -49,14 +48,15 @@ class CommentForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    let action;
-    if (this.props.type === "create") {
-      action = this.props.createPost;
-    } else {
-      action = this.props.updatePost;
-    }
+    const formData = new FormData();
+    formData.append("comment[body]", this.state.body);
+    const file = this.state.imageFile;
+    if (file) formData.append("comment[image]", file);
+    formData.append("comment[post_id]", this.props.post.id);
 
-    action(this.state).then(() => {
+    this.fileInput.value = "";
+
+    this.props.action(formData).then(() => {
       this.setState({
         body: "",
         imageFile: null,

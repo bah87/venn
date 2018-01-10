@@ -12,10 +12,10 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const action = ownProps.type === "create" ? createComment : updateComment;
   return {
-    createComment: comment => dispatch(createComment(comment)),
-    updateComment: comment => dispatch(updateComment(comment)),
+    action: comment => dispatch(action(comment)),
     fetchComment: id => dispatch(fetchComment(id))
   };
 };

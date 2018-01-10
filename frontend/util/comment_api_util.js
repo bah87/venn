@@ -12,11 +12,14 @@ export const deleteComment = commentId => {
   });
 };
 
-export const createComment = comment => {
+export const createComment = formData => {
   return $.ajax({
     method: 'POST',
     url: '/api/comments',
-    data: { comment }
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
   });
 };
 
@@ -27,10 +30,13 @@ export const fetchComment = commentId => {
   });
 };
 
-export const updateComment = comment => {
+export const updateComment = formData => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/comments/${comment.id}`,
-    data: { comment }
+    url: `/api/comments/${formData.get("comment[id]")}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
   });
 };
