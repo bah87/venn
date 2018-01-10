@@ -15,10 +15,6 @@ class CommentForm extends React.Component {
     this.cancelUpload = this.cancelUpload.bind(this);
   }
 
-  componentDidMount() {
-
-  }
-
   update(event) {
     this.setState({ body: event.target.value });
   }
