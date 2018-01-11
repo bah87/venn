@@ -8,7 +8,7 @@ class NavBar extends React.Component {
       return (
         <div className="main-nav-bar">
           <div className="left-nav">
-            <Link to="/">
+            <Link to="/" style={{ display: 'flex' }}>
               <img
                 className="nav-logo"
                 src={window.staticImages.navLogo}
