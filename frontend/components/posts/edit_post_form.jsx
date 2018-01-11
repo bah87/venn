@@ -62,7 +62,6 @@ class EditPostForm extends React.Component {
 
   cancelUpload() {
     if (this.props.post.image_url) {
-      console.log("here")
       this.setState({ deleteReq: true });
     }
 

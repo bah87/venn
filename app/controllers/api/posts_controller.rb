@@ -37,8 +37,10 @@ class Api::PostsController < ApplicationController
   end
 
   def delete_post_photo
+    debugger
     @post = Post.find(params[:post_id])
     @post.image = nil
+    @post.save!
     render :show
   end
 
@@ -69,6 +71,7 @@ class Api::PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(
+      :id,
       :body,
       :recipient_id,
       :image
