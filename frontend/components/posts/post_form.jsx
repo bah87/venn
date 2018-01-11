@@ -30,7 +30,7 @@ class PostForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState({ modal: newProps.modal });
+    this.setState({ modal: newProps.modal, errorModal: newProps.errorModal });
     this.handlePlaceholderText();
   }
 
@@ -54,6 +54,7 @@ class PostForm extends React.Component {
     const reader = new FileReader();
     const file = event.currentTarget.files[0];
     reader.onloadend = () => {
+      document.getElementById("post-form-textarea").focus();
       this.setState({
         imageUrl: reader.result,
         imageFile: file,
@@ -87,38 +88,37 @@ class PostForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    if (this.state.body === "") {
-      this.props.togglePostFormErrorModal();
+    if (this.state.modal) {
+      const user = this.props.user;
+      const currentUser = this.props.currentUser;
+
+      const formData = new FormData();
+      formData.append("post[body]", this.state.body);
+
+      if (user) {
+        const id = user.id !== currentUser.id ? user.id: null;
+        formData.append("post[recipient_id]", id);
+      }
+
+      const file = this.state.imageFile;
+      if (file) formData.append("post[image]", file);
+
+      this.handlePlaceholderText();
+
+      this.fileInput.value = "";
+
+      this.props.createPost(formData).then(() => {
+        this.props.togglePostFormModal();
+      }).then(() => {
+        this.setState({
+          body: "",
+          imageUrl: "",
+          imageFile: null
+        });
+      });
     } else {
       this.props.togglePostFormModal();
-
-      if (this.state.modal) {
-        const user = this.props.user;
-        const currentUser = this.props.currentUser;
-
-        const formData = new FormData();
-        formData.append("post[body]", this.state.body);
-
-        if (user) {
-          const id = user.id !== currentUser.id ? user.id: null;
-          formData.append("post[recipient_id]", id);
-        }
-
-        const file = this.state.imageFile;
-        if (file) formData.append("post[image]", file);
-
-        this.handlePlaceholderText();
-
-        this.fileInput.value = "";
-
-        this.props.createPost(formData).then(() => {
-          this.setState({
-            body: "",
-            imageUrl: "",
-            imageFile: null
-          });
-        });
-      } else { document.getElementById("post-form-textarea").focus(); }
+      document.getElementById("post-form-textarea").focus();
     }
 
   }
