@@ -60,6 +60,10 @@
 
 .signup-form-container {
   width: 399px;
+
+  label {
+    position: relative;
+  }
 }
 
 .signup-form input {
@@ -138,6 +142,7 @@
 .gender-signup {
   display: flex;
   justify-content: flex-start;
+  position: relative;
 }
 
 .gender-signup div {
@@ -164,4 +169,62 @@
 .gender-signup p {
   padding-left: 3px;
   padding-right: 10px;
+}
+
+.errors {
+  background-color: #be4b49;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+  color: #fff;
+  font-size: 13px;
+}
+
+.email {
+  position: absolute;
+  // top: -324px;
+  // left: -150px;
+  padding: 13px;
+}
+
+.first-name {
+  position: absolute;
+  top: -324px;
+  left: -150px;
+  padding: 13px;
+}
+
+.last-name {
+  position: absolute;
+  top: -373px;
+  right: 20px;
+  padding: 13px;
+}
+
+.password {
+  position: absolute;
+  // top: -324px;
+  // left: -150px;
+  padding: 13px;
+}
+
+.birthday {
+  position: absolute;
+  // top: -324px;
+  // left: -150px;
+  padding: 13px;
+}
+
+.gender {
+  position: absolute;
+  top: -100px;
+  left: -430px;
+  padding: 13px;
+}
+
+.no-errors {
+  display: none;
+}
+
+.error-container {
+  position: relative;
 }

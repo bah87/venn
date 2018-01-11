@@ -28,18 +28,57 @@ class NewUserForm extends React.Component {
 
   handleSubmit(event) {
     const date = this.dateInput.state;
+    let birthday;
+    if (date.year < 1905) {
+      birthday = null;
+    } else {
+      birthday = new Date(date.year, date.month, date.day);
+    }
     event.preventDefault();
     this.setState(
-      { birthday: new Date(
-        date.year,
-        date.month,
-        date.day
-      ) },
+      { birthday },
       () => this.props.signup(this.state)
     );
   }
 
   render() {
+    let emailClass = "no-errors"; let emailMsg = "";
+    let firstClass = "no-errors"; let firstMsg = "";
+    let lastClass = "no-errors"; let lastMsg = "";
+    let passwordClass = "no-errors"; let passwordMsg = "";
+    let birthdayClass = "no-errors"; let birthdayMsg = "";
+    let genderClass = "no-errors"; let genderMsg = "";
+    this.props.errors.forEach(error => {
+      let err = error.split(" ");
+      switch (err[0]) {
+        case "Email":
+          emailClass = "email errors";
+          emailMsg = err.slice(1).join(" ");
+          break;
+        case "First":
+          firstClass = "first-name errors";
+          firstMsg = err.slice(2).join(" ");
+          break;
+        case "Last":
+          lastClass = "last-name errors";
+          lastMsg = err.slice(2).join(" ");
+          break;
+        case "Password":
+          passwordClass = "password errors";
+          passwordMsg = err.slice(1).join(" ");
+          break;
+        case "Birthday":
+          birthdayClass = "birthday errors";
+          birthdayMsg = err.slice(1).join(" ");
+          break;
+        case "Gender":
+          genderClass = "gender errors";
+          genderMsg = err.slice(1).join(" ");
+          break;
+        default:
+
+      }
+    });
     return (
       <main className="landing-page-main">
         <div className="signup-container">
@@ -134,6 +173,27 @@ class NewUserForm extends React.Component {
                 type="submit"
                 value="Create Account">
               </input>
+
+              <div className="error-container">
+                <div className={firstClass}>
+                  { firstMsg }
+                </div>
+                <div className={lastClass}>
+                  { lastMsg }
+                </div>
+                <div className={emailClass}>
+                  { emailMsg }
+                </div>
+                <div className={passwordClass}>
+                  { passwordMsg }
+                </div>
+                <div className={birthdayClass}>
+                  { birthdayMsg }
+                </div>
+                <div className={genderClass}>
+                  { genderMsg }
+                </div>
+              </div>
             </form>
           </div>
         </div>
