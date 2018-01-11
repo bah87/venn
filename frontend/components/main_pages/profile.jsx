@@ -13,6 +13,7 @@ class Profile extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.userId !== this.props.match.params.userId) {
+      window.scrollTo(0, 0);
       this.props.fetchUser(newProps.match.params.userId);
     }
   }

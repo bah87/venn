@@ -4,6 +4,22 @@
   margin-top: 13px;
 }
 
+.wall-post-hidden {
+  display: none;
+}
+
+.wall-post {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  i {
+    margin: 0 5px;
+    color: rgb(144, 148, 156);
+  }
+}
+
 .post-profile-pic {
   width: 38px;
   height: 38px;

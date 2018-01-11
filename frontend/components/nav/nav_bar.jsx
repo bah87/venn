@@ -5,7 +5,7 @@ class NavBar extends React.Component {
   render() {
     const currentUser = this.props.currentUser;
     const navClass = window.location.href.includes("profile") ? "profile" : "feed";
-    if (currentUser) {
+    // if (currentUser) {
       return (
         <div className="main-nav-bar">
           <div className="left-nav">
@@ -56,12 +56,15 @@ class NavBar extends React.Component {
 
         </div>
       );
-    } else {
-      return (
-        <div></div>
-      );
-    }
   }
 }
 
 export default NavBar;
+
+
+// } 
+// else {
+//   return (
+//     <div></div>
+//   );
+// }

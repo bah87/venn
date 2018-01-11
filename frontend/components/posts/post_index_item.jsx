@@ -6,33 +6,45 @@ import EditPostForm from './edit_post_form';
 import { postDateFormat } from '../../util/date_util';
 
 const PostIndexItem = ({ toggleEditPostModal, currentUser,
-  author, post, modal, deletePost, updatePost, deletePostPhoto }) => {
+  user, post, modal, deletePost, updatePost, deletePostPhoto }) => {
   let date = postDateFormat(post.updated_at);
 
-  if (author) {
+  let wallPostClass = "wall-post-hidden";
+  if (post.recipient_id) {
+    wallPostClass = "wall-post"
+  }
+
+  if (user) {
     return (
       <li className="post-item">
 
         <header className="post-item-header">
-          <Link to={`/profile/${author.id}`}>
+          <Link to={`/profile/${post.author_id}`}>
             <img className="post-item-profile-pic"
-              src={author.profile_pic_url}
+              src={post.author_img}
               />
           </Link>
 
           <div className="post-item-header-right">
             <div className="post-item-name-and-options">
               <Link
-                to={`/profile/${author.id}`} style={{ textDecoration: 'none'}}>
+                to={`/profile/${post.author_id}`} style={{ textDecoration: 'none'}}>
                 <p className="post-item-name">
-                  {`${author.first_name} ${author.last_name}`}
+                  {post.author_name}
                 </p>
               </Link>
+
+              <div className={wallPostClass}>
+                <i className="fa fa-caret-right" aria-hidden="true"></i>
+                <p className="post-item-name">
+                  {`${user.first_name} ${user.last_name}`}
+                </p>
+              </div>
 
               <PostDropdown
                 postId={ post.id }
                 currentUser={ currentUser }
-                author={ author }
+                user={ user }
                 toggleEditPostModal={ toggleEditPostModal }
                 deletePost={ deletePost }
               />
@@ -42,7 +54,7 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser,
                 toggleModal={ toggleEditPostModal }
                 updatePost={ updatePost }
                 deletePostPhoto={ deletePostPhoto }
-                currentUser={ author }
+                currentUser={ user }
               />
             </div>
 

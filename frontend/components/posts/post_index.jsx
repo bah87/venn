@@ -35,7 +35,7 @@ class PostIndex extends React.Component {
             updatePost={ this.props.updatePost }
             modal={ this.props.modal }
             post={ post }
-            author={ user }
+            user={ user }
             currentUser={ this.props.currentUser }
             toggleEditPostModal={ this.props.toggleEditPostModal }
             deletePostPhoto={ this.props.deletePostPhoto }
