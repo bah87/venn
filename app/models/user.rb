@@ -25,11 +25,18 @@
 class User < ApplicationRecord
   attr_reader :password
 
-  validates :email, :session_token, :password_digest,
-    :first_name, :last_name, :birthday, :gender, presence: true
-  validates :gender, inclusion: { in: ["M", "F"] }
+  validates :session_token, :password_digest, presence: true
   validates :email, :session_token, uniqueness: true
-  validates :password, length: { minimum: 6, allow_nil: true }
+  validates :email, presence: { message: ["You'll use this when you log in and if you ever need to reset your password."] }
+  validates :first_name, presence: { message: ["What's your name?"] }
+  validates :last_name, presence: { message: ["What's your name?"] }
+  validates :gender, presence: { message: ["Please choose a gender. You can change who can see this later."] }
+  validates :birthday, presence: { message: ["Select a birthday. You can change who can see this later."] }
+  validates :password, length: {
+    minimum: 6,
+    allow_nil: true,
+    message: ["Enter a combination of at least 6 numbers, letters, and punctuation marks (like ! and &)."]
+  }
 
   has_attached_file :image, default_url: "missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

@@ -6,6 +6,7 @@ class Api::UsersController < ApplicationController
       login(@user)
       render "api/users/show"
     else
+      debugger
       render json: @user.errors.full_messages, status: 422
     end
   end
@@ -21,7 +22,7 @@ class Api::UsersController < ApplicationController
     if @user.save!
       render :show
     else
-      render json: @user.errors.full_messages
+      render json: @user.errors.messages
     end
   end
 
