@@ -4,8 +4,14 @@
   margin: 13px;
 }
 
+.newsfeed-parent {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
 .newsfeed-sidebar {
-  width: 184px;
+  max-width: 184px;
   margin: 0 13px 0 17px;
 }
 

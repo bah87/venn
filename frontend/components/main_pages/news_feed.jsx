@@ -12,25 +12,26 @@ class NewsFeed extends React.Component {
   render() {
     const currentUser = this.props.currentUser;
     return (
-      <div className="newsfeed-main">
-        <div className="newsfeed-sidebar">
-          <ul>
-            <li>
-              <Link
-                to={`/profile/${currentUser.id}`}
-                style={{ textDecoration: 'none'}}>
-                <div className="newsfeed-li-name">
-                  <img className="newsfeed-sidebar-profile-pic"
-                    src={currentUser.profile_pic_url}
-                    />
-                  <p>
-                    {`${currentUser.first_name} ${currentUser.last_name}`}
-                  </p>
-                </div>
-              </Link>
-            </li>
-          </ul>
-        </div>
+      <div className="newsfeed-parent">
+        <div className="newsfeed-main">
+          <div className="newsfeed-sidebar">
+            <ul>
+              <li>
+                <Link
+                  to={`/profile/${currentUser.id}`}
+                  style={{ textDecoration: 'none'}}>
+                  <div className="newsfeed-li-name">
+                    <img className="newsfeed-sidebar-profile-pic"
+                      src={currentUser.profile_pic_url}
+                      />
+                    <p>
+                      {`${currentUser.first_name} ${currentUser.last_name}`}
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            </ul>
+          </div>
 
         <div className="newsfeed-post-index">
           <PostFormContainer
@@ -41,9 +42,9 @@ class NewsFeed extends React.Component {
           <PostIndexContainer page={"feed"} friends={this.props.friends} />
         </div>
 
-        <div className="newsfeed-trending">
-        </div>
+        
       </div>
+    </div>
     );
   }
 }

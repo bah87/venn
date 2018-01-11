@@ -4,6 +4,15 @@
   margin-top: 13px;
 }
 
+.profile-name {
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  position: absolute;
+  top: 280px;
+  left: 215px;
+}
+
 .profile-aside {
   width: 321px;
   margin-top: 13px;
@@ -46,6 +55,7 @@
 
 .profile-cover {
   width: 851px;
+  position: relative;
 }
 
 .profile-cover-photo {

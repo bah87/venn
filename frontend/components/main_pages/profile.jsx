@@ -40,6 +40,13 @@ class Profile extends React.Component {
       );
     }
 
+    let firstName = "";
+    let lastName = "";
+    if (this.props.user) {
+      firstName = this.props.user.first_name;
+      lastName = this.props.user.last_name;
+    }
+
     return (
       <div className="profile-main">
         <header className="profile-cover">
@@ -55,6 +62,9 @@ class Profile extends React.Component {
             toggleProfPicModal={ this.props.toggleProfPicModal }
             modal={this.props.modal}
           />
+          <div className="profile-name">
+            { `${firstName} ${lastName}` }
+          </div>
         </header>
 
         <main className="profile-body">
