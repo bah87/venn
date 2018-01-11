@@ -12,16 +12,8 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
 
   let wallPostClass = "wall-post-hidden";
   if (post.recipient_id  && page !== "feed") {
-    wallPostClass = "wall-post"
+    wallPostClass = "wall-post";
   }
-
-  // <NameHover
-  //   user={{
-  //     "name": post.author_name,
-  //     "coverImg": post.author_cover_img,
-  //     "profImg": post.author_img
-  //   }}
-  // />
 
   if (user) {
     return (
@@ -40,9 +32,13 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
                 to={`/profile/${post.author_id}`} style={{ textDecoration: 'none'}}>
                 <div className="post-item-name">
                   {post.author_name}
-                  <div className="hover-test">
-                    "HOVER"
-                  </div>
+                  <NameHover
+                    post={{
+                      "name": post.author_name,
+                      "coverImg": post.author_cover_img,
+                      "profImg": post.author_img
+                    }}
+                  />
                 </div>
               </Link>
 

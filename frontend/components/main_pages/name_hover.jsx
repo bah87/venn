@@ -1,19 +1,13 @@
 import React from 'react';
 
-const NameHover = ({ user }) => {
+const NameHover = ({ post }) => {
   return (
-    <div className="name-hover-container">
-      <img className="name-hover-cover" src={user.coverImg}></img>
-      <div className="name-hover-nav">
-        <div>
-          {user.name}
-        </div>
-        <div className="name-hover-pic-container">
-          <img className="name-hover-prof-pic" src={user.profImg}></img>
-        </div>
-      </div>
+    <div className="hover-container">
+      <img className="hover-cover-img" src={post.coverImg}></img>
+      <img className="hover-prof-img" src={post.profImg}></img>
+      <div className="hover-name">{post.name}</div>
     </div>
   );
-}
+};
 
 export default NameHover;

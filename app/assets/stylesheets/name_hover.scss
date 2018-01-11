@@ -1,62 +1,47 @@
-.name-hover-container {
-  // display: none;
-}
-
-.hover-test {
+.hover-container {
   display: none;
 }
 
-.post-item-name:hover .hover-test {
-  display: block;
-  width: 375px;
-  height: 200px;
-  background-color: black;
-  position: absolute;
-  top: 0;
-  left: 0;
+.hover-name {
   color: white;
+  font-size: 10px;
+  font-weight: 700;
+  position: absolute;
+  top: 90px;
+  left: 80px;
+  width: 70px;
 }
 
-.post-item-name:hover .name-hover-container {
-  z-index: 2;
-  width: 375px;
-  height: 200px;
+.post-item-name:hover .hover-container {
+  display: block;
+  width: 180px;
+  height: 150px;
+  background-color: white;
+  position: absolute;
+  top: -160px;
+  left: -25px;
+  color: white;
   border-radius: 3px;
-  position: absolute;
-  top:auto;
-  left:auto;
-  box-sizing: border-box;
-}
-
-.name-hover-nav {
-  width: 375px;
-  height: 60px;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
-  position: relative;
-}
-
-.name-hover-cover {
-  width: 375px;
-  height: 60px;
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
-}
-
-.name-hover-prof-pic {
-  box-sizing: border-box;
-  width: 100px;
-  height: 100px;
-  border: 2px solid white;
-  border-radius: 2px;
-}
-
-.name-hover-pic-container {
-  width: 100px;
-  height: 100px;
+  box-sizing: content-box;
   border: 1px solid rgb(221, 223, 226);
+  &:before {
+    background: linear-gradient(to top, rgba(0,0,0,.7), rgba(0,0,0,.3) -88%, transparent);
+  }
+}
+
+.hover-cover-img {
+  width: 180px;
+  height: 120px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.hover-prof-img {
+  width: 60px;
+  height: 60px;
   position: absolute;
-  top:auto;
-  left:auto;
-  border-radius: 2px;
+  top: 78px;
+  left: 10px;
+  border: 1px solid rgb(221, 223, 226);
+  border-radius: 3px;
 }
