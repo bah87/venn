@@ -86,35 +86,41 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.togglePostFormModal();
 
-    if (this.state.modal) {
-      const user = this.props.user;
-      const currentUser = this.props.currentUser;
+    if (this.state.body === "") {
+      this.props.togglePostFormErrorModal();
+    } else {
+      this.props.togglePostFormModal();
 
-      const formData = new FormData();
-      formData.append("post[body]", this.state.body);
+      if (this.state.modal) {
+        const user = this.props.user;
+        const currentUser = this.props.currentUser;
 
-      if (user) {
-        const id = user.id !== currentUser.id ? user.id: null;
-        formData.append("post[recipient_id]", id);
-      }
+        const formData = new FormData();
+        formData.append("post[body]", this.state.body);
 
-      const file = this.state.imageFile;
-      if (file) formData.append("post[image]", file);
+        if (user) {
+          const id = user.id !== currentUser.id ? user.id: null;
+          formData.append("post[recipient_id]", id);
+        }
 
-      this.handlePlaceholderText();
+        const file = this.state.imageFile;
+        if (file) formData.append("post[image]", file);
 
-      this.fileInput.value = "";
+        this.handlePlaceholderText();
 
-      this.props.createPost(formData).then(() => {
-        this.setState({
-          body: "",
-          imageUrl: "",
-          imageFile: null
+        this.fileInput.value = "";
+
+        this.props.createPost(formData).then(() => {
+          this.setState({
+            body: "",
+            imageUrl: "",
+            imageFile: null
+          });
         });
-      });
-    } else { document.getElementById("post-form-textarea").focus(); }
+      } else { document.getElementById("post-form-textarea").focus(); }
+    }
+
   }
 
   render() {
@@ -163,7 +169,11 @@ class PostForm extends React.Component {
               Please write something in the body of the post.
             </div>
             <div className="post-form-error-footer">
-              <button className="save-cover-upload">Close</button>
+              <button
+                className="save-cover-upload"
+                onClick={() => this.props.togglePostFormErrorModal()}>
+                Close
+              </button>
             </div>
           </div>
         </div>
