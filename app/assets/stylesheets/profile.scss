@@ -23,6 +23,18 @@
   left: 215px;
 }
 
+.profile-name-container {
+  position: absolute;
+  top: 280px;
+  left: 215px;
+  background-color: black;
+  opacity: .3;
+  color: transparent;
+  font-size: 24px;
+  font-weight: 500;
+  box-shadow: 0px 0px 20px 8px black;
+}
+
 .profile-aside {
   width: 321px;
   margin-top: 13px;
