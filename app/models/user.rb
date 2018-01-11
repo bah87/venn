@@ -26,7 +26,8 @@ class User < ApplicationRecord
   attr_reader :password
 
   validates :session_token, :password_digest, presence: true
-  validates :email, :session_token, uniqueness: true
+  validates :session_token, uniqueness: true
+  validates :email, uniqueness: { message: ["This email is already assigned to an account. Please log in with this email or provide a new one."] }
   validates :email, presence: { message: ["You'll use this when you log in and if you ever need to reset your password."] }
   validates :first_name, presence: { message: ["What's your name?"] }
   validates :last_name, presence: { message: ["What's your name?"] }

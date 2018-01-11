@@ -32,9 +32,19 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let errorClass = "no-errors"; 
+    if (this.props.errors.length > 0) {
+      errorClass = "session errors";
+    }
     return (
       <div className="login-header">
         <h1>venn</h1>
+
+        <div className="session-error-container">
+          <div className={errorClass}>
+            Invalid username or password
+          </div>
+        </div>
 
         <div className="both-login-forms">
           <form className="login-form" onSubmit={this.handleSubmit}>

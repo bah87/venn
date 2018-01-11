@@ -73,3 +73,15 @@
 .login-btns:hover {
   background-color: #3b5998;
 }
+
+.session-error-container {
+  position: relative;
+}
+
+.session {
+  position: absolute;
+  padding: 13px;
+  left: 10px;
+  width: 200px;
+  top: -12px;
+}

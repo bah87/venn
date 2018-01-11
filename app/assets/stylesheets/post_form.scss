@@ -227,3 +227,50 @@
 .cancel-upload-btn-hidden {
   display: none;
 }
+
+.post-form-modal-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: .5;
+}
+
+.post-form-error-hidden {
+  display: none;
+}
+
+.post-form-error-container {
+  width: ;
+  height: ;
+  border: ;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+}
+
+.post-form-error-header {
+  padding: ;
+  border-bottom: ;
+  font-size: ;
+  font-weight: ;
+  color: ;
+  background-color: ;
+}
+
+.post-form-error-body {
+  padding: ;
+  border-bottom: ;
+  font-size: ;
+  font-weight: ;
+  color: ;
+  background-color: ;
+}
+
+.post-form-error-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
