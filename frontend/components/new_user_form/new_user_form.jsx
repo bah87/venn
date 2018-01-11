@@ -111,6 +111,7 @@ class NewUserForm extends React.Component {
               <div className="first-and-last-name">
                 <label>
                   <input
+                    id={`${firstClass.split(" ")[1]}-border`}
                     type="text"
                     placeholder="First name"
                     value={this.state.first_name}
@@ -120,6 +121,7 @@ class NewUserForm extends React.Component {
 
                 <label>
                   <input
+                    id={`${lastClass.split(" ")[1]}-border`}
                     type="text"
                     placeholder="Last name"
                     value={this.state.last_name}
@@ -130,6 +132,7 @@ class NewUserForm extends React.Component {
 
               <label>
                 <input
+                  id={`${emailClass.split(" ")[1]}-border`}
                   type="text"
                   placeholder="Email"
                   value={this.state.email}
@@ -139,6 +142,7 @@ class NewUserForm extends React.Component {
 
               <label>
                 <input
+                  id={`${passwordClass.split(" ")[1]}-border`}
                   type="password"
                   placeholder="New password"
                   value={this.state.password}
@@ -146,11 +150,15 @@ class NewUserForm extends React.Component {
                 />
               </label>
 
-              <BirthdayDropdown ref={(date) => { this.dateInput = date; }}/>
+              <BirthdayDropdown
+                ref={(date) => { this.dateInput = date; }}
+                errorsClass={`${birthdayClass.split(" ")[1]}-border`}
+              />
 
               <div className="gender-signup">
                 <div className="female">
                   <input
+                    id={`${genderClass.split(" ")[1]}-border`}
                     type="radio"
                     value={this.state.gender}
                     name="gender"
@@ -160,6 +168,7 @@ class NewUserForm extends React.Component {
 
                 <div className="male">
                   <input
+                    id={`${genderClass.split(" ")[1]}-border`}
                     type="radio"
                     value={this.state.gender}
                     name="gender"

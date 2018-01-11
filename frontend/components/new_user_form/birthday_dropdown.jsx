@@ -51,9 +51,18 @@ class BirthdayDropdown extends React.Component {
     return (
       <div className="birthday-signup">
         <p>Birthday</p>
-        <select onChange={this.update("month")}>{ months }</select>
-        <select onChange={this.update("day")}>{ days }</select>
-        <select onChange={this.update("year")}>{ years }</select>
+        <select
+          id={this.props.errorsClass}
+          onChange={this.update("month")}>{ months }
+        </select>
+        <select
+          id={this.props.errorsClass}
+          onChange={this.update("day")}>{ days }
+          </select>
+        <select
+          id={this.props.errorsClass}
+          onChange={this.update("year")}>{ years }
+        </select>
       </div>
     );
   }

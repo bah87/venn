@@ -179,10 +179,15 @@
   font-size: 13px;
 }
 
+#errors-border {
+  border: 1px solid #be4b49;
+}
+
 .email {
   position: absolute;
-  // top: -324px;
-  // left: -150px;
+  top: -270px;
+  left: -232px;
+  width: 200px;
   padding: 13px;
 }
 
@@ -202,15 +207,16 @@
 
 .password {
   position: absolute;
-  // top: -324px;
-  // left: -150px;
+  width: 220px;
+  top: -178px;
+  right: -30px;
   padding: 13px;
 }
 
 .birthday {
   position: absolute;
-  // top: -324px;
-  // left: -150px;
+  top: -185px;
+  left: -390px;
   padding: 13px;
 }
 
