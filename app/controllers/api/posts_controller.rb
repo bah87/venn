@@ -2,14 +2,15 @@ class Api::PostsController < ApplicationController
   before_action :require_logged_in
 
   def show_profile
-    # my_posts_no_recipient = User.find(params[:user_id]).posts.reject do |post|
-    #   !post.recipient_id.nil
-    # end
-    #
-    # posts_to_me = Post.find_by(recipient_id: current_user.id)
-    #
-    # @posts = my_posts_no_recipient + posts_to_me
-    @posts = User.find(params[:user_id]).posts.includes(:comments)
+    # @posts = Post.includes(:comments).select {
+    #   |p| p.recipient_id == params[:user_id] ||
+    #   (p.author_id == params[:user_id] &&
+    #     (p.recipient_id.nil? || p.recipient_id == 0))
+    # }
+
+    # @posts = User.find(params[:user_id]).posts.includes(:comments)
+
+    @posts = User.find(params[:user_id]).profile_items
     render :index
   end
 
@@ -19,7 +20,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id]).includes(:comments)
+    @post = Post.find(params[:id])#.includes(:comments)
   end
 
   def new

@@ -63,9 +63,6 @@ class Profile extends React.Component {
               toggleProfPicModal={ this.props.toggleProfPicModal }
               modal={this.props.modal}
             />
-            <div className="profile-name-container">
-              { `${firstName} ${lastName}` }
-            </div>
             <div className="profile-name">
               { `${firstName} ${lastName}` }
             </div>

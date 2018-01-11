@@ -55,6 +55,18 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   dependent: :destroy
 
+  def received_posts
+    Post.includes(:comments).where(recipient_id: id)
+  end
+
+  def statuses
+    Post.includes(:comments).where(author_id: id, recipient_id: [0, nil])
+  end
+
+  def profile_items
+    statuses + received_posts
+  end
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user

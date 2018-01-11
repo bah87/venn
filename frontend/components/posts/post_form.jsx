@@ -96,7 +96,7 @@ class PostForm extends React.Component {
       formData.append("post[body]", this.state.body);
 
       if (user) {
-        const id = user.id !== currentUser.id ? user.id: null;
+        const id = user.id !== currentUser.id ? user.id : null;
         formData.append("post[recipient_id]", id);
       }
 
