@@ -1,5 +1,4 @@
 import * as PostApiUtil from '../util/post_api_util';
-import { togglePostFormErrorModal } from './ui_actions'
 
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
@@ -63,6 +62,8 @@ export const createPost = post => dispatch => {
 export const updatePost = post => dispatch => {
   return PostApiUtil.updatePost(post).then(newPost => {
     dispatch(receivePost(newPost));
+  }).fail(err => {
+    document.getElementById("post-form-textarea").focus();
   });
 };
 
