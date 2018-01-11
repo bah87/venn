@@ -18,6 +18,7 @@ class PostForm extends React.Component {
       imageFile: null,
       imageUrl: null,
       modal: this.props.modal,
+      errorModal: this.props.errorModal,
       placeholderText: placeholderText
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -119,6 +120,7 @@ class PostForm extends React.Component {
   render() {
 
     let modalFormClass = "";
+    let modalFormErrorClass = "post-form-error-hidden";
     let modalScreenClass = "";
     let modalHiddenForm = "";
     let modalCloseBtn = "post-form-close-btn-hidden";
@@ -133,6 +135,9 @@ class PostForm extends React.Component {
       modalImgPreview = "cancel-upload-btn";
       modalHiddenForm = "post-form-modal-hidden-picture";
     }
+    if (this.state.errorModal) {
+      modalFormErrorClass = "post-form-error-show";
+    }
 
     let profPicUrl = "";
     if (this.props.currentUser) {
@@ -144,6 +149,23 @@ class PostForm extends React.Component {
         <div
           className={modalScreenClass}
           onClick={() => this.props.togglePostFormModal()}>
+        </div>
+
+        <div className={modalFormErrorClass}>
+          <div className="post-form-error-modal-screen">
+          </div>
+          <div className="post-form-error-container">
+            <div className="post-form-error-header">
+              Post Is Empty
+            </div>
+            <div className="post-form-error-body">
+              This post appears to be blank.
+              Please write something in the body of the post.
+            </div>
+            <div className="post-form-error-footer">
+              <button className="save-cover-upload">Close</button>
+            </div>
+          </div>
         </div>
 
         <div className={modalFormClass}>
