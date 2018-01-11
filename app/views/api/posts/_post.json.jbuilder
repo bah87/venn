@@ -5,7 +5,7 @@ json.author_img author.image.url
 json.author_cover_img author.cover_photo.url
 json.image_url asset_path(post.image.url)
 
-if post.recipient_id
+if !post.recipient_id.nil? && post.recipient_id > 0
   recipient = User.find(post.recipient_id)
   json.recipient_img recipient.image.url
   json.recipient_cover_img recipient.cover_photo.url
