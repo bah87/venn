@@ -1,0 +1,47 @@
+.name-hover-container {
+  display: none;
+}
+
+.post-item-name:hover .name-hover-container {
+  z-index: 2;
+  width: 375px;
+  height: 200px;
+  border-radius: 3px;
+  position: absolute;
+  top:auto;
+  left:auto;
+  box-sizing: border-box;
+}
+
+.name-hover-nav {
+  width: 375px;
+  height: 60px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  position: relative;
+}
+
+.name-hover-cover {
+  width: 375px;
+  height: 60px;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+}
+
+.name-hover-prof-pic {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+  border-radius: 2px;
+}
+
+.name-hover-pic-container {
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(221, 223, 226);
+  position: absolute;
+  top:auto;
+  left:auto;
+  border-radius: 2px;
+}

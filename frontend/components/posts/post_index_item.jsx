@@ -4,6 +4,7 @@ import PostImage from './post_image';
 import PostDropdown from './post_dropdown';
 import EditPostForm from './edit_post_form';
 import { postDateFormat } from '../../util/date_util';
+import NameHover from './name_hover';
 
 const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
   user, post, modal, deletePost, updatePost, deletePostPhoto }) => {
@@ -31,6 +32,13 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
                 to={`/profile/${post.author_id}`} style={{ textDecoration: 'none'}}>
                 <p className="post-item-name">
                   {post.author_name}
+                  <NameHover
+                    user={{
+                      "name": post.author_name,
+                      "coverImg": post.author_cover_img,
+                      "profImg": post.author_img
+                    }}
+                  />
                 </p>
               </Link>
 
