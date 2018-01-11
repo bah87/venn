@@ -37,7 +37,6 @@ class Api::PostsController < ApplicationController
   end
 
   def delete_post_photo
-    debugger
     @post = Post.find(params[:post_id])
     @post.image = nil
     @post.save!

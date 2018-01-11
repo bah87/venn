@@ -39,7 +39,6 @@ export const createPost = formData => {
 };
 
 export const updatePost = formData => {
-  debugger
   return $.ajax({
     method: 'PATCH',
     url: `/api/posts/${formData.get("post[id]")}`,
