@@ -32,8 +32,8 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    let errorClass = "no-errors"; 
-    if (this.props.errors.length > 0) {
+    let errorClass = "no-errors";
+    if (this.props.errors.includes("Invalid username/password combination")) {
       errorClass = "session errors";
     }
     return (
