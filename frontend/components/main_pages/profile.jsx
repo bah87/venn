@@ -48,51 +48,51 @@ class Profile extends React.Component {
     }
 
     return (
-      <div className="profile-main">
-        <header className="profile-cover">
-          <CoverPhoto
-            currentUser={ this.props.currentUser }
-            user={ this.props.user }
-            saveUserPhoto={ this.props.saveUserPhoto }
-          />
-          <ProfilePicture
-            currentUser={ this.props.currentUser }
-            user={ this.props.user }
-            saveUserPhoto={ this.props.saveUserPhoto }
-            toggleProfPicModal={ this.props.toggleProfPicModal }
-            modal={this.props.modal}
-          />
-          <div className="profile-name">
-            { `${firstName} ${lastName}` }
-          </div>
-        </header>
-
-        <main className="profile-body">
-          <aside className="profile-aside">
-            <div className="profile-intro">
-            </div>
-
-            <div className="profile-photos">
-            </div>
-
-            <div className="profile-friends">
-            </div>
-          </aside>
-
-          <div className="profile-post-index">
-            { postForm }
-            <PostIndexContainer
-              page={"profile"}
+      <div className="profile-container-box">
+        <div className="profile-main">
+          <header className="profile-cover">
+            <CoverPhoto
+              currentUser={ this.props.currentUser }
               user={ this.props.user }
-              id={ this.props.match.params.userId }
-              />
-          </div>
-        </main>
+              saveUserPhoto={ this.props.saveUserPhoto }
+            />
+            <ProfilePicture
+              currentUser={ this.props.currentUser }
+              user={ this.props.user }
+              saveUserPhoto={ this.props.saveUserPhoto }
+              toggleProfPicModal={ this.props.toggleProfPicModal }
+              modal={this.props.modal}
+            />
+            <div className="profile-name">
+              { `${firstName} ${lastName}` }
+            </div>
+          </header>
+
+          <main className="profile-body">
+            <aside className="profile-aside">
+              <div className="profile-intro">
+              </div>
+
+              <div className="profile-photos">
+              </div>
+
+              <div className="profile-friends">
+              </div>
+            </aside>
+
+            <div className="profile-post-index">
+              { postForm }
+              <PostIndexContainer
+                page={"profile"}
+                user={ this.props.user }
+                id={ this.props.match.params.userId }
+                />
+            </div>
+
+          </main>
+        </div>
+        <div className="messenger-and-games"></div>
       </div>
-
-
-
-
     );
   }
 }
