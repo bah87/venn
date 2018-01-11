@@ -2,14 +2,6 @@ class Api::PostsController < ApplicationController
   before_action :require_logged_in
 
   def show_profile
-    # @posts = Post.includes(:comments).select {
-    #   |p| p.recipient_id == params[:user_id] ||
-    #   (p.author_id == params[:user_id] &&
-    #     (p.recipient_id.nil? || p.recipient_id == 0))
-    # }
-
-    # @posts = User.find(params[:user_id]).posts.includes(:comments)
-
     @posts = User.find(params[:user_id]).profile_items
     render :index
   end
