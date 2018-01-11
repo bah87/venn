@@ -41,9 +41,8 @@ class NewsFeed extends React.Component {
             />
           <PostIndexContainer page={"feed"} friends={this.props.friends} />
         </div>
-
-        
       </div>
+      <div className="messenger-and-games"></div>
     </div>
     );
   }

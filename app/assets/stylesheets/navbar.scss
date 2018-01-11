@@ -19,11 +19,18 @@
   margin-left: calc((100vw - 851px - 305px) / 2);
 }
 
-.right-nav {
+.right-nav-profile {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-left: 160px;
+}
+
+.right-nav-feed {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 215px;
 }
 
 .main-nav-bar p {

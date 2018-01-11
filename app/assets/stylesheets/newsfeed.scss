@@ -1,7 +1,8 @@
 .newsfeed-main {
   display: flex;
   justify-content: flex-start;
-  margin: 13px;
+  margin: 13px auto;
+  width: 851px;
 }
 
 .newsfeed-parent {
@@ -12,7 +13,7 @@
 
 .newsfeed-sidebar {
   max-width: 184px;
-  margin: 0 13px 0 17px;
+  margin: 0 13px 0 5px;
 }
 
 .newsfeed-sidebar ul {

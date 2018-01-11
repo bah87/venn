@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
   render() {
     const currentUser = this.props.currentUser;
+    const navClass = window.location.href.includes("profile") ? "profile" : "feed";
     if (currentUser) {
       return (
         <div className="main-nav-bar">
@@ -26,7 +27,7 @@ class NavBar extends React.Component {
             </div>
           </div>
 
-          <div className="right-nav">
+          <div className={`right-nav-${navClass}`}>
             <Link
               to={`/profile/${this.props.currentUser.id}`}
               style={{ textDecoration: 'none' }}>
