@@ -4,7 +4,7 @@ import PostImage from './post_image';
 import PostDropdown from './post_dropdown';
 import EditPostForm from './edit_post_form';
 import { postDateFormat } from '../../util/date_util';
-import NameHover from './name_hover';
+import NameHover from '../main_pages/name_hover';
 
 const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
   user, post, modal, deletePost, updatePost, deletePostPhoto }) => {
@@ -14,6 +14,14 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
   if (post.recipient_id  && page !== "feed") {
     wallPostClass = "wall-post"
   }
+
+  // <NameHover
+  //   user={{
+  //     "name": post.author_name,
+  //     "coverImg": post.author_cover_img,
+  //     "profImg": post.author_img
+  //   }}
+  // />
 
   if (user) {
     return (
@@ -30,16 +38,12 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
             <div className="post-item-name-and-options">
               <Link
                 to={`/profile/${post.author_id}`} style={{ textDecoration: 'none'}}>
-                <p className="post-item-name">
+                <div className="post-item-name">
                   {post.author_name}
-                  <NameHover
-                    user={{
-                      "name": post.author_name,
-                      "coverImg": post.author_cover_img,
-                      "profImg": post.author_img
-                    }}
-                  />
-                </p>
+                  <div className="hover-test">
+                    "HOVER"
+                  </div>
+                </div>
               </Link>
 
               <div className={wallPostClass}>

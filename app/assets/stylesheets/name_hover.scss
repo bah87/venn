@@ -1,5 +1,20 @@
 .name-hover-container {
+  // display: none;
+}
+
+.hover-test {
   display: none;
+}
+
+.post-item-name:hover .hover-test {
+  display: block;
+  width: 375px;
+  height: 200px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
 }
 
 .post-item-name:hover .name-hover-container {
