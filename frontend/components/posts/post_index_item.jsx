@@ -5,12 +5,12 @@ import PostDropdown from './post_dropdown';
 import EditPostForm from './edit_post_form';
 import { postDateFormat } from '../../util/date_util';
 
-const PostIndexItem = ({ toggleEditPostModal, currentUser,
+const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
   user, post, modal, deletePost, updatePost, deletePostPhoto }) => {
   let date = postDateFormat(post.updated_at);
 
   let wallPostClass = "wall-post-hidden";
-  if (post.recipient_id) {
+  if (post.recipient_id  && page !== "feed") {
     wallPostClass = "wall-post"
   }
 
@@ -44,7 +44,7 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser,
               <PostDropdown
                 postId={ post.id }
                 currentUser={ currentUser }
-                user={ user }
+                authorId={ post.author_id }
                 toggleEditPostModal={ toggleEditPostModal }
                 deletePost={ deletePost }
               />

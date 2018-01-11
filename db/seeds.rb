@@ -15,6 +15,9 @@ u1 = User.create!(
   gender: "M",
   birthday: Date.new(1991,12,17)
 )
+u1.cover_photo = File.open('app/assets/images/lebron-james-dunks-lakers.jpg');
+u1.image = File.open('app/assets/images/lebron.jpg');
+u1.save!
 u2 = User.create!(
   email: "Zucc",
   first_name: "Mats",
@@ -23,6 +26,9 @@ u2 = User.create!(
   gender: "M",
   birthday: Date.new(1991,12,17)
 )
+u2.cover_photo = File.open('app/assets/images/zucc-cover.jpg');
+u2.image = File.open('app/assets/images/zucc.jpg');
+u2.save!
 u3 = User.create!(
   email: "Judge",
   first_name: "Aaron",
@@ -31,6 +37,9 @@ u3 = User.create!(
   gender: "M",
   birthday: Date.new(1991,12,17)
 )
+u3.cover_photo = File.open('app/assets/images/judge-cover.jpg');
+u3.image = File.open('app/assets/images/judge.jpg');
+u3.save!
 u4 = User.create!(
   email: "Odell",
   first_name: "Odell",
@@ -39,6 +48,9 @@ u4 = User.create!(
   gender: "M",
   birthday: Date.new(1991,12,17)
 )
+u4.cover_photo = File.open('app/assets/images/odell-cover.jpg');
+u4.image = File.open('app/assets/images/odell.jpg');
+u4.save!
 
 u5 = User.create!(
   email: "demo",
@@ -48,6 +60,9 @@ u5 = User.create!(
   gender: "M",
   birthday: Date.new(1991,12,17)
 )
+u5.cover_photo = File.open('app/assets/images/demo-cover.jpg');
+u5.image = File.open('app/assets/images/demo.jpg');
+u5.save!
 
 Post.destroy_all
 

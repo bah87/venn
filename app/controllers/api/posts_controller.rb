@@ -7,7 +7,8 @@ class Api::PostsController < ApplicationController
   end
 
   def show_feed
-    @posts = Post.all.includes(:author, :comments) # temporary until "friends" feature implemented
+    # temporary until "friends" feature implemented
+    @posts = Post.where(recipient_id: [0, nil]).includes(:comments)
     render :index
   end
 

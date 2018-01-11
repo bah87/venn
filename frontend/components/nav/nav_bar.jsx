@@ -5,7 +5,7 @@ class NavBar extends React.Component {
   render() {
     const currentUser = this.props.currentUser;
     const navClass = window.location.href.includes("profile") ? "profile" : "feed";
-    // if (currentUser) {
+    if (currentUser) {
       return (
         <div className="main-nav-bar">
           <div className="left-nav">
@@ -29,11 +29,11 @@ class NavBar extends React.Component {
 
           <div className={`right-nav-${navClass}`}>
             <Link
-              to={`/profile/${this.props.currentUser.id}`}
+              to={`/profile/${currentUser.id}`}
               style={{ textDecoration: 'none' }}>
               <div className="profile-btn-container">
                 <img className="nav-profile-pic"
-                  src={this.props.currentUser.profile_pic_url}
+                  src={currentUser.profile_pic_url}
                 />
               <button className="profile-btn">{ currentUser.first_name }</button>
               </div>
@@ -56,15 +56,12 @@ class NavBar extends React.Component {
 
         </div>
       );
+    } else {
+      return (
+        <div></div>
+      );
+    }
   }
 }
 
 export default NavBar;
-
-
-// } 
-// else {
-//   return (
-//     <div></div>
-//   );
-// }
