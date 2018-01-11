@@ -46,6 +46,13 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
                 <i className="fa fa-caret-right" aria-hidden="true"></i>
                 <p className="post-item-name">
                   {`${user.first_name} ${user.last_name}`}
+                  <NameHover
+                    post={{
+                      "name": `${user.first_name} ${user.last_name}`,
+                      "coverImg": post.recipient_cover_img,
+                      "profImg": post.recipient_img
+                    }}
+                  />
                 </p>
               </div>
 

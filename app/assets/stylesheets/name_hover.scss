@@ -24,9 +24,6 @@
   border-radius: 3px;
   box-sizing: content-box;
   border: 1px solid rgb(221, 223, 226);
-  &:before {
-    background: linear-gradient(to top, rgba(0,0,0,.7), rgba(0,0,0,.3) -88%, transparent);
-  }
 }
 
 .hover-cover-img {
@@ -34,6 +31,9 @@
   height: 120px;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
+  &:before {
+    background: linear-gradient(to top, rgba(0,0,0,.7), rgba(0,0,0,.3) -88%, transparent);
+  }
 }
 
 .hover-prof-img {
