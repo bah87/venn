@@ -101,12 +101,14 @@ class CoverPhoto extends React.Component {
       friendMsg = 'Add Friend';
     }
 
+    let friendClass = "friend-btn";
     let coverPhotoUrl = "";
     if (this.props.user) coverPhotoUrl = this.props.user.cover_photo_url;
 
     let coverPhotoClass = "cover-photo-screen-hidden";
     if (this.props.user && (this.props.user.id === this.props.currentUser.id)) {
       coverPhotoClass = "cover-photo-screen";
+      friendClass = "friend-btn-hidden";
     }
 
     return (
@@ -138,7 +140,7 @@ class CoverPhoto extends React.Component {
         </div>
 
         <div className="profile-cover-nav">
-          <button className="friend-btn"
+          <button className={friendClass}
             onClick={this.handleFriendClick}>
             { friendMsg }
           </button>

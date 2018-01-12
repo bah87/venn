@@ -4,6 +4,10 @@
   justify-content: flex-start;
 }
 
+.friend-btn-hidden {
+  display: none;
+}
+
 .friend-btn {
   height: 26px;
   padding: 0 10px;
@@ -13,8 +17,8 @@
   background-color: rgb(246, 247, 249);
   border: 1px solid rgba(0, 0, 0, 0.4);
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 62px;
+  right: 18px;
   border-radius: 2px;
 
   &:hover {
