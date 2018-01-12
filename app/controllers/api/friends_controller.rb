@@ -21,7 +21,10 @@ class Api::FriendsController < ApplicationController
   end
 
   def reject_friend
-    @request = current_user.friend_requests.find_by(requestor_id: params[:requestor_id])
+    @request = current_user.friend_requests.find(
+      requestor_id: [params[:requestor_id], current_user.id],
+      receiver_id: [params[:requestor_id], current_user.id]
+    )
     @request.destroy!
     render :show
   end

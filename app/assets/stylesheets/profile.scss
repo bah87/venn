@@ -5,19 +5,20 @@
 }
 
 .friend-btn {
-  width: ;
-  height: ;
-  color: ;
-  font-size: ;
-  font-weight: ;
-  background-color: ;
-  border: ;
+  height: 26px;
+  padding: 0 10px;
+  color: rgb(75, 79, 86);
+  font-size: 12px;
+  font-weight: 700;
+  background-color: rgb(246, 247, 249);
+  border: 1px solid rgba(0, 0, 0, 0.4);
   position: absolute;
-  bottom: ;
-  right: ;
+  bottom: 0;
+  right: 0;
+  border-radius: 2px;
 
   &:hover {
-    background-color: ;
+    background-color: #e9ebee;
     cursor: pointer;
   }
 }

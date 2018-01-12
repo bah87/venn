@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   get '/api/incoming_pending_requests', to: 'api/friends#incoming_pending_requests'
   get '/api/sent_pending_requests', to: 'api/friends#sent_pending_requests'
 
+  get '/api/friends', to: 'api/users#get_friends'
+
   root "static_pages#root"
 end
