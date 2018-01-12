@@ -56,6 +56,9 @@ class Profile extends React.Component {
               currentUser={ this.props.currentUser }
               user={ this.props.user }
               saveUserPhoto={ this.props.saveUserPhoto }
+              sendRequest={ this.props.sendRequest }
+              cancelRequest={ this.props.cancelRequest }
+              friendRequest={ this.props.friendRequest }
             />
             <ProfilePicture
               currentUser={ this.props.currentUser }

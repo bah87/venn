@@ -4,6 +4,24 @@
   justify-content: flex-start;
 }
 
+.friend-btn {
+  width: ;
+  height: ;
+  color: ;
+  font-size: ;
+  font-weight: ;
+  background-color: ;
+  border: ;
+  position: absolute;
+  bottom: ;
+  right: ;
+
+  &:hover {
+    background-color: ;
+    cursor: pointer;
+  }
+}
+
 .messenger-and-games {
   width: 305px;
 }
@@ -158,6 +176,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  position: relative;
 }
 
 .cancel-cover-upload {

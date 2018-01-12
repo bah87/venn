@@ -13,6 +13,7 @@ class CoverPhoto extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.cancelUpload = this.cancelUpload.bind(this);
+    this.handleFriendClick = this.handleFriendClick.bind(this);
   }
 
   updateFile(event) {
@@ -46,8 +47,31 @@ class CoverPhoto extends React.Component {
       imageUrl: null,
       imageFile: null,
       cancelCoverUpload: "cover-upload-hidden",
-      saveCoverUpload: "cover-upload-hidden"
+      saveCoverUpload: "cover-upload-hidden",
+      friendReq: this.props.friendRequest.status
     });
+  }
+
+  handleFriendClick(msg) {
+    switch (msg) {
+      case "Add Friend":
+        this.props.sendRequest(this.props.user.id).then(() => {
+          this.setState({ friendReq: 'PENDING' });
+        });
+        break;
+      case "Unfriend":
+        this.props.rejectFriend(this.props.user.id).then(() => {
+          this.setState({ friendReq: null });
+        });
+        break;
+      case "Cancel Request":
+        this.props.rejectFriend(this.props.user.id).then(() => {
+          this.setState({ friendReq: null });
+        });
+        break;
+      default:
+
+    }
   }
 
   handleSubmit() {
@@ -68,6 +92,15 @@ class CoverPhoto extends React.Component {
   }
 
   render() {
+    let friendMsg;
+    if (this.state.friendReq === 'ACCEPTED') {
+      friendMsg = 'Unfriend';
+    } else if (this.state.friendReq === 'PENDING') {
+      friendMsg = 'Cancel Request';
+    } else {
+      friendMsg = 'Add Friend';
+    }
+
     let coverPhotoUrl = "";
     if (this.props.user) coverPhotoUrl = this.props.user.cover_photo_url;
 
@@ -105,6 +138,10 @@ class CoverPhoto extends React.Component {
         </div>
 
         <div className="profile-cover-nav">
+          <button className="friend-btn"
+            onClick={this.handleFriendClick}>
+            { friendMsg }
+          </button>
           <button
             className={this.state.cancelCoverUpload}
             onClick={this.cancelUpload}>
