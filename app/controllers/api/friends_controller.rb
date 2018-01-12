@@ -27,6 +27,6 @@ class Api::FriendsController < ApplicationController
 
   private
   def friend_params
-    params.require(:friend).permit(:id, :receiver_id)
+    params.require(:friend).permit(:id, :receiver_id, :requestor_id)
   end
 end
