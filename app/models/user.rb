@@ -55,6 +55,15 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   dependent: :destroy
 
+  has_many :friend_requests,
+  foreign_key: :receiver_id,
+  class_name: 'Friend'
+
+  has_many :sent_requests,
+  foreign_key: :requestor_id,
+  class_name: 'Friend'
+
+
   def received_posts
     Post.includes(:comments).where(recipient_id: id)
   end
@@ -65,6 +74,19 @@ class User < ApplicationRecord
 
   def profile_items
     statuses + received_posts
+  end
+
+  def friends
+    Friend.where(status: 'ACCEPTED', receiver_id: id) +
+    Friend.where(status: 'ACCEPTED', requestor_id: id)
+  end
+
+  def pending_requests
+    Friend.where(status: 'PENDING', requestor_id: id)
+  end
+
+  def incoming_pending_requests
+    Friend.where(status: 'PENDING', receiver_id: id)
   end
 
   def self.find_by_credentials(email, password)

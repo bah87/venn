@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110034047) do
+ActiveRecord::Schema.define(version: 20180112032058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20180110034047) do
     t.datetime "image_updated_at"
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.integer "requestor_id", null: false
+    t.integer "receiver_id", null: false
+    t.string "status", default: "PENDING", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id", "requestor_id"], name: "index_friends_on_receiver_id_and_requestor_id", unique: true
   end
 
   create_table "posts", force: :cascade do |t|
