@@ -25,6 +25,16 @@ class Api::FriendsController < ApplicationController
     @request.destroy!
   end
 
+  def sent_pending_requests
+    @requests = current_user.sent_pending_requests
+    render :index
+  end
+
+  def incoming_pending_requests
+    @requests = current_user.incoming_pending_requests
+    render :index
+  end
+
   private
   def friend_params
     params.require(:friend).permit(:id, :receiver_id, :requestor_id)

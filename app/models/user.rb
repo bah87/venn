@@ -81,7 +81,7 @@ class User < ApplicationRecord
     Friend.where(status: 'ACCEPTED', requestor_id: id)
   end
 
-  def pending_requests
+  def sent_pending_requests
     Friend.where(status: 'PENDING', requestor_id: id)
   end
 
