@@ -26,8 +26,6 @@ class PostIndex extends React.Component {
         user = this.props.friends[post.author_id];
       }
 
-      // debugger
-
       return (
         <div key={ post.id }>
           <PostIndexItem

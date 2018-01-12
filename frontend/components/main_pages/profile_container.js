@@ -5,14 +5,21 @@ import { sendRequest, rejectFriend } from '../../actions/friend_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
-  const requestId = state.session.currentUser.request_ids.filter(id => state.entities.friendRequests[id].requestor_id === parseInt(ownProps.match.params.userId))[0];
-  debugger
+
+  let friendRequest;
+  const requestId = state.session.currentUser.request_ids.filter(id => {
+    friendRequest = state.entities.friendRequests[id];
+    if (friendRequest) {
+      return friendRequest.requestor_id === parseInt(ownProps.match.params.userId);
+    }
+  })[0];
+  
   return {
     user: state.entities.users[ownProps.match.params.userId],
     currentUser: state.session.currentUser,
     modal: state.ui.profPicModal,
-    friendRequest: state.entities.friendRequests[requestId]
+    friendRequest: state.entities.friendRequests[requestId],
+    friendIds: state.session.currentUser.friend_ids
   };
 };
 

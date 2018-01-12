@@ -48,8 +48,6 @@ class Profile extends React.Component {
       lastName = this.props.user.last_name;
     }
 
-    debugger
-
     return (
       <div className="profile-container-box">
         <div className="profile-main">
@@ -61,6 +59,7 @@ class Profile extends React.Component {
               sendRequest={ this.props.sendRequest }
               rejectFriend={ this.props.rejectFriend }
               friendRequest={ this.props.friendRequest }
+              friendIds={ this.props.friendIds }
             />
             <ProfilePicture
               currentUser={ this.props.currentUser }

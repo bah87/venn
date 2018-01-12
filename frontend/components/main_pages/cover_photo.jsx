@@ -95,14 +95,17 @@ class CoverPhoto extends React.Component {
 
   render() {
     let friendMsg;
-    if (this.state.friendReq === 'ACCEPTED') {
+    let userId;
+    if (this.props.user) {
+      userId = this.props.user.id;
+    }
+    if (this.state.friendReq === 'ACCEPTED' || this.props.friendIds.includes(userId)) {
       friendMsg = 'Unfriend';
     } else if (this.state.friendReq === 'PENDING') {
       friendMsg = 'Cancel Request';
     } else {
       friendMsg = 'Add Friend';
     }
-    debugger
 
     let friendClass = "friend-btn";
     let coverPhotoUrl = "";

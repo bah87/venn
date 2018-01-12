@@ -19,12 +19,9 @@ export const receiveErrors = errors => {
 };
 
 export const login = user => dispatch => {
-  // debugger
   return SessionApiUtil.login(user).then(payload => {
-    // debugger
     dispatch(receiveCurrentUser(payload));
   }, err => {
-    // debugger
     dispatch(receiveErrors(err.responseJSON));
   });
 };

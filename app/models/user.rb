@@ -76,15 +76,16 @@ class User < ApplicationRecord
     statuses + received_posts
   end
 
-  def friends
-    Friend.where(status: 'ACCEPTED', receiver_id: id) +
-    Friend.where(status: 'ACCEPTED', requestor_id: id)
+  def friend_ids
+    requested_friend_ids = Friend.where(status: 'ACCEPTED', requestor_id: id).pluck(:receiver_id)
+    received_friends_ids = Friend.where(status: 'ACCEPTED', receiver_id: id).pluck(:requestor_id)
+    requested_friend_ids + received_friends_ids
   end
 
   def mutual_friends(user)
     mutual = []
-    user_friends = user.friends
-    self.friends.each do |friend|
+    user_friends = user.friend_ids
+    self.friend_ids.each do |friend|
       mutual << friend if user_friends.include?(friend)
     end
     mutual
