@@ -1,8 +1,8 @@
 import * as FriendRequestApiUtil from '../util/friend_request_api_util';
 
 export const RECEIVE_REQUEST = 'RECEIVE_REQUEST';
-export const RECEIVE_INCOMING_REQUESTS = 'RECEIVE_INCOMING_REQUESTS';
-export const RECEIVE_OUTGOING_REQUESTS = 'RECEIVE_OUTGOING_REQUESTS';
+export const RECEIVE_REQUESTS = 'RECEIVE_REQUESTS';
+export const REMOVE_REQUEST = 'REMOVE_REQUEST';
 
 export const receiveRequest = request => {
   return {
@@ -11,29 +11,29 @@ export const receiveRequest = request => {
   };
 };
 
-export const receiveIncomingRequests = requests => {
+export const receiveRequests = requests => {
   return {
-    type: RECEIVE_INCOMING_REQUESTS,
+    type: RECEIVE_REQUESTS,
     requests
   };
 };
 
-export const receiveOutgoingRequests = requests => {
+export const removeRequest = request => {
   return {
-    type: RECEIVE_OUTGOING_REQUESTS,
-    requests
+    type: REMOVE_REQUEST,
+    request
   };
 };
 
 export const fetchIncomingRequests = () => dispatch => {
   return FriendRequestApiUtil.fetchIncomingRequests().then(requests => {
-    dispatch(receiveIncomingRequests(requests));
+    dispatch(receiveRequests(requests));
   });
 };
 
 export const fetchOutgoingRequests = () => dispatch => {
   return FriendRequestApiUtil.fetchOutgoingRequests().then(requests => {
-    dispatch(receiveOutgoingRequests(requests));
+    dispatch(receiveRequests(requests));
   });
 };
 
@@ -45,7 +45,7 @@ export const addFriend = requestorId => dispatch => {
 
 export const rejectFriend = requestorId => dispatch => {
   return FriendRequestApiUtil.rejectFriend(requestorId).then(request => {
-    dispatch(receiveRequest(request));
+    dispatch(removeRequest(request));
   });
 };
 
