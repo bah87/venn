@@ -90,6 +90,10 @@ class User < ApplicationRecord
     mutual
   end
 
+  def all_friend_requests
+    Friend.where(requestor_id: id) + Friend.where(receiver_id: id)
+  end
+
   def sent_pending_requests
     Friend.where(status: 'PENDING', requestor_id: id)
   end

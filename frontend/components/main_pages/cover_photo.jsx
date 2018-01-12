@@ -8,7 +8,8 @@ class CoverPhoto extends React.Component {
       imageFile: null,
       imageUrl: null,
       cancelCoverUpload: "cover-upload-hidden",
-      saveCoverUpload: "cover-upload-hidden"
+      saveCoverUpload: "cover-upload-hidden",
+      friendReq: this.props.friendRequest.status
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
