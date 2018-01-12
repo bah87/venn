@@ -26,9 +26,8 @@ class NavBar extends React.Component {
 
   render() {
 
-
     let currentUser = this.state.currentUser;
-    currentUser = currentUser ? currentUser : {};
+    // currentUser = currentUser ? currentUser : {};
     const navClass = window.location.href.includes("profile") ? "profile" : "feed";
     if (currentUser) {
       return (
