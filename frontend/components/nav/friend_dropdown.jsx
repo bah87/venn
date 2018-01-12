@@ -11,6 +11,9 @@ class FriendDropdown extends React.Component {
             img={request.requestor_img}
             name={request.requestor_name}
             mutualFriends={request.mutual_friends}
+            requestorId={request.requestor_id}
+            rejectFriend={this.props.rejectFriend}
+            addFriend={this.props.addFriend}
           />
         );
       });

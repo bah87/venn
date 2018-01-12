@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import NavBar from './nav_bar';
+import { addFriend, rejectFriend } from '../../actions/friend_actions';
 
 const mapStateToProps = state => {
   let id;
@@ -8,7 +9,6 @@ const mapStateToProps = state => {
     id = state.session.currentUser.id;
   }
   const currentUser = id ? state.entities.users[id] : null;
-  // debugger
   return {
     currentUser: currentUser,
     requests: Object.values(state.entities.friendRequests)
@@ -17,7 +17,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    addFriend: id => dispatch(addFriend(id)),
+    rejectFriend: id => dispatch(rejectFriend(id))
   };
 };
 

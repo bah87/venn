@@ -22,6 +22,32 @@
   z-index: 2;
 }
 
+.left-side-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-name-and-friends {
+  color: #365899;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.friend-dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+}
+
+.friend-dropdown-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .friend-dropdown-header {
   width: 406px;
   height: 32px;
