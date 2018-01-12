@@ -4,12 +4,13 @@ import PhotoPreview from './photo_preview';
 class CoverPhoto extends React.Component {
   constructor(props) {
     super(props);
+    const friendReq = (this.props.friendRequest ? this.props.friendRequest.status : null);
     this.state = {
       imageFile: null,
       imageUrl: null,
       cancelCoverUpload: "cover-upload-hidden",
       saveCoverUpload: "cover-upload-hidden",
-      friendReq: this.props.friendRequest.status
+      friendReq
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -101,6 +102,7 @@ class CoverPhoto extends React.Component {
     } else {
       friendMsg = 'Add Friend';
     }
+    debugger
 
     let friendClass = "friend-btn";
     let coverPhotoUrl = "";

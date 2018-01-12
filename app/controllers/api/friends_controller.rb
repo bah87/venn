@@ -25,8 +25,10 @@ class Api::FriendsController < ApplicationController
       requestor_id: [params[:requestor_id].to_i, current_user.id],
       receiver_id: [params[:requestor_id].to_i, current_user.id]
     ).first
-    @request.destroy
-    render :show
+    if @request
+      @request.destroy
+      render :show
+    end
   end
 
   def sent_pending_requests

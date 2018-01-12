@@ -19,16 +19,19 @@ export const receiveErrors = errors => {
 };
 
 export const login = user => dispatch => {
+  // debugger
   return SessionApiUtil.login(user).then(payload => {
+    // debugger
     dispatch(receiveCurrentUser(payload));
   }, err => {
+    // debugger
     dispatch(receiveErrors(err.responseJSON));
   });
 };
 
 export const logout = () => dispatch => {
   return SessionApiUtil.logout().then(payload => {
-    dispatch(receiveCurrentUser(null));
+    dispatch(receiveCurrentUser({}));
   });
 };
 

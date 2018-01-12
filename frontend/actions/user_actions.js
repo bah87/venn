@@ -3,10 +3,10 @@ import * as UserApiUtil from '../util/user_api_util';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_FRIENDS = 'RECEIVE_FRIENDS';
 
-export const receiveUser = ({ user, requests }) => {
+export const receiveUser = ({ currentUser, requests }) => {
   return {
     type: RECEIVE_USER,
-    user
+    user: currentUser
   };
 };
 

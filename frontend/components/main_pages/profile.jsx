@@ -48,6 +48,8 @@ class Profile extends React.Component {
       lastName = this.props.user.last_name;
     }
 
+    debugger
+
     return (
       <div className="profile-container-box">
         <div className="profile-main">
