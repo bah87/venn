@@ -14,7 +14,9 @@ const sessionReducer = (state = _nullUser, action) => {
       return merge({}, { currentUser });
     case RECEIVE_REQUEST:
       let newState = merge({}, state);
-      newState.currentUser.request_ids.push(action.request.id);
+      if (!newState.currentUser.request_ids.includes(action.request.id)) {
+        newState.currentUser.request_ids.push(action.request.id);
+      }
       return newState;
     default:
       return state;
