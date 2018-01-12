@@ -2,8 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentUser: this.props.currentUser
+    };
+  }
+
+  componentDidMount() {
+    debugger
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({ currentUser: newProps.currentUser });
+  }
+
   render() {
-    const currentUser = this.props.currentUser;
+    let currentUser = this.state.currentUser;
+    currentUser = currentUser ? currentUser : {};
     const navClass = window.location.href.includes("profile") ? "profile" : "feed";
     if (currentUser) {
       return (
