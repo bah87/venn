@@ -3,6 +3,7 @@ import PostFormContainer from '../posts/post_form_container';
 import PostIndexContainer from '../posts/post_index_container';
 import CoverPhoto from './cover_photo';
 import ProfilePicture from './profile_picture';
+import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -54,7 +55,9 @@ class Profile extends React.Component {
           <div className="profile-friends-names">
             {`${friend.first_name} ${friend.last_name}`}
           </div>
-          <img className="profile-friends-pic" src={friend.profile_pic_url}></img>
+          <Link to={`/profile/${friend.id}`}>
+            <img className="profile-friends-pic" src={friend.profile_pic_url}></img>
+          </Link>
         </li>
       );
     });
