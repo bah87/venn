@@ -57,7 +57,7 @@ class Profile extends React.Component {
               user={ this.props.user }
               saveUserPhoto={ this.props.saveUserPhoto }
               sendRequest={ this.props.sendRequest }
-              cancelRequest={ this.props.cancelRequest }
+              rejectFriend={ this.props.rejectFriend }
               friendRequest={ this.props.friendRequest }
             />
             <ProfilePicture
