@@ -48,7 +48,16 @@ class Profile extends React.Component {
       lastName = this.props.user.last_name;
     }
 
-    debugger
+    const friends = this.props.profileUserFriends.map(friend => {
+      return (
+        <li>
+          <div className="profile-friends-names">
+            {`${friend.first_name} ${friend.last_name}`}
+          </div>
+          <img className="profile-friends-pic" src={friend.profile_pic_url}></img>
+        </li>
+      );
+    });
 
     return (
       <div className="profile-container-box">
@@ -78,9 +87,14 @@ class Profile extends React.Component {
           <main className="profile-body">
             <aside className="profile-aside">
               <div className="profile-friends">
-                <i className="fa fa-users" aria-hidden="true"></i>
-                Friends
-
+                <div className="profile-friends-header">
+                  <i className="fa fa-users" aria-hidden="true"></i>
+                  <div className="profile-friends-title">Friends</div>
+                  <div className="profile-friends-count">{friends.length}</div>
+                </div>
+                <ul className="profile-friends-list">
+                  {friends}
+                </ul>
               </div>
             </aside>
 

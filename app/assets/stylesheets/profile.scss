@@ -73,6 +73,49 @@
   border: 1px solid rgb(221, 223, 226);
 }
 
+.profile-friends-pic {
+  width: 100px;
+  height: 100px;
+}
+
+.profile-friends-names {
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.profile-friends-header {
+  width: 321px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.profile-friends-list {
+  list-style: none;
+
+  li {
+    position: relative;
+  }
+}
+
+.profile-friends-title {
+  font-size: 16px;
+  color: rgb(29, 33, 41);
+  margin: 0 10px;
+}
+
+.profile-friends-count {
+  color: #90949c;
+  font-size: 14px;
+}
+
 .profile-body {
   width: 851px;
   display: flex;
