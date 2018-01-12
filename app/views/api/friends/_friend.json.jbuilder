@@ -5,3 +5,4 @@ json.requestor_img = requestor.image.url
 receiver = friend.receiver
 json.receiver_name = "#{receiver.first_name} #{receiver.last_name}"
 json.receiver_img = receiver.image.url
+json.mutual_friends = requestor.mutual_friends(receiver)

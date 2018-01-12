@@ -11,6 +11,33 @@
   border-bottom: 1px solid black;
 }
 
+.friend-dropdown-container {
+  width: 406px;
+  background-color: white;
+  border: 1px solid rgb(221, 223, 226);
+  border-radius: 3px;
+}
+
+.friend-dropdown-header {
+  width: 406px;
+  height: 16px;
+  padding: 8 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgb(29, 33, 41);
+  border-bottom: 1px solid rgb(221, 223, 226);
+}
+
+.friend-requests {
+  width: 27px;
+  height: 27px;
+  color: #0b1b44;
+  display: flex;
+  align-items: center;
+  margin-left: 32px;
+  cursor: pointer;
+}
+
 .left-nav {
   display: flex;
   align-items: center;
@@ -93,7 +120,6 @@
   background-color: transparent;
   border: none;
   height: 20px;
-  border-left: 1px solid #3b5998;
   padding: 0 10px;
 }
 
@@ -115,7 +141,6 @@
   justify-content: flex-start;
   align-items: center;
   height: 28px;
-  padding: 0 10px;
 }
 
 .profile-btn-container:hover {
@@ -131,6 +156,8 @@
   font-weight: 700;
   background-color: transparent;
   border: none;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 .nav-profile-pic {

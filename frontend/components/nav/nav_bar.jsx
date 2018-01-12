@@ -5,19 +5,27 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: this.props.currentUser
+      currentUser: this.props.currentUser,
+      dropdown: false
     };
+    this.clickFriendDropdown = this.clickFriendDropdown.bind(this);
   }
 
   componentDidMount() {
-    debugger
+
   }
 
   componentWillReceiveProps(newProps) {
     this.setState({ currentUser: newProps.currentUser });
   }
 
+  clickFriendDropdown() {
+    this.setState({ dropdown: true });
+  }
+
   render() {
+    
+
     let currentUser = this.state.currentUser;
     currentUser = currentUser ? currentUser : {};
     const navClass = window.location.href.includes("profile") ? "profile" : "feed";
@@ -61,6 +69,11 @@ class NavBar extends React.Component {
                   Home
                 </button>
               </Link>
+            </div>
+
+            <div className="friend-requests"
+              onClick={this.clickFriendDropdown}>
+              <i className="fa fa-users" aria-hidden="true"></i>
             </div>
 
             <div className="logout-btn-container">

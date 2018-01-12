@@ -39,10 +39,10 @@ class User < ApplicationRecord
     message: ["Enter a combination of at least 6 numbers, letters, and punctuation marks (like ! and &)."]
   }
 
-  has_attached_file :image, default_url: "missing.png"
+  has_attached_file :image, default_url: "img-missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :cover_photo, default_url: "missing.png", styles: { large: "851x851#" }
+  has_attached_file :cover_photo, default_url: "img-missing.png", styles: { large: "851x851#" }
   validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token
@@ -79,6 +79,15 @@ class User < ApplicationRecord
   def friends
     Friend.where(status: 'ACCEPTED', receiver_id: id) +
     Friend.where(status: 'ACCEPTED', requestor_id: id)
+  end
+
+  def mutual_friends(user)
+    mutual = []
+    user_friends = user.friends
+    self.friends.each do |friend|
+      mutual << friend if user_friends.include?(friend)
+    end
+    mutual
   end
 
   def sent_pending_requests
