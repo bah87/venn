@@ -79,6 +79,7 @@ class NavBar extends React.Component {
               requests={this.props.requests}
               rejectFriend={this.props.rejectFriend}
               addFriend={this.props.addFriend}
+              currentUser={currentUser}
             />
 
             <div className="logout-btn-container">

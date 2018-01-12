@@ -5,7 +5,10 @@ class FriendDropdown extends React.Component {
   render() {
     let requests;
     if (this.props.requests) {
-      requests = this.props.requests.map(request => {
+      requests = this.props.requests.filter(request => (
+        request.receiver_id === this.props.currentUser.id &&
+        request.status === 'PENDING'
+      )).map(request => {
         return (
           <FriendDropdownItem
             img={request.requestor_img}
