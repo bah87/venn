@@ -11,6 +11,10 @@
   border-bottom: 1px solid black;
 }
 
+.friend-dropdown-hidden {
+  display: none;
+}
+
 .friend-dropdown-container {
   width: 406px;
   background-color: white;
@@ -18,7 +22,7 @@
   border-radius: 3px;
   position: absolute;
   top: 44px;
-  right: 320px;
+  right: 0;
   z-index: 2;
 }
 
@@ -67,6 +71,7 @@
   align-items: center;
   margin-left: 32px;
   cursor: pointer;
+  position: relative;
 }
 
 .left-nav {

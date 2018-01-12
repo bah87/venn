@@ -21,11 +21,18 @@ class FriendDropdown extends React.Component {
         );
       });
     } else {
-      requests = null;
+      requests = (
+        <div>"No pending requests"</div>
+      );
+    }
+
+    let friendDropdown = "friend-dropdown-hidden";
+    if (this.props.dropdownStatus) {
+      friendDropdown = "friend-dropdown-container";
     }
 
     return (
-      <div className="friend-dropdown-container">
+      <div className={friendDropdown}>
         <div className="friend-dropdown-header">
           Friend Requests
         </div>
