@@ -1,6 +1,6 @@
 class Api::FriendsController < ApplicationController
   def request_friend
-    @request = Friend.new(friend_params)
+    @request = Friend.new(receiver_id: params[:receiver_id])
     @request.requestor_id = current_user.id
     @request.status = 'PENDING'
     if @request.save!
@@ -37,10 +37,5 @@ class Api::FriendsController < ApplicationController
   def incoming_pending_requests
     @requests = current_user.incoming_pending_requests
     render :index
-  end
-
-  private
-  def friend_params
-    params.require(:friend).permit(:id, :receiver_id, :requestor_id)
   end
 end

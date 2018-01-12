@@ -12,23 +12,26 @@ export const fetchOutgoingRequests = () => {
   });
 };
 
-export const addFriend = requestorId => {
+export const addFriend = id => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/friend_requests/${requestorId}`
+    url: `/api/friend_requests/${id}`,
+    data: { requestor_id: id }
   });
 };
 
-export const rejectFriend = requestorId => {
+export const rejectFriend = id => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/friend_requests/${requestorId}`
+    url: `/api/friend_requests/${id}`,
+    data: { requestor_id: id }
   });
 };
 
-export const sendRequest = receiverId => {
+export const sendRequest = id => {
   return $.ajax({
     method: 'POST',
-    url: `/api/friend_requests/${receiverId}`
+    url: `/api/friend_requests/${id}`,
+    data: { receiver_id: id }
   });
 };

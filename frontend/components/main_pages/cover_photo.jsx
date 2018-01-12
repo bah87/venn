@@ -141,7 +141,7 @@ class CoverPhoto extends React.Component {
 
         <div className="profile-cover-nav">
           <button className={friendClass}
-            onClick={this.handleFriendClick}>
+            onClick={() => this.handleFriendClick(friendMsg)}>
             { friendMsg }
           </button>
           <button
