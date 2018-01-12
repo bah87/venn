@@ -6,9 +6,11 @@ import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
   const profileUserFriends = [];
-  state.entities.users[ownProps.match.params.userId].friend_ids.forEach(id => {
-    profileUserFriends.push(state.entities.users[id]);
-  });
+  if (state.entities.users[ownProps.match.params.userId]) {
+    state.entities.users[ownProps.match.params.userId].friend_ids.forEach(id => {
+      profileUserFriends.push(state.entities.users[id]);
+    });
+  }
 
   let friendRequest;
   const requestId = state.session.currentUser.request_ids.filter(id => {
