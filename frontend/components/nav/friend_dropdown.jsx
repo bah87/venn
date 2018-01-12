@@ -3,15 +3,20 @@ import FriendDropdownItem from './friend_dropdown_item';
 
 class FriendDropdown extends React.Component {
   render() {
-    const requests = this.props.requests.map(request => {
-      return (
-        <FriendDropdownItem
-          img={request.requestor_img}
-          name={request.requestor_name}
-          mutualFriends={request.mutual_friends}
-        />
-    );
-    });
+    let requests;
+    if (this.props.requests) {
+      requests = this.props.requests.map(request => {
+        return (
+          <FriendDropdownItem
+            img={request.requestor_img}
+            name={request.requestor_name}
+            mutualFriends={request.mutual_friends}
+          />
+        );
+      });
+    } else {
+      requests = null;
+    }
 
     return (
       <div className="friend-dropdown-container">

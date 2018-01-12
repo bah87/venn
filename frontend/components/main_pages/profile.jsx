@@ -77,9 +77,6 @@ class Profile extends React.Component {
               <div className="profile-intro">
               </div>
 
-              <div className="profile-photos">
-              </div>
-
               <div className="profile-friends">
               </div>
             </aside>

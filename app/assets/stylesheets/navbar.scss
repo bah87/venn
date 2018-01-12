@@ -16,12 +16,17 @@
   background-color: white;
   border: 1px solid rgb(221, 223, 226);
   border-radius: 3px;
+  position: absolute;
+  top: 44px;
+  right: 320px;
+  z-index: 2;
 }
 
 .friend-dropdown-header {
   width: 406px;
-  height: 16px;
-  padding: 8 12px;
+  height: 32px;
+  box-sizing: border-box;
+  padding: 8px 12px;
   font-size: 12px;
   font-weight: 700;
   color: rgb(29, 33, 41);

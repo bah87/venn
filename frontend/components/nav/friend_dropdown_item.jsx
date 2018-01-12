@@ -14,10 +14,10 @@ const FriendDropdownItem = ({ img, name, mutualFriends }) => {
           {`${mutualFriends.length} mutual friends`}
         </div>
       </div>
-      <button>
+      <button className="save-cover-upload">
         Confirm
       </button>
-      <button>
+      <button className="cancel-cover-upload">
         Delete Request
       </button>
     </div>

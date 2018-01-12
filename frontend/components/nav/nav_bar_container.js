@@ -8,8 +8,10 @@ const mapStateToProps = state => {
     id = state.session.currentUser.id;
   }
   const currentUser = id ? state.entities.users[id] : null;
+  // debugger
   return {
-    currentUser: currentUser
+    currentUser: currentUser,
+    requests: Object.values(state.entities.friendRequests)
   };
 };
 

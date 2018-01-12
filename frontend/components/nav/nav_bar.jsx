@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FriendDropdown from './friend_dropdown';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    
+
 
     let currentUser = this.state.currentUser;
     currentUser = currentUser ? currentUser : {};
@@ -75,6 +76,9 @@ class NavBar extends React.Component {
               onClick={this.clickFriendDropdown}>
               <i className="fa fa-users" aria-hidden="true"></i>
             </div>
+            <FriendDropdown
+              requests={this.props.requests}
+            />
 
             <div className="logout-btn-container">
               <button
