@@ -22,16 +22,7 @@ class FriendButton extends React.Component {
     this.handleFriendClick = this.handleFriendClick.bind(this);
   }
 
-  componentDidMount() {
-    // debugger
-  }
-
-  componentWillReceiveProps(newProps) {
-    // debugger
-  }
-
   handleFriendClick(msg) {
-    // debugger
     switch (msg) {
       case "Add Friend":
         this.props.sendRequest(this.props.user.id).then(() => {
@@ -80,7 +71,6 @@ class FriendButton extends React.Component {
     if (this.props.user) {
       userId = this.props.user.id;
     }
-    // debugger
     let status;
     if (this.props.friendRequest) {
       status = this.props.friendRequest.status;

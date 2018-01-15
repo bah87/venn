@@ -25,10 +25,13 @@ class NavBar extends React.Component {
   }
 
   render() {
+    let friendReqClass = this.state.dropdown ?
+    "friend-requests-drop" : "friend-requests";
 
     let currentUser = this.state.currentUser;
     // currentUser = currentUser ? currentUser : {};
-    const navClass = window.location.href.includes("profile") ? "profile" : "feed";
+    const navClass = window.location.href.includes("profile") ?
+    "profile" : "feed";
     if (currentUser) {
       return (
         <div className="main-nav-bar">
@@ -59,7 +62,9 @@ class NavBar extends React.Component {
                 <img className="nav-profile-pic"
                   src={currentUser.profile_pic_url}
                 />
-              <button className="profile-btn">{ currentUser.first_name }</button>
+              <button className="profile-btn">
+                { currentUser.first_name }
+              </button>
               </div>
             </Link>
 
@@ -71,7 +76,7 @@ class NavBar extends React.Component {
               </Link>
             </div>
 
-            <div className="friend-requests"
+            <div className={friendReqClass}
               onClick={this.clickFriendDropdown}>
               <i className="fa fa-users" aria-hidden="true"></i>
               <FriendDropdown

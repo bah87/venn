@@ -90,8 +90,15 @@
   position: relative;
 }
 
-.friend-requests-color {
+.friend-requests-drop {
+  width: 27px;
+  height: 27px;
   color: white;
+  display: flex;
+  align-items: center;
+  margin-left: 32px;
+  cursor: pointer;
+  position: relative;
 }
 
 .left-nav {
