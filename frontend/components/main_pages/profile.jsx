@@ -20,6 +20,7 @@ class Profile extends React.Component {
   }
 
   render() {
+    // debugger
 
     let postForm = null;
     if (parseInt(this.props.match.params.userId) === this.props.currentUser.id) {

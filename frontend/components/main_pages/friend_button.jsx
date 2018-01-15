@@ -22,27 +22,51 @@ class FriendButton extends React.Component {
     this.handleFriendClick = this.handleFriendClick.bind(this);
   }
 
+  componentDidMount() {
+    // debugger
+  }
+
+  componentWillReceiveProps(newProps) {
+    // debugger
+  }
+
   handleFriendClick(msg) {
-    debugger
+    // debugger
     switch (msg) {
       case "Add Friend":
         this.props.sendRequest(this.props.user.id).then(() => {
-          this.setState({ friendReqStatus: 'PENDING' });
+          this.setState({
+            friendReqStatus: 'PENDING',
+            friendRequestor: this.props.currentUser.id,
+            friendReceiver: this.props.user.id
+          });
         });
         break;
       case "Unfriend":
         this.props.rejectFriend(this.props.user.id).then(() => {
-          this.setState({ friendReqStatus: null });
+          this.setState({
+            friendReqStatus: null,
+            friendRequestor: this.props.currentUser.id,
+            friendReceiver: this.props.user.id
+          });
         });
         break;
       case "Cancel Request":
         this.props.rejectFriend(this.props.user.id).then(() => {
-          this.setState({ friendReqStatus: null });
+          this.setState({
+            friendReqStatus: null,
+            friendRequestor: this.props.currentUser.id,
+            friendReceiver: this.props.user.id
+          });
         });
         break;
       case "Accept Request":
         this.props.addFriend(this.state.friendRequestor).then(() => {
-          this.setState({ friendReqStatus: 'ACCEPTED' });
+          this.setState({
+            friendReqStatus: 'ACCEPTED',
+            friendRequestor: this.props.currentUser.id,
+            friendReceiver: this.props.user.id
+          });
         });
         break;
       default:
@@ -56,13 +80,17 @@ class FriendButton extends React.Component {
     if (this.props.user) {
       userId = this.props.user.id;
     }
-    debugger
-    if (this.state.friendReqStatus === 'ACCEPTED' || this.props.friendIds.includes(userId)) {
+    // debugger
+    let status;
+    if (this.props.friendRequest) {
+      status = this.props.friendRequest.status;
+    }
+    if (status === 'ACCEPTED' || this.props.friendIds.includes(userId)) {
       friendMsg = 'Unfriend';
-    } else if (this.state.friendReqStatus === 'PENDING'
+    } else if (status === 'PENDING'
     && this.state.friendRequestor === userId) {
       friendMsg = 'Accept Request';
-    } else if (this.state.friendReqStatus === 'PENDING'
+    } else if (status === 'PENDING'
     && this.state.friendReceiver === userId) {
       friendMsg = 'Cancel Request';
     } else {

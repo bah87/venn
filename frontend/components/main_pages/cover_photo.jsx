@@ -69,6 +69,7 @@ class CoverPhoto extends React.Component {
   }
 
   render() {
+    // debugger
     let coverPhotoUrl = "";
     if (this.props.user) coverPhotoUrl = this.props.user.cover_photo_url;
 

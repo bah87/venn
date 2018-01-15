@@ -20,9 +20,12 @@ const mapStateToProps = (state, ownProps) => {
   const requestId = state.session.currentUser.request_ids.filter(id => {
     friendRequest = state.entities.friendRequests[id];
     if (friendRequest) {
-      return friendRequest.requestor_id === parseInt(ownProps.match.params.userId);
+      return friendRequest.requestor_id === parseInt(ownProps.match.params.userId) ||
+      friendRequest.receiver_id === parseInt(ownProps.match.params.userId);
     }
   })[0];
+
+  // debugger
 
   return {
     user: state.entities.users[ownProps.match.params.userId],
