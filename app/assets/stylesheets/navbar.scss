@@ -15,6 +15,22 @@
   display: none;
 }
 
+.friend-notification-hidden {
+  display: none;
+}
+
+.friend-notification {
+  height: 13px;
+  font-size: 12px;
+  color: white;
+  background-color: #fa3e3e;
+  border-radius: 2px;
+  padding: 1px 3px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .friend-dropdown-container {
   width: 406px;
   background-color: white;
@@ -72,6 +88,10 @@
   margin-left: 32px;
   cursor: pointer;
   position: relative;
+}
+
+.friend-requests-color {
+  color: white;
 }
 
 .left-nav {

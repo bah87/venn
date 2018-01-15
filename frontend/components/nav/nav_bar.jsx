@@ -21,6 +21,7 @@ class NavBar extends React.Component {
   }
 
   render() {
+
     let currentUser = this.state.currentUser;
     // currentUser = currentUser ? currentUser : {};
     const navClass = window.location.href.includes("profile") ? "profile" : "feed";
@@ -70,6 +71,7 @@ class NavBar extends React.Component {
               onClick={this.clickFriendDropdown}>
               <i className="fa fa-users" aria-hidden="true"></i>
               <FriendDropdown
+                ref={friends => { this.friends = friends; }}
                 requests={this.props.requests}
                 rejectFriend={this.props.rejectFriend}
                 addFriend={this.props.addFriend}

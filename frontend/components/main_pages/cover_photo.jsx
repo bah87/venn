@@ -1,21 +1,19 @@
 import React from 'react';
 import PhotoPreview from './photo_preview';
+import FriendButton from './friend_button';
 
 class CoverPhoto extends React.Component {
   constructor(props) {
     super(props);
-    const friendReq = (this.props.friendRequest ? this.props.friendRequest.status : null);
     this.state = {
       imageFile: null,
       imageUrl: null,
       cancelCoverUpload: "cover-upload-hidden",
-      saveCoverUpload: "cover-upload-hidden",
-      friendReq
+      saveCoverUpload: "cover-upload-hidden"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.cancelUpload = this.cancelUpload.bind(this);
-    this.handleFriendClick = this.handleFriendClick.bind(this);
   }
 
   updateFile(event) {
@@ -49,31 +47,8 @@ class CoverPhoto extends React.Component {
       imageUrl: null,
       imageFile: null,
       cancelCoverUpload: "cover-upload-hidden",
-      saveCoverUpload: "cover-upload-hidden",
-      friendReq: this.props.friendRequest.status
+      saveCoverUpload: "cover-upload-hidden"
     });
-  }
-
-  handleFriendClick(msg) {
-    switch (msg) {
-      case "Add Friend":
-        this.props.sendRequest(this.props.user.id).then(() => {
-          this.setState({ friendReq: 'PENDING' });
-        });
-        break;
-      case "Unfriend":
-        this.props.rejectFriend(this.props.user.id).then(() => {
-          this.setState({ friendReq: null });
-        });
-        break;
-      case "Cancel Request":
-        this.props.rejectFriend(this.props.user.id).then(() => {
-          this.setState({ friendReq: null });
-        });
-        break;
-      default:
-
-    }
   }
 
   handleSubmit() {
@@ -94,27 +69,12 @@ class CoverPhoto extends React.Component {
   }
 
   render() {
-    let friendMsg;
-    let userId;
-    if (this.props.user) {
-      userId = this.props.user.id;
-    }
-    if (this.state.friendReq === 'ACCEPTED' || this.props.friendIds.includes(userId)) {
-      friendMsg = 'Unfriend';
-    } else if (this.state.friendReq === 'PENDING') {
-      friendMsg = 'Cancel Request';
-    } else {
-      friendMsg = 'Add Friend';
-    }
-
-    let friendClass = "friend-btn";
     let coverPhotoUrl = "";
     if (this.props.user) coverPhotoUrl = this.props.user.cover_photo_url;
 
     let coverPhotoClass = "cover-photo-screen-hidden";
     if (this.props.user && (this.props.user.id === this.props.currentUser.id)) {
       coverPhotoClass = "cover-photo-screen";
-      friendClass = "friend-btn-hidden";
     }
 
     return (
@@ -146,10 +106,14 @@ class CoverPhoto extends React.Component {
         </div>
 
         <div className="profile-cover-nav">
-          <button className={friendClass}
-            onClick={() => this.handleFriendClick(friendMsg)}>
-            { friendMsg }
-          </button>
+          <FriendButton
+            friendRequest={this.props.friendRequest}
+            user={this.props.user}
+            currentUser={this.props.currentUser}
+            friendIds={this.props.friendIds}
+            sendRequest={this.props.sendRequest}
+            rejectFriend={this.props.rejectFriend}
+          />
           <button
             className={this.state.cancelCoverUpload}
             onClick={this.cancelUpload}>
