@@ -1,7 +1,11 @@
 import { connect } from 'react-redux';
 import { fetchUser, saveUserPhoto } from '../../actions/user_actions';
 import { toggleProfPicModal } from '../../actions/ui_actions';
-import { sendRequest, rejectFriend } from '../../actions/friend_actions';
+import {
+  sendRequest,
+  addFriend,
+  rejectFriend
+} from '../../actions/friend_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
@@ -36,7 +40,8 @@ const mapDispatchToProps = dispatch => {
     saveUserPhoto: photo => dispatch(saveUserPhoto(photo)),
     toggleProfPicModal: () => dispatch(toggleProfPicModal()),
     sendRequest: receiverId => dispatch(sendRequest(receiverId)),
-    rejectFriend: receiverId => dispatch(rejectFriend(receiverId))
+    rejectFriend: requestorId => dispatch(rejectFriend(requestorId)),
+    addFriend: requestorId => dispatch(addFriend(requestorId))
   };
 };
 

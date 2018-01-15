@@ -113,6 +113,7 @@ class CoverPhoto extends React.Component {
             friendIds={this.props.friendIds}
             sendRequest={this.props.sendRequest}
             rejectFriend={this.props.rejectFriend}
+            addFriend={this.props.addFriend}
           />
           <button
             className={this.state.cancelCoverUpload}

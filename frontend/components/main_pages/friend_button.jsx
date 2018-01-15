@@ -40,7 +40,7 @@ class FriendButton extends React.Component {
         });
         break;
       case "Accept Request":
-        this.props.addFriend(this.props.user.id).then(() => {
+        this.props.addFriend(this.state.friendRequestor).then(() => {
           this.setState({ friendReqStatus: 'ACCEPTED' });
         });
         break;
