@@ -31,13 +31,8 @@ class Api::FriendsController < ApplicationController
     end
   end
 
-  def sent_pending_requests
-    @requests = current_user.sent_pending_requests
-    render :index
-  end
-
-  def incoming_pending_requests
-    @requests = current_user.incoming_pending_requests
+  def all_requests
+    @requests = current_user.all_friend_requests
     render :index
   end
 end

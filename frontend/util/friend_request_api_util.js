@@ -1,14 +1,7 @@
-export const fetchIncomingRequests = () => {
+export const fetchRequests = () => {
   return $.ajax({
     method: 'GET',
-    url: '/api/incoming_pending_requests'
-  });
-};
-
-export const fetchOutgoingRequests = () => {
-  return $.ajax({
-    method: 'GET',
-    url: '/api/sent_pending_requests'
+    url: '/api/all_requests'
   });
 };
 

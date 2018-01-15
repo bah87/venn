@@ -95,14 +95,6 @@ class User < ApplicationRecord
     Friend.where(requestor_id: id) + Friend.where(receiver_id: id)
   end
 
-  def sent_pending_requests
-    Friend.where(status: 'PENDING', requestor_id: id)
-  end
-
-  def incoming_pending_requests
-    Friend.where(status: 'PENDING', receiver_id: id)
-  end
-
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user

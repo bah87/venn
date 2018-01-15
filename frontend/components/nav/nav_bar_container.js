@@ -1,7 +1,11 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import NavBar from './nav_bar';
-import { addFriend, rejectFriend } from '../../actions/friend_actions';
+import {
+  addFriend,
+  rejectFriend,
+  fetchRequests
+} from '../../actions/friend_actions';
 
 const mapStateToProps = state => {
   let id;
@@ -19,7 +23,8 @@ const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(logout()),
     addFriend: id => dispatch(addFriend(id)),
-    rejectFriend: id => dispatch(rejectFriend(id))
+    rejectFriend: id => dispatch(rejectFriend(id)),
+    fetchRequests: () => dispatch(fetchRequests())
   };
 };
 

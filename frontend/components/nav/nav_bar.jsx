@@ -12,6 +12,10 @@ class NavBar extends React.Component {
     this.clickFriendDropdown = this.clickFriendDropdown.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchRequests();
+  }
+
   componentWillReceiveProps(newProps) {
     this.setState({ currentUser: newProps.currentUser });
   }

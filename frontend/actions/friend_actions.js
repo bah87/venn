@@ -25,14 +25,8 @@ export const removeRequest = request => {
   };
 };
 
-export const fetchIncomingRequests = () => dispatch => {
-  return FriendRequestApiUtil.fetchIncomingRequests().then(requests => {
-    dispatch(receiveRequests(requests));
-  });
-};
-
-export const fetchOutgoingRequests = () => dispatch => {
-  return FriendRequestApiUtil.fetchOutgoingRequests().then(requests => {
+export const fetchRequests = () => dispatch => {
+  return FriendRequestApiUtil.fetchRequests().then(requests => {
     dispatch(receiveRequests(requests));
   });
 };

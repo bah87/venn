@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   post '/api/friend_requests/:receiver_id', to: 'api/friends#request_friend'
   patch '/api/friend_requests/:requestor_id', to: 'api/friends#accept_friend'
   delete '/api/friend_requests/:requestor_id', to: 'api/friends#reject_friend'
-  get '/api/incoming_pending_requests', to: 'api/friends#incoming_pending_requests'
-  get '/api/sent_pending_requests', to: 'api/friends#sent_pending_requests'
+  get '/api/all_requests', to: 'api/friends#all_requests'
 
   get '/api/friends', to: 'api/users#get_friends'
 
