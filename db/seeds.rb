@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker';
+
 User.destroy_all
 u1 = User.create!(
   email: "LeBron",
@@ -64,7 +66,25 @@ u5.cover_photo = File.open('app/assets/images/demo-cover.jpg');
 u5.image = File.open('app/assets/images/demo.jpg');
 u5.save!
 
+u6 = User.create!(
+  email: "Barney",
+  first_name: "Barney",
+  last_name: "Stinson",
+  password: "starwars",
+  gender: "M",
+  birthday: Date.new(1991,12,17)
+)
+u6.cover_photo = File.open('app/assets/images/himym-cover.png');
+u6.image = File.open('app/assets/images/barney.png');
+u6.save!
+
 Post.destroy_all
+
+p21 = Post.create(body: Faker::HowIMetYourMother.quote, author_id: User.fifth.id)
+p22 = Post.create(body: Faker::HowIMetYourMother.quote, author_id: User.fifth.id)
+p23 = Post.create(body: Faker::HowIMetYourMother.quote, author_id: User.fifth.id)
+p24 = Post.create(body: Faker::HowIMetYourMother.quote, author_id: User.fifth.id)
+
 
 p1 = Post.create(body: "y'all still think Kobe is better?", author_id: User.first.id)
 p2 = Post.create(body: "R.W.T.W", author_id: User.first.id)
