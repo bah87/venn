@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FriendDropdown from './friend_dropdown';
+import SearchDropdown from './search_dropdown';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -63,10 +64,7 @@ class NavBar extends React.Component {
             </Link>
 
             <div className="nav-search">
-              <input
-                type="text"
-                placeholder="Search"
-              />
+              <SearchDropdown />
               <button className="nav-search-btn">
                 <i className="fa fa-search" aria-hidden="true"></i>
               </button>

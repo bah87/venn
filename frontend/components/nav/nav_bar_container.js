@@ -6,6 +6,7 @@ import {
   rejectFriend,
   fetchRequests
 } from '../../actions/friend_actions';
+import { fetchSearchedUsers } from '../../actions/user_actions';
 
 const mapStateToProps = state => {
   let id;
@@ -24,7 +25,8 @@ const mapDispatchToProps = dispatch => {
     logout: () => dispatch(logout()),
     addFriend: id => dispatch(addFriend(id)),
     rejectFriend: id => dispatch(rejectFriend(id)),
-    fetchRequests: () => dispatch(fetchRequests())
+    fetchRequests: () => dispatch(fetchRequests()),
+    fetchSearchedUsers: query => dispatch(fetchSearchedUsers(query))
   };
 };
 

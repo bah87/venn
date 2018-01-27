@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   patch '/api/friend_requests/:requestor_id', to: 'api/friends#accept_friend'
   delete '/api/friend_requests/:requestor_id', to: 'api/friends#reject_friend'
   get '/api/all_requests', to: 'api/friends#all_requests'
-
   get '/api/friends', to: 'api/users#get_friends'
+  get '/api/search_users', to: 'api/users#search'
 
   root "static_pages#root"
 end

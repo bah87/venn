@@ -1,4 +1,8 @@
-import { RECEIVE_USER, RECEIVE_FRIENDS } from '../actions/user_actions';
+import {
+  RECEIVE_USER,
+  RECEIVE_FRIENDS,
+  RECEIVE_SEARCHED_USERS
+} from '../actions/user_actions';
 import merge from 'lodash/merge';
 
 const usersReducer = (state = {}, action) => {
@@ -8,6 +12,8 @@ const usersReducer = (state = {}, action) => {
       return merge({}, state, { [action.user.id]: action.user });
     case RECEIVE_FRIENDS:
       return merge({}, action.friends);
+    case RECEIVE_SEARCHED_USERS:
+      return merge({}, action.users);
     default:
       return state;
   }

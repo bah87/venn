@@ -22,3 +22,12 @@ export const saveUserPhoto = formData => {
     data: formData
   });
 };
+
+export const searchUsers = query => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/search_users',
+    dataType: 'json',
+    data: { query }
+  });
+};

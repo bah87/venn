@@ -25,6 +25,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def search
+    if params[:query].present?
+      @users = User.where('username ~ ?', params[:query])
+    else
+      @users = User.none
+    end
+    render :friends
+  end
+
   def get_friends
     # @users = current_user.friends # once friends feature is implemented
     @users = User.all
