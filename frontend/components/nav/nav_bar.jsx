@@ -10,6 +10,7 @@ class NavBar extends React.Component {
       dropdown: false
     };
     this.clickFriendDropdown = this.clickFriendDropdown.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   componentDidMount() {
@@ -20,7 +21,21 @@ class NavBar extends React.Component {
     this.setState({ currentUser: newProps.currentUser });
   }
 
+  handleClickOutside(e) {
+    if (this.node.contains(e.target)) {
+      return;
+    }
+
+    this.clickFriendDropdown();
+  }
+
   clickFriendDropdown() {
+    if (!this.state.dropdown) {
+      document.addEventListener('click', this.handleClickOutside, false);
+    } else {
+      document.removeEventListener('click', this.handleClickOutside, false);
+    }
+
     this.setState({ dropdown: !this.state.dropdown });
   }
 
@@ -80,7 +95,8 @@ class NavBar extends React.Component {
               </Link>
             </div>
 
-            <div className={friendReqClass}>
+            <div className={friendReqClass}
+              ref={node => { this.node = node; }}>
               <i onClick={this.clickFriendDropdown}
                 className="fa fa-users" aria-hidden="true"></i>
               <img className={beeperNub}
