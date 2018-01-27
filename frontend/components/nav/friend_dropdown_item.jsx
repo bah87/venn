@@ -12,7 +12,7 @@ requestorId, addFriend, rejectFriend }) => {
           <div>
             {name}
           </div>
-          <div>
+          <div className="mutual-friends">
             {`${mutualFriends.length} mutual friends`}
           </div>
         </div>
