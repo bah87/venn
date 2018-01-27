@@ -65,6 +65,7 @@ class NavBar extends React.Component {
 
             <div className="nav-search">
               <SearchDropdown
+                users={this.props.searchedUsers}
                 searchUsers={this.props.fetchSearchedUsers}
               />
               <button className="nav-search-btn">

@@ -27,7 +27,9 @@ class Api::UsersController < ApplicationController
 
   def search
     if params[:query].present?
-      @users = User.where('username ~ ?', params[:query])
+      first_name = User.where('first_name ~ ?', params[:query])
+      last_name = User.where('last_name ~ ?', params[:query])
+      @users = first_name + last_name
     else
       @users = User.none
     end

@@ -12,8 +12,6 @@ const usersReducer = (state = {}, action) => {
       return merge({}, state, { [action.user.id]: action.user });
     case RECEIVE_FRIENDS:
       return merge({}, action.friends);
-    case RECEIVE_SEARCHED_USERS:
-      return merge({}, action.users);
     default:
       return state;
   }

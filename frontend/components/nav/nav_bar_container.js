@@ -16,7 +16,8 @@ const mapStateToProps = state => {
   const currentUser = id ? state.entities.users[id] : null;
   return {
     currentUser: currentUser,
-    requests: Object.values(state.entities.friendRequests)
+    requests: Object.values(state.entities.friendRequests),
+    searchedUsers: Object.values(state.entities.searchedUsers)
   };
 };
 
