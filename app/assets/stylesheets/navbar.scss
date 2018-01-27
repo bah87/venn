@@ -37,9 +37,21 @@
   border: 1px solid rgb(221, 223, 226);
   border-radius: 3px;
   position: absolute;
-  top: 44px;
-  right: 0;
+  top: 33px;
+  right: -65px;
   z-index: 2;
+  cursor: default;
+}
+
+.nub-hidden {
+  display: none;
+}
+
+.friend-beeper-nub {
+  width: 21px;
+  position: absolute;
+  top: 24px;
+  z-index: 3;
 }
 
 .left-side-dropdown {

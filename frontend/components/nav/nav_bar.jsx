@@ -25,8 +25,12 @@ class NavBar extends React.Component {
   }
 
   render() {
-    let friendReqClass = this.state.dropdown ?
-    "friend-requests-drop" : "friend-requests";
+    let friendReqClass = "friend-requests";
+    let beeperNub = "nub-hidden";
+    if (this.state.dropdown) {
+      beeperNub = "friend-beeper-nub";
+      friendReqClass = "friend-requests-drop";
+    }
 
     let currentUser = this.state.currentUser;
     // currentUser = currentUser ? currentUser : {};
@@ -76,9 +80,11 @@ class NavBar extends React.Component {
               </Link>
             </div>
 
-            <div className={friendReqClass}
-              onClick={this.clickFriendDropdown}>
-              <i className="fa fa-users" aria-hidden="true"></i>
+            <div className={friendReqClass}>
+              <i onClick={this.clickFriendDropdown}
+                className="fa fa-users" aria-hidden="true"></i>
+              <img className={beeperNub}
+                src={window.staticImages.beeperNub}></img>
               <FriendDropdown
                 ref={friends => { this.friends = friends; }}
                 requests={this.props.requests}
