@@ -5,6 +5,7 @@ import PostDropdown from './post_dropdown';
 import EditPostForm from './edit_post_form';
 import { postDateFormat } from '../../util/date_util';
 import NameHover from '../main_pages/name_hover';
+import Linkify from 'react-linkify';
 
 const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
   user, post, modal, deletePost, updatePost, deletePostPhoto }) => {
@@ -14,6 +15,8 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
   if (post.recipient_id  && page !== "feed") {
     wallPostClass = "wall-post";
   }
+
+  debugger
 
   if (user) {
     return (
@@ -85,7 +88,7 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
         </header>
 
         <main className="post-item-body">
-          <p>{ post.body }</p>
+          <p><Linkify>{ post.body }</Linkify></p>
           <PostImage form={false} imageUrl={post.image_url} />
         </main>
 

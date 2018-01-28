@@ -4,6 +4,7 @@ import { commentDateFormat } from '../../util/date_util';
 import PostImage from '../posts/post_image';
 import CommentDropdown from './comment_dropdown';
 import CommentFormContainer from './comment_form_container';
+import Linkify from 'react-linkify';
 
 const CommentIndexItem = ({ comment, deleteComment, toggleEditComment,
   currentUserId, post, editComment }) => {
@@ -35,7 +36,7 @@ const CommentIndexItem = ({ comment, deleteComment, toggleEditComment,
                 <strong className="comment-name">
                   { comment.author_fname + " " + comment.author_lname }
                 </strong>
-              </Link> { comment.body }
+              </Link> <Linkify>{ comment.body }</Linkify>
             </div>
           </div>
           <PostImage
