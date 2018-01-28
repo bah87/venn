@@ -21,7 +21,7 @@ class SearchDropdown extends React.Component {
     if (this.props.users) {
       users = this.props.users.map(user => {
         return (
-          <li id={user.id}>
+          <li className="search-item" id={user.id}>
             {`${user.first_name} ${user.last_name}`}
           </li>
         );
@@ -36,7 +36,7 @@ class SearchDropdown extends React.Component {
           placeholder="Search"
           value={this.state.query}
         />
-        <ul>
+        <ul className="search-results">
           { users }
         </ul>
       </div>
