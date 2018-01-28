@@ -38,7 +38,9 @@ class SearchDropdown extends React.Component {
                 fontSize: '14px'
               }}
               to={`/profile/${user.id}`}>
-              {`${user.first_name} ${user.last_name}`}
+              <div className="search-name">
+                {`${user.first_name} ${user.last_name}`}
+              </div>
             </Link>
           </li>
         );
