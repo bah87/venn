@@ -63,15 +63,10 @@ class NavBar extends React.Component {
                 />
             </Link>
 
-            <div className="nav-search">
-              <SearchDropdown
-                users={this.props.searchedUsers}
-                searchUsers={this.props.fetchSearchedUsers}
-              />
-              <button className="nav-search-btn">
-                <i className="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </div>
+            <SearchDropdown
+              users={this.props.searchedUsers}
+              searchUsers={this.props.fetchSearchedUsers}
+            />
           </div>
 
           <div className={`right-nav-${navClass}`}>
