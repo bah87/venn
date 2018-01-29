@@ -53,6 +53,42 @@
   cursor: pointer;
 }
 
+.right-div {
+  margin-left: 13px;
+}
+
 .newsapi {
-  
+  background-color: white;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+  width: 308px;
+  height: 225px;
+  box-sizing: border-box;
+  padding: 12px;
+}
+.trending-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.trending-title {
+  height: 13px;
+  width: 152px;
+  font-size: 13px;
+  color: rgb(144, 148, 156);
+  margin: 0;
+}
+
+.trending-icons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  i {
+    color: rgb(144, 148, 156);
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+  }
 }
