@@ -18,12 +18,20 @@ class PostIndexItem extends React.Component {
       wallPostClass = "wall-post";
     }
 
-    let link = <Linkify>{this.props.post.body}</Linkify>;
+    let body = this.props.post.body;
     const linkify = new LinkifyIt();
-    if (Object.values(this.props.linkPreview).length > 0) {
-      link = this.props.linkPreview.title;
-    } else if (linkify.match(link)) {
-      this.props.fetchLinkPreview(linkify.match(link)[0].url);
+    const link = linkify.match(body);
+    if (link) {
+      if (link[0].url.includes("youtube.com")) {
+        const videoId = link[0].url.split("?v=")[1];
+        body = (<iframe
+          src={`https://www.youtube.com/embed/${videoId}`}
+          height="275" width="492" style={{ border: 'none' }}></iframe>);
+      } else {
+        body = <Linkify>{ body }</Linkify>;
+      }
+    } else {
+      body = <Linkify>{ body }</Linkify>;
     }
 
     if (this.props.user) {
@@ -99,7 +107,7 @@ class PostIndexItem extends React.Component {
           </header>
 
           <main className="post-item-body">
-            <p>{ link }</p>
+            <p>{ body }</p>
             <PostImage form={false}
               imageUrl={this.props.post.image_url} />
           </main>

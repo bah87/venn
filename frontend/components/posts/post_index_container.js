@@ -8,15 +8,13 @@ import {
   updatePost,
   deletePostPhoto
 } from '../../actions/post_actions';
-import { fetchLinkPreview } from '../../actions/link_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
     posts: Object.values(state.entities.posts),
     friends: ownProps.friends,
     currentUser: state.session.currentUser,
-    modal: state.ui.editPostModal,
-    linkPreview: state.entities.linkPreview
+    modal: state.ui.editPostModal
   };
 };
 
@@ -27,8 +25,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     deletePost: id => dispatch(deletePost(id)),
     updatePost: post => dispatch(updatePost(post)),
     toggleEditPostModal: id => dispatch(toggleEditPostModal(id)),
-    deletePostPhoto: id => dispatch(deletePostPhoto(id)),
-    fetchLinkPreview: targetUrl => dispatch(fetchLinkPreview(targetUrl))
+    deletePostPhoto: id => dispatch(deletePostPhoto(id))
   };
 };
 

@@ -10,7 +10,7 @@ class Api::PostsController < ApplicationController
     @posts = Post.where(
       recipient_id: [0, nil],
       author_id: [current_user.id] + current_user.friend_ids
-    ).includes(:comments)
+    ).order(updated_at: :desc).limit(10).includes(:comments)
     render :index
   end
 
