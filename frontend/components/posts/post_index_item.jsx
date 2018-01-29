@@ -5,7 +5,7 @@ import PostDropdown from './post_dropdown';
 import EditPostForm from './edit_post_form';
 import { postDateFormat } from '../../util/date_util';
 import NameHover from '../main_pages/name_hover';
-import Linkify from 'react-linkify';
+import LinkifyIt from 'linkify-it';
 
 const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
   user, post, modal, deletePost, updatePost, deletePostPhoto }) => {
@@ -16,6 +16,16 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
     wallPostClass = "wall-post";
   }
 
+  // let link = [post.body].map(body => {
+  //   return (
+  //     <Linkify>
+  //       { body }
+  //     </Linkify>
+  //   );
+  // });
+  // link = link[0];
+  const link = post.body;
+  const linked = new LinkifyIt();
   debugger
 
   if (user) {
@@ -88,7 +98,7 @@ const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
         </header>
 
         <main className="post-item-body">
-          <p><Linkify>{ post.body }</Linkify></p>
+          <p>{ link }</p>
           <PostImage form={false} imageUrl={post.image_url} />
         </main>
 
