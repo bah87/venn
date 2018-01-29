@@ -8,16 +8,24 @@ class NewsFeed extends React.Component {
     super();
 
     this.state = {
-      category: "politics"
+      category: "politics",
+      moreLinksBtn: "See More"
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.clickSeeMore = this.clickSeeMore.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchFriends();
     this.props.fetchTrendingNews(this.state.category);
+  }
+
+  clickSeeMore() {
+    const text = this.state.moreLinksBtn === "See More" ? "See Less"
+    : "See More";
+    this.setState({ moreLinksBtn: text });
   }
 
   handleClick(category) {
@@ -52,7 +60,7 @@ class NewsFeed extends React.Component {
 
     let articles;
     if (this.props.news) {
-      articles= this.props.news.map((article, idx) => {
+      articles= this.props.news.slice(0,num).map((article, idx) => {
         return (
           <li key={idx}>
             <img className="trend-icon"
@@ -120,6 +128,10 @@ class NewsFeed extends React.Component {
             <ul className="trending-list">
               { articles }
             </ul>
+            <div className="trending-footer">
+              <button>{this.state.moreLinksBtn}</button>
+              <div>Powered by <a>NewsApi</a></div>
+            </div>
           </div>
         </div>
       </div>
