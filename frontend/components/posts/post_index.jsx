@@ -38,7 +38,9 @@ class PostIndex extends React.Component {
             currentUser={ this.props.currentUser }
             toggleEditPostModal={ this.props.toggleEditPostModal }
             deletePostPhoto={ this.props.deletePostPhoto }
-            />
+            linkPreview={ this.props.linkPreview }
+            fetchLinkPreview={ this.props.fetchLinkPreview }
+          />
           <CommentIndexContainer
             post={ post }
           />

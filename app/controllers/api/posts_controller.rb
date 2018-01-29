@@ -7,13 +7,15 @@ class Api::PostsController < ApplicationController
   end
 
   def show_feed
-    # temporary until "friends" feature implemented
-    @posts = Post.where(recipient_id: [0, nil]).includes(:comments)
+    @posts = Post.where(
+      recipient_id: [0, nil],
+      author_id: [current_user.id] + current_user.friend_ids
+    ).includes(:comments)
     render :index
   end
 
   def show
-    @post = Post.find(params[:id])#.includes(:comments)
+    @post = Post.find(params[:id])
   end
 
   def new

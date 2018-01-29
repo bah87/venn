@@ -7,116 +7,140 @@ import { postDateFormat } from '../../util/date_util';
 import NameHover from '../main_pages/name_hover';
 import LinkifyIt from 'linkify-it';
 
-const PostIndexItem = ({ toggleEditPostModal, currentUser, page,
-  user, post, modal, deletePost, updatePost, deletePostPhoto }) => {
-  let date = postDateFormat(post.updated_at);
+// ({
+//   user, post, modal, deletePost, updatePost, deletePostPhoto, page,
+//   linkPreview, fetchLinkPreview, toggleEditPostModal, currentUser
+// })
 
-  let wallPostClass = "wall-post-hidden";
-  if (post.recipient_id  && page !== "feed") {
-    wallPostClass = "wall-post";
+class PostIndexItem extends React.Component {
+  // constructor() {
+  //
+  // }
+
+  componentDidMount() {
+    // debugger
+    console.log(this.props.linkPreview);
   }
 
-  // let link = [post.body].map(body => {
-  //   return (
-  //     <Linkify>
-  //       { body }
-  //     </Linkify>
-  //   );
-  // });
-  // link = link[0];
-  const link = post.body;
-  const linked = new LinkifyIt();
-  debugger
+  componentWillReceiveProps(newProps) {
+    let variable = newProps;
+    // debugger
+    console.log(newProps.linkPreview);
+  }
 
-  if (user) {
-    return (
-      <li className="post-item">
+  render() {
+    console.log(this.props.linkPreview);
+    let date = postDateFormat(this.props.post.updated_at);
 
-        <header className="post-item-header">
-          <Link to={`/profile/${post.author_id}`}>
-            <img className="post-item-profile-pic"
-              src={post.author_img}
-              />
-          </Link>
+    let wallPostClass = "wall-post-hidden";
+    if (this.props.post.recipient_id  && this.props.page !== "feed") {
+      wallPostClass = "wall-post";
+    }
 
-          <div className="post-item-header-right">
-            <div className="post-item-name-and-options">
-              <Link
-                to={`/profile/${post.author_id}`} style={{ textDecoration: 'none'}}>
-                <div className="post-item-name">
-                  {post.author_name}
-                  <NameHover
-                    post={{
-                      "name": post.author_name,
-                      "coverImg": post.author_cover_img,
-                      "profImg": post.author_img
-                    }}
-                  />
+    let link = this.props.post.body;
+    const linkify = new LinkifyIt();
+    if (Object.values(this.props.linkPreview).length > 0) {
+      // debugger
+      link = this.props.linkPreview.title;
+    } else if (linkify.match(link)) {
+      // debugger
+      this.props.fetchLinkPreview(linkify.match(link)[0].url);
+    }
+
+    if (this.props.user) {
+      return (
+        <li className="post-item">
+
+          <header className="post-item-header">
+            <Link to={`/profile/${this.props.post.author_id}`}>
+              <img className="post-item-profile-pic"
+                src={this.props.post.author_img}
+                />
+            </Link>
+
+            <div className="post-item-header-right">
+              <div className="post-item-name-and-options">
+                <Link
+                  to={`/profile/${this.props.post.author_id}`}
+                  style={{ textDecoration: 'none'}}>
+                  <div className="post-item-name">
+                    {this.props.post.author_name}
+                    <NameHover
+                      post={{
+                        "name": this.props.post.author_name,
+                        "coverImg": this.props.post.author_cover_img,
+                        "profImg": this.props.post.author_img
+                      }}
+                    />
+                  </div>
+                </Link>
+
+                <div className={wallPostClass}>
+                  <i className="fa fa-caret-right" aria-hidden="true"></i>
+                  <p className="post-item-name">
+                    {`${this.props.user.first_name}
+                    ${this.props.user.last_name}`}
+                    <NameHover
+                      post={{
+                        "name": `${this.props.user.first_name}
+                        ${this.props.user.last_name}`,
+                        "coverImg": this.props.post.recipient_cover_img,
+                        "profImg": this.props.post.recipient_img
+                      }}
+                    />
+                  </p>
                 </div>
-              </Link>
 
-              <div className={wallPostClass}>
-                <i className="fa fa-caret-right" aria-hidden="true"></i>
-                <p className="post-item-name">
-                  {`${user.first_name} ${user.last_name}`}
-                  <NameHover
-                    post={{
-                      "name": `${user.first_name} ${user.last_name}`,
-                      "coverImg": post.recipient_cover_img,
-                      "profImg": post.recipient_img
-                    }}
-                  />
-                </p>
+                <PostDropdown
+                  postId={ this.props.post.id }
+                  currentUser={ this.props.currentUser }
+                  authorId={ this.props.post.author_id }
+                  toggleEditPostModal={ this.props.toggleEditPostModal }
+                  deletePost={ this.props.deletePost }
+                />
+                <EditPostForm
+                  modal={ this.props.modal }
+                  post={ this.props.post }
+                  toggleModal={ this.props.toggleEditPostModal }
+                  updatePost={ this.props.updatePost }
+                  deletePostPhoto={ this.props.deletePostPhoto }
+                  currentUser={ this.props.user }
+                />
               </div>
 
-              <PostDropdown
-                postId={ post.id }
-                currentUser={ currentUser }
-                authorId={ post.author_id }
-                toggleEditPostModal={ toggleEditPostModal }
-                deletePost={ deletePost }
-              />
-              <EditPostForm
-                modal={ modal }
-                post={ post }
-                toggleModal={ toggleEditPostModal }
-                updatePost={ updatePost }
-                deletePostPhoto={ deletePostPhoto }
-                currentUser={ user }
-              />
+              <div className="post-item-date-container">
+                <Link to={`/users/${this.props.post.author_id}/posts/${this.props.post.id}`}
+                  style={{ textDecoration: 'none'}}>
+                  <p className="post-item-date">
+                    { date }
+                  </p>
+                </Link>
+              </div>
             </div>
+          </header>
 
-            <div className="post-item-date-container">
-              <Link to={`/users/${post.author_id}/posts/${post.id}`}
-                style={{ textDecoration: 'none'}}>
-                <p className="post-item-date">
-                  { date }
-                </p>
-              </Link>
+          <main className="post-item-body">
+            <p>{ link }</p>
+            <PostImage form={false}
+              imageUrl={this.props.post.image_url} />
+          </main>
+
+          <footer className="post-item-footer">
+            <div className="like-btn">
+              <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
+              <p>Like</p>
             </div>
-          </div>
-        </header>
-
-        <main className="post-item-body">
-          <p>{ link }</p>
-          <PostImage form={false} imageUrl={post.image_url} />
-        </main>
-
-        <footer className="post-item-footer">
-          <div className="like-btn">
-            <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
-            <p>Like</p>
-          </div>
-          <div
-            onClick={() => document.getElementById(`comment-input-focus-${post.id}`).focus()}
-            className="comment-btn">
-            <i className="fa fa-comment-o" aria-hidden="true"></i>
-            <p>Comment</p>
-          </div>
-        </footer>
-      </li>
-    );
-  } else { return null; }
-};
+            <div
+              onClick={() => document.getElementById(`comment-input-focus-${this.props.post.id}`).focus()}
+              className="comment-btn">
+              <i className="fa fa-comment-o" aria-hidden="true"></i>
+              <p>Comment</p>
+            </div>
+          </footer>
+        </li>
+      );
+    } else { return null; }
+  }
+}
 
 export default PostIndexItem;
