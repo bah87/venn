@@ -80,6 +80,34 @@
   margin: 0;
 }
 
+.trend-icon {
+  margin-right: 8px;
+  max-width: 18px;
+}
+
+.trending-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+}
+
+.article-desc {
+  font-size: 13px;
+  color: rgb(29, 33, 41);
+  margin: 0;
+}
+
+.article-source {
+  color: #90949c;
+}
+
 .trending-icons {
   display: flex;
   justify-content: flex-start;
@@ -89,6 +117,8 @@
     color: rgb(144, 148, 156);
     width: 16px;
     height: 16px;
-    margin-right: 12px;
+    padding: 4px;
+    margin-right: 8px;
+    cursor: pointer;
   }
 }

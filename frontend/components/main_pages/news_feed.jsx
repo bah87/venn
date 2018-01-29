@@ -4,14 +4,47 @@ import PostFormContainer from '../posts/post_form_container';
 import { Link } from 'react-router-dom';
 
 class NewsFeed extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      category: "politics"
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchFriends();
-    // this.props.fetchTrendingNews();
-    // trending, politics, science & technology, sports, entertainment
+    this.props.fetchTrendingNews(this.state.category);
+  }
+
+  handleClick(category) {
+    return () => {
+      this.setState({ category }, () => {
+        this.props.fetchTrendingNews(this.state.category);
+      });
+    };
   }
 
   render() {
+    let articles;
+    if (this.props.news) {
+      articles= this.props.news.map((article, idx) => {
+        return (
+          <li key={idx}>
+            <img className="trend-icon"
+              src={window.staticImages.trendIcon}></img>
+            <div>
+              <p className="article-desc">{ article.title }</p> <span
+                className="article-source">
+              { article.source.name }</span>
+            </div>
+          </li>
+        );
+      });
+    }
 
     const currentUser = this.props.currentUser;
     return (
@@ -50,14 +83,19 @@ class NewsFeed extends React.Component {
             <div className="trending-header">
               <p className="trending-title">Trending</p>
               <div className="trending-icons">
-                <i class="fa fa-line-chart" aria-hidden="true"></i>
-                <i class="fa fa-university" aria-hidden="true"></i>
-                <i class="fa fa-flask" aria-hidden="true"></i>
-                <i class="fa fa-futbol-o" aria-hidden="true"></i>
-                <i class="fa fa-film" aria-hidden="true"></i>
+                <i onClick={this.handleClick("politics")}
+                  className="fa fa-university" aria-hidden="true"></i>
+                <i onClick={this.handleClick("science")}
+                  className="fa fa-flask" aria-hidden="true"></i>
+                <i onClick={this.handleClick("sports")}
+                  className="fa fa-futbol-o" aria-hidden="true"></i>
+                <i onClick={this.handleClick("entertainment")}
+                  className="fa fa-film" aria-hidden="true"></i>
               </div>
             </div>
-
+            <ul className="trending-list">
+              { articles }
+            </ul>
           </div>
         </div>
       </div>

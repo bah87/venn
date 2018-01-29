@@ -7,7 +7,7 @@ const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
     friends: state.entities.users,
-    news: state.entities.trendingNews
+    news: state.entities.trendingNews.articles
   };
 };
 
