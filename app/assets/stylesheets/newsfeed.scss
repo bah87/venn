@@ -132,6 +132,40 @@ i:hover .icon-hover {
   left: 0;
 }
 
+.see-more {
+  border: none;
+  background-color: transparent;
+  font-size: 13px;
+  color: rgb(66, 103, 178);
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.newsapi-cred {
+  font-size: 13px;
+  color: rgb(144, 148, 156);
+  text-decoration: none;
+  margin-left: 70px;
+
+  a {
+    color: rgb(66, 103, 178);
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
 .trending-icons {
   display: flex;
   justify-content: flex-start;
@@ -150,4 +184,10 @@ i:hover .icon-hover {
     color: rgb(66, 103, 178);
     border-bottom: 1px solid rgb(66, 103, 178);
   }
+}
+
+.trending-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }

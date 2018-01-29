@@ -20,8 +20,6 @@ class Profile extends React.Component {
   }
 
   render() {
-    // debugger
-
     let postForm = null;
     if (parseInt(this.props.match.params.userId) === this.props.currentUser.id) {
       postForm = (
@@ -50,7 +48,7 @@ class Profile extends React.Component {
       lastName = this.props.user.last_name;
     }
 
-    const friends = this.props.profileUserFriends.map(friend => {
+    const friends = this.props.profileUserFriends.map((friend,idx) => {
       return (
         <li>
           <div className="profile-friends-names">

@@ -60,6 +60,7 @@ class NewsFeed extends React.Component {
 
     let articles;
     if (this.props.news) {
+      const num = this.state.moreLinksBtn === "See More" ? 7 : 13;
       articles= this.props.news.slice(0,num).map((article, idx) => {
         return (
           <li key={idx}>
@@ -129,8 +130,13 @@ class NewsFeed extends React.Component {
               { articles }
             </ul>
             <div className="trending-footer">
-              <button>{this.state.moreLinksBtn}</button>
-              <div>Powered by <a>NewsApi</a></div>
+              <button className="see-more" onClick={this.clickSeeMore}>
+                {this.state.moreLinksBtn}
+              </button>
+              <div className="newsapi-cred">Powered by <a
+                href="https://newsapi.org/"
+                target={"_blank"}>News API</a>
+              </div>
             </div>
           </div>
         </div>
