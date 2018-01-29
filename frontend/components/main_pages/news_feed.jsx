@@ -29,6 +29,27 @@ class NewsFeed extends React.Component {
   }
 
   render() {
+    let politics = "fa fa-university";
+    let science = "fa fa-flask";
+    let sports = "fa fa-futbol-o";
+    let entertainment = "fa fa-film";
+    switch (this.state.category) {
+      case "politics":
+        politics = `${politics} icon-active`;
+        break;
+      case "science":
+        science = `${science} icon-active`;
+        break;
+      case "sports":
+        sports = `${sports} icon-active`;
+        break;
+      case "entertainment":
+        entertainment = `${entertainment} icon-active`;
+        break;
+      default:
+
+    }
+
     let articles;
     if (this.props.news) {
       articles= this.props.news.map((article, idx) => {
@@ -36,11 +57,11 @@ class NewsFeed extends React.Component {
           <li key={idx}>
             <img className="trend-icon"
               src={window.staticImages.trendIcon}></img>
-            <div>
+            <a href={ article.url } target={"_blank"}>
               <p className="article-desc">{ article.title }</p> <span
                 className="article-source">
               { article.source.name }</span>
-            </div>
+            </a>
           </li>
         );
       });
@@ -83,14 +104,17 @@ class NewsFeed extends React.Component {
             <div className="trending-header">
               <p className="trending-title">Trending</p>
               <div className="trending-icons">
-                <i onClick={this.handleClick("politics")}
-                  className="fa fa-university" aria-hidden="true"></i>
+                <div className="icon-container">
+                  <i onClick={this.handleClick("politics")}
+                    className={politics} aria-hidden="true"></i>
+                  <div className="icon-hover">Politics</div>
+                </div>
                 <i onClick={this.handleClick("science")}
-                  className="fa fa-flask" aria-hidden="true"></i>
+                  className={science} aria-hidden="true"></i>
                 <i onClick={this.handleClick("sports")}
-                  className="fa fa-futbol-o" aria-hidden="true"></i>
+                  className={sports} aria-hidden="true"></i>
                 <i onClick={this.handleClick("entertainment")}
-                  className="fa fa-film" aria-hidden="true"></i>
+                  className={entertainment} aria-hidden="true"></i>
               </div>
             </div>
             <ul className="trending-list">
