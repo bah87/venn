@@ -1,14 +1,50 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 require 'faker';
 
 User.destroy_all
+Post.destroy_all
+Comment.destroy_all
+Friend.destroy_all
+
+users = [
+  ["Chandler", "Bing", "M", "friendscover.jpg", "chandlerbing.png"],
+  ["Joey", "Tribbiani", "M", "friendscover.jpg", "joeytribbiani.png"],
+  ["Monica", "Geller", "F", "friendscover.jpg", "monicageller.png"],
+  ["Phoebe", "Buffay", "F", "friendscover.jpg", "phoebebuffay.png"],
+  ["Rachel", "Green", "F", "friendscover.jpg", "rachelgreen.png"],
+  ["Ross", "Geller", "M", "friendscover.jpg", "rossgeller.png"],
+
+  ["Dinesh", "Chugtai", "M", "siliconvalleycover.jpg", "dinesh.png"],
+  ["Erlich", "Bachman", "M", "siliconvalleycover.jpg", "erlichbachman.png"],
+  ["Gilfoyle", "Starr", "M", "siliconvalleycover.jpg", "gilfoyle.png"],
+  ["Jared", "Dunn", "M", "siliconvalleycover.jpg", "jareddunn.png"],
+  ["Richard", "Hendricks", "M", "siliconvalleycover.jpg", "richardhendricks.png"],
+
+  ["Chuck", "Norris", "M", "norrisbestcover.jpg", "chuck.jpg"],
+
+  ["Harry", "Potter", "M", "harrypotterwallpaper.jpg", "harrypotter.png"],
+  ["Hermoine", "Granger", "F", "harrypotterwallpaper.jpg", "hermoinegranger.png"],
+  ["Ron", "Weasley", "M", "harrypotterwallpaper.jpg", "ronweasley.jpg"],
+
+  ["Ted", "Mosby", "M", "himym-cover.png", "mosby.png"],
+  ["Barney", "Stinson", "M", "himym-cover.png", "barney.png"],
+  ["Robin", "Scherbatsky", "F", "himym-cover.png", "robinscherbatsky.png"],
+  ["Lily", "Aldrin", "F", "himym-cover.png", "lilyaldrin.png"],
+  ["Marshall", "Eriksen", "M", "himym-cover.png", "marshalleriksen.png"],
+
+  ["Jerry", "Seinfeld", "M", "seinfeld-cover.png", "jerryseinfeld.png"],
+  ["Elaine", "Benes", "F", "seinfeld-cover.png", "elainebenes.png"],
+  ["George", "Costanza", "M", "seinfeld-cover.png", "georgecostanza.png"],
+  ["Cosmo", "Kramer", "M", "seinfeld-cover.png", "kramer.png"],
+]
+
+u1 = User.new(
+  email: "Chandler",
+  first_name: "Chandler",
+  last_name: "Bing",
+  gender: "M"
+)
+
+
 u1 = User.create!(
   email: "LeBron",
   first_name: "LeBron",

@@ -6,30 +6,11 @@ import EditPostForm from './edit_post_form';
 import { postDateFormat } from '../../util/date_util';
 import NameHover from '../main_pages/name_hover';
 import LinkifyIt from 'linkify-it';
-
-// ({
-//   user, post, modal, deletePost, updatePost, deletePostPhoto, page,
-//   linkPreview, fetchLinkPreview, toggleEditPostModal, currentUser
-// })
+import Linkify from 'react-linkify';
 
 class PostIndexItem extends React.Component {
-  // constructor() {
-  //
-  // }
-
-  componentDidMount() {
-    // debugger
-    console.log(this.props.linkPreview);
-  }
-
-  componentWillReceiveProps(newProps) {
-    let variable = newProps;
-    // debugger
-    console.log(newProps.linkPreview);
-  }
 
   render() {
-    console.log(this.props.linkPreview);
     let date = postDateFormat(this.props.post.updated_at);
 
     let wallPostClass = "wall-post-hidden";
@@ -37,13 +18,11 @@ class PostIndexItem extends React.Component {
       wallPostClass = "wall-post";
     }
 
-    let link = this.props.post.body;
+    let link = <Linkify>{this.props.post.body}</Linkify>;
     const linkify = new LinkifyIt();
     if (Object.values(this.props.linkPreview).length > 0) {
-      // debugger
       link = this.props.linkPreview.title;
     } else if (linkify.match(link)) {
-      // debugger
       this.props.fetchLinkPreview(linkify.match(link)[0].url);
     }
 
