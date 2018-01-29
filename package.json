@@ -17,6 +17,7 @@
     "linkify-it": "^2.0.3",
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
+    "newsapi": "^2.1.0",
     "react": "^16.2.0",
     "react-click-outside": "^3.0.0",
     "react-dom": "^16.2.0",
