@@ -1,6 +1,7 @@
 import React from 'react';
 import PostIndexContainer from '../posts/post_index_container';
 import PostFormContainer from '../posts/post_form_container';
+import LinkHover from './link_hover';
 import { Link } from 'react-router-dom';
 
 class NewsFeed extends React.Component {
@@ -66,10 +67,14 @@ class NewsFeed extends React.Component {
           <li key={idx}>
             <img className="trend-icon"
               src={window.staticImages.trendIcon}></img>
-            <a href={ article.url } target={"_blank"}>
+            <a className="news-link"
+              href={ article.url } target={"_blank"}>
               <p className="article-desc">{ article.title }</p> <span
                 className="article-source">
               { article.source.name }</span>
+              <LinkHover
+                article={article}
+              />
             </a>
           </li>
         );

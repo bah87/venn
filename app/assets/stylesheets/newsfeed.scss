@@ -191,3 +191,58 @@ i:hover .icon-hover {
   align-items: center;
   justify-content: flex-start;
 }
+
+.link-img-container {
+  display: none;
+}
+
+.link-img {
+  width: 155px;
+  height: 155px;
+}
+
+.link-hover-title {
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.link-hover-desc {
+  color: black;
+  font-size: 12px;
+}
+
+.link-hover-details {
+  height: 155px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 13px;
+}
+
+.link-hover-date {
+  color: #90949c;
+  font-size: 12px;
+}
+
+.news-link {
+  position: relative;
+}
+
+.news-link:hover .link-img-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: white;
+  width: 500px;
+  height: 181px;
+  border-radius: 3px;
+  border: 1px solid rgb(221, 223, 226);
+  box-shadow: 0 4px 6px 2px rgba(0, 0, 0, .10);
+  padding: 13px;
+  box-sizing: border-box;
+  position: absolute;
+  top: -80px;
+  left: -535px;
+}
