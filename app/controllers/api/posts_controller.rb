@@ -3,6 +3,9 @@ class Api::PostsController < ApplicationController
 
   def show_profile
     @posts = User.find(params[:user_id]).profile_items
+    .order(updated_at: :desc)
+    .offset(params[:offset])
+    .limit(5)
     render :index
   end
 

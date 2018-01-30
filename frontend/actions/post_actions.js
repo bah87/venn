@@ -1,8 +1,9 @@
 import * as PostApiUtil from '../util/post_api_util';
-import { togglePostFormErrorModal } from './ui_actions'
+import { togglePostFormErrorModal } from './ui_actions';
 
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
+export const RECEIVE_NEW_POSTS = 'RECEIVE_NEW_POSTS';
 export const REMOVE_POST = 'REMOVE_POST';
 
 export const receivePost = post => {
@@ -15,6 +16,14 @@ export const receivePost = post => {
 export const receiveAllPosts = ({ posts, comments }) => {
   return {
     type: RECEIVE_ALL_POSTS,
+    posts,
+    comments
+  };
+};
+
+export const receiveNewPosts = ({ posts, comments }) => {
+  return {
+    type: RECEIVE_NEW_POSTS,
     posts,
     comments
   };
@@ -45,9 +54,21 @@ export const fetchProfile = (id, offset) => dispatch => {
   });
 };
 
+export const fetchMoreProfile = (id, offset) => dispatch => {
+  return PostApiUtil.fetchProfile(id, offset).then(payload => {
+    dispatch(receiveNewPosts(payload));
+  });
+};
+
 export const fetchFeed = (id, offset) => dispatch => {
   return PostApiUtil.fetchFeed(offset).then(payload => {
     dispatch(receiveAllPosts(payload));
+  });
+};
+
+export const fetchMoreFeed = (id, offset) => dispatch => {
+  return PostApiUtil.fetchFeed(offset).then(payload => {
+    dispatch(receiveNewPosts(payload));
   });
 };
 

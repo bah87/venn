@@ -3,7 +3,9 @@ import PostIndex from './post_index';
 import { toggleEditPostModal } from '../../actions/ui_actions';
 import {
   fetchFeed,
+  fetchMoreFeed,
   fetchProfile,
+  fetchMoreProfile,
   deletePost,
   updatePost,
   deletePostPhoto
@@ -19,9 +21,13 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const action = ownProps.page === "feed" ? fetchFeed : fetchProfile;
+  const initialFetch = ownProps.page === "feed" ?
+    fetchFeed : fetchProfile;
+  const additionalFetch = ownProps.page === "feed" ?
+    fetchMoreFeed : fetchMoreProfile;
   return {
-    action: (id, offset) => dispatch(action(id, offset)),
+    initialFetch: (id, offset) => dispatch(initialFetch(id, offset)),
+    additionalFetch: (id, offset) => dispatch(additionalFetch(id, offset)),
     deletePost: id => dispatch(deletePost(id)),
     updatePost: post => dispatch(updatePost(post)),
     toggleEditPostModal: id => dispatch(toggleEditPostModal(id)),

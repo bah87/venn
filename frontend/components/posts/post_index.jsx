@@ -12,18 +12,18 @@ class PostIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.action(this.props.id, 0);
+    this.props.initialFetch(this.props.id, 0);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.id !== this.props.id) {
-      this.props.action(newProps.id, 0);
+      this.props.initialFetch(newProps.id, 0);
     }
   }
 
   fetchData(length) {
     return () => {
-      this.props.action(this.props.id, length);
+      this.props.additionalFetch(this.props.id, length);
     };
   }
 

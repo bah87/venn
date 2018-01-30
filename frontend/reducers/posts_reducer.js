@@ -1,6 +1,7 @@
 import {
   RECEIVE_POST,
   RECEIVE_ALL_POSTS,
+  RECEIVE_NEW_POSTS,
   REMOVE_POST
 } from '../actions/post_actions';
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
@@ -12,6 +13,8 @@ const postsReducer = (state = {}, action) => {
   let post;
   switch (action.type) {
     case RECEIVE_ALL_POSTS:
+      return merge({}, action.posts);
+    case RECEIVE_NEW_POSTS:
       return merge({}, state, action.posts);
     case RECEIVE_POST:
       return merge({}, state, { [action.post.id]: action.post });
