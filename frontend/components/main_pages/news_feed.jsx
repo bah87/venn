@@ -75,6 +75,10 @@ class NewsFeed extends React.Component {
               <LinkHover
                 article={article}
               />
+              <img
+                className="link-nub"
+                src={window.staticImages.linkNub}
+                />
             </a>
           </li>
         );

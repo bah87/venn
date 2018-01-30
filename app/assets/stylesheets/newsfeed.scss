@@ -205,6 +205,7 @@ i:hover .icon-hover {
   color: black;
   font-size: 16px;
   font-weight: 700;
+  margin-bottom: 4px;
 }
 
 .link-hover-desc {
@@ -224,10 +225,23 @@ i:hover .icon-hover {
 .link-hover-date {
   color: #90949c;
   font-size: 12px;
+  margin-bottom: 4px;
 }
 
 .news-link {
   position: relative;
+}
+
+.link-nub {
+  display: none;
+}
+
+.news-link:hover .link-nub {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -37px;
+  width: 10px;
 }
 
 .news-link:hover .link-img-container {
