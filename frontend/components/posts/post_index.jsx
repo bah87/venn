@@ -64,6 +64,7 @@ class PostIndex extends React.Component {
     return (
       <div >
         <InfiniteScroll
+          style={{ overflow: 'none' }}
           next={this.fetchData(posts.length)}
           hasMore={this.props.morePosts}
           loader={

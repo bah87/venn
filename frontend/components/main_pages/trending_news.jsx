@@ -1,6 +1,7 @@
 import React from 'react';
 import LinkHover from './link_hover';
 import { Link } from 'react-router-dom';
+import { ClipLoader } from 'react-spinners';
 
 class TrendingNews extends React.Component {
   constructor() {
@@ -77,6 +78,15 @@ class TrendingNews extends React.Component {
           </li>
         );
       });
+    } else {
+      articles = (
+        <div className="clip-loader">
+          <ClipLoader
+            loading={true}
+            color={'rgb(89, 109, 190)'}
+          />
+        </div>
+      );
     }
 
     return (
@@ -89,12 +99,21 @@ class TrendingNews extends React.Component {
                 className={politics} aria-hidden="true"></i>
               <div className="icon-hover">Politics</div>
             </div>
-            <i onClick={this.handleClick("science")}
-              className={science} aria-hidden="true"></i>
-            <i onClick={this.handleClick("sports")}
-              className={sports} aria-hidden="true"></i>
-            <i onClick={this.handleClick("entertainment")}
-              className={entertainment} aria-hidden="true"></i>
+            <div className="icon-container">
+              <i onClick={this.handleClick("science")}
+                className={science} aria-hidden="true"></i>
+              <div className="icon-hover">Science</div>
+            </div>
+            <div className="icon-container">
+              <i onClick={this.handleClick("sports")}
+                className={sports} aria-hidden="true"></i>
+              <div className="icon-hover">Sports</div>
+            </div>
+            <div className="icon-container">
+              <i onClick={this.handleClick("entertainment")}
+                className={entertainment} aria-hidden="true"></i>
+              <div className="icon-hover">Entertainment</div>
+            </div>
           </div>
         </div>
         <ul className="trending-list">

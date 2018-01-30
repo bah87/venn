@@ -63,18 +63,23 @@
 
 .icon-container {
   position: relative;
-}
 
-i:hover .icon-hover {
-  display: none;
-  background-color: black;
-  width: 100px;
-  height: 100px;
-  color: white;
-  font-size: 13px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  &:hover .icon-hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 80px;
+    height: 30px;
+    padding: 10px;
+    color: white;
+    font-size: 13px;
+    position: absolute;
+    top: -32px;
+    left: -26px;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
 }
 
 .see-more {
@@ -165,6 +170,7 @@ i:hover .icon-hover {
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 13px;
+  overflow: hidden;
 }
 
 .link-hover-date {
@@ -204,4 +210,11 @@ i:hover .icon-hover {
   position: absolute;
   top: -80px;
   left: -535px;
+}
+
+.clip-loader {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
