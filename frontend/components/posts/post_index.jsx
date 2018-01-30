@@ -2,16 +2,29 @@ import React from 'react';
 import PostIndexItem from './post_index_item';
 import CommentFormContainer from '../comments/comment_form_container';
 import CommentIndexContainer from '../comments/comment_index_container';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { ScaleLoader } from 'react-spinners';
 
 class PostIndex extends React.Component {
+  constructor() {
+    super();
+    this.fetchData = this.fetchData.bind(this);
+  }
+
   componentDidMount() {
-    this.props.action(this.props.id);
+    this.props.action(this.props.id, 0);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.id !== this.props.id) {
-      this.props.action(newProps.id);
+      this.props.action(newProps.id, 0);
     }
+  }
+
+  fetchData(length) {
+    return () => {
+      this.props.action(this.props.id, length);
+    };
   }
 
   render() {
@@ -52,7 +65,25 @@ class PostIndex extends React.Component {
 
     return (
       <div >
-        <ul className="post-index-ul">{ posts }</ul>
+        <InfiniteScroll
+          next={this.fetchData(posts.length)}
+          hasMore={true}
+          loader={
+            <div className="scale-loader">
+              <ScaleLoader
+                loading={true}
+                color={'rgb(89, 109, 190)'}
+              />
+            </div>
+          }
+          endMessage={
+            <p style={{ textAlign: 'center' }}>
+              <p>There are no more posts to load.</p>
+            </p>
+          }
+        >
+          <ul className="post-index-ul">{ posts }</ul>
+        </InfiniteScroll>
       </div>
     );
   }

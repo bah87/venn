@@ -12,18 +12,19 @@ export const fetchPost = id => {
   });
 };
 
-export const fetchProfile = id => {
+export const fetchProfile = (id, offset) => {
   return $.ajax({
     method: 'GET',
     url: `/api/profile/${id}`,
-    data: { user_id: id }
+    data: { user_id: id, offset }
   });
 };
 
-export const fetchFeed = () => {
+export const fetchFeed = offset => {
   return $.ajax({
     method: 'GET',
-    url: '/api/feed'
+    url: '/api/feed',
+    data: { offset }
   });
 };
 

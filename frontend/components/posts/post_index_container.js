@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   const action = ownProps.page === "feed" ? fetchFeed : fetchProfile;
   return {
-    action: id => dispatch(action(id)),
+    action: (id, offset) => dispatch(action(id, offset)),
     deletePost: id => dispatch(deletePost(id)),
     updatePost: post => dispatch(updatePost(post)),
     toggleEditPostModal: id => dispatch(toggleEditPostModal(id)),

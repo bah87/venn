@@ -39,14 +39,14 @@ export const fetchPosts = () => dispatch => {
   });
 };
 
-export const fetchProfile = id => dispatch => {
-  return PostApiUtil.fetchProfile(id).then(payload => {
+export const fetchProfile = (id, offset) => dispatch => {
+  return PostApiUtil.fetchProfile(id, offset).then(payload => {
     dispatch(receiveAllPosts(payload));
   });
 };
 
-export const fetchFeed = () => dispatch => {
-  return PostApiUtil.fetchFeed().then(payload => {
+export const fetchFeed = (id, offset) => dispatch => {
+  return PostApiUtil.fetchFeed(offset).then(payload => {
     dispatch(receiveAllPosts(payload));
   });
 };
