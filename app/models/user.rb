@@ -65,8 +65,8 @@ class User < ApplicationRecord
 
 
   def profile_items
-    Post.where(author_id: 175, recipient_id: [0, nil])
-    .or(Post.where(recipient_id: 175))
+    Post.where(author_id: id, recipient_id: [0, nil])
+    .or(Post.where(recipient_id: id))
     .includes(:comments)
   end
 

@@ -28,9 +28,7 @@ class PostIndex extends React.Component {
   }
 
   render() {
-
     let user = this.props.user;
-
     if (!user && !this.props.friends) { return null; }
 
     const posts = this.props.posts.reverse().map(post => {
@@ -67,11 +65,11 @@ class PostIndex extends React.Component {
       <div >
         <InfiniteScroll
           next={this.fetchData(posts.length)}
-          hasMore={true}
+          hasMore={this.props.morePosts}
           loader={
             <div className="scale-loader">
               <ScaleLoader
-                loading={true}
+                loading={this.props.morePosts}
                 color={'rgb(89, 109, 190)'}
               />
             </div>

@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
     posts: Object.values(state.entities.posts),
     friends: ownProps.friends,
     currentUser: state.session.currentUser,
-    modal: state.ui.editPostModal
+    modal: state.ui.editPostModal,
+    morePosts: state.ui.morePosts
   };
 };
 
