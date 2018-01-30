@@ -64,16 +64,10 @@ class User < ApplicationRecord
   class_name: 'Friend'
 
 
-  def received_posts
-    Post.includes(:comments).where(recipient_id: id)
-  end
-
-  def statuses
-    Post.includes(:comments).where(author_id: id, recipient_id: [0, nil])
-  end
-
   def profile_items
-    statuses + received_posts
+    Post.where(author_id: 175, recipient_id: [0, nil])
+    .or(Post.where(recipient_id: 175))
+    .includes(:comments)
   end
 
   def friend_ids
