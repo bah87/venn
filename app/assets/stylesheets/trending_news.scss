@@ -29,6 +29,10 @@
   max-width: 18px;
 }
 
+.link-icon {
+  display: none;
+}
+
 .trending-list {
   list-style: none;
   padding: 0;
@@ -74,10 +78,19 @@
     color: white;
     font-size: 13px;
     position: absolute;
-    top: -32px;
-    left: -26px;
+    top: -34px;
+    left: -21px;
     box-sizing: border-box;
     border-radius: 3px;
+  }
+
+  &:hover .link-icon {
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 5px;
+    width: 15px;
+    height: 8px;
   }
 }
 

@@ -98,22 +98,30 @@ class TrendingNews extends React.Component {
               <i onClick={this.handleClick("politics")}
                 className={politics} aria-hidden="true"></i>
               <div className="icon-hover">Politics</div>
-            </div>
+              <img className="link-icon"
+                src={window.staticImages.linkIconNub}></img>
+              </div>
             <div className="icon-container">
               <i onClick={this.handleClick("science")}
                 className={science} aria-hidden="true"></i>
               <div className="icon-hover">Science</div>
-            </div>
+              <img className="link-icon"
+                src={window.staticImages.linkIconNub}></img>
+              </div>
             <div className="icon-container">
               <i onClick={this.handleClick("sports")}
                 className={sports} aria-hidden="true"></i>
               <div className="icon-hover">Sports</div>
-            </div>
+              <img className="link-icon"
+                src={window.staticImages.linkIconNub}></img>
+              </div>
             <div className="icon-container">
               <i onClick={this.handleClick("entertainment")}
                 className={entertainment} aria-hidden="true"></i>
               <div className="icon-hover">Entertainment</div>
-            </div>
+              <img className="link-icon"
+                src={window.staticImages.linkIconNub}></img>
+              </div>
           </div>
         </div>
         <ul className="trending-list">
