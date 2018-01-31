@@ -38,7 +38,7 @@ users = [
 
   ["Jonathan", "Goldsmith", "M", "mimitw-cover.jpg", "mimitw.png", "Faker::MostInterestingManInTheWorld"],
 
-  ["Demo", "User", "M", "demo-cover.jpg", "demo.jpg", "Faker::FamilyGuy"]
+  ["Demo", "User", "M", "demo-cover.jpg", "demo.jpg", "Faker::Hacker"]
 ]
 
 users.each do |user|
@@ -55,7 +55,13 @@ users.each do |user|
   u.save!
 
   10.times do
-    body = user[0] == "Chuck" ? Kernel.const_get(user[5]).fact : Kernel.const_get(user[5]).quote
+    if user[0] == "Chuck"
+      body = Kernel.const_get(user[5]).unique.fact
+    elsif user[0] == "Demo"
+      body = Kernel.const_get(user[5]).unique.say_something_smart
+    else
+      body = Kernel.const_get(user[5]).quote
+    end
     Post.create(
       body: body,
       author_id: u.id,

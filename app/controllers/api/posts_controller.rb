@@ -17,6 +17,7 @@ class Api::PostsController < ApplicationController
     .offset(params[:offset])
     .limit(5)
     .includes(:comments)
+
     render :index
   end
 

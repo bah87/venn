@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { fetchUser, saveUserPhoto } from '../../actions/user_actions';
+import {
+  fetchUser,
+  saveUserPhoto ,
+  fetchFriends
+} from '../../actions/user_actions';
 import { toggleProfPicModal } from '../../actions/ui_actions';
 import {
   sendRequest,
@@ -10,6 +14,7 @@ import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
   const profileUserFriends = [];
+  // debugger
   if (state.entities.users[ownProps.match.params.userId]) {
     state.entities.users[ownProps.match.params.userId].friend_ids.forEach(id => {
       profileUserFriends.push(state.entities.users[id]);
@@ -25,8 +30,6 @@ const mapStateToProps = (state, ownProps) => {
     }
   })[0];
 
-  // debugger
-
   return {
     user: state.entities.users[ownProps.match.params.userId],
     currentUser: state.session.currentUser,
@@ -39,6 +42,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    fetchFriends: () => dispatch(fetchFriends()),
     fetchUser: id => dispatch(fetchUser(id)),
     saveUserPhoto: photo => dispatch(saveUserPhoto(photo)),
     toggleProfPicModal: () => dispatch(toggleProfPicModal()),

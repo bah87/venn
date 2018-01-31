@@ -9,19 +9,24 @@ class Profile extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     const id = this.props.match.params.userId;
-    this.props.fetchUser(id);
+    this.props.fetchFriends().then(() => {
+      this.props.fetchUser(id);
+    });
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.userId !== this.props.match.params.userId) {
       window.scrollTo(0, 0);
-      this.props.fetchUser(newProps.match.params.userId);
+      this.props.fetchFriends().then(() => {
+        this.props.fetchUser(newProps.match.params.userId);
+      });
     }
   }
 
   render() {
     let postForm = null;
-    if (parseInt(this.props.match.params.userId) === this.props.currentUser.id) {
+    if (parseInt(this.props.match.params.userId)
+          === this.props.currentUser.id) {
       postForm = (
         <PostFormContainer
           page={"profile"}
@@ -48,18 +53,26 @@ class Profile extends React.Component {
       lastName = this.props.user.last_name;
     }
 
-    const friends = this.props.profileUserFriends.map((friend,idx) => {
-      return (
-        <li key={friend.id}>
-          <div className="profile-friends-names">
-            {`${friend.first_name} ${friend.last_name}`}
-          </div>
-          <Link to={`/profile/${friend.id}`}>
-            <img className="profile-friends-pic" src={friend.profile_pic_url}></img>
-          </Link>
-        </li>
-      );
-    });
+    let friends;
+    // debugger
+    if (this.props.profileUserFriends === []) {
+      friends = [];
+    } else {
+      friends = this.props.profileUserFriends.map((friend,idx) => {
+        return (
+          <li key={friend.id}>
+            <div className="profile-friends-names">
+              {`${friend.first_name} ${friend.last_name}`}
+            </div>
+            <Link to={`/profile/${friend.id}`}>
+              <img
+                className="profile-friends-pic"
+                src={friend.profile_pic_url}></img>
+            </Link>
+          </li>
+        );
+      });
+    }
 
     return (
       <div className="profile-container-box">
