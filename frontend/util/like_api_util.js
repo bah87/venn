@@ -13,3 +13,17 @@ export const likeComment = commentId => {
     data: { likeable_id: commentId }
   });
 };
+
+export const deletePostLike = likeId => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/posts/likes/${likeId}`
+  });
+};
+
+export const deleteCommentLike = likeId => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/comments/likes/${likeId}`
+  });
+};

@@ -1,4 +1,6 @@
 class Api::CommentsController < ApplicationController
+  before_action :require_logged_in
+
   def index
     @comments = Post.find(params[:post_id]).comments
   end
