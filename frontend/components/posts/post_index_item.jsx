@@ -31,6 +31,14 @@ class PostIndexItem extends React.Component {
   }
 
   render() {
+    let likeBtn = "like-btn";
+    let likeIcon = "fa fa-thumbs-o-up";
+    if (this.props.post.likes.map(
+      like => like.liker_id).includes(this.props.currentUser.id)) {
+      likeBtn += " liked";
+      likeIcon = "fa fa-thumbs-up";
+    }
+
     let date = postDateFormat(this.props.post.updated_at);
 
     let wallPostClass = "wall-post-hidden";
@@ -137,8 +145,8 @@ class PostIndexItem extends React.Component {
           </main>
 
           <footer className="post-item-footer">
-            <div onClick={this.handleLike} className="like-btn">
-              <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            <div onClick={this.handleLike} className={likeBtn}>
+              <i className={likeIcon} aria-hidden="true"></i>
               <p>Like</p>
             </div>
             <div
