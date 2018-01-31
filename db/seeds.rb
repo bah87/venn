@@ -86,7 +86,7 @@ User.where(first_name: ['Jonathan', 'Chuck']).each do |user1|
 end
 
 demo_id = User.where(first_name: 'Demo').first.id
-users.each do |user|
+users[0..-2].each do |user|
   req_status = rand > 0.8 ? 'PENDING' : 'ACCEPTED'
   Friend.create(
     requestor_id: user.id,

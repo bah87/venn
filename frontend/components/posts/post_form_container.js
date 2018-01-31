@@ -8,7 +8,7 @@ import {
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.entities.users[state.session.currentUser.id],
+    currentUser: state.session.currentUser,
     modal: state.ui.postFormModal,
     errorModal: state.ui.postFormErrorModal
   };

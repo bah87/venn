@@ -45,9 +45,11 @@ class PostForm extends React.Component {
     } else {
       placeholderText = `Write something to ${this.props.user.first_name}...`;
     }
-    if (this.state.imageFile) placeholderText = "Say something about this photo...";
+    if (this.state.imageFile) {
+      placeholderText = "Say something about this photo...";
+    }
 
-    this.setState({ placeholderText: placeholderText });
+    this.setState({ placeholderText });
   }
 
   updateFile(event) {
@@ -145,11 +147,6 @@ class PostForm extends React.Component {
       modalFormErrorClass = "post-form-error-show";
     }
 
-    let profPicUrl = "";
-    if (this.props.currentUser) {
-      profPicUrl = this.props.currentUser.profile_pic_url;
-    }
-
     return (
       <div>
         <div
@@ -206,7 +203,7 @@ class PostForm extends React.Component {
                 <div className="post-body-wrapper">
                   <div className="post-form-text">
                     <img className="post-profile-pic"
-                      src={profPicUrl}
+                      src={this.props.currentUser.profile_pic_url}
                       />
                     <textarea
                       id="post-form-textarea"

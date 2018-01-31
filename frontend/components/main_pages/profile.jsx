@@ -50,7 +50,7 @@ class Profile extends React.Component {
 
     const friends = this.props.profileUserFriends.map((friend,idx) => {
       return (
-        <li>
+        <li key={friend.id}>
           <div className="profile-friends-names">
             {`${friend.first_name} ${friend.last_name}`}
           </div>
