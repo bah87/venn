@@ -66,7 +66,7 @@ class PostIndexItem extends React.Component {
 
                 <div className={wallPostClass}>
                   <i className="fa fa-caret-right" aria-hidden="true"></i>
-                  <p className="post-item-name">
+                  <div className="post-item-name">
                     {`${this.props.user.first_name}
                     ${this.props.user.last_name}`}
                     <NameHover
@@ -79,7 +79,7 @@ class PostIndexItem extends React.Component {
                     />
                     <img className="name-hover-nub"
                       src={window.staticImages.nameHoverNub}></img>
-                  </p>
+                  </div>
                 </div>
 
                 <PostDropdown

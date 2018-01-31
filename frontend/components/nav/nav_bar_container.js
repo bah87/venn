@@ -9,13 +9,8 @@ import {
 import { fetchSearchedUsers } from '../../actions/user_actions';
 
 const mapStateToProps = state => {
-  let id;
-  if (state.session.currentUser) {
-    id = state.session.currentUser.id;
-  }
-  const currentUser = id ? state.entities.users[id] : null;
   return {
-    currentUser: currentUser,
+    currentUser: state.session.currentUser,
     requests: Object.values(state.entities.friendRequests),
     searchedUsers: Object.values(state.entities.searchedUsers)
   };

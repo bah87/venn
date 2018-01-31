@@ -11,6 +11,7 @@ class FriendDropdown extends React.Component {
       )).map(request => {
         return (
           <FriendDropdownItem
+            key={request.id}
             img={request.requestor_img}
             name={request.requestor_name}
             mutualFriends={request.mutual_friends}

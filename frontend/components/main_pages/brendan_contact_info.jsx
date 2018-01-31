@@ -34,7 +34,7 @@ const BrendanContactInfo = () => {
           </a>
         </li>
         <li className="contact-item">
-          <a href="https://angel.co/brendan-higgins-1?public_profile=1"
+          <a href="https://angel.co/bhiggins3"
           target="_blank">
             <i className="fa fa-angellist" aria-hidden="true"></i>
             <span>/bhiggins3</span>
