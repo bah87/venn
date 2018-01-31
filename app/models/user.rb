@@ -63,6 +63,10 @@ class User < ApplicationRecord
   foreign_key: :requestor_id,
   class_name: 'Friend'
 
+  has_many :likes,
+  foreign_key: :liker_id,
+  class_name: 'Like'
+
 
   def profile_items
     Post.where(author_id: id, recipient_id: [0, nil])
