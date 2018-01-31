@@ -4,6 +4,43 @@
   font-weight: 700;
 }
 
+.contact-brendan {
+  margin-top: 25px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: rgb(246, 247, 249);
+    cursor: pointer;
+  }
+}
+
 .contact-options {
   list-style: none;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  i {
+    color: #4267b2;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    color: black;
+    font-size: 12px;
+  }
 }

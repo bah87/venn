@@ -18,7 +18,7 @@ class NewsFeed extends React.Component {
         <div className="newsfeed-main">
           <div className="newsfeed-sidebar">
             <ul>
-              <li>
+              <li className="newsfeed-to-profile">
                 <Link
                   to={`/profile/${currentUser.id}`}
                   style={{ textDecoration: 'none'}}>
