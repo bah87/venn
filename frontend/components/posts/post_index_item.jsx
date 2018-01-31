@@ -16,6 +16,8 @@ class PostIndexItem extends React.Component {
   }
 
   handleLike() {
+    debugger
+
     let likeId;
     this.props.post.likes.forEach(like => {
       if (like.liker_id === this.props.currentUser.id) {

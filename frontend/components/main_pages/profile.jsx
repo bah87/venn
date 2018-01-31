@@ -83,8 +83,6 @@ class Profile extends React.Component {
       });
     }
 
-    console.log(friends);
-
     return (
       <div className="profile-container-box">
         <div className="profile-main">
