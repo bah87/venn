@@ -5,6 +5,7 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_NEW_POSTS = 'RECEIVE_NEW_POSTS';
 export const REMOVE_POST = 'REMOVE_POST';
+export const REMOVE_LIKE = 'REMOVE_LIKE';
 
 export const receivePost = post => {
   return {
@@ -33,6 +34,14 @@ export const removePost = postId => {
   return {
     type: REMOVE_POST,
     postId
+  };
+};
+
+export const removeLike = ({ likeId, likeableId }) => {
+  return {
+    type: REMOVE_LIKE,
+    likeId,
+    likeableId
   };
 };
 
@@ -108,7 +117,7 @@ export const likePost = postId => dispatch => {
 };
 
 export const unlikePost = (likeId, postId) => dispatch => {
-  return PostApiUtil.unlikePost(likeId, postId).then(post => {
-    dispatch(receivePost(post));
+  return PostApiUtil.unlikePost(likeId, postId).then(payload => {
+    dispatch(removeLike(payload));
   });
 };

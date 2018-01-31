@@ -20,14 +20,6 @@ class Api::LikesController < ApplicationController
     @like = Like.find(params[:id])
     @like.destroy
     render :destroy
-
-    # if like_params[:likeable_type] == 'post'
-    #   @post = Post.find(like_params[:likeable_id])
-    #   render :destroy
-    # elsif like_params[:likeable_type] == 'comment'
-    #   @comment = Comment.find(like_params[:likeable_id])
-    #   render :comment_likes
-    # end
   end
 
   private

@@ -2,7 +2,8 @@ import {
   RECEIVE_POST,
   RECEIVE_ALL_POSTS,
   RECEIVE_NEW_POSTS,
-  REMOVE_POST
+  REMOVE_POST,
+  REMOVE_LIKE
 } from '../actions/post_actions';
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 import merge from 'lodash/merge';
@@ -16,6 +17,13 @@ const postsReducer = (state = {}, action) => {
       return merge({}, action.posts);
     case RECEIVE_NEW_POSTS:
       return merge({}, state, action.posts);
+    case REMOVE_LIKE:
+      newState = merge({}, state);
+      post = newState[action.likeableId];
+      post.likes = post.likes.filter(like => {
+        return like.id !== action.likeId;
+      });
+      return newState;
     case RECEIVE_POST:
       return merge({}, state, { [action.post.id]: action.post });
     case REMOVE_POST:
