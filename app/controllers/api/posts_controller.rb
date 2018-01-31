@@ -21,6 +21,15 @@ class Api::PostsController < ApplicationController
     render :index
   end
 
+  def create_like
+    like = Like.new(like_params)
+    like.likeable_type = 'post'
+    like.likeable_id = params[:id]
+    like.save!
+    @post = Post.find(params[:id])
+    render :show
+  end
+
   def show
     @post = Post.find(params[:id])
   end
@@ -77,6 +86,12 @@ class Api::PostsController < ApplicationController
       :body,
       :recipient_id,
       :image
+    )
+  end
+
+  def like_params
+    params.require(:like).permit(
+      :liker_id
     )
   end
 end

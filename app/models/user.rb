@@ -57,16 +57,18 @@ class User < ApplicationRecord
 
   has_many :friend_requests,
   foreign_key: :receiver_id,
-  class_name: 'Friend'
+  class_name: 'Friend',
+  dependent: :destroy
 
   has_many :sent_requests,
   foreign_key: :requestor_id,
-  class_name: 'Friend'
+  class_name: 'Friend',
+  dependent: :destroy
 
   has_many :likes,
   foreign_key: :liker_id,
-  class_name: 'Like'
-
+  class_name: 'Like',
+  dependent: :destroy
 
   def profile_items
     Post.where(author_id: id, recipient_id: [0, nil])
