@@ -4,6 +4,21 @@
   justify-content: flex-start;
 }
 
+.prop-loader {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.friends-loading {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
 .friend-btn-hidden {
   display: none;
 }

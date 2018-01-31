@@ -14,7 +14,6 @@ import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
   const profileUserFriends = [];
-  // debugger
   if (state.entities.users[ownProps.match.params.userId]) {
     state.entities.users[ownProps.match.params.userId].friend_ids.forEach(id => {
       profileUserFriends.push(state.entities.users[id]);

@@ -4,6 +4,7 @@ import PostIndexContainer from '../posts/post_index_container';
 import CoverPhoto from './cover_photo';
 import ProfilePicture from './profile_picture';
 import { Link } from 'react-router-dom';
+import { PropagateLoader } from 'react-spinners';
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -54,9 +55,17 @@ class Profile extends React.Component {
     }
 
     let friends;
-    // debugger
-    if (this.props.profileUserFriends === []) {
-      friends = [];
+    let friendsListClass = "profile-friends-list";
+    if (this.props.profileUserFriends.length === 0) {
+      friendsListClass = "friends-loading";
+      friends = (
+        <div className="prop-loader">
+          <PropagateLoader
+            loading={true}
+            color={'rgb(89, 109, 190)'}
+          />
+        </div>
+      );
     } else {
       friends = this.props.profileUserFriends.map((friend,idx) => {
         return (
@@ -73,6 +82,8 @@ class Profile extends React.Component {
         );
       });
     }
+
+    console.log(friends);
 
     return (
       <div className="profile-container-box">
@@ -108,7 +119,7 @@ class Profile extends React.Component {
                   <div className="profile-friends-title">Friends</div>
                   <div className="profile-friends-count">{friends.length}</div>
                 </div>
-                <ul className="profile-friends-list">
+                <ul className={friendsListClass}>
                   {friends}
                 </ul>
               </div>
