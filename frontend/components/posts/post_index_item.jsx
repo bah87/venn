@@ -59,6 +59,8 @@ class PostIndexItem extends React.Component {
                         "profImg": this.props.post.author_img
                       }}
                     />
+                    <img className="name-hover-nub"
+                      src={window.staticImages.nameHoverNub}></img>
                   </div>
                 </Link>
 
@@ -75,6 +77,8 @@ class PostIndexItem extends React.Component {
                         "profImg": this.props.post.recipient_img
                       }}
                     />
+                    <img className="name-hover-nub"
+                      src={window.staticImages.nameHoverNub}></img>
                   </p>
                 </div>
 

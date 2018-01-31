@@ -3,6 +3,7 @@ import PostIndexContainer from '../posts/post_index_container';
 import PostFormContainer from '../posts/post_form_container';
 import { Link } from 'react-router-dom';
 import TrendingNews from './trending_news';
+import BrendanContactInfo from './brendan_contact_info';
 
 class NewsFeed extends React.Component {
   componentDidMount() {
@@ -30,6 +31,9 @@ class NewsFeed extends React.Component {
                     </p>
                   </div>
                 </Link>
+              </li>
+              <li>
+                <BrendanContactInfo />
               </li>
             </ul>
           </div>

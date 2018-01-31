@@ -12,18 +12,32 @@
   width: 70px;
 }
 
-.post-item-name:hover .hover-container {
-  display: block;
-  width: 180px;
-  height: 150px;
-  background-color: white;
-  position: absolute;
-  top: -160px;
-  left: -25px;
-  color: white;
-  border-radius: 3px;
-  box-sizing: content-box;
-  border: 1px solid rgb(221, 223, 226);
+.name-hover-nub {
+  display: none;
+}
+
+.post-item-name {
+  &:hover .hover-container {
+    display: block;
+    width: 180px;
+    height: 150px;
+    background-color: white;
+    position: absolute;
+    top: -160px;
+    left: -46px;
+    color: white;
+    border-radius: 3px;
+    box-sizing: content-box;
+    border: 1px solid rgb(221, 223, 226);
+  }
+
+  &:hover .name-hover-nub {
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 34px;
+    width: 15px;
+  }
 }
 
 .hover-cover-img {
