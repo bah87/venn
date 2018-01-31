@@ -100,3 +100,15 @@ export const deletePostPhoto = id => dispatch => {
     dispatch(receivePost(post));
   });
 };
+
+export const likePost = postId => dispatch => {
+  return PostApiUtil.likePost(postId).then(post => {
+    dispatch(receivePost(post));
+  });
+};
+
+export const unlikePost = (likeId, postId) => dispatch => {
+  return PostApiUtil.likePost(likeId, postId).then(post => {
+    dispatch(receivePost(post));
+  });
+};

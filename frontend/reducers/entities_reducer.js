@@ -5,7 +5,6 @@ import commentsReducer from './comments_reducer';
 import friendRequestsReducer from './friend_requests_reducer';
 import userSearchReducer from './user_search_reducer';
 import trendingReducer from './trending_reducer';
-import likesReducer from './likes_reducer';
 
 const entitiesReducer = combineReducers({
   posts: postsReducer,
@@ -13,8 +12,7 @@ const entitiesReducer = combineReducers({
   comments: commentsReducer,
   friendRequests: friendRequestsReducer,
   searchedUsers: userSearchReducer,
-  trendingNews: trendingReducer,
-  likes: likesReducer
+  trendingNews: trendingReducer
 });
 
 export default entitiesReducer;

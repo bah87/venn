@@ -63,3 +63,19 @@ export const deletePostPhoto = id => {
     url: `/api/posts/images/${id}`
   });
 };
+
+export const likePost = postId => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/likes',
+    data: { like: { likeable_id: postId, likeable_type: 'post' } }
+  });
+};
+
+export const unlikePost = (likeId, postId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/likes/${likeId}`,
+    data: { like: { likeable_id: postId, likeable_type: 'post' } }
+  });
+};

@@ -5,11 +5,12 @@ class Api::LikesController < ApplicationController
     like = Like.new(like_params)
     like.liker_id = current_user.id
     like.save!
-    if likeable_type == 'post'
+    current_user.likes.push(like)
+    if like_params[:likeable_type] == 'post'
       @post = Post.find(like_params[:likeable_id])
       @post.likes.push(like)
       render :post_likes
-    elsif likeable_type == 'comment'
+    elsif like_params[:likeable_type] == 'comment'
       @comment = Comment.find(like_params[:likeable_id])
       @comment.likes.push(like)
       render :comment_likes
@@ -18,12 +19,18 @@ class Api::LikesController < ApplicationController
 
   def destroy
     like = Like.find(params[:id])
-    if likeable_type == 'post'
-      @post.likes.delete(like)
+    current_user.likes = current_user.likes.reject do |like|
+      like.id == params[:id]
+    end
+    
+    if like_params[:likeable_type] == 'post'
+      @post = Post.find(like_params[:likeable_id])
+      @post.likes = @post.likes.reject { |like| like.id == params[:id] }
       like.destroy
       render :post_likes
-    elsif likeable_type == 'comment'
-      @comment.likes.delete(like)
+    elsif like_params[:likeable_type] == 'comment'
+      @comment = Comment.find(like_params[:likeable_id])
+      @comment.likes = @comment.likes.reject { |like| like.id == params[:id] }
       like.destroy
       render :comment_likes
     end
