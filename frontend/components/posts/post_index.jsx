@@ -76,9 +76,9 @@ class PostIndex extends React.Component {
             </div>
           }
           endMessage={
-            <p style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center' }}>
               <p>There are no more posts to load.</p>
-            </p>
+            </div>
           }
         >
           <ul className="post-index-ul">{ posts }</ul>

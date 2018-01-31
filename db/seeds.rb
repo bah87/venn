@@ -56,7 +56,11 @@ users.each do |user|
 
   10.times do
     body = user[0] == "Chuck" ? Kernel.const_get(user[5]).fact : Kernel.const_get(user[5]).quote
-    Post.create(body: body, author_id: u.id, updated_at: )
+    Post.create(
+      body: body,
+      author_id: u.id,
+      updated_at: DateTime.new(2018,1,rand(1..31),rand(0..23),rand(0..59),rand(0..59))
+    )
   end
 end
 
