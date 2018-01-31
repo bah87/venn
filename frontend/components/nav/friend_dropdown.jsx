@@ -4,7 +4,7 @@ import FriendDropdownItem from './friend_dropdown_item';
 class FriendDropdown extends React.Component {
   render() {
     let requests;
-    if (this.props.requests) {
+    if (this.props.requests && this.props.currentUser) {
       requests = this.props.requests.filter(request => (
         request.receiver_id === this.props.currentUser.id &&
         request.status === 'PENDING'

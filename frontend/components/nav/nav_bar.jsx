@@ -14,7 +14,9 @@ class NavBar extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchRequests();
+    if (this.props.currentUser) {
+      this.props.fetchRequests();
+    }
   }
 
   handleClickOutside(e) {
@@ -41,73 +43,76 @@ class NavBar extends React.Component {
       friendReqClass = "friend-requests-drop";
     }
 
-    let currentUser = this.props.currentUser;
     const navClass = window.location.href.includes("profile") ?
     "profile" : "feed";
 
-    return (
-      <div className="main-nav-bar">
-        <div className="left-nav">
-          <Link to="/" style={{ display: 'flex' }}>
-            <img
-              className="nav-logo"
-              src={window.staticImages.navLogo}
-              />
-          </Link>
-
-          <SearchDropdown
-            users={this.props.searchedUsers}
-            searchUsers={this.props.fetchSearchedUsers}
-          />
-        </div>
-
-        <div className={`right-nav-${navClass}`}>
-          <Link
-            to={`/profile/${currentUser.id}`}
-            style={{ textDecoration: 'none' }}>
-            <div className="profile-btn-container">
-              <img className="nav-profile-pic"
-                src={currentUser.profile_pic_url}
-              />
-            <button className="profile-btn">
-              { currentUser.first_name }
-            </button>
-            </div>
-          </Link>
-
-          <div className="newsfeed-btn-container">
-            <Link to="/">
-              <button className="newsfeed-btn">
-                Home
-              </button>
+    if (this.props.currentUser) {
+      return (
+        <div className="main-nav-bar">
+          <div className="left-nav">
+            <Link to="/" style={{ display: 'flex' }}>
+              <img
+                className="nav-logo"
+                src={window.staticImages.navLogo}
+                />
             </Link>
+
+            <SearchDropdown
+              users={this.props.searchedUsers}
+              searchUsers={this.props.fetchSearchedUsers}
+            />
           </div>
 
-          <div className={friendReqClass}
-            ref={node => { this.node = node; }}>
-            <i onClick={this.clickFriendDropdown}
-              className="fa fa-users" aria-hidden="true"></i>
-            <img className={beeperNub}
-              src={window.staticImages.beeperNub}></img>
-            <FriendDropdown
-              ref={friends => { this.friends = friends; }}
-              requests={this.props.requests}
-              rejectFriend={this.props.rejectFriend}
-              addFriend={this.props.addFriend}
-              currentUser={currentUser}
-              dropdownStatus={this.state.dropdown}
-              />
+          <div className={`right-nav-${navClass}`}>
+            <Link
+              to={`/profile/${this.props.currentUser.id}`}
+              style={{ textDecoration: 'none' }}>
+              <div className="profile-btn-container">
+                <img className="nav-profile-pic"
+                  src={this.props.currentUser.profile_pic_url}
+                />
+              <button className="profile-btn">
+                { this.props.currentUser.first_name }
+              </button>
+              </div>
+            </Link>
+
+            <div className="newsfeed-btn-container">
+              <Link to="/">
+                <button className="newsfeed-btn">
+                  Home
+                </button>
+              </Link>
+            </div>
+
+            <div className={friendReqClass}
+              ref={node => { this.node = node; }}>
+              <i onClick={this.clickFriendDropdown}
+                className="fa fa-users" aria-hidden="true"></i>
+              <img className={beeperNub}
+                src={window.staticImages.beeperNub}></img>
+              <FriendDropdown
+                ref={friends => { this.friends = friends; }}
+                requests={this.props.requests}
+                rejectFriend={this.props.rejectFriend}
+                addFriend={this.props.addFriend}
+                currentUser={this.props.currentUser}
+                dropdownStatus={this.state.dropdown}
+                />
+            </div>
+
+            <div className="logout-btn-container">
+              <button
+                className="logout-btn"
+                onClick={() => this.props.logout()}>Logout</button>
+            </div>
           </div>
 
-          <div className="logout-btn-container">
-            <button
-              className="logout-btn"
-              onClick={() => this.props.logout()}>Logout</button>
-          </div>
         </div>
-
-      </div>
-    );
+      );
+    } else {
+      return (<div></div>);
+    }
   }
 }
 

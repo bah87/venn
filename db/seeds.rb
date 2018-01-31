@@ -56,7 +56,7 @@ users.each do |user|
 
   10.times do
     body = user[0] == "Chuck" ? Kernel.const_get(user[5]).fact : Kernel.const_get(user[5]).quote
-    Post.create(body: body, author_id: u.id)
+    Post.create(body: body, author_id: u.id, updated_at: )
   end
 end
 
