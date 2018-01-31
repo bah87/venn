@@ -108,7 +108,7 @@ export const likePost = postId => dispatch => {
 };
 
 export const unlikePost = (likeId, postId) => dispatch => {
-  return PostApiUtil.likePost(likeId, postId).then(post => {
+  return PostApiUtil.unlikePost(likeId, postId).then(post => {
     dispatch(receivePost(post));
   });
 };

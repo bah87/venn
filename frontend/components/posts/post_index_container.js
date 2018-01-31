@@ -8,7 +8,9 @@ import {
   fetchMoreProfile,
   deletePost,
   updatePost,
-  deletePostPhoto
+  deletePostPhoto,
+  likePost,
+  unlikePost
 } from '../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -32,7 +34,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     deletePost: id => dispatch(deletePost(id)),
     updatePost: post => dispatch(updatePost(post)),
     toggleEditPostModal: id => dispatch(toggleEditPostModal(id)),
-    deletePostPhoto: id => dispatch(deletePostPhoto(id))
+    deletePostPhoto: id => dispatch(deletePostPhoto(id)),
+    likePost: postId => dispatch(likePost(postId)),
+    unlikePost: (likeId, postId) => dispatch(unlikePost(likeId, postId))
   };
 };
 

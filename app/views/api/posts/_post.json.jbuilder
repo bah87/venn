@@ -1,4 +1,4 @@
-json.extract! post, :id, :body, :author_id, :updated_at, :recipient_id
+json.extract! post, :id, :body, :author_id, :updated_at, :recipient_id, :likes
 author = post.author
 json.author_name "#{author.first_name} #{author.last_name}"
 json.author_img author.image.url

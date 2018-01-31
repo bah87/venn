@@ -9,6 +9,26 @@ import LinkifyIt from 'linkify-it';
 import Linkify from 'react-linkify';
 
 class PostIndexItem extends React.Component {
+  constructor() {
+    super();
+
+    this.handleLike = this.handleLike.bind(this);
+  }
+
+  handleLike() {
+    let likeId;
+    this.props.post.likes.forEach(like => {
+      if (like.liker_id === this.props.currentUser.id) {
+        likeId = like.id;
+      }
+    });
+
+    if (likeId) {
+      this.props.unlikePost(likeId, this.props.post.id);
+    } else {
+      this.props.likePost(this.props.post.id);
+    }
+  }
 
   render() {
     let date = postDateFormat(this.props.post.updated_at);
@@ -117,7 +137,7 @@ class PostIndexItem extends React.Component {
           </main>
 
           <footer className="post-item-footer">
-            <div className="like-btn">
+            <div onClick={this.handleLike} className="like-btn">
               <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
               <p>Like</p>
             </div>
