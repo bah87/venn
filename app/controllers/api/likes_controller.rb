@@ -8,10 +8,10 @@ class Api::LikesController < ApplicationController
     like.save!
     if like_params[:likeable_type] == 'Post'
       @post = Post.find(like_params[:likeable_id])
-      render :show
+      render :show_post
     elsif like_params[:likeable_type] == 'Comment'
       @comment = Comment.find(like_params[:likeable_id])
-      render :show
+      render :show_comment
     end
   end
 

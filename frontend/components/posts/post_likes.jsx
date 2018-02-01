@@ -30,7 +30,7 @@ const PostLikes = ({ you, youLiked, likers }) => {
   let likersHover = youLiked ? [you] : [];
   likersHover = likersHover.concat(likers).map(liker => {
     return (
-      <div>
+      <div key={liker.id}>
         {`${liker.first_name} ${liker.last_name}`}
       </div>
     );

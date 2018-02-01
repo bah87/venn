@@ -13,6 +13,8 @@ class CommentIndex extends React.Component {
           currentUserId={ this.props.currentUserId }
           post={ this.props.post }
           editComment={ this.props.editComment }
+          likeComment={ this.props.likeComment }
+          unlikeComment={ this.props.unlikeComment }
         />
       );
     });

@@ -9,6 +9,23 @@ import Linkify from 'react-linkify';
 class CommentIndexItem extends React.Component {
   constructor() {
     super();
+
+    this.handleLike = this.handleLike.bind(this);
+  }
+
+  handleLike() {
+    let likeId;
+    this.props.comment.likes.forEach(like => {
+      if (like.liker_id === this.props.currentUser.id) {
+        likeId = like.id;
+      }
+    });
+
+    if (likeId) {
+      this.props.unlikeComment(likeId, this.props.comment.id);
+    } else {
+      this.props.likeComment(this.props.comment.id);
+    }
   }
 
   render() {
@@ -51,8 +68,12 @@ class CommentIndexItem extends React.Component {
               form={false}
               imageUrl={this.props.comment.image_url}
             />
-            <div id="comment-date" className="post-item-date">
-              { date }
+            <div id="comment-date">
+              <strong onClick={this.handleLike}
+                className="comment-strong-like">Like</strong>
+              <strong className="comment-strong-date">
+                { `• ${date}` }
+              </strong>
             </div>
           </div>
           <CommentDropdown
