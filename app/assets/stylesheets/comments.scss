@@ -174,7 +174,7 @@
   color: rgb(54, 88, 153);
 }
 
-.comment-strong-like {
+.comment-like-btn {
   font-size: 12px;
   font-weight: normal;
   cursor: pointer;
@@ -184,6 +184,11 @@
   &:hover {
     text-decoration: underline;
   }
+}
+
+.comment-liked {
+  color: rgb(64, 128, 255);
+  font-weight: 700;
 }
 
 .comment-strong-date {

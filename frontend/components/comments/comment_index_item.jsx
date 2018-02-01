@@ -31,6 +31,12 @@ class CommentIndexItem extends React.Component {
   render() {
     let date = commentDateFormat(this.props.comment.updated_at);
 
+    let likeBtn = "comment-like-btn";
+    if (this.props.comment.likes.map(
+      like => like.liker_id).includes(this.props.currentUser.id)) {
+      likeBtn += " comment-liked";
+    }
+
     if (this.props.editComment === this.props.comment.id) {
       return (
         <CommentFormContainer
@@ -70,7 +76,7 @@ class CommentIndexItem extends React.Component {
             />
             <div id="comment-date">
               <strong onClick={this.handleLike}
-                className="comment-strong-like">Like</strong>
+                className={likeBtn}>Like</strong>
               <strong className="comment-strong-date">
                 { `• ${date}` }
               </strong>
