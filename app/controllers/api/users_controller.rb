@@ -27,9 +27,7 @@ class Api::UsersController < ApplicationController
 
   def search
     if params[:query].present?
-      first_name = User.where('first_name ~ ?', params[:query])
-      last_name = User.where('last_name ~ ?', params[:query])
-      @users = first_name + last_name
+      @users = User.search_by_full_name(params[:query].downcase)
     else
       @users = User.none
     end
@@ -37,7 +35,6 @@ class Api::UsersController < ApplicationController
   end
 
   def get_friends
-    # @users = current_user.friends # once friends feature is implemented
     @users = User.all
     render :friends
   end

@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   get '/api/all_requests', to: 'api/friends#all_requests'
   get '/api/friends', to: 'api/users#get_friends'
   get '/api/search_users', to: 'api/users#search'
-  # post '/api/like_post', to: 'api/likes#like_post'
-  # post '/api/like_comment', to: 'api/likes#like_comment'
 
   root "static_pages#root"
 end

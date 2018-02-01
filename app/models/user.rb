@@ -70,6 +70,10 @@ class User < ApplicationRecord
   class_name: 'Like',
   dependent: :destroy
 
+  def self.search_by_full_name(query)
+    where("CONCAT_WS(' ', lower(first_name), lower(last_name)) LIKE ?", "%#{query}%").limit(8)
+  end
+
   def profile_items
     Post.where(author_id: id, recipient_id: [0, nil])
     .or(Post.where(recipient_id: id))
