@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { deleteComment } from '../../actions/comment_actions';
+import {
+  deleteComment,
+  likeComment,
+  unlikeComment
+} from '../../actions/comment_actions';
 import { toggleEditComment } from '../../actions/ui_actions';
 import CommentIndex from './comment_index';
 
@@ -21,7 +25,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     deleteComment: commentId => dispatch(deleteComment(commentId)),
-    toggleEditComment: commentId => dispatch(toggleEditComment(commentId))
+    toggleEditComment: commentId => dispatch(toggleEditComment(commentId)),
+    likeComment: commentId => dispatch(likeComment(commentId)),
+    unlikeComment: (likeId, commentId) => dispatch(unlikeComment(likeId, commentId))
   };
 };
 
