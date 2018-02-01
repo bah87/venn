@@ -68,7 +68,7 @@ export const likePost = postId => {
   return $.ajax({
     method: 'POST',
     url: '/api/likes',
-    data: { like: { likeable_id: postId, likeable_type: 'post' } }
+    data: { like: { likeable_id: postId, likeable_type: 'Post' } }
   });
 };
 
@@ -76,6 +76,6 @@ export const unlikePost = (likeId, postId) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/likes/${likeId}`,
-    data: { like: { likeable_id: postId, likeable_type: 'post' } }
+    data: { like: { likeable_id: postId, likeable_type: 'Post' } }
   });
 };

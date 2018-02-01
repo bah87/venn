@@ -40,3 +40,19 @@ export const updateComment = formData => {
     data: formData
   });
 };
+
+export const likeComment = commentId => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/likes',
+    data: { like: { likeable_id: commentId, likeable_type: 'Comment' } }
+  });
+};
+
+export const unlikeComment = (likeId, commentId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/likes/${likeId}`,
+    data: { like: { likeable_id: commentId, likeable_type: 'Comment' } }
+  });
+};
