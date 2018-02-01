@@ -41,6 +41,8 @@ users = [
   ["Demo", "User", "M", "demo-cover.jpg", "demo.jpg", "Faker::Hacker"]
 ]
 
+post_samples = []
+
 users.each do |user|
   u = User.new(
     email: user[0],
@@ -62,6 +64,7 @@ users.each do |user|
     else
       body = Kernel.const_get(user[5]).quote
     end
+    post_samples.push(body)
     Post.create(
       body: body,
       author_id: u.id
@@ -75,11 +78,13 @@ users = User.all
 (0...users.length-1).each do |i|
   (i+1...users.length).each do |j|
     if users[i].cover_photo_file_name == users[j].cover_photo_file_name
-      Friend.create(
-        requestor_id: users[i].id,
-        receiver_id: users[j].id,
-        status: 'ACCEPTED'
-      )
+      unless users[i].id == users[j].id
+        Friend.create(
+          requestor_id: users[i].id,
+          receiver_id: users[j].id,
+          status: 'ACCEPTED'
+        )
+      end
     end
   end
 end
@@ -87,20 +92,47 @@ end
 User.where(first_name: ['Jonathan', 'Chuck']).each do |user1|
   users.each do |user2|
     next if ['Jonathan', 'Chuck', 'Demo'].include?(user2.first_name)
-    Friend.create(
-      requestor_id: user1.id,
-      receiver_id: user2.id,
-      status: 'ACCEPTED'
-    )
+    unless user1.id == user2.id
+      Friend.create(
+        requestor_id: user1.id,
+        receiver_id: user2.id,
+        status: 'ACCEPTED'
+      )
+    end
   end
 end
 
 demo_id = User.where(first_name: 'Demo').first.id
 users[0..-2].each do |user|
   req_status = rand > 0.8 ? 'PENDING' : 'ACCEPTED'
-  Friend.create(
-    requestor_id: user.id,
-    receiver_id: demo_id,
-    status: req_status
-  )
+  unless user.id == demo_id
+    Friend.create(
+      requestor_id: user.id,
+      receiver_id: demo_id,
+      status: req_status
+    )
+  end
+end
+
+posts = Post.all
+users = User.all
+
+posts.each do |post|
+  users.each do |user|
+    if rand > 0.85
+      Comment.create!(body: post_samples.sample, post_id: post.id, author_id: user.id)
+    elsif rand > 0.75
+      Like.create!(liker_id: user.id, likeable_type: 'Post', likeable_id: post.id)
+    end
+  end
+end
+
+comments = Comment.all
+
+comments.each do |comment|
+  users.each do |user|
+    if rand > 0.85
+      Like.create!(liker_id: user.id, likeable_type: 'Comment', likeable_id: comment.id)
+    end
+  end
 end
