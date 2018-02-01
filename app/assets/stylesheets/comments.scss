@@ -192,6 +192,14 @@
   font-weight: 700;
 }
 
+.comment-like-hover-list {
+  display: none;
+}
+
+.comment-like-nub {
+  display: none;
+}
+
 .comment-like-count {
   background-color: white;
   border-radius: 10px;
@@ -201,8 +209,33 @@
   align-items: center;
   justify-content: flex-start;
   position: absolute;
-  bottom: -13px;
-  right: -12px;
+  bottom: -5px;
+  right: -22px;
+  cursor: default;
+
+  &:hover .comment-like-hover-list {
+    // list-style: none;
+    cursor: default;
+    display: block;
+    padding: 8px;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    border-radius: 3px;
+    position: absolute;
+    top: 29px;
+    left: -10px;
+    z-index: 2;
+    // width: 100px;
+  }
+
+  &:hover .comment-like-nub {
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    left: 11px;
+    width: 12px;
+  }
 }
 
 .comment-like-icon-circle {
