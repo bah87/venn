@@ -47,11 +47,13 @@ class PostIndexItem extends React.Component {
     }
 
     let body = this.props.post.body;
+    let bodyText;
     const linkify = new LinkifyIt();
     const link = linkify.match(body);
     if (link) {
       if (link[0].url.includes("youtube.com")) {
         const videoId = link[0].url.split("?v=")[1];
+        bodyText = body.replace(link[0].url, "");
         body = (<iframe
           src={`https://www.youtube.com/embed/${videoId}`}
           height="275" width="492" style={{ border: 'none' }}></iframe>);
@@ -139,6 +141,7 @@ class PostIndexItem extends React.Component {
           </header>
 
           <main className="post-item-body">
+            <p>{ bodyText }</p>
             <p>{ body }</p>
             <PostImage form={false}
               imageUrl={this.props.post.image_url} />
