@@ -191,6 +191,30 @@
   font-weight: 700;
 }
 
+.comment-like-count {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px;
+  color: rgb(144, 148, 156);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.comment-like-icon-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: color: rgb(64, 128, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    color: white;
+  }
+}
+
 .comment-strong-date {
   color: #90949c;
   font-size: 12px;

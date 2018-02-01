@@ -5,6 +5,7 @@ import PostImage from '../posts/post_image';
 import CommentDropdown from './comment_dropdown';
 import CommentFormContainer from './comment_form_container';
 import Linkify from 'react-linkify';
+import CommentLikes from './comment_likes';
 
 class CommentIndexItem extends React.Component {
   constructor() {
