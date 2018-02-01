@@ -11,7 +11,7 @@ const CommentLikes = ({ likers }) => {
         <div className="comment-like-icon-circle">
           <i className="fa fa-thumbs-up" aria-hidden="true"></i>
         </div>
-        <div>{ likers.length }</div>
+        <div className="comment-like-number">{ likers.length }</div>
       </div>
     );
   }

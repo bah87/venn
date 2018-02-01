@@ -12,6 +12,7 @@ class CommentIndex extends React.Component {
           toggleEditComment={ this.props.toggleEditComment }
           currentUser={ this.props.currentUser }
           post={ this.props.post }
+          users={ this.props.users }
           editComment={ this.props.editComment }
           likeComment={ this.props.likeComment }
           unlikeComment={ this.props.unlikeComment }

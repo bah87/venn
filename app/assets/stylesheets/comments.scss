@@ -167,6 +167,7 @@
   align-items: center;
   justify-content: flex-start;
   font-size: 13px;
+  position: relative;
 }
 
 .comment-name {
@@ -199,20 +200,29 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: absolute;
+  bottom: -13px;
+  right: -12px;
 }
 
 .comment-like-icon-circle {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: color: rgb(64, 128, 255);
+  background-color: rgb(64, 128, 255);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 3px;
 
   i {
     color: white;
   }
+}
+
+.comment-like-number {
+  font-size: 11px;
+  margin: 2px;
 }
 
 .comment-strong-date {

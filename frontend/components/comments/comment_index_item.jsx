@@ -38,6 +38,13 @@ class CommentIndexItem extends React.Component {
       likeBtn += " comment-liked";
     }
 
+    let likers = [];
+    if (Object.values(this.props.users).length > 0) {
+      likers = this.props.comment.likes.map(like => {
+        return this.props.users[like.liker_id];
+      });
+    }
+
     if (this.props.editComment === this.props.comment.id) {
       return (
         <CommentFormContainer
@@ -59,6 +66,7 @@ class CommentIndexItem extends React.Component {
           </div>
           <div>
             <div className="comment-body-container">
+              <CommentLikes likers={ likers } />
               <div className="comment-body">
                 <Link
                   to={`/profile/${this.props.comment.author_id}`}
