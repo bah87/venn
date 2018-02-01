@@ -12,14 +12,44 @@
   color: rgb(54, 88, 153);
 }
 
+.likers-hover-container {
+  display: none;
+}
+
+.like-nub {
+  display: none;
+}
+
 .liker-names {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  cursor: default;
 
   i {
     color: rgb(64, 128, 255);
     margin-right: 4px;
+  }
+
+  &:hover .likers-hover-container {
+    display: block;
+    padding: 8px;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    border-radius: 3px;
+    position: absolute;
+    top: 21px;
+    left: 0;
+  }
+
+  &:hover .like-nub {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 21px;
+    width: 10px;
   }
 }
 

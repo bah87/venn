@@ -168,7 +168,11 @@ class PostIndexItem extends React.Component {
             </div>
           </footer>
 
-          <PostLikes likers={likers} youLiked={youLiked}/>
+          <PostLikes
+            likers={likers}
+            youLiked={youLiked}
+            you={this.props.currentUser}
+          />
         </li>
       );
     } else { return null; }
