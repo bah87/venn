@@ -184,13 +184,19 @@ class PostForm extends React.Component {
                   className="make-post-modal-btn">Make Post</button>
               </span>
 
-              <span>
-                <i className="fa fa-camera" aria-hidden="true"></i>
-                <button
-                  className="photo-video-modal-btn">Photo/Video
-                </button>
-              </span>
+              <div className="post-file-upload-container">
+                <label htmlFor="file-upload-post" id="post-form-upload-header">
+                  <i className="fa fa-camera" aria-hidden="true"></i>
+                  Photo
+                </label>
 
+                <input
+                  id="file-upload-post"
+                  type="file"
+                  ref={(element) => { this.fileInput = element; }}
+                  onChange={this.updateFile}
+                />
+              </div>
               <div
                 className={modalCloseBtn}
                 onClick={() => this.props.togglePostFormModal()}>
@@ -231,7 +237,7 @@ class PostForm extends React.Component {
                   <div className="post-file-upload-container">
                     <label htmlFor="file-upload-post" id="post-form-upload-label">
                       <i className="fa fa-camera" aria-hidden="true"></i>
-                      Photo/Video
+                      Photo
                     </label>
 
                     <input

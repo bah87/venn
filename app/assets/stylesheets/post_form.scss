@@ -84,11 +84,29 @@
   display: none;
 }
 
+#post-form-upload-header {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  width: 82px;
+  height: 32px;
+  background-color: rgb(246, 247, 249);
+  color: rgb(75, 79, 86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+}
+
+#post-form-upload-header i {
+  margin-right: 4px;
+}
+
 #post-form-upload-label {
   cursor: pointer;
   font-size: 12px;
   font-weight: 700;
-  width: 122px;
+  width: 92px;
   height: 32px;
   background-color: rgb(246, 247, 249);
   color: rgb(75, 79, 86);
@@ -146,7 +164,7 @@
 }
 
 .post-form-close-btn {
-  width: 290px;
+  width: 328px;
   display: flex;
   cursor: pointer;
   justify-content: flex-end;
