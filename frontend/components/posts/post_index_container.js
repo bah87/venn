@@ -19,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
     friends: ownProps.friends,
     currentUser: state.session.currentUser,
     modal: state.ui.editPostModal,
-    morePosts: state.ui.morePosts
+    morePosts: state.ui.morePosts,
+    users: state.entities.users
   };
 };
 

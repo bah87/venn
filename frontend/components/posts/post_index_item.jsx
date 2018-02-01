@@ -7,6 +7,7 @@ import { postDateFormat } from '../../util/date_util';
 import NameHover from '../main_pages/name_hover';
 import LinkifyIt from 'linkify-it';
 import Linkify from 'react-linkify';
+import PostLikes from './post_likes';
 
 class PostIndexItem extends React.Component {
   constructor() {
@@ -38,6 +39,11 @@ class PostIndexItem extends React.Component {
       likeBtn += " liked";
       likeIcon = "fa fa-thumbs-up";
     }
+    const youLiked = likeIcon === "fa fa-thumbs-up" ? true : false;
+    debugger
+    const likers = this.props.post.likes.map(like => {
+      return this.props.users[like.liker_id];
+    }).filter(liker => liker.id !== this.props.currentUser.id);
 
     let date = postDateFormat(this.props.post.updated_at);
 
@@ -159,6 +165,8 @@ class PostIndexItem extends React.Component {
               <p>Comment</p>
             </div>
           </footer>
+
+          <PostLikes likers={likers} youLiked={youLiked}/>
         </li>
       );
     } else { return null; }
