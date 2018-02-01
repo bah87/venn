@@ -40,10 +40,12 @@ class PostIndexItem extends React.Component {
       likeIcon = "fa fa-thumbs-up";
     }
     const youLiked = likeIcon === "fa fa-thumbs-up" ? true : false;
-    debugger
-    const likers = this.props.post.likes.map(like => {
-      return this.props.users[like.liker_id];
-    }).filter(liker => liker.id !== this.props.currentUser.id);
+    let likers = [];
+    if (Object.values(this.props.users).length > 0) {
+      likers = this.props.post.likes.map(like => {
+        return this.props.users[like.liker_id];
+      }).filter(liker => liker.id !== this.props.currentUser.id);
+    }
 
     let date = postDateFormat(this.props.post.updated_at);
 
