@@ -2,7 +2,7 @@ import {
   RECEIVE_COMMENTS,
   RECEIVE_COMMENT,
   REMOVE_COMMENT,
-  REMOVE_LIKE
+  REMOVE_COMMENT_LIKE
 } from '../actions/comment_actions';
 import {
   RECEIVE_ALL_POSTS,
@@ -23,7 +23,7 @@ const commentsReducer = (state = {}, action) => {
       let newState = merge({}, state);
       delete newState[action.commentId];
       return newState;
-    case REMOVE_LIKE:
+    case REMOVE_COMMENT_LIKE:
       newState = merge({}, state);
       let comment = newState[action.likeableId];
       comment.likes = comment.likes.filter(like => {

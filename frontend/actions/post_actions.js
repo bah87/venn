@@ -5,7 +5,7 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_NEW_POSTS = 'RECEIVE_NEW_POSTS';
 export const REMOVE_POST = 'REMOVE_POST';
-export const REMOVE_LIKE = 'REMOVE_LIKE';
+export const REMOVE_POST_LIKE = 'REMOVE_POST_LIKE';
 
 export const receivePost = post => {
   return {
@@ -39,7 +39,7 @@ export const removePost = postId => {
 
 export const removeLike = ({ likeId, likeableId }) => {
   return {
-    type: REMOVE_LIKE,
+    type: REMOVE_POST_LIKE,
     likeId,
     likeableId
   };

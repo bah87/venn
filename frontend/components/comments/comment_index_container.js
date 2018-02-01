@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
   });
   return {
     comments,
-    currentUserId: state.session.currentUser.id,
+    currentUser: state.session.currentUser,
     post: ownProps.post,
     editComment: state.ui.editComment
   };

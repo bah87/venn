@@ -80,7 +80,7 @@ class CommentIndexItem extends React.Component {
             authorId={this.props.comment.author_id}
             deleteComment={this.props.deleteComment}
             toggleEditComment={this.props.toggleEditComment}
-            currentUserId={this.props.currentUserId}
+            currentUserId={this.props.currentUser.id}
             commentId={this.props.comment.id}
           />
         </li>
