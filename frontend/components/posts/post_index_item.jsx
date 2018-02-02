@@ -5,8 +5,8 @@ import PostDropdown from './post_dropdown';
 import EditPostForm from './edit_post_form';
 import { postDateFormat } from '../../util/date_util';
 import NameHover from '../main_pages/name_hover';
-import LinkifyIt from 'linkify-it';
 import Linkify from 'react-linkify';
+import { urlMatch } from '../../util/embed_links_util';
 import PostLikes from './post_likes';
 
 class PostIndexItem extends React.Component {
@@ -54,23 +54,7 @@ class PostIndexItem extends React.Component {
       wallPostClass = "wall-post";
     }
 
-    let body = this.props.post.body;
-    let bodyText;
-    const linkify = new LinkifyIt();
-    const link = linkify.match(body);
-    if (link) {
-      if (link[0].url.includes("youtube.com")) {
-        const videoId = link[0].url.split("?v=")[1];
-        bodyText = body.replace(link[0].url, "");
-        body = (<iframe
-          src={`https://www.youtube.com/embed/${videoId}`}
-          height="275" width="492" style={{ border: 'none' }}></iframe>);
-      } else {
-        body = <Linkify>{ body }</Linkify>;
-      }
-    } else {
-      body = <Linkify>{ body }</Linkify>;
-    }
+    const body = urlMatch(this.props.post.body, "post");
 
     if (this.props.user) {
       return (
@@ -149,8 +133,9 @@ class PostIndexItem extends React.Component {
           </header>
 
           <main className="post-item-body">
-            <p>{ bodyText }</p>
-            <p>{ body }</p>
+            <p>{ body[0] }</p>
+            <p>{ body[1] }</p>
+            <p>{ body[2] }</p>
             <PostImage form={false}
               imageUrl={this.props.post.image_url} />
           </main>

@@ -5,6 +5,7 @@ import PostImage from '../posts/post_image';
 import CommentDropdown from './comment_dropdown';
 import CommentFormContainer from './comment_form_container';
 import Linkify from 'react-linkify';
+import { urlMatch } from '../../util/embed_links_util';
 import CommentLikes from './comment_likes';
 
 class CommentIndexItem extends React.Component {
@@ -45,6 +46,8 @@ class CommentIndexItem extends React.Component {
       });
     }
 
+    const body = urlMatch(this.props.comment.body, "comment");
+
     if (this.props.editComment === this.props.comment.id) {
       return (
         <CommentFormContainer
@@ -75,7 +78,10 @@ class CommentIndexItem extends React.Component {
                     { this.props.comment.author_fname +
                       " " + this.props.comment.author_lname }
                   </strong>
-                </Link> <Linkify>{ this.props.comment.body }</Linkify>
+                </Link>
+                <p>{ body[0] }</p>
+                <p>{ body[1] }</p>
+                <p>{ body[2] }</p>
               </div>
             </div>
             <PostImage
