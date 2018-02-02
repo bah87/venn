@@ -78,10 +78,7 @@ class CommentIndexItem extends React.Component {
                     { this.props.comment.author_fname +
                       " " + this.props.comment.author_lname }
                   </strong>
-                </Link>
-                <p>{ body[0] }</p>
-                <p>{ body[1] }</p>
-                <p>{ body[2] }</p>
+                </Link>{ " " }{ body[1] }
               </div>
             </div>
             <PostImage
