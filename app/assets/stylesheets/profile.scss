@@ -90,6 +90,7 @@
 .profile-friends-pic {
   width: 100px;
   height: 100px;
+  object-fit: cover;
   margin-left: 5px;
   margin-bottom: 5px;
   background: linear-gradient(to top, black, transparent);
@@ -182,6 +183,7 @@
 .profile-pic-preview {
   width: 100px;
   height: 100px;
+  object-fit: cover;
 }
 
 .cover-photo-screen-hidden {
@@ -305,6 +307,7 @@
 .profile-picture {
   width: 168px;
   height: 168px;
+  object-fit: cover;
   border: 4px solid white;
   border-radius: 2px;
 }
