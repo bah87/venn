@@ -69,7 +69,6 @@ users.each do |user|
       body: body,
       author_id: u.id
     )
-    # updated_at: DateTime.new(2018,1,rand(1..31),rand(0..23),rand(0..59),rand(0..59))
   end
 end
 
@@ -119,9 +118,9 @@ users = User.all
 
 posts.each do |post|
   users.each do |user|
-    if rand > 0.85
+    if rand > 0.9
       Comment.create!(body: post_samples.sample, post_id: post.id, author_id: user.id)
-    elsif rand > 0.75
+    elsif rand > 0.8
       Like.create!(liker_id: user.id, likeable_type: 'Post', likeable_id: post.id)
     end
   end
@@ -131,7 +130,7 @@ comments = Comment.all
 
 comments.each do |comment|
   users.each do |user|
-    if rand > 0.85
+    if rand > 0.9
       Like.create!(liker_id: user.id, likeable_type: 'Comment', likeable_id: comment.id)
     end
   end
